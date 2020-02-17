@@ -1,7 +1,7 @@
 # bash profile
 
 # custom ls 
-alias ls="ls -G"
+alias ls="ls -G --color=auto"
 alias ll="ls -ltrh"
 
 # colours
