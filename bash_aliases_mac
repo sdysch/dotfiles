@@ -8,3 +8,6 @@ export BOOST_INCLUDE_DIR="/usr/local/include/"
 
 # git bash completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# ls
+alias ls="ls -G"
