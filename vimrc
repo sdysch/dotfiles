@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,7 +28,13 @@ filetype plugin on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" NERDTree
 let g:NERDTreeDirArrows=0
+
+" Airline
+" remove section C
+let g:airline_section_c = '%t'
+
 set encoding=utf-8
 
 " With a map leader it's possible to do extra key combinations
