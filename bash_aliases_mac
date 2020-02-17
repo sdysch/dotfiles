@@ -1,0 +1,10 @@
+# mac specific bash aliases
+
+# bored
+alias lookBusy="hexdump -C < /dev/urandom | grep 'f'"
+
+# boost include directory
+export BOOST_INCLUDE_DIR="/usr/local/include/"
+
+# git bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"

@@ -1,0 +1,8 @@
+[user]
+	email = samuel.dysch@cern.ch
+	name = Samuel Dysch
+[http]
+	postBuffer = 209715200
+	emptyAuth = true
+[core]
+	include = ~/.gitconfig_common

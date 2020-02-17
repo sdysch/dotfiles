@@ -1,0 +1,5 @@
+[user]
+	name = Samuel Dezso Dysch
+	email = sdysch94@gmail.com
+[core]
+	include = ~/.gitconfig_common
