@@ -13,7 +13,7 @@ link_configs() {
     olddir=~/dotfiles_backup
 
     # list of files/folders to symlink in homedir
-    files="bash_profile bash_aliases bash_aliases_mac bash_aliases_lxplus vimrc gitconfig_common gitconfig_lxplus gitconfig_personal"
+    files="bash_profile bash_aliases bash_aliases_mac bash_aliases_lxplus vimrc gitconfig_common gitconfig_lxplus gitconfig_personal gitignore_global"
 
     # create dotfiles_old in homedir
     echo "Creating $olddir for backup of any existing dotfiles in ~"

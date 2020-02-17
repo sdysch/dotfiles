@@ -1,0 +1,37 @@
+# global gitignore file
+
+# python
+*.pyc
+
+# C++
+*.o
+*.so
+*.exe
+
+# ROOT
+*.pcm
+*.root
+
+# image/document files
+*.png
+*.pdf
+*.jpg
+
+# LaTeX
+*.aux
+*.toc
+*.lot
+*.lof
+*.log
+*.out
+*.bbl
+*.blg
+
+# mac related
+*.DS_store
+
+# afs process files
+*.__afs
+
+# editor backups
+*~
