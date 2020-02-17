@@ -1,8 +1,8 @@
 # bash profile
 
 # custom ls 
-alias ls="ls -G" aliases
-alias ll="ls -ltrh" aliases
+alias ls="ls -G"
+alias ll="ls -ltrh"
 
 # colours
 export CLICOLOR=1
@@ -57,7 +57,7 @@ elif [ "$(uname)" == "Darwin" ]; then
 
 	# use personal git config
 	export GIT_CONFIG=$HOME/.gitconfig_personal
-else; then
+else
 	# use personal git config
 	export GIT_CONFIG=$HOME/.gitconfig_personal
 fi
