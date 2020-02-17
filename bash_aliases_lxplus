@@ -1,3 +1,8 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+   . /etc/bashrc
+   fi
+
 # cd aliases
 alias cdwork="cd /afs/cern.ch/work/s/sdysch"
 #alias cdTP="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/theo_code/Analysis"
