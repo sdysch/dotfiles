@@ -46,19 +46,12 @@ if [[ "$(hostname)" =~ "lxplus" ]]; then
 	# lxplus specific bash aliases
 	source ~/.bash_aliases_lxplus
 
-	# for lxplus, use CERN gitconfig
-	export GIT_CONFIG=$HOME/.gitconfig_lxplus
-
 elif [ "$(uname)" == "Darwin" ]; then
-	
+
 	# mac specific bash aliases
 	source ~/.bash_aliases_mac
 
-	# use personal git config
-	export GIT_CONFIG=$HOME/.gitconfig_personal
 else
 	# personal bash aliases
 	source ~/.bash_aliases_personal
-	# use personal git config
-	export GIT_CONFIG=$HOME/.gitconfig_personal
 fi

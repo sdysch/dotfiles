@@ -1,46 +1,20 @@
 #!/bin/bash
 
-####################################################################################
+# link common dotfiles
+ln -s vimrc ~/.vimrc
+ln -s bash_profile ~/.bash_profile
+ln -s bash_aliases_personal ~/.bash_aliases_personal
+ln -s bash_aliases_lxplus ~/.bash_aliases_lxplus
+ln -s bash_aliases_mac ~/.bash_aliases_mac
+ln -s gitconfig_common ~/.gitconfig_common
+ln -s gitignore_global ~/.gitignore_global
 
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles_mac
+# platform specific git config
+# CERN config for lxplus
+if [[ "$(hostname)" =~ "lxplus" ]]; then
+	ln -s gitconfig_lxplus ~/.gitconfig
 
-####################################################################################
-
-link_configs() {
-    # dotfiles directory
-    dir=~/dotfiles_harmonised
-    # old dotfiles backup directory
-    olddir=~/dotfiles_backup
-
-    # list of files/folders to symlink in homedir
-    files="bash_profile bash_aliases bash_aliases_mac bash_aliases_lxplus bash_aliases_personal vimrc gitconfig_common gitconfig_lxplus gitconfig_personal gitignore_global"
-
-    # create dotfiles_old in homedir
-    echo "Creating $olddir for backup of any existing dotfiles in ~"
-    mkdir -p $olddir
-    echo "...done"
-
-    # change to the dotfiles directory
-    echo "Changing to the $dir directory"
-    cd $dir
-    echo "...done"
-
-    # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-    for file in $files; do
-      if [ -L ~/.$file ]
-      then
-        rm ~/.$file
-      else
-        mv ~/.$file $olddir/
-      fi
-
-      echo "Creating symlink to $file in home directory."
-      ln -s $dir/$file ~/.$file
-    done
-}
-
-case "$1" in
-    link)
-        link_configs
-        ;;
-esac
+# personal otherwise
+elif [ "$(uname)" == "Darwin" ]; then
+	ln -s gitconfig_personal ~/.gitconfig
+fi
