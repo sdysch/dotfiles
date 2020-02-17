@@ -51,6 +51,12 @@ elif [ "$(uname)" == "Darwin" ]; then
 	# mac specific bash aliases
 	source ~/.bash_aliases_mac
 
+# personal laptop
+if [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
+	
+	# lxplus specific bash aliases
+	source ~/.bash_aliases_sam
+
 else
 	# personal bash aliases
 	source ~/.bash_aliases_personal
