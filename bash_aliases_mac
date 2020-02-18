@@ -11,3 +11,6 @@ export BOOST_INCLUDE_DIR="/usr/local/include/"
 
 # ls
 alias ls="ls -G"
+
+# change to my thesis directory :'(
+alias cdThesis="cd ~/Documents/Manchester/PhD/thesis"
