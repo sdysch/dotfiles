@@ -44,8 +44,11 @@ alias jobQueueID="condor_q"
 alias whyAreMyJobsHeld="condor_q -hold -af HoldReason"
 alias whyAreMyJobsNotRunning="condor_q -better-analyze"
 
+# actual size on EOS
+alias duOnEOS="du -s --apparent-size"
+
 # eos size
-alias eosSize="du -s --apparent-size /eos/user/s/sdysch/"
+alias eosSize="duOnEOS /eos/user/s/sdysch/"
 
 # ATLAS specific
 alias getProxy="voms-proxy-init -voms atlas"
