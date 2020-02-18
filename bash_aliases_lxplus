@@ -40,6 +40,7 @@ alias condor_tail="condor_tail -f"
 # easier to type
 alias jobPeek="condor_tail -f"
 alias jobQueue="condor_q -nobatch"
+alias jobQueueID="condor_q"
 alias whyAreMyJobsHeld="condor_q -hold -af HoldReason"
 alias whyAreMyJobsNotRunning="condor_q -better-analyze"
 
