@@ -32,11 +32,11 @@ elif [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	# personal aliases
 	ln -s ~/dotfiles_harmonised/bash_aliases_sam ~/.bash_aliases_sam
 
-# anything else (Manchester?)
-else
+# Manchester
+elif [[ "$(hostname)" =~ "hep.manchester.ac.uk" ]]; then
 	# git
 	ln -s ~/dotfiles_harmonised/gitconfig_personal ~/.gitconfig
 
 	# any Manchester aliases
-	ln -s ~/dotfiles_harmonised/bash_aliases_personal ~/.bash_aliases_personal
+	ln -s ~/dotfiles_harmonised/bash_aliases_manchester ~/.bash_aliases_manchester
 fi
