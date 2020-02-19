@@ -41,4 +41,6 @@ source $HOME/.zsh_aliases_common
 # personal laptop
 if [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	source $HOME/.zsh_aliases_personal
+elif [[ "$(hostname)" =~ "lxplus" ]]; then
+	source $HOME/.zsh_aliases_lxplus
 fi

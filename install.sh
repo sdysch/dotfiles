@@ -5,7 +5,7 @@ ln -s ~/dotfiles_harmonised/vimrc ~/.vimrc
 ln -s ~/dotfiles_harmonised/bash_profile ~/.bash_profile
 ln -s ~/dotfiles_harmonised/gitignore_global ~/.gitignore_global
 
-ln -s ~/dotfiles_harmonised/zshrc ~/.zshrc
+# common zsh aliases
 ln -s ~/dotfiles_harmonised/zsh_aliases_common ~/.zsh_aliases_common
 
 # platform specific files to link
@@ -15,6 +15,9 @@ if [[ "$(hostname)" =~ "lxplus" ]]; then
 	ln -s ~/dotfiles_harmonised/gitconfig_lxplus ~/.gitconfig
 	# lxplus aliases
 	ln -s ~/dotfiles_harmonised/bash_aliases_lxplus ~/.bash_aliases_lxplus
+
+	# zshrc for lxplus
+	ln -s ~/dotfiles_harmonised/zshrc_lxplus ~/.zshrc
 
 # mac
 elif [ "$(uname)" == "Darwin" ]; then
@@ -28,6 +31,7 @@ elif [ "$(uname)" == "Darwin" ]; then
 elif [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	# git
 	ln -s ~/dotfiles_harmonised/gitconfig_personal ~/.gitconfig
+	ln -s ~/dotfiles_harmonised/zshrc_personal ~/.zshrc
 
 	# personal aliases
 	ln -s ~/dotfiles_harmonised/bashrc ~/.bashrc
