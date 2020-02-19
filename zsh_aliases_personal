@@ -1,0 +1,14 @@
+# personal aliases
+
+# ls
+alias ls="ls --color=auto"
+alias ll="ls -ltrh"
+
+# opening files
+alias open="gnome-open"
+
+# root version
+rootSource="/home/sam/Documents/rootInstall/build/bin/thisroot.sh"
+if [ -f rootSource ]; then
+	source rootSource 
+fi

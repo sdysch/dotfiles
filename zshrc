@@ -21,10 +21,17 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+  #export EDITOR='vim'
+#else
+  #export EDITOR='mvim'
+#fi
 
+# common aliases
 source $HOME/.zsh_aliases_common
+
+# platform specific aliases
+# personal laptop
+if [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
+	source $HOME/.zsh_aliases_personal
+fi

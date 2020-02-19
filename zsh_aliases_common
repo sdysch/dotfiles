@@ -1,9 +1,5 @@
 # common aliases
 
-# ls
-alias ls="ls --color=auto"
-alias ll="ls -ltrh"
-
 # default editor
 export EDITOR=vim
 

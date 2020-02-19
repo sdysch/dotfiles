@@ -33,6 +33,9 @@ elif [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	ln -s ~/dotfiles_harmonised/bashrc ~/.bashrc
 	ln -s ~/dotfiles_harmonised/bash_aliases_sam ~/.bash_aliases_sam
 
+	# zsh
+	ln -s ~/dotfiles_harmonised/zsh_aliases_personal ~/.zsh_aliases_personal
+
 # Manchester
 elif [[ "$(hostname)" =~ "hep.manchester.ac.uk" ]]; then
 	# git
