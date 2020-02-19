@@ -31,7 +31,7 @@ elif [ "$(uname)" == "Darwin" ]; then
 elif [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	# git
 	ln -s ~/dotfiles_harmonised/gitconfig_personal ~/.gitconfig
-	ln -s ~/dotfiles_harmonised/zshrc_personal ~/.zshrc
+	ln -s ~/dotfiles_harmonised/zshrc_sam ~/.zshrc
 
 	# personal aliases
 	ln -s ~/dotfiles_harmonised/bashrc ~/.bashrc
