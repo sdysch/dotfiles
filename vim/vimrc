@@ -46,8 +46,8 @@ let g:mapleader = ","
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
-nmap <leader>g :Gstatus<cr>
-nmap <leader>c :Gcommit<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
