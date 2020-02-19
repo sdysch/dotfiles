@@ -26,3 +26,6 @@ alias rt="root -l"
 
 # kerberos authentication
 alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
+
+# get weather
+alias weather="curl http://wttr.in//~Manchester"
