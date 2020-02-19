@@ -4,12 +4,19 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sam/.oh-my-zsh"
 
-# theme
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="awesomepanda"
+#DEFAULT_USER=$(whoami)
+#DEFAULT_USER="Sam"
 
-export DEFAULT_USER="Sam"
+# theme
+#ZSH_THEME="agnoster"
+# REF: https://github.com/Powerlevel9k/powerlevel9k
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user time dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+
 
 # plugins
 plugins=(
