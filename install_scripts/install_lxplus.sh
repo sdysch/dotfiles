@@ -12,3 +12,4 @@ ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_common ~/.zsh_aliases_common
 ln -fsn ~/dotfiles_harmonised/git/gitconfig_lxplus ~/.gitconfig
 ln -fsn ~/dotfiles_harmonised/bash/bash_aliases_lxplus ~/.bash_aliases_lxplus
 ln -fsn ~/dotfiles_harmonised/zsh/zshrc_lxplus ~/.zshrc
+ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_lxplus ~/.zsh_aliases_lxplus
