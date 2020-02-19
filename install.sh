@@ -30,6 +30,7 @@ elif [[ "$(hostname)" =~ "sam-Lenovo" ]]; then
 	ln -s ~/dotfiles_harmonised/gitconfig_personal ~/.gitconfig
 
 	# personal aliases
+	ln -s ~/dotfiles_harmonised/bashrc ~/.bashrc
 	ln -s ~/dotfiles_harmonised/bash_aliases_sam ~/.bash_aliases_sam
 
 # Manchester
