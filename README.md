@@ -5,7 +5,7 @@
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
 
 ## zsh
-	* I am (slowly) moving from bash to zsh (using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+	* I am (slowly) moving from bash to zsh, using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 	* The bash dotfiles may become obsolete
 
 ## Example zsh
