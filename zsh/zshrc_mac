@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/afs/cern.ch/user/s/sdysch/.oh-my-zsh"
+export ZSH="/Users/samdysch/.oh-my-zsh"
 
 #DEFAULT_USER=$(whoami)
 #DEFAULT_USER="Sam"
@@ -38,5 +38,4 @@ source $ZSH/oh-my-zsh.sh
 # common aliases
 source $HOME/.zsh_aliases_common
 
-# lxplus 
-source $HOME/.zsh_aliases_lxplus
+# mac specific
