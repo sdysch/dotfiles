@@ -1,5 +1,6 @@
 # ls
 alias ls="ls --color=auto"
+alias ll="ls -ltrh"
 
 # cd aliases
 alias cdwork="cd /afs/cern.ch/work/s/sdysch"
