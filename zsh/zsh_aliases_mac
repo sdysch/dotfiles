@@ -15,3 +15,6 @@ alias ll="ls -ltrh"
 
 # change to my thesis directory :'(
 alias cdThesis="cd ~/Documents/Manchester/PhD/thesis"
+
+# open with Preview
+alias previewOpen="open -a Preview"
