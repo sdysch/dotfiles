@@ -10,6 +10,10 @@ alias grep='grep --color=auto'
 alias du="du -h"
 alias df="df -h"
 
+# being careful about what I move and delete
+alias rm="rm -i"
+alias mv="mv -i"
+
 # ssh aliases
 # Login to Manchester hep machines
 alias TONY="ssh -X -Y samdysch@tony.hep.manchester.ac.uk"
