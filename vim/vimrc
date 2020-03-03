@@ -83,7 +83,11 @@ set noswapfile
 set nowrap
 
 " line numbers
-set number
+"set number
+
+" turn relative line numbers on
+:set relativenumber
+:set rnu
 
 " show matching brackets
 set showmatch
