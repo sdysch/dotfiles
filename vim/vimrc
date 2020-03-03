@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdcommenter'
 
 " All of your Plugins must be added before the following line
@@ -34,7 +34,8 @@ let g:NERDTreeDirArrows=0
 
 " Airline
 " remove section C
-"let g:airline_section_c = '%t'
+let g:airline_section_c = '%t'
+let g:airline_extensions = []
 
 set encoding=utf-8
 
