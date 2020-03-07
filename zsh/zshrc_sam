@@ -23,6 +23,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 # plugins
 plugins=(
 	git
+	tmux
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	z
