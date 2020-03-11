@@ -1,8 +1,25 @@
+#====================
+# vim
+#====================
+
 # Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+#====================
+# tmux
+#====================
+
+# themes
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+
+#====================
+# zsh specific
+#====================
+
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#ZSH_CUSTOM="~/.oh-my-zsh/custom"
 
 # powerline fonts
 # clone
