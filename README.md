@@ -3,16 +3,8 @@
 ## My dotfiles
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
-
-## zsh
-* I am (slowly) moving from bash to zsh, using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-* The bash dotfiles may become obsolete
-
-## Example zsh
+* zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+* bash dotfiles for legacy purposes only
 
 ![shell](figures/screenshot.png)
 
-
-
-## Usage
-* Run `install.sh` to clone needed repositories (requires git)
