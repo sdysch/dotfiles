@@ -3,6 +3,7 @@
 ## My dotfiles
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
+
 ## Setup
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
