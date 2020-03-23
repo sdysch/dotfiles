@@ -5,7 +5,7 @@
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
 
 ## Setup
-* OS: uxbuntu 18.04.4 (xfce)
+* OS: [xubuntu](https://xubuntu.org/) 18.04.4 (xfce)
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * bash dotfiles for legacy purposes only
