@@ -1,0 +1,15 @@
+evince
+firefox
+google-chrome-stable
+htop
+i3-wm
+i3blocks
+i3status
+neofetch
+nitrogen
+rofi
+skypeforlinux
+texlive-full
+tmux
+vim
+vlc
