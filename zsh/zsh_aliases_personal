@@ -12,3 +12,6 @@ rootSource="/home/sam/Documents/rootInstall/build/bin/thisroot.sh"
 if [ -f rootSource ]; then
 	source rootSource 
 fi
+
+# add i3 scripts to path
+export PATH=$PATH:~/dotfiles_harmonised/i3/scripts

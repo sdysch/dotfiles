@@ -6,7 +6,7 @@
 
 ## Setup
 * OS: [xubuntu](https://xubuntu.org/) 18.04.4 (xfce)
-* Window manager: i3wm alongside xfce desktop environment
+* Window manager: i3wm (+gaps) alongside xfce desktop environment
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * bash dotfiles for legacy purposes only

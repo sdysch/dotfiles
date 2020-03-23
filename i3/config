@@ -20,6 +20,11 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# shutdown
+set $shutdown sudo -A shutdown 
+set $lockscreen xflock4
+bindsym $mod+Shift+u exec --no-startup-id prompt.sh "Shutdown computer?" "$shutdown"
+bindsym $mod+Control+l exec --no-startup-id $lockscreen
 
 # change focus (vim keys)
 bindsym $mod+j focus down
@@ -112,7 +117,7 @@ bar {
     position top
 	#status_command i3status
 	status_command i3status -c ~/.i3/i3status.conf
-	output primary
+	#output primary
 	font pango:hermit 10
 	separator_symbol " ⁞ "
 }
@@ -145,3 +150,10 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id synergy
+
+# i3 gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 10
+bindsym $mod+z gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current minus 5
