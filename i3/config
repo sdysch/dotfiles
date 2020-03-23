@@ -46,7 +46,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shit+v split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -67,6 +67,10 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# assign monitors
+workspace 1 output DP-1
+workspace 2 output eDP-1
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -100,8 +104,18 @@ bindsym $mod+Shift+r restart
 #-old-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec xfce4-session-logout
 
-# custom programs
+# appfinder
 bindsym $mod+Control+space exec xfce4-appfinder
+
+# status bar
+bar {
+    position top
+	#status_command i3status
+	status_command i3status -c ~/.i3/i3status.conf
+	output primary
+	font pango:DejaVu Sans Mono 10
+	separator_symbol "⁞"
+}
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
