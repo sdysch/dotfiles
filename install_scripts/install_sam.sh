@@ -8,3 +8,6 @@ ln -fsn ~/dotfiles_harmonised/bash/bash_aliases_sam ~/.bash_aliases_sam
 ln -fsn ~/dotfiles_harmonised/zsh/zshrc_sam ~/.zshrc
 ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
 ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
+
+mkdir -p ~/.i3
+ln -fsn ~/dotfiles_harmonised/i3/config ~/.i3/config
