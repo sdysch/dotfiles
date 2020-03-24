@@ -48,9 +48,16 @@ let g:mapleader = ","
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
+
+" fugitive shortcuts
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
+
+" compiling LaTeX documents (with Makefile)
 nmap <leader>r :!make<cr>
+
+" turn off search highlighting
+nmap <leader>n :noh<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
