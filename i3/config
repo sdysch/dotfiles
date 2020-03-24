@@ -153,7 +153,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id synergy
+#exec --no-startup-id synergy
 
 # i3 gaps
 for_window [class="^.*"] border pixel 2
