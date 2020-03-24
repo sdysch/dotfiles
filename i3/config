@@ -25,7 +25,7 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 #bindsym $mod+Shift+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
 
 # shutdown, lock
-set $shutdown sudo -A shutdown 
+set $shutdown shutdown -h now
 set $lockscreen xflock4
 bindsym $mod+Shift+u exec --no-startup-id $prompt "Shutdown computer?" "$shutdown"
 bindsym $mod+Control+l exec --no-startup-id $lockscreen
