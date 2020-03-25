@@ -13,3 +13,8 @@ ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
 mkdir -p ~/.i3
 ln -fsn ~/dotfiles_harmonised/i3/config ~/.i3/config
 ln -fsn ~/dotfiles_harmonised/i3/i3status.conf ~/.i3/i3status.conf
+
+# nitrogen config
+mkdir -p ~/.config/nitrogen
+ln -fsn ~/dotfiles_harmonised/config/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.cfg
+ln -fsn ~/dotfiles_harmonised/config/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
