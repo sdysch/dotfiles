@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdcommenter'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,6 +38,10 @@ let g:NERDTreeDirArrows=0
 " remove section C
 let g:airline_section_c = '%t'
 let g:airline_extensions = []
+
+" wildignores
+set wildignore=*.o,*.pyc
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 
 set encoding=utf-8
 
@@ -104,9 +109,6 @@ set showmatch
 " smarter splitting
 set splitright
 set undolevels=1000
-
-" ignore compiled files
-set wildignore=*.o,*.pyc
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
