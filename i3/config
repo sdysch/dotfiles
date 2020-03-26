@@ -17,7 +17,10 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+
+# kill all windows on all workspaces
+bindsym $mod+Shift+q [class=".*"] kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
