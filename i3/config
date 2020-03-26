@@ -29,8 +29,10 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 
 # shutdown, lock
 set $shutdown shutdown -h now
+set $reboot shutdown -r now
 set $lockscreen xflock4
-bindsym $mod+Shift+u exec --no-startup-id $prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Control+u exec --no-startup-id $prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Control+r exec --no-startup-id $prompt "Reboot computer?" "$reboot"
 bindsym $mod+Control+l exec --no-startup-id $lockscreen
 
 # change focus (vim keys)
