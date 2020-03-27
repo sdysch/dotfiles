@@ -10,6 +10,4 @@ alias open="xdg-open"
 
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
-if [ -f rootSource ]; then
-	source rootSource 
-fi
+source $rootSource
