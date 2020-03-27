@@ -14,8 +14,8 @@ ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
 
 # install i3 config
 mkdir -p ~/.i3
-ln -fsn ~/dotfiles_harmonised/i3/config ~/.i3/config
-ln -fsn ~/dotfiles_harmonised/i3/i3status.conf ~/.i3/i3status.conf
+ln -fsn ~/dotfiles_harmonised/i3/config ~/.config/i3/config
+#ln -fsn ~/dotfiles_harmonised/i3/i3status.conf ~/.config/i3/i3status.conf
 ln -fsn ~/dotfiles_harmonised/i3/i3blocks.config ~/.config/i3blocks/config
 
 # nitrogen config
