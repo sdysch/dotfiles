@@ -34,6 +34,8 @@ libxpm-dev
 neofetch
 nitrogen
 python-dev
+python3-pandas
+python3-pip
 rofi
 texlive-full
 tmux
