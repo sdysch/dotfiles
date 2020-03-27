@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# common install scripts
+source ~/dotfiles_harmonised/install_scripts/install_common.sh
+
 # install dotfiles for me
 
 ln -fsn ~/dotfiles_harmonised/git/gitconfig_personal ~/.gitconfig
