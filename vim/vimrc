@@ -13,6 +13,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdcommenter'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'sngn/vim-i3blocks-syntax'
+Plugin 'sdysch/vim-tqfolder-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
