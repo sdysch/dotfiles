@@ -26,6 +26,10 @@ chsh -s /bin/zsh $(whoami)
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+* powerline theme
+```
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
 * powerline fonts
 ```
 git clone https://github.com/powerline/fonts.git --depth=1
