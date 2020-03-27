@@ -20,5 +20,5 @@ ln -fsn ~/dotfiles_harmonised/i3blocks.config ~/.config/i3blocks/config
 
 # nitrogen config
 mkdir -p ~/.config/nitrogen
-ln -fsn ~/dotfiles_harmonised/config/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.cfg
-ln -fsn ~/dotfiles_harmonised/config/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
+ln -fsn ~/dotfiles_harmonised/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.cfg
+ln -fsn ~/dotfiles_harmonised/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
