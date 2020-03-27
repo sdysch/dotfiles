@@ -18,14 +18,17 @@
 
 # zsh and oh-my-zsh
 * Change shell to zsh
-```chsh -s /bin/zsh $(whoami)
+```
+chsh -s /bin/zsh $(whoami)
 ```
 * Logout and log back in
 * Install oh-my-zsh
-```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 * powerline fonts
-```git clone https://github.com/powerline/fonts.git --depth=1
+```
+git clone https://github.com/powerline/fonts.git --depth=1
 cd /fonts
 ./install.sh
 cd ..
@@ -45,7 +48,8 @@ vim +PluginInstall +qall
 
 # tmux
 * themes
-```git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+```
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 ```
 
 # i3
