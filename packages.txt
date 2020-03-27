@@ -5,6 +5,7 @@ dmenu
 dpkg-dev
 evince
 firefox
+fonts-humor-sans
 g++
 gcc
 gfortran
