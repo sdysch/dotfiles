@@ -10,9 +10,9 @@ VUNDLE_INSTALL_DIR="~/.vim/bundle/Vundle.vim"
 #     link dotfiles
 #========================
 
-echo "Installing config files...."
-source ~/dotfiles_harmonised/install_scripts/install_sam.sh
-echo "Done"
+#echo "Installing config files...."
+#source ~/dotfiles_harmonised/install_scripts/install_sam.sh
+#echo "Done"
 
 #=======================
 #         zsh 
