@@ -5,7 +5,8 @@
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
 
 ## Setup
-* OS: [xubuntu](https://xubuntu.org/) 18.04.4 (xfce)
+* OS: [xubuntu](https://xubuntu.org/) 19.10 (xfce)
+	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
 * Window manager: i3wm (+gaps) alongside xfce desktop environment
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
