@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set modeline
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,7 +14,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'preservim/nerdcommenter'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'sngn/vim-i3blocks-syntax'
+"Plugin 'sngn/vim-i3blocks-syntax'
+Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 
 " All of your Plugins must be added before the following line
@@ -115,6 +117,10 @@ set undolevels=1000
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" modeline
+set modeline
+set modelines=5
 
 " mac specific (?) to run bashrc when vim is shut
 "set shell=bash\ --login
