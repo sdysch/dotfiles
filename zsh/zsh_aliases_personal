@@ -11,5 +11,3 @@ alias open="xdg-open"
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
 source $rootSource
-
-export PATH=$PATH:$HOME/dotfiles_harmonised/scripts

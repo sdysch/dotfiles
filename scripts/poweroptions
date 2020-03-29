@@ -2,11 +2,11 @@
 # scripts
 PROMPT="$HOME/dotfiles_harmonised/scripts/prompt"
 LOGOUTSCRIPT="$HOME/dotfiles_harmonised/scripts/logout"
-SHUTDOWNSCRIPT="$HOME/dotfiles_harmonised/scripts/reboot"
-REBOOTSCRIPT="$HOME/dotfiles_harmonised/scripts/shutdown_script"
+SHUTDOWNSCRIPT="$HOME/dotfiles_harmonised/scripts/shutdown_script"
+REBOOTSCRIPT="$HOME/dotfiles_harmonised/scripts/reboot"
 
 TEXT="Would you like to..."
-options=("Shutdown?\nReboot?\nLogout?\nQuit")
+options=("Shutdown?\nReboot?\nLogout?\nQuit menu")
 chosen=$(echo -e "$options" | dmenu -i)
 
 case $chosen in
