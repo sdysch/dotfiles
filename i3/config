@@ -123,7 +123,7 @@ bindsym $mod+Control+space exec mate-calculator
 
 # status bar
 bar {
-	font pango:hermit 10
+	font pango:hermit 10, FontAwesome 10
 	status_command i3blocks
     position top
 	separator_symbol " ⁞ "
