@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# A bash scipt for writing a notes file
+notesfile="$HOME/.notes"
+touch $notesfile
+
+vim $notesfile
