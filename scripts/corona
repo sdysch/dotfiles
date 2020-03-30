@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Coronavirus tracker, from https://github.com/sagarkarira/coronavirus-tracker-cli
+# call with corona [country] (defaults to UK)
+
+CMD="curl -s https://corona-stats.online/"
+CMDDefault="${CMD}UK"
+if [[ $# -eq 0 ]] ; then
+	$CMDDefault
+else
+	${CMD}$1
+fi

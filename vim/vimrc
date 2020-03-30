@@ -18,6 +18,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'gerw/vim-tex-syntax'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +55,7 @@ set encoding=utf-8
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
+let maplocalleader = ','
 
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
