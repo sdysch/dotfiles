@@ -35,3 +35,5 @@ for script in ${i3blocksscripts[@]}; do
 	ln -fsn ~/dotfiles_harmonised/i3blocks/scripts/$script ~/.local/bin/$script
 done
 
+# xfce4 config
+ln -fsn ~/dotfiles_harmonised/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
