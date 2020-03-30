@@ -32,6 +32,7 @@ libxext-dev
 libxft-dev
 libxml2-dev
 libxpm-dev
+mpv
 neofetch
 nitrogen
 python-dev
