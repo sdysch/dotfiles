@@ -24,7 +24,7 @@ ln -fsn ~/dotfiles_harmonised/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.
 ln -fsn ~/dotfiles_harmonised/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
 
 # link custom scripts
-declare -a scripts=("shutdown_script" "reboot" "logout" "prompt" "poweroptions", "corona", "corona_formatted")
+declare -a scripts=("shutdown_script" "reboot" "logout" "prompt" "poweroptions" "corona" "corona_formatted" "notes")
 for script in ${scripts[@]}; do
 	ln -fsn ~/dotfiles_harmonised/scripts/$script ~/.local/bin/$script
 done
