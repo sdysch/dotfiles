@@ -11,3 +11,10 @@ alias open="xdg-open"
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
 source $rootSource
+
+# thesis
+export thesisDir="/home/sdysch/Documents/Manchester/PhD/thesis"
+# navigate to thesis dir
+alias cdthesis="cd ${thesisDir}"
+# open my thesis [ screams internally :'(]
+alias thesis="open ${thesisDir}/thesis.pdf"
