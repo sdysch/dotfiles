@@ -4,4 +4,4 @@
 notesfile="$HOME/.notes"
 touch $notesfile
 
-vim $notesfile
+mousepad $notesfile
