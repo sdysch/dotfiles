@@ -39,14 +39,14 @@ ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
 mkdir -p $SCRIPTINSTALLDIR
 
 # link custom scripts
-declare -a scripts=("shutdown_script" "reboot" "logout" "prompt" "poweroptions" "corona" "corona_formatted" "notes")
-for script in ${scripts[@]}; do
+for file in scripts/*; do
+	script=$(echo $file | sed "s/scripts\///g")
 	ln -fsn ${INSTALLDIR}/scripts/$script $SCRIPTINSTALLDIR/$script
 done
 
 # link custom scripts
-declare -a i3blocksscripts=("battery" "bandwidth" "battery2" "bandwidth2" "memory" "cpu_usage" "wifi" "disk_usage" "keyindicator" "volume")
-for script in ${i3blocksscripts[@]}; do
+for file in i3blocks/scripts/*; do
+	script=$(echo $file | sed "s/i3blocks\/scripts\///g")
 	ln -fsn ${INSTALLDIR}/i3blocks/scripts/$script $SCRIPTINSTALLDIR/$script
 done
 
