@@ -1,5 +1,6 @@
 stages:
     - install_packages_personal
+    - test_scripts
 
 install_vim:
     stage: install_packages_personal
@@ -50,3 +51,21 @@ install_zsh:
         - git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
         - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         - echo "Done"
+
+test_local_scripts:
+    stage: test_scripts
+
+    script:
+        - for file in scripts/*; do
+                test=$(echo $file | sed "s/scripts\///g")
+                which $test
+            done
+
+test_i3blocks_scripts:
+    stage: test_scripts
+
+    script:
+        - for file in i3blocks/scripts/*; do
+                test=$(echo $file | sed "s/i3blocks\/\/scripts\///g")
+                which $test
+            done
