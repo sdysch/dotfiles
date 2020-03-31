@@ -56,16 +56,10 @@ test_local_scripts:
     stage: test_scripts
 
     script:
-        - for file in scripts/*; do
-                test=$(echo $file | sed "s/scripts\///g")
-                which $test
-            done
+        - source testing/test_scripts.sh
 
 test_i3blocks_scripts:
     stage: test_scripts
 
     script:
-        - for file in i3blocks/scripts/*; do
-                test=$(echo $file | sed "s/i3blocks\/\/scripts\///g")
-                which $test
-            done
+        - source testing/test_i3blocks_scripts.sh
