@@ -7,10 +7,10 @@ install_packages:
     image: ubuntu:19.10
 
     before_script:
-        source install_scripts/install_apt_packages.sh
+        - source install_scripts/install_apt_packages.sh
 
     script:
-        source install_scripts/install_vim.sh
-        source install_scripts/install_tmux.sh
-        source install_scripts/install_fonts.sh
-        source install_scripts/install_zsh.sh
+        - source install_scripts/install_vim.sh
+        - source install_scripts/install_tmux.sh
+        - source install_scripts/install_fonts.sh
+        - source install_scripts/install_zsh.sh
