@@ -21,4 +21,8 @@ alias thesis="open ${thesisDir}/thesis.pdf"
 
 # to do list
 export TODOLISTDIR="/home/sdysch/.todolist"
-export PATH=$PATH:"/home/sdysch/.todolist/scripts"
+export PATH=$PATH:"${TODOLISTDIR}/scripts"
+
+# to do list backup (repo is private from git)
+export TODOBACKUP="/home/sdysch/Documents/todolist-backup"
+export PATH=$PATH:"${TODOBACKUP}/scripts"
