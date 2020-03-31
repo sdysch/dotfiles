@@ -1,15 +1,18 @@
 stages:
-    - install_packages
+    - install_packages_personal
 
-install_packages:
-    stage: install_packages
+install_packages_personal:
+    stage: install_packages_personal
 
     image: ubuntu:19.10
 
     before_script:
+        # update apt-get
         - apt-get update
         # only get packages that I need for testing
         - apt-get -y install vim tmux zsh git curl
+        # link personal config files
+        - source install_scripts/install_sam.sh
 
     script:
         - source install_scripts/install_vim.sh
