@@ -4,7 +4,7 @@ variables:
 
 stages:
     - install_packages_personal
-    - test_scripts
+    - test_config
 
 install_vim:
     stage: install_packages_personal
@@ -56,20 +56,8 @@ install_zsh:
         - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         - echo "Done"
 
-test_local_scripts:
+test_config:
     stage: test_scripts
     
-    before_script:
-        - export PATH=$PATH:scripts
-
     script:
-        - source testing/test_scripts.sh
-
-test_i3blocks_scripts:
-    stage: test_scripts
-
-    before_script:
-        - export PATH=$PATH:i3blocks/scripts
-
-    script:
-        - source testing/test_i3blocks_scripts.sh
+        - source install_scripts/install_sam.sh
