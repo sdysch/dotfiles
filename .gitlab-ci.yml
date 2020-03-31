@@ -7,7 +7,7 @@ install_packages:
     image: ubuntu:19.10
 
     before_script:
-        sudo apt-get -y install $(cat packages.txt)
+        source install_scripts/install_apt_packages.sh
 
     script:
         source install_scripts/install_vim.sh
