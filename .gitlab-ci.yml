@@ -1,3 +1,8 @@
+variables:
+    GIT_DEPTH: 10
+    GIT_CLONE_PATH:~/dotfiles_harmonised
+
+
 stages:
     - install_packages_personal
     - test_scripts
