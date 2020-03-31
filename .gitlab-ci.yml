@@ -1,6 +1,5 @@
 variables:
     GIT_DEPTH: 10
-    GIT_CLONE_PATH:~/dotfiles_harmonised
 
 
 stages:
@@ -59,12 +58,18 @@ install_zsh:
 
 test_local_scripts:
     stage: test_scripts
+    
+    before_script:
+        - export PATH=$PATH:scripts
 
     script:
         - source testing/test_scripts.sh
 
 test_i3blocks_scripts:
     stage: test_scripts
+
+    before_script:
+        - export PATH=$PATH:i3blocks/scripts
 
     script:
         - source testing/test_i3blocks_scripts.sh
