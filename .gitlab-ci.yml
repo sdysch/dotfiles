@@ -1,7 +1,7 @@
 stages:
     - install_packages_personal
 
-install_packages_personal:
+install_vim:
     stage: install_packages_personal
 
     image: ubuntu:19.10
@@ -9,19 +9,46 @@ install_packages_personal:
     before_script:
         # update apt-get
         - apt-get update
-        # only get packages that I need for testing
-        - apt-get -y install vim tmux zsh git curl
-        # Only link required dotfiles for now,
-        # see issue #2...
-        #- source install_scripts/install_sam.sh
+        - apt-get -y install vim git
         - ln -fsn vim/vimrc ~/.vimrc
-        - ln -fsn zsh/zshrc_sam ~/.zshrc
-        - ln -fsn zsh/zsh_aliases_personal ~/.zsh_aliases_personal
-        - ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
+
+    script:
+        - source install_scripts/install_vim.sh
+
+install_tmux:
+    stage: install_packages_personal
+
+    image: ubuntu:19.10
+
+    before_script:
+        - apt-get update
+        - apt-get -y install tmux
+        - ln -fsn tmux/tmux.common.conf ~/.tmux.common.conf
+        - ln -fsn tmux/tmux.conf ~/.tmux.conf
 
     script:
         - source install_scripts/install_vim.sh
         - source install_scripts/install_tmux.sh
         - source install_scripts/install_fonts.sh
         - source install_scripts/install_zsh.sh
-        - source install_scripts/install_zsh.sh
+
+install_zsh:
+    stage: install_packages_personal
+
+    image: ubuntu:19.10
+
+    before_script:
+        # update apt-get
+        - apt-get update
+        - apt-get -y install zsh curl
+        - ln -fsn zsh/zshrc_sam ~/.zshrc
+        - ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
+
+    script:
+        - echo "Installing oh-my-zsh ....."
+        - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        - echo "Installing zsh packages..."
+        - git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+        - git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+        - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+        - echo "Done"
