@@ -45,8 +45,6 @@ install_zsh:
         # update apt-get
         - apt-get update
         - apt-get -y install zsh curl git
-        #- ln -fsn zsh/zshrc_sam ~/.zshrc
-        #- ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
 
     script:
         - echo "Installing oh-my-zsh ....."
@@ -57,8 +55,27 @@ install_zsh:
         - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
         - echo "Done"
 
-install_config:
+# check that all config files can be correctly installed
+install_config_sam:
     stage: test_config_install
     
     script:
         - source install_scripts/install_sam.sh
+
+install_config_lxplus:
+    stage: test_config_install
+    
+    script:
+        - source install_scripts/install_lxplus.sh
+
+install_config_mac:
+    stage: test_config_install
+    
+    script:
+        - source install_scripts/install_mac.sh
+
+install_config_manchester:
+    stage: test_config_install
+    
+    script:
+        - source install_scripts/install_manchester.sh
