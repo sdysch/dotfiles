@@ -2,16 +2,12 @@ stages:
     - install_packages
 
 install_packages:
-    stage: install
+    stage: install_packages
 
     image: ubuntu:19.10
 
     before_install:
         sudo apt-get -y install $(cat packages.txt)
-
-    addons:
-        apt:
-            update: true
 
     script:
         source install_scripts/install_vim.sh
