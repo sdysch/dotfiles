@@ -6,7 +6,7 @@ install_packages:
 
     image: ubuntu:19.10
 
-    before_install:
+    before_script:
         sudo apt-get -y install $(cat packages.txt)
 
     script:
