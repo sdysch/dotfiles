@@ -24,3 +24,4 @@ install_packages_personal:
         - source install_scripts/install_tmux.sh
         - source install_scripts/install_fonts.sh
         - source install_scripts/install_zsh.sh
+        - source install_scripts/install_zsh.sh

@@ -4,7 +4,7 @@ if [[ "$SHELL" =~ .*zsh$ ]]; then
 	echo "ZSH is the current shell"
 else
 	echo "Changing shell from ${SHELL} to zsh"
-	sudo chsh -s "$(which zsh)" "$USER"
+	chsh -s "$(which zsh)" "$USER"
 	echo -e "Please log out and log back in to apply shell changes, then rerun install_zsh.sh"
 	exit 1
 fi
@@ -17,7 +17,6 @@ else
 fi
 echo "Done"
 
-chsh -s /bin/zsh $(whoami)
 echo "Installing zsh packages..."
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
