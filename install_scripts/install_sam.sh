@@ -36,7 +36,7 @@ ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.cfg
 ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
 
 # installation location for custom scripts
-mkdir -p $SCRIPINSTALLDIR
+mkdir -p $SCRIPTINSTALLDIR
 
 # link custom scripts
 declare -a scripts=("shutdown_script" "reboot" "logout" "prompt" "poweroptions" "corona" "corona_formatted" "notes")
