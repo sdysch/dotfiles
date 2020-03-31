@@ -7,6 +7,7 @@ install_packages:
     image: ubuntu:19.10
 
     before_script:
+        - apt-get update
         - source install_scripts/install_apt_packages.sh
 
     script:
