@@ -1,2 +1,3 @@
 # backup todo list every hour
+PATH=~/bin:/usr/bin:/bin:~/.local/bin
 0 * * * * backup-todo-list
