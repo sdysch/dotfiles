@@ -14,4 +14,9 @@
 
 ![shell](figures/screenshot.png)
 
+## Installation
+* Installation instructions can be found [here](docs/install.md)
+* I am working on a script, when I get time, to install
+
+
 * Mirror [here](https://github.com/sdysch/dotfiles)

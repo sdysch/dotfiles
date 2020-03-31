@@ -1,7 +1,3 @@
-## Installation
-* Installation instructions can be found [here](docs/install.md)
-* I am working on a script, when I get time, to install
-
 # zsh and oh-my-zsh
 * Change shell to zsh
 ```
