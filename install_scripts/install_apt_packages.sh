@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get -y install $(cat packages.txt)
+apt-get -y install $(cat packages.txt)
