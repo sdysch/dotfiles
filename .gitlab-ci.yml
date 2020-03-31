@@ -22,15 +22,13 @@ install_tmux:
 
     before_script:
         - apt-get update
-        - apt-get -y install tmux
+        - apt-get -y install tmux git
         - ln -fsn tmux/tmux.common.conf ~/.tmux.common.conf
         - ln -fsn tmux/tmux.conf ~/.tmux.conf
 
     script:
-        - source install_scripts/install_vim.sh
         - source install_scripts/install_tmux.sh
         - source install_scripts/install_fonts.sh
-        - source install_scripts/install_zsh.sh
 
 install_zsh:
     stage: install_packages_personal
@@ -40,7 +38,7 @@ install_zsh:
     before_script:
         # update apt-get
         - apt-get update
-        - apt-get -y install zsh curl
+        - apt-get -y install zsh curl git
         - ln -fsn zsh/zshrc_sam ~/.zshrc
         - ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
 
