@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # link common config files
+INSTALLDIR=$1
 
-ln -fsn ~/dotfiles_harmonised/vim/vimrc ~/.vimrc
-ln -fsn ~/dotfiles_harmonised/bash/bash_profile ~/.bash_profile
-ln -fsn ~/dotfiles_harmonised/git/gitignore_global ~/.gitignore_global
-ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_common ~/.zsh_aliases_common
-ln -fsn ~/dotfiles_harmonised/tmux/tmux.common.conf ~/.tmux.common.conf
+ln -fsn ${INSTALLDIR}/vim/vimrc ~/.vimrc
+ln -fsn ${INSTALLDIR}/bash/bash_profile ~/.bash_profile
+ln -fsn ${INSTALLDIR}/git/gitignore_global ~/.gitignore_global
+ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common ~/.zsh_aliases_common
+ln -fsn ${INSTALLDIR}/tmux/tmux.common.conf ~/.tmux.common.conf

@@ -1,7 +1,9 @@
 #!/bin/bash
 
+INSTALLDIR=$(pwd)
+
 # common install scripts
-source ~/dotfiles_harmonised/install_scripts/install_common.sh
+source ~/dotfiles_harmonised/install_scripts/install_common.sh $INSTALLDIR
 
 # install dotfiles for me
 
@@ -13,7 +15,8 @@ ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
 ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
 
 # install i3 config
-mkdir -p ~/.i3
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3blocks
 ln -fsn ~/dotfiles_harmonised/i3/config ~/.config/i3/config
 #ln -fsn ~/dotfiles_harmonised/i3/i3status.conf ~/.config/i3/i3status.conf
 ln -fsn ~/dotfiles_harmonised/i3blocks/i3blocks.config ~/.config/i3blocks/config
@@ -39,7 +42,7 @@ done
 ln -fsn ~/dotfiles_harmonised/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
 
 # actually install the various packages
-if [ "$1"=="install" ]; then
+if [[ "$1" == "install" ]]; then
 	echo "Installing packages"
 	source install_scripts/install_packages.sh
 fi

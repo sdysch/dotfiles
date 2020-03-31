@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # install dotfiles for mac
+INSTALLDIR=$(pwd)
 
-source ~/dotfiles_harmonised/install_scripts/install_common.sh
+source ${INSTALLDIR}/install_scripts/install_common.sh $INSTALLDIR
 
-ln -fsn ~/dotfiles_harmonised/git/gitconfig_personal ~/.gitconfig
-ln -fsn ~/dotfiles_harmonised/bash/bash_aliases_mac ~/.bash_aliases_mac
-ln -fsn ~/dotfiles_harmonised/zsh/zshrc_mac ~/.zshrc
-ln -fsn ~/dotfiles_harmonised/zsh/zsh_aliases_mac ~/.zsh_aliases_mac
-ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
+ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
+ln -fsn ${INSTALLDIR}/bash/bash_aliases_mac ~/.bash_aliases_mac
+ln -fsn ${INSTALLDIR}/zsh/zshrc_mac ~/.zshrc
+ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_mac ~/.zsh_aliases_mac
+ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf

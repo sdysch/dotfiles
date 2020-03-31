@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # install dotfiles for Manchester
+INSTALLDIR=$(pwd)
 
-source ~/dotfiles_harmonised/install_scripts/install_common.sh
+source ${INSTALLDIR}/install_scripts/install_common.sh $INSTALLDIR
 
-ln -fsn ~/dotfiles_harmonised/git/gitconfig_personal ~/.gitconfig
-ln -fsn ~/dotfiles_harmonised/bash/bash_aliases_manchester ~/.bash_aliases_manchester
-ln -fsn ~/dotfiles_harmonised/tmux/tmux.conf ~/.tmux.conf
+ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
+ln -fsn ${INSTALLDIR}/bash/bash_aliases_manchester ~/.bash_aliases_manchester
+ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf
