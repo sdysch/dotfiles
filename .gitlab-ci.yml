@@ -9,7 +9,7 @@ install_packages:
     before_script:
         - apt-get update
         # only get packages that I need for testing
-        - apt-get install vim tmux zsh
+        - apt-get -y install vim tmux zsh
 
     script:
         - source install_scripts/install_vim.sh
