@@ -6,6 +6,7 @@ stages:
     - install_packages_personal
     - test_config_install
 
+# these tests check that "common" installations work
 install_vim:
     stage: install_packages_personal
 
@@ -44,8 +45,8 @@ install_zsh:
         # update apt-get
         - apt-get update
         - apt-get -y install zsh curl git
-        - ln -fsn zsh/zshrc_sam ~/.zshrc
-        - ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
+        #- ln -fsn zsh/zshrc_sam ~/.zshrc
+        #- ln -fsn zsh/zsh_aliases_common ~/.zsh_aliases_common
 
     script:
         - echo "Installing oh-my-zsh ....."

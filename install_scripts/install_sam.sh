@@ -2,8 +2,14 @@
 
 INSTALLDIR=$(pwd)
 
+# actually install the various packages?
+if [[ "$1" == "install" ]]; then
+	echo "Installing packages"
+	source install_scripts/install_packages.sh
+fi
+
 # common install scripts
-source ~/dotfiles_harmonised/install_scripts/install_common.sh $INSTALLDIR
+source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
 
 # install dotfiles for me
 
@@ -40,9 +46,3 @@ done
 
 # xfce4 config
 ln -fsn ~/dotfiles_harmonised/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
-
-# actually install the various packages
-if [[ "$1" == "install" ]]; then
-	echo "Installing packages"
-	source install_scripts/install_packages.sh
-fi
