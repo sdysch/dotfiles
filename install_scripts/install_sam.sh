@@ -39,7 +39,7 @@ done
 ln -fsn ~/dotfiles_harmonised/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
 
 # actually install the various packages
-if [ "$1" == "install" ]; then
+if [ "$1"=="install" ]; then
 	echo "Installing packages"
 	source install_scripts/install_packages.sh
 fi
