@@ -18,3 +18,7 @@ export thesisDir="/home/sdysch/Documents/Manchester/PhD/thesis"
 alias cdthesis="cd ${thesisDir}"
 # open my thesis [ screams internally :'(]
 alias thesis="open ${thesisDir}/thesis.pdf"
+
+# to do list
+export TODOLISTDIR="/home/sdysch/.todolist"
+export PATH=$PATH:"/home/sdysch/.todolist/scripts"

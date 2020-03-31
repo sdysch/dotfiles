@@ -15,10 +15,11 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'sngn/vim-i3blocks-syntax'
-Plugin 'sdysch/vim-i3blocks-syntax'
-Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'gerw/vim-tex-syntax'
 Plugin 'lervag/vimtex'
+Plugin 'sdysch/vim-i3blocks-syntax'
+Plugin 'sdysch/vim-tqfolder-syntax'
+Plugin 'sdysch/vim-todolist-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
