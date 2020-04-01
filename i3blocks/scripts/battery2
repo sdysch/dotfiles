@@ -2,6 +2,8 @@
 #
 # Copyright (C) 2016 James Murphy
 # Licensed under the GPL version 2 only
+# 
+# Minor edits by Sam Dysch - getBatteryIcon
 #
 # A battery indicator blocklet script for i3blocks
 
@@ -48,14 +50,29 @@ else:
     else:
         percentleft = 0
 
+    def getBatteryIcon(percent):
+        if percent >= 75:
+            return "\uf240"
+        elif percent >= 50:
+            return "\uf241"
+        elif percent >= 25:
+            return "\uf242"
+        elif battery >= 10:
+            return "\uf243"
+        else:
+            return "\uf244"
+
+
     # stands for charging
-    FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
+    #FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
+    FA_BATTERY = "<span color='yellow'><span font='FontAwesome'>" + getBatteryIcon(percentleft) + "</span></span>"
 
     # stands for plugged in
     FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
 
     # stands for using battery
-    FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
+    #FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
+    FA_BATTERY = "<span font='FontAwesome'>" + getBatteryIcon(percentleft) + "</span>"
 
     # stands for unknown status of battery
     FA_QUESTION = "<span font='FontAwesome'>\uf128</span>"
