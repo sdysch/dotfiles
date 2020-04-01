@@ -16,17 +16,6 @@ alias df="df -h"
 alias rm="rm -i"
 alias mv="mv -i"
 
-# ssh aliases
-# Login to Manchester hep machines
-alias TONY="ssh -X -Y samdysch@tony.hep.manchester.ac.uk"
-alias HIGGS="ssh -X -Y samdysch@higgs.hep.manchester.ac.uk"
-alias GPU="ssh -X -Y samdysch@hepgpu1.hep.manchester.ac.uk"
-alias PC2014="ssh -X -Y samdysch@pc2014.hep.manchester.ac.uk"
-alias PC2013="ssh -X -Y samdysch@pc2013.hep.manchester.ac.uk"
-
-# Login to CERN lxplus
-alias CERN="ssh -X -Y sdysch@lxplus.cern.ch"
-
 # remove ROOT splash screen
 alias rt="root -l"
 
