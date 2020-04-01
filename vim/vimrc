@@ -136,3 +136,6 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 	\| exe "normal! g'\"" | endif
 endif
+
+" automatically backup todo list (see https://github.com/sdysch/todolist)
+autocmd BufWritePost ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
