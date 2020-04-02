@@ -40,6 +40,7 @@ ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
 mkdir -p $CMUSINSTALLDIR
 ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
 ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
+ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
 
 # installation location for custom scripts
 mkdir -p $SCRIPTINSTALLDIR
