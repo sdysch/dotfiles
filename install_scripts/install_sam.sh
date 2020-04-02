@@ -7,6 +7,7 @@ TERMINALINSTALLDIR="${HOME}/.config/xfce4/terminal"
 NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
 I3INSTALLDIR="${HOME}/.config/i3"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
+CMUSINSTALLDIR="${HOME}/.config/cmus"
 
 # actually install the various packages?
 if [[ "$1" == "install" ]]; then
@@ -32,8 +33,13 @@ ln -fsn ${INSTALLDIR}/i3blocks/i3blocks.config $I3BLOCKSINSTALLDIR/config
 
 # nitrogen config
 mkdir -p $NITROGENINSTALLDIR
-ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ~/.config/nitrogen/nitrogen.cfg
-ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
+ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ${NITROGENINSTALLDIR}/nitrogen.cfg
+ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
+
+# cmus
+mkdir -p $CMUSINSTALLDIR
+ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
+ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
 
 # installation location for custom scripts
 mkdir -p $SCRIPTINSTALLDIR

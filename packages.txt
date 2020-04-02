@@ -1,5 +1,6 @@
 binutils
 cmake
+cmus
 curl
 dmenu
 dpkg-dev
