@@ -64,7 +64,7 @@ else:
 
 
     # stands for charging
-    #FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
+    FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
     FA_BATTERY = "<span color='yellow'><span font='FontAwesome'>" + getBatteryIcon(percentleft) + "</span></span>"
 
     # stands for plugged in
