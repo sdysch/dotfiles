@@ -26,3 +26,7 @@ export PATH=$PATH:"${TODOLISTDIR}/scripts"
 # to do list backup (repo is private from git)
 export TODOBACKUP="/home/sdysch/Documents/todolist-backup"
 export PATH=$PATH:"${TODOBACKUP}/scripts"
+
+# directory where icons are stored
+# FIXME - hardcoded!
+export ICONSDIR="/home/sdysch/dotfiles_harmonised/icons"

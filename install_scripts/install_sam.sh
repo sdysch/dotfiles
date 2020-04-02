@@ -53,6 +53,3 @@ done
 # xfce4 config
 mkdir -p $TERMINALINSTALLDIR
 ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
-
-# icons
-export ICONSDIR="${INSTALLDIR}/icons"
