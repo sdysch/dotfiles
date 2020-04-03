@@ -8,9 +8,9 @@ fi
 
 case $BLOCK_BUTTON in
 	# left click = previous
-	1) cmus-remote -r;;
+	1) cmus-remote -r && pkill -RTMIN+1;;
 	# middle click = pause
-	2) cmus-remote -u;;
+	2) cmus-remote -u && pkill -RTMIN+1;;
 	# right click = next
-	3) cmus-remote -n;;
+	3) cmus-remote -n && pkill -RTMIN+1;;
 esac

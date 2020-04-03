@@ -27,7 +27,7 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 #bindsym $mod+Shift+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
 
 # start cmus
-bindsym $mod+c exec --no-startup-id "xfce4-terminal --role=cmus --command=cmus"
+bindsym $mod+c exec --no-startup-id "xfce4-terminal --role=cmus --command=cmus && pkill -RTMIN+1 i3blocks"
 
 # power options
 bindsym $mod+Control+u exec --no-startup-id poweroptions
