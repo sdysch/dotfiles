@@ -1,8 +1,5 @@
 #!/bin/bash
 
-TASK="task ${@}"
-TASKDIR=$HOME/.task
-
 # check data directory exists
 if [ ! -d "$TASKDIR" ]; then
 	echo "Could not load task directory!"

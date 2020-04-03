@@ -6,6 +6,9 @@ alias ll="ls -ltrh"
 
 # taskwarrior
 alias t=backup_taskwarrior
+export TASK="task ${@}"
+export TASKDIR=$HOME/.task
+
 
 # opening files
 open() {
