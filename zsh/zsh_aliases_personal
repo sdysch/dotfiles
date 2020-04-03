@@ -32,7 +32,11 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 # FIXME - hardcoded!
 export ICONSDIR="/home/sdysch/dotfiles_harmonised/icons"
 
-# plugin screens
+# unplu/plugin screens
 plugin() {
 	xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --left-of eDP-1 && nitrogen --restore
+}
+
+unplug() {
+	xrandr --output HDMI-1 --off
 }

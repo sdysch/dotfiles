@@ -26,6 +26,9 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack 10" -show combi
 #bindsym $mod+Shift+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
 
+# start cmus
+bindsym $mod+c exec --no-startup-id "xfce4-terminal --role=cmus --command=cmus"
+
 # power options
 bindsym $mod+Control+u exec --no-startup-id poweroptions
 
@@ -77,10 +80,11 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # workspaces
+# NOTE, no space after colon
 set $ws1 "1:Main"
 set $ws2 "2:Skype"
 set $ws3 "3:Firefox"
-set $ws4 "4"
+set $ws4 "4:Music"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -189,6 +193,7 @@ exec pulseaudio --start
 assign [class="Google-chrome"] $ws1
 assign [class="Skype"] $ws2
 assign [class="Firefox"] $ws3
+assign [class="Xfce4-terminal" window_role="cmus"] $ws4
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 i3blocks
