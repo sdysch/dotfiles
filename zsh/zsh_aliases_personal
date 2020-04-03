@@ -5,8 +5,8 @@ alias ls="ls --color=auto"
 alias ll="ls -ltrh"
 
 # taskwarrior
-alias t=backup_taskwarrior
-export TASK="task ${@}"
+alias t="task"
+alias tp="/home/sdysch/dotfiles_harmonised/scripts/task --task-git-push"
 export TASKDIR=$HOME/.task
 
 
