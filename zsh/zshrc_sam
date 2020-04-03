@@ -6,18 +6,9 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sdysch/.oh-my-zsh"
 
-#DEFAULT_USER=$(whoami)
-#DEFAULT_USER="Sam"
-
 # theme
-#ZSH_THEME="agnoster"
-# REF: https://github.com/Powerlevel9k/powerlevel9k
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user time dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 
 # plugins
@@ -43,3 +34,6 @@ source $HOME/.zsh_aliases_common
 
 # personal laptop
 source ~/.zsh_aliases_personal
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

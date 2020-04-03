@@ -24,6 +24,7 @@ ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam ~/.zshrc
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf
+ln -fsn ~/dotfiles_harmonised/p10k.zsh ~/.p10k.zsh
 
 # install i3 config
 mkdir -p $I3INSTALLDIR
