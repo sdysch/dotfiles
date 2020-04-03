@@ -77,9 +77,9 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1:Main"
+set $ws2 "2:Skype"
+set $ws3 "3:Firefox"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -89,8 +89,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # assign monitors
-workspace $ws1 output HDMI-1
-workspace $ws2 output eDP-1
+set $laptop "eDP-1"
+set $screen "HDMI-1"
+workspace $ws1 output $screen
+workspace $ws2 output $laptop
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -127,7 +129,8 @@ bindsym $mod+Ctrl+Left move workspace to output left
 # specific workspaces
 bindsym $mod+Home workspace $ws1
 bindsym $mod+Shift+Home move container to workspace $ws1
-bindsym $mod+Escape	workspace prev
+bindsym $mod+Escape	workspace next
+bindsym $mod+Shift+Escape workspace prev
 
 # i3 config
 # reload the configuration file
@@ -147,6 +150,8 @@ bar {
 	status_command i3blocks
     position top
 	separator_symbol " ⁞ "
+	# Remove numbers
+	strip_workspace_numbers yes
 }
 
 # resize window (you can also use the mouse for that)
@@ -178,6 +183,12 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nitrogen --restore
 exec pulseaudio --start
 #exec --no-startup-id synergy
+
+# open applications on specific screens/workspaces
+# https://i3wm.org/docs/userguide.html#assign_workspace
+assign [class="Google-chrome"] $ws1
+assign [class="Skype"] $ws2
+assign [class="Firefox"] $ws3
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 i3blocks
