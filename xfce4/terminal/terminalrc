@@ -1,12 +1,4 @@
 [Configuration]
-ColorForeground=#b7b7b7
-ColorBackground=#000000000000
-ColorCursor=#0f4999
-ColorSelection=#163b59
-ColorSelectionUseDefault=FALSE
-ColorBold=#ffffff
-ColorBoldUseDefault=FALSE
-ColorPalette=#000000;#aa0000;#44aa44;#aa5500;#0039aa;#aa22aa;#1a92aa;#aaaaaa;#777777;#ff8787;#4ce64c;#ded82c;#295fcc;#cc58cc;#4ccce6;#ffffff
 FontName=Ubuntu Mono derivative Powerline 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
@@ -20,7 +12,7 @@ MiscMenubarDefault=TRUE
 MiscMouseAutohide=FALSE
 MiscMouseWheelZoom=TRUE
 MiscToolbarDefault=FALSE
-MiscConfirmClose=FALSE
+MiscConfirmClose=TRUE
 MiscCycleTabs=TRUE
 MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
@@ -35,5 +27,4 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
-TabActivityColor=#0f4999
 
