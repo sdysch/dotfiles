@@ -222,4 +222,4 @@ bindsym $mod+greater exec $next && pkill -RTMIN+1 i3blocks
 bindsym $mod+less exec $prev && pkill -RTMIN+1 i3blocks
 
 # i3lock
-bindsym $mod+x exec --no-startup-id i3lock -e -f -t -i /home/sdysch/dotfiles_harmonised/wallpapers/games/skyrim2.png
+bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id i3lock -e -f -t -i /home/sdysch/dotfiles_harmonised/wallpapers/games/skyrim2.png
