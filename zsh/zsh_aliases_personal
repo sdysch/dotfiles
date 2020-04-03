@@ -5,8 +5,9 @@ alias ls="ls --color=auto"
 alias ll="ls -ltrh"
 
 # opening files
-#alias open="gnome-open"
-alias open="xdg-open"
+open() {
+	xdg-open $@ 2>/dev/null
+}
 
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
@@ -30,3 +31,8 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 # directory where icons are stored
 # FIXME - hardcoded!
 export ICONSDIR="/home/sdysch/dotfiles_harmonised/icons"
+
+# plugin screens
+plugin() {
+	xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --left-of eDP-1 && nitrogen --restore
+}
