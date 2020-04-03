@@ -155,7 +155,7 @@ bar {
     position top
 	separator_symbol " ⁞ "
 	# Remove numbers
-	strip_workspace_numbers yes
+	#strip_workspace_numbers yes
 }
 
 # resize window (you can also use the mouse for that)

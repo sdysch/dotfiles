@@ -21,6 +21,5 @@ else
 	icon="⏵ "
 fi
 
-# truncate
-echo -e "$icon $artist - <i>$title</i>" 
-#echo -e "$icon \033[1m $artist \033[0m - \033[3m $title \033[0m"
+cmd="$icon $artist - <i>$title</i>"
+echo $cmd
