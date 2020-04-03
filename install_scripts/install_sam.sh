@@ -9,22 +9,29 @@ I3INSTALLDIR="${HOME}/.config/i3"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
 CMUSINSTALLDIR="${HOME}/.config/cmus"
 
-# actually install the various packages?
+# actually install the various packages
+# Order matters, clone taskwarrior backup before installing the package to prevent the directory being overwritten
 if [[ "$1" == "install" ]]; then
+	echo "cloning taskwarrior"
+	git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
+
 	echo "Installing packages"
 	source install_scripts/install_packages.sh
+
 fi
 
 # common install scripts
 source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
 
 # install dotfiles for me
-
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam ~/.zshrc
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf
-ln -fsn ${INSTALLDIR}p10k.zsh ~/.p10k.zsh
+ln -fsn ${INSTALLDIR}/p10k.zsh ~/.p10k.zsh
+
+# taskwarrior
+ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $HOME/.taskrc
 
 # install i3 config
 mkdir -p $I3INSTALLDIR

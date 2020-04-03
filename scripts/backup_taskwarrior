@@ -1,0 +1,22 @@
+#!/bin/bash
+
+TASK="task ${@}"
+TASKDIR=$HOME/.task
+
+# check data directory exists
+if [ ! -d "$TASKDIR" ]; then
+	echo "Could not load task directory!"
+	exit 1
+fi
+
+# commit message
+timestampAuto=$(date)
+message="Taskwarrior backed up at ${timestampAuto}"
+
+# call task, commit and push automatically
+task $@
+cd $TASKDIR
+git add -A
+git commit -m "$message" > /dev/null
+git push origin master > /dev/null
+echo $message

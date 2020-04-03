@@ -4,6 +4,9 @@
 alias ls="ls --color=auto"
 alias ll="ls -ltrh"
 
+# taskwarrior
+alias t=backup_taskwarrior
+
 # opening files
 open() {
 	xdg-open $@ 2>/dev/null
@@ -32,7 +35,7 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 # FIXME - hardcoded!
 export ICONSDIR="/home/sdysch/dotfiles_harmonised/icons"
 
-# unplu/plugin screens
+# unplug/plugin screens
 plugin() {
 	xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --left-of eDP-1 && nitrogen --restore
 }

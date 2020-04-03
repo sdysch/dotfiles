@@ -42,6 +42,7 @@ python3-pandas
 python3-pip
 ranger
 rofi
+taskwarrior
 texlive-full
 tmux
 vim
