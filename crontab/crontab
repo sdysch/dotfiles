@@ -9,4 +9,4 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 * * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshrc;  check_battery
 
 # Reminder to do duolingo
-0 13 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshrc;  notify-send -i $ICONSDIR/DanishFlag.png -u low "Reminder" "Duolingo"
+0 13 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zshrc;  notify-send -i $ICONSDIR/DanishFlag.png -u low "Reminder" "Duolingo" -t 3
