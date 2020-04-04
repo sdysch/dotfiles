@@ -37,6 +37,7 @@ libxpm-dev
 mpv
 neofetch
 nitrogen
+notify-osd
 python-dev
 python3-pandas
 python3-pip
