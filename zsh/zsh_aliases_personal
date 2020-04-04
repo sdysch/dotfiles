@@ -6,9 +6,8 @@ alias ll="ls -ltrh"
 
 # taskwarrior
 alias t="task"
-alias tp="/home/sdysch/dotfiles_harmonised/taskwarrior/task --task-git-push"
-export TASKDIR=$HOME/.task
-
+# NOTE call absolute path to modified task script!
+alias tp="$HOME/dotfiles_harmonised/taskwarrior/task --task-git-push"
 
 # opening files
 open() {
@@ -20,23 +19,10 @@ rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
 source $rootSource
 
 # thesis
-export thesisDir="/home/sdysch/Documents/Manchester/PhD/thesis"
 # navigate to thesis dir
 alias cdthesis="cd ${thesisDir}"
 # open my thesis [ screams internally :'(]
 alias thesis="open ${thesisDir}/thesis.pdf"
-
-# to do list
-export TODOLISTDIR="/home/sdysch/.todolist"
-export PATH=$PATH:"${TODOLISTDIR}/scripts"
-
-# to do list backup (repo is private from git)
-export TODOBACKUP="/home/sdysch/Documents/todolist-backup"
-export PATH=$PATH:"${TODOBACKUP}/scripts"
-
-# directory where icons are stored
-# FIXME - hardcoded!
-export ICONSDIR="/home/sdysch/dotfiles_harmonised/icons"
 
 # unplug/plugin screens
 plugin() {

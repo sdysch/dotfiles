@@ -1,10 +1,5 @@
 # common aliases
 
-# default editor
-export EDITOR=vim
-
-export PROMPT_EOL_MARK=""
-
 # grep
 alias grep='grep --color=auto'
 

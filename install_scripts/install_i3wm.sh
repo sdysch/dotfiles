@@ -5,7 +5,8 @@
 #REF, i3-gaps: https://gist.github.com/dabroder/813a941218bdb164fb4c178d464d5c23
 
 # nitrogen needed to change desktop background
-sudo apt-get install i3-wm i3status i3blocks nitrogen
+# done by global install of packages.txt?
+#sudo apt-get install i3-wm i3status i3blocks nitrogen
 
 #========================
 #	      i3-gaps
