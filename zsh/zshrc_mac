@@ -4,16 +4,20 @@
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+  fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# # environment variables
+# default editor
+export EDITOR=vim
+
+# taskwarrior
+export TASKDIR=$HOME/.task
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/samdysch/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
-#DEFAULT_USER=$(whoami)
-#DEFAULT_USER="Sam"
+# boost include directory
+export BOOST_INCLUDE_DIR="/usr/local/include/"
 
 # theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -30,13 +34,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# Preferred editor for local and remote sessions
-#if [[ -n $SSH_CONNECTION ]]; then
-  #export EDITOR='vim'
-#else
-  #export EDITOR='mvim'
-#fi
 
 # common aliases
 source $HOME/.zsh_aliases_common
