@@ -16,6 +16,7 @@ htop
 i3-wm
 i3blocks
 i3lock
+i3lock-fancy
 i3status
 libavahi-compat-libdnssd-dev
 libcfitsio-dev

@@ -11,6 +11,6 @@ scrot "$tmpbg"
 convert "$tmpbg" -filter Gaussian -thumbnail 20% -sample 500% "$tmpbg"
 
 # lock the screen with the blurred screenshot
-i3lock -i "$tmpbg" -e -f -t
+i3lock -i "$tmpbg" -e -f -t -n
 
 rm $tmpbg

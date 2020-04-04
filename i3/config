@@ -222,7 +222,7 @@ bindsym $mod+greater exec $next && pkill -RTMIN+1 i3blocks
 bindsym $mod+less exec $prev && pkill -RTMIN+1 i3blocks
 
 # i3lock
-set $lock "/home/sdysch/.local/bin/lock"
+set $lock i3lock-fancy -p
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
-#bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id i3lock -e -f -t -i /home/sdysch/dotfiles_harmonised/wallpapers/games/skyrim2.png
-exec xautolock -detectsleep -time 5 -locker $lock -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+# automatically lock screen on inactivity
+exec ~/.local/bin/check_inactivity
