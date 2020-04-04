@@ -1,9 +1,9 @@
 #!/bin/bash
 # scripts
-PROMPT="$HOME/dotfiles_harmonised/scripts/prompt"
-LOGOUTSCRIPT="$HOME/dotfiles_harmonised/scripts/logout"
-SHUTDOWNSCRIPT="$HOME/dotfiles_harmonised/scripts/shutdown_script"
-REBOOTSCRIPT="$HOME/dotfiles_harmonised/scripts/reboot"
+PROMPT="$HOME/.local/bin/prompt"
+LOGOUTSCRIPT="$HOME/.local/bin/logout"
+SHUTDOWNSCRIPT="$HOME/.local/bin/shutdown_script"
+REBOOTSCRIPT="$HOME/.local/bin/reboot"
 
 TEXT="Would you like to..."
 options=("Shutdown?\nReboot?\nLogout?\nQuit menu")

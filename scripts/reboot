@@ -1,2 +1,3 @@
 #!/bin/bash
+notify-send -i $ICONSDIR/shutdown.png -u critical "Shutdown" "Rebooting immediately" -t 3
 shutdown -r now
