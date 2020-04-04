@@ -42,11 +42,13 @@ python3-pandas
 python3-pip
 ranger
 rofi
+scrot
 taskwarrior
 texlive-full
 tmux
 vim
 vlc
+xautolock
 xclip
 xlibmesa-glu-dev
 zsh
