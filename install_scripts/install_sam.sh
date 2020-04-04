@@ -35,11 +35,13 @@ fi
 source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
 
 # install dotfiles for me
-ln -fsn ${INSTALLDIR}/zsh/zshrc_sam ~/.zshrc
-ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
-ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
-ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf
-ln -fsn ${INSTALLDIR}/p10k.zsh ~/.p10k.zsh
+ln -fsn ${INSTALLDIR}/profile $HOME/.profile
+ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
+ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $HOME/.zshrc
+ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $HOME/.zsh_aliases_personal
+ln -fsn ${INSTALLDIR}/p10k.zsh $HOME/.p10k.zsh
+ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
+ln -fsn ${INSTALLDIR}/tmux/tmux.conf $HOME/.tmux.conf
 
 # taskwarrior
 ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $HOME/.taskrc

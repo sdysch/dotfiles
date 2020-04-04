@@ -5,34 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# # environment variables
-# default editor
-export EDITOR=vim
-
-export PROMPT_EOL_MARK=""
-
-# terminal
-export TERM="xterm-256color"
-
-# taskwarrior
-export TASKDIR=$HOME/.task
-
-# thesis
-export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
-
-# to do list
-export TODOLISTDIR="$HOME/.todolist"
-export PATH=$PATH:"${TODOLISTDIR}/scripts"
-
-# to do list backup (repo is private from git)
-export TODOBACKUP="$HOME/Documents/todolist-backup"
-export PATH=$PATH:"${TODOBACKUP}/scripts"
-
-# directory where icons are stored
-export ICONSDIR="$HOME/dotfiles_harmonised/icons"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 # ===================================================
 #				oh-my-zsh related
@@ -40,7 +12,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="powerlevel9k/powerlevel9k"
-
 
 # plugins
 plugins=(
@@ -52,6 +23,8 @@ plugins=(
 	z
 )
 
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # common aliases
