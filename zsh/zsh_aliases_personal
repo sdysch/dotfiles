@@ -6,7 +6,7 @@ alias ll="ls -ltrh"
 
 # taskwarrior
 alias t="task"
-alias tp="/home/sdysch/dotfiles_harmonised/scripts/task --task-git-push"
+alias tp="/home/sdysch/dotfiles_harmonised/taskwarrior/task --task-git-push"
 export TASKDIR=$HOME/.task
 
 
