@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# install everything and sym link config files to their correct locations
+
 # installation locations
 INSTALLDIR=$(pwd)
 SCRIPTINSTALLDIR="${HOME}/.local/bin"
@@ -8,6 +10,15 @@ NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
 I3INSTALLDIR="${HOME}/.config/i3"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
 CMUSINSTALLDIR="${HOME}/.config/cmus"
+
+# make directories
+mkdir -p $SCRIPTINSTALLDIR
+mkdir -p $I3INSTALLDIR
+mkdir -p $I3BLOCKSINSTALLDIR
+mkdir -p $NITROGENINSTALLDIR
+mkdir -p $CMUSINSTALLDIR
+mkdir -p $TERMINALINSTALLDIR
+
 
 # actually install the various packages
 # Order matters, clone taskwarrior backup before installing the package to prevent the directory being overwritten
@@ -24,9 +35,9 @@ fi
 source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
 
 # install dotfiles for me
-ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam ~/.zshrc
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal ~/.zsh_aliases_personal
+ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf ~/.tmux.conf
 ln -fsn ${INSTALLDIR}/p10k.zsh ~/.p10k.zsh
 
@@ -34,24 +45,17 @@ ln -fsn ${INSTALLDIR}/p10k.zsh ~/.p10k.zsh
 ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $HOME/.taskrc
 
 # install i3 config
-mkdir -p $I3INSTALLDIR
-mkdir -p $I3BLOCKSINSTALLDIR
 ln -fsn ${INSTALLDIR}/i3/config $I3INSTALLDIR/config
 ln -fsn ${INSTALLDIR}/i3blocks/i3blocks.config $I3BLOCKSINSTALLDIR/config
 
 # nitrogen config
-mkdir -p $NITROGENINSTALLDIR
 ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ${NITROGENINSTALLDIR}/nitrogen.cfg
 ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
 
 # cmus
-mkdir -p $CMUSINSTALLDIR
 ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
 ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
 ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
-
-# installation location for custom scripts
-mkdir -p $SCRIPTINSTALLDIR
 
 # link custom scripts
 for file in scripts/*; do
@@ -66,5 +70,4 @@ for file in i3blocks/scripts/*; do
 done
 
 # xfce4 config
-mkdir -p $TERMINALINSTALLDIR
 ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
