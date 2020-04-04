@@ -207,7 +207,7 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 # i3 gaps
 for_window [class="^.*"] border pixel 2
 gaps inner 10
-gaps outer 15
+gaps outer 10
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
