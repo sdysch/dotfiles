@@ -231,3 +231,6 @@ bindsym $mod+less exec $prev && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
 # automatically lock screen on inactivity
 exec ~/.local/bin/check_inactivity
+
+# open backgammon
+bindsym $mod+b exec "ristretto $HOME/dotfiles_harmonised/wallpapers/boardgames/backgammon.jpg"
