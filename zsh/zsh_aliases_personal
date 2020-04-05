@@ -5,10 +5,10 @@ alias ls="ls --color=auto"
 alias ll="ls -ltrh"
 
 # taskwarrior
+alias task="$HOME/dotfiles_harmonised/taskwarrior/task"
 alias t="task"
 # NOTE call absolute path to modified task script!
 alias tp="$HOME/dotfiles_harmonised/taskwarrior/task --task-git-push"
-
 # opening files
 open() {
 	xdg-open $@ 2>/dev/null

@@ -21,6 +21,7 @@ done
 
 # Call task, commit files and push if flag is set.
 task $@
+pkill -RTMIN+3 $STATUSBAR
 cd $TASKDIR
 git add -A
 git commit -m "$TASK_COMMAND" > /dev/null
