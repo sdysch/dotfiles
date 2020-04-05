@@ -233,4 +233,4 @@ bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
 exec ~/.local/bin/check_inactivity
 
 # open backgammon
-bindsym $mod+b exec "ristretto $WALLPAPERSDIR/boardgames/backgammon.jpg"
+bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"

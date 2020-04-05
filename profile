@@ -56,3 +56,6 @@ export WALLPAPERSDIR="$HOME/dotfiles_harmonised/wallpapers"
 
 # status bar
 export STATUSBAR="i3blocks"
+
+# image viewer
+export IMAGEVIEWER="ristretto"

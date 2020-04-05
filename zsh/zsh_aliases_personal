@@ -26,4 +26,4 @@ alias cdthesis="cd ${thesisDir}"
 alias thesis="open ${thesisDir}/thesis.pdf"
 
 # open backgammon image
-alias backgammon="open $WALLPAPERSDIR/boardgames/backgammon.jpg"
+alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
