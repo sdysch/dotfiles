@@ -10,6 +10,7 @@ NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
 I3INSTALLDIR="${HOME}/.config/i3"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
 CMUSINSTALLDIR="${HOME}/.config/cmus"
+NEWSBOATINSTALLDIR="$HOME/.config/newsboat"
 
 # make directories
 mkdir -p $SCRIPTINSTALLDIR
@@ -18,6 +19,7 @@ mkdir -p $I3BLOCKSINSTALLDIR
 mkdir -p $NITROGENINSTALLDIR
 mkdir -p $CMUSINSTALLDIR
 mkdir -p $TERMINALINSTALLDIR
+mkdir -p $NEWSBOATINSTALLDIR
 
 
 # actually install the various packages
@@ -30,6 +32,8 @@ if [[ "$1" == "install" ]]; then
 	source install_scripts/install_packages.sh
 
 fi
+
+# ===== config files ========
 
 # common install scripts
 source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
@@ -59,6 +63,15 @@ ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
 ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
 ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
 
+# xfce4 config
+ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
+
+# newsboat
+ln -fsn ${INSTALLDIR}/newsboat/config $NEWSBOATINSTALLDIR/config
+ln -fsn ${INSTALLDIR}/newsboat/urls $NEWSBOATINSTALLDIR/urls
+
+# ===== scripts ========
+
 # link custom scripts
 for file in scripts/*; do
 	script=$(echo $file | sed "s/scripts\///g")
@@ -70,6 +83,3 @@ for file in i3blocks/scripts/*; do
 	script=$(echo $file | sed "s/i3blocks\/scripts\///g")
 	ln -fsn ${INSTALLDIR}/i3blocks/scripts/$script $SCRIPTINSTALLDIR/$script
 done
-
-# xfce4 config
-ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc

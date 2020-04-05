@@ -1,0 +1,33 @@
+# use URL below to generate
+# https://rss.app/
+
+# ==== News ====
+# BBC
+http://feeds.bbci.co.uk/news/rss.xml "News"
+http://feeds.bbci.co.uk/news/uk/rss.xml "News"
+
+# xubuntu
+https://rss.app/feeds/HnlUGB2AUPzDOrjo.xml "News"
+
+# Twitter
+https://rss.app/feeds/SpK1XRzlYFkymEye.xml "~Twitter"
+
+# ==== Work  ====
+# arXiv hep-ex
+https://arxiv.org/rss/hep-ex
+
+# ==== YouTube ====
+# Tech
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "~Tech With Tim (YouTube)"
+https://rss.app/feeds/Ba7587nLuBqkrae2.xml "~Engineer Man (YouTube)"
+
+# Skiing 
+https://rss.app/feeds/uJx3vSmQiwRKYIxn.xml "~Stomp It Tutorials (YouTube)"
+https://rss.app/feeds/QfpsAo90pbcT4XnC.xml "~Reilly McGlashan (YouTube)"
+https://rss.app/feeds/V7V2JtyDcaBI6GsD.xml "~Damn Skilled (YouTube)"
+https://rss.app/feeds/rvWbcINek0RwUrOK.xml "~Salomon TV (YouTube)"
+https://rss.app/feeds/RJQcbZVMlkWsWdRl.xml "~The Faction Collective (YouTube)"
+
+# Misc
+https://rss.app/feeds/byFJiIT61uz0uC7z.xml "~UK Dash Cameras (YouTube)"

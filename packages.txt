@@ -37,6 +37,7 @@ libxml2-dev
 libxpm-dev
 mpv
 neofetch
+newsboat
 nitrogen
 notify-osd
 python-dev
