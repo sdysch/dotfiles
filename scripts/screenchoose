@@ -1,0 +1,14 @@
+#!/bin/bash
+# Choose which screen setup. Uses `plugin' and `unplug' scripts
+choices=("monitor\nlaptop")
+
+chosen=$(echo -e "$choices" | rofi -dmenu)
+
+case $chosen in
+	"monitor")
+	plugin;;
+	"laptop")
+	unplug;;
+	"Quit menu?")
+		break;;
+esac
