@@ -53,5 +53,6 @@ vim
 vlc
 xautolock
 xclip
+xdotool
 xlibmesa-glu-dev
 zsh
