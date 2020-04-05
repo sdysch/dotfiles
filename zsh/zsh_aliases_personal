@@ -26,7 +26,7 @@ alias cdthesis="cd ${thesisDir}"
 alias thesis="open ${thesisDir}/thesis.pdf"
 
 # open backgammon image
-alias backgammon="open $HOME/dotfiles_harmonised/wallpapers/boardgames/backgammon.jpg"
+alias backgammon="open $WALLPAPERSDIR/boardgames/backgammon.jpg"
 
 # unplug/plugin screens
 plugin() {

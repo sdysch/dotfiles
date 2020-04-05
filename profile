@@ -50,8 +50,9 @@ export PATH=$PATH:"${TODOLISTDIR}/scripts"
 export TODOBACKUP="$HOME/Documents/todolist-backup"
 export PATH=$PATH:"${TODOBACKUP}/scripts"
 
-# directory where icons are stored
+# directory where wallpapers/icons are stored
 export ICONSDIR="$HOME/dotfiles_harmonised/icons"
+export WALLPAPERSDIR="$HOME/dotfiles_harmonised/wallpapers"
 
 # status bar
 export STATUSBAR="i3blocks"
