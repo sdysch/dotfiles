@@ -1,0 +1,7 @@
+#!/bin/bash
+echo $(task status:pending count)
+
+case $BLOCK_BUTTON in
+	# left click = open taskwarrior
+	1) setsid "$TERMINAL" -e 'sh -c "task; sleep 10;"';;
+esac
