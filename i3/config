@@ -44,7 +44,7 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
 
 # power options
-bindsym $mod+Control+u exec --no-startup-id poweroptions
+bindsym $mod+u exec --no-startup-id poweroptions
 
 # change focus (vim keys)
 bindsym $mod+j focus down
