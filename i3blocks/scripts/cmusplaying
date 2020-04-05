@@ -21,5 +21,14 @@ else
 	icon="⏵ "
 fi
 
+case $BLOCK_BUTTON in
+	# left click = pause
+	1) cmus-remote -u && pkill -RTMIN+1 "${STATUSBAR:?}";;
+	# middle click = previous
+	2) cmus-remote -r && pkill -RTMIN+1 "${STATUSBAR:?}";;
+	# right click = next
+	3) cmus-remote -n && pkill -RTMIN+1 "${STATUSBAR:?}";;
+esac
+
 cmd="$icon $artist - <i>$title</i>"
 echo $cmd
