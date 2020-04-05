@@ -9,6 +9,7 @@ alias task="$HOME/dotfiles_harmonised/taskwarrior/task"
 alias t="task"
 # NOTE call absolute path to modified task script!
 alias tp="$HOME/dotfiles_harmonised/taskwarrior/task --task-git-push"
+
 # opening files
 open() {
 	xdg-open $@ 2>/dev/null
@@ -23,6 +24,9 @@ source $rootSource
 alias cdthesis="cd ${thesisDir}"
 # open my thesis [ screams internally :'(]
 alias thesis="open ${thesisDir}/thesis.pdf"
+
+# open backgammon image
+alias backgammon="open $HOME/dotfiles_harmonised/wallpapers/boardgames/backgammon.jpg"
 
 # unplug/plugin screens
 plugin() {
