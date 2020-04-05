@@ -31,6 +31,8 @@ if [[ "$1" == "install" ]]; then
 	echo "Installing packages"
 	source install_scripts/install_packages.sh
 
+	# install crontab
+	cat crontab/crontab | crontab -
 fi
 
 # ===== config files ========
