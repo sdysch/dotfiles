@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# i3blocks calendar
+# When clicked, brings up cal
+
+cmd=$(date '+%A, %d/%m/%Y')
+echo $cmd
+
+case $BLOCK_BUTTON in
+	1) setsid "$TERMINAL" -e 'sh -c "cal -3; sleep 10;"';;
+esac
