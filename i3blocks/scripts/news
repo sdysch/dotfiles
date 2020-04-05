@@ -8,7 +8,8 @@
 cmd="$(newsboat -x print-unread | awk '{ print "📰 " $1}' | sed s/^0$//g)$(cat ~/.config/newsboat/.update 2>/dev/null)"
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e newsboat && echo $cmd;;
+	1) setsid "$TERMINAL" -e newsboat ;;
+	#1) setsid "$TERMINAL" -e newsboat && echo $cmd;;
 	2) setsid updatenews > /dev/null & exit ;;
 esac
 echo $cmd
