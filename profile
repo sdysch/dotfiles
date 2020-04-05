@@ -34,6 +34,7 @@ export PROMPT_EOL_MARK=""
 
 # terminal
 export TERM="xterm-256color"
+export TERMINAL="xfce4-terminal"
 
 # taskwarrior
 export TASKDIR=$HOME/.task
