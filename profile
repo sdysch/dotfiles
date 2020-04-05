@@ -52,3 +52,6 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 
 # directory where icons are stored
 export ICONSDIR="$HOME/dotfiles_harmonised/icons"
+
+# status bar
+export STATUSBAR="i3blocks"

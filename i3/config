@@ -41,7 +41,7 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 #bindsym $mod+Shift+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
 
 # start cmus
-bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 i3blocks"
+bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
 
 # power options
 bindsym $mod+Control+u exec --no-startup-id poweroptions
@@ -162,7 +162,7 @@ bindsym $mod+Control+space exec mate-calculator
 # status bar
 bar {
 	font pango:hermit 10, FontAwesome 10
-	status_command i3blocks
+	status_command $STATUSBAR
     position top
 	separator_symbol " ⁞ "
 	# Remove numbers
@@ -207,13 +207,13 @@ assign [class="Firefox"] $ws3
 assign [class="Xfce4-terminal" window_role="cmus"] $ws4
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && pkill -RTMIN+2 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && pkill -RTMIN+2 $STATUSBAR
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+2 $STATUSBAR
 
 # caps lock
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 $STATUSBAR
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 $STATUSBAR
 
 # i3 gaps
 for_window [class="^.*"] border pixel 2
@@ -223,9 +223,9 @@ bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
 # cmus
-bindsym $mod+p exec $pause && pkill -RTMIN+1 i3blocks
-bindsym $mod+greater exec $next && pkill -RTMIN+1 i3blocks
-bindsym $mod+less exec $prev && pkill -RTMIN+1 i3blocks
+bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
+bindsym $mod+greater exec $next && pkill -RTMIN+1 $STATUSBAR
+bindsym $mod+less exec $prev && pkill -RTMIN+1 $STATUSBAR
 
 # i3lock
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
