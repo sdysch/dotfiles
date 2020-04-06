@@ -5,6 +5,7 @@ INSTALLDIR=$(pwd)
 
 mkdir -p ~/.vim
 mkdir -p ~/.config/tmux
+mkdir -p ~/.ssh
 
 ln -fsn ${INSTALLDIR}/bash/bash_aliases_lxplus ~/.bash_aliases_lxplus
 ln -fsn ${INSTALLDIR}/bash/bash_profile ~/.bash_profile
