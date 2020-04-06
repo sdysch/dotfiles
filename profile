@@ -65,7 +65,7 @@ export TASKRC=$HOME/.config/task/taskrc
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
 
 # to do list
-export TODOLISTDIR="$HOME/.todolist"
+export TODOLISTDIR="$HOME/.config/todolist"
 export PATH=$PATH:"${TODOLISTDIR}/scripts"
 
 # to do list backup (repo is private from git)
