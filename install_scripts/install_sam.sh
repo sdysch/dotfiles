@@ -4,26 +4,30 @@
 
 # installation locations
 INSTALLDIR=$(pwd)
+
+CMUSINSTALLDIR="${HOME}/.config/cmus"
+I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
+I3INSTALLDIR="${HOME}/.config/i3"
+NEWSBOATINSTALLDIR="$HOME/.config/newsboat"
+NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
 SCRIPTINSTALLDIR="${HOME}/.local/bin"
 TERMINALINSTALLDIR="${HOME}/.config/xfce4/terminal"
-NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
-I3INSTALLDIR="${HOME}/.config/i3"
-I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
-CMUSINSTALLDIR="${HOME}/.config/cmus"
-NEWSBOATINSTALLDIR="$HOME/.config/newsboat"
+ZDOTDIR="$HOME/.config/zsh"
 
 # make directories
-mkdir -p $SCRIPTINSTALLDIR
-mkdir -p $I3INSTALLDIR
-mkdir -p $I3BLOCKSINSTALLDIR
-mkdir -p $NITROGENINSTALLDIR
 mkdir -p $CMUSINSTALLDIR
-mkdir -p $TERMINALINSTALLDIR
+mkdir -p $I3BLOCKSINSTALLDIR
+mkdir -p $I3INSTALLDIR
 mkdir -p $NEWSBOATINSTALLDIR
+mkdir -p $NITROGENINSTALLDIR
+mkdir -p $SCRIPTINSTALLDIR
+mkdir -p $TERMINALINSTALLDIR
+mkdir -p $ZDOTDIR
 
 
 # actually install the various packages
-# Order matters, clone taskwarrior backup before installing the package to prevent the directory being overwritten
+# Order matters(?), clone taskwarrior backup before installing
+# the package to prevent the directory being overwritten
 if [[ "$1" == "install" ]]; then
 	echo "cloning taskwarrior"
 	git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
@@ -43,8 +47,9 @@ source $INSTALLDIR/install_scripts/install_common.sh $INSTALLDIR
 # install dotfiles for me
 ln -fsn ${INSTALLDIR}/profile $HOME/.profile
 ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
-ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $HOME/.zshrc
-ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $HOME/.zsh_aliases_personal
+ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $ZDOTDIR/.zshrc
+ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
+ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/p10k.zsh $HOME/.p10k.zsh
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf $HOME/.tmux.conf
