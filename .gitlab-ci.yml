@@ -16,7 +16,7 @@ install_vim:
         # update apt-get
         - apt-get update
         - apt-get -y install vim git
-        - ln -fsn vim/vimrc ~/.vimrc
+        - ln -fsn vim/vimrc ~/.vim/vimrc
 
     script:
         - source install_scripts/install_vim.sh
@@ -29,8 +29,9 @@ install_tmux:
     before_script:
         - apt-get update
         - apt-get -y install tmux git
-        - ln -fsn tmux/tmux.common.conf ~/.tmux.common.conf
-        - ln -fsn tmux/tmux.conf ~/.tmux.conf
+        - mkdir -p ~/.config/tmux
+        - ln -fsn tmux/tmux.common.conf ~/.config/tmux/tmux.common.conf
+        - ln -fsn tmux/tmux.conf ~/.config/tmuxtmux.conf
 
     script:
         - source install_scripts/install_tmux.sh
