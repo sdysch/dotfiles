@@ -29,6 +29,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# === config file locations ===
+# TODO, replace hardcoded $HOME/.config with $XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
 # ==== environment variables ====
 
 # ==== dotfiles ====
