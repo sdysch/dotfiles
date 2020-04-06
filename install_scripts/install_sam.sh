@@ -50,7 +50,7 @@ ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $ZDOTDIR/.zshrc
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
-ln -fsn ${INSTALLDIR}/p10k.zsh $HOME/.p10k.zsh
+ln -fsn ${INSTALLDIR}/p10k.zsh $ZDOTDIR/.p10k.zsh
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf $HOME/.tmux.conf
 
