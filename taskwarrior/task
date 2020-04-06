@@ -3,7 +3,7 @@
 TASK_COMMAND="task ${@}"
 
 # check data directory exists
-if [ ! -d "$TASKDIR" ]; then
+if [ ! -d "$TASKDATA" ]; then
 	echo "Could not load task directory!"
 	exit 1
 fi
@@ -22,7 +22,7 @@ done
 # Call task, commit files and push if flag is set.
 task $@
 pkill -RTMIN+3 $STATUSBAR
-cd $TASKDIR
+cd $TASKDATA
 git add -A
 git commit -m "$TASK_COMMAND" > /dev/null
 if [ "$PUSH" == 1 ]; then

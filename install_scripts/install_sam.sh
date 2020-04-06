@@ -57,7 +57,7 @@ ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
 ln -fsn ${INSTALLDIR}/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
 
 # taskwarrior
-ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $HOME/.taskrc
+ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $TASKRC
 
 # install i3 config
 ln -fsn ${INSTALLDIR}/i3/config $I3INSTALLDIR/config

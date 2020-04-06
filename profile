@@ -58,7 +58,8 @@ export PROMPT_EOL_MARK=""
 
 
 # taskwarrior
-export TASKDIR=$HOME/.task
+export TASKDATA=$HOME/.config/task
+export TASKRC=$HOME/.config/task/taskrc
 
 # thesis
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
