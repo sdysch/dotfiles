@@ -12,6 +12,7 @@ NEWSBOATINSTALLDIR="$HOME/.config/newsboat"
 NITROGENINSTALLDIR="${HOME}/.config/nitrogen"
 SCRIPTINSTALLDIR="${HOME}/.local/bin"
 TERMINALINSTALLDIR="${HOME}/.config/xfce4/terminal"
+TMUXINSTALLDIR="${HOME}/.config/tmux"
 ZDOTDIR="$HOME/.config/zsh"
 
 # make directories
@@ -22,6 +23,7 @@ mkdir -p $NEWSBOATINSTALLDIR
 mkdir -p $NITROGENINSTALLDIR
 mkdir -p $SCRIPTINSTALLDIR
 mkdir -p $TERMINALINSTALLDIR
+mkdir -p $TMUXINSTALLDIR
 mkdir -p $ZDOTDIR
 
 
@@ -52,7 +54,7 @@ ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/p10k.zsh $ZDOTDIR/.p10k.zsh
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
-ln -fsn ${INSTALLDIR}/tmux/tmux.conf $HOME/.tmux.conf
+ln -fsn ${INSTALLDIR}/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
 
 # taskwarrior
 ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $HOME/.taskrc

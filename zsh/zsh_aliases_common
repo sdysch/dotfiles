@@ -19,3 +19,6 @@ alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
 
 # get weather
 alias weather="curl http://wttr.in//~Manchester"
+
+# tmux
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"

@@ -37,7 +37,7 @@ vim +PluginInstall +qall
 # tmux
 * themes
 ```
-git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+git clone https://github.com/jimeh/tmux-themepack.git ~/.config/tmux/.tmux-themepack
 ```
 
 # i3
