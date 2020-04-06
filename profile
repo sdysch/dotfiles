@@ -33,6 +33,7 @@ fi
 
 # ==== dotfiles ====
 export ZDOTDIR=$HOME/.config/zsh
+export _Z_DATA=$HOME/.local/share/z
 
 # ==== programs ====
 # default editor
