@@ -14,6 +14,7 @@ SCRIPTINSTALLDIR="${HOME}/.local/bin"
 SSHINSTALLDIR="$HOME/.ssh"
 TERMINALINSTALLDIR="${HOME}/.config/xfce4/terminal"
 TMUXINSTALLDIR="${HOME}/.config/tmux"
+VIMINSTALLDIR=$HOME/.vim
 ZDOTDIR="$HOME/.config/zsh"
 
 # make directories
@@ -26,6 +27,7 @@ mkdir -p $SCRIPTINSTALLDIR
 mkdir -p $SSHINSTALLDIR
 mkdir -p $TERMINALINSTALLDIR
 mkdir -p $TMUXINSTALLDIR
+mkdir -p $VIMINSTALLDIR
 mkdir -p $ZDOTDIR
 
 

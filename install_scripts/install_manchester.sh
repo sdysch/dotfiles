@@ -3,8 +3,8 @@
 # install dotfiles for Manchester
 INSTALLDIR=$(pwd)
 
-mkdir -p ~/.ssh
 mkdir -p ~/.config/tmux
+mkdir -p ~/.vim
 
 ln -fsn ${INSTALLDIR}/bash/bash_aliases_manchester ~/.bash_aliases_manchester
 ln -fsn ${INSTALLDIR}/bash/bash_profile ~/.bash_profile
