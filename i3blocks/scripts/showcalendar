@@ -3,7 +3,8 @@
 # i3blocks calendar
 # When clicked, brings up cal
 
-cmd=$(date '+%A, %d/%m/%Y')
+cmd=$(date '+%a, %d/%m/%Y')
+#cmd=$(date '+%A, %d/%m/%Y')
 echo $cmd
 
 case $BLOCK_BUTTON in
