@@ -4,6 +4,7 @@
 INSTALLDIR=$(pwd)
 
 mkdir -p ~/.ssh
+mkdir -p ~/.config/tmux
 
 ln -fsn ${INSTALLDIR}/bash/bash_aliases_mac ~/.bash_aliases_mac
 ln -fsn ${INSTALLDIR}/bash/bash_profile ~/.bash_profile

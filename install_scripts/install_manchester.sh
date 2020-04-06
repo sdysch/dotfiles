@@ -4,6 +4,8 @@
 INSTALLDIR=$(pwd)
 
 mkdir -p ~/.ssh
+mkdir -p ~/.config/tmux
+
 ln -fsn ${INSTALLDIR}/bash/bash_aliases_manchester ~/.bash_aliases_manchester
 ln -fsn ${INSTALLDIR}/bash/bash_profile ~/.bash_profile
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal ~/.gitconfig
