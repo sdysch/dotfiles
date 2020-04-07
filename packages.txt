@@ -46,6 +46,7 @@ neomutt
 newsboat
 nitrogen
 notify-osd
+notmuch
 pass
 python-dev
 python3-pandas
