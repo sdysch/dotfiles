@@ -4,13 +4,13 @@
 # ==== News ====
 # BBC
 http://feeds.bbci.co.uk/news/rss.xml "News"
-http://feeds.bbci.co.uk/news/uk/rss.xml "News"
+#http://feeds.bbci.co.uk/news/uk/rss.xml "News"
 
 # xubuntu
 https://rss.app/feeds/HnlUGB2AUPzDOrjo.xml "News"
 
 # Twitter
-https://rss.app/feeds/SpK1XRzlYFkymEye.xml "~Twitter"
+#https://rss.app/feeds/SpK1XRzlYFkymEye.xml "~Twitter"
 
 # ==== Work  ====
 # arXiv hep-ex
