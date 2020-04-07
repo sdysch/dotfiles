@@ -161,7 +161,7 @@ bindsym $mod+Control+space exec mate-calculator
 
 # status bar
 bar {
-	font pango:hermit 10, FontAwesome 10
+	font pango:hermit 9, FontAwesome 9
 	status_command $STATUSBAR
     position top
 	separator_symbol " ⁞ "

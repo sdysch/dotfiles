@@ -18,7 +18,7 @@ elif [ "$status" == "stopped" ]; then
 	echo ""
 	exit 0
 else
-	icon="▶️"
+	icon="🎶"
 fi
 
 case $BLOCK_BUTTON in
