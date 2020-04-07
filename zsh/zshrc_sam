@@ -16,7 +16,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugins
 plugins=(
 	git
-	taskwarrior
+	#taskwarrior
 	tmux
 	zsh-syntax-highlighting
 	zsh-autosuggestions
