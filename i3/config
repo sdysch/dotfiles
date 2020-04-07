@@ -43,6 +43,9 @@ bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack
 # start cmus
 bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
 
+# neomutt
+bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
+
 # power options
 bindsym $mod+u exec --no-startup-id poweroptions
 
@@ -99,7 +102,7 @@ set $ws1 "1:Main"
 set $ws2 "2:Skype"
 set $ws3 "3:Firefox"
 set $ws4 "4:Music"
-set $ws5 "5"
+set $ws5 "5:Mail"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -235,6 +238,7 @@ assign [class="Google-chrome"] $ws1
 assign [class="Skype"] $ws2
 assign [class="Firefox"] $ws3
 assign [class="Xfce4-terminal" window_role="cmus"] $ws4
+assign [class="Xfce4-terminal" window_role="neomutt"] $ws5
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
