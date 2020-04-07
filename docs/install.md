@@ -42,3 +42,6 @@ git clone https://github.com/jimeh/tmux-themepack.git ~/.config/tmux/.tmux-theme
 
 # i3
 * [Installation instructions](docs/i3.md)
+
+# mutt
+* [Installation instructions](docs/mutt.md)
