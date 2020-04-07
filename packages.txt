@@ -38,6 +38,7 @@ libxext-dev
 libxft-dev
 libxml2-dev
 libxpm-dev
+lynx
 mpv
 msmtp
 neofetch
