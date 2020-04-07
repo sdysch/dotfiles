@@ -170,6 +170,10 @@ set $brightslate #526b77
 set $slate #455a64
 set $darkslate #37474f
 
+# more colours
+set $blue #1e4da4
+set $red #db0000
+
 # status bar
 bar {
 	font pango:hermit 9, FontAwesome 9
@@ -186,20 +190,18 @@ bar {
 		statusline          $white
 
 		# <workclass>       <border>      <bg>     <text>
-		focused_workspace   $transparent $brightslate $brightwhite
-		inactive_workspace  $transparent $slate       $white
+		focused_workspace   $transparent $blue        $brightwhite
+		inactive_workspace  $transparent $black       $white
 		active_workspace    $darkblack   $darkwhite   $brightwhite
-		urgent_workspace    $darkblack   $darkred     $brightwhite
-		binding_mode        $darkblack   $darkmagenta $brightwhite
+		urgent_workspace    $darkblack   $red         $brightwhite
 	}
 }
 
 # <clientclass>         <border>   <bg>    <text> <indicator> <childborder>
-client.focused          $darkblack $brightslate  $brightwhite   $white $darkblue
+client.focused          $blue      $brightslate  $brightwhite   $white $darkblue
 client.unfocused        $black     $slate     $white       $darkwhite $slate
 client.focused_inactive $black     $darkslate $white       $black     $darkslate 
-client.urgent           $darkblack $darkred   $brightwhite $darkred   $darkred
-client.background       $black
+client.urgent           $darkblack $red   $brightwhite $red   $red
 
 # i3 gaps
 for_window [class="^.*"] border pixel 2
