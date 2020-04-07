@@ -25,7 +25,7 @@ use File::Basename;
 my $indicator = $ENV{BLOCK_INSTANCE} || $ENV{KEY} || "CAPS";
 my $text_on = "🔒 on";
 #my $text_on = $ENV{TEXT_ON} || $indicator;
-my $text_off = "🔓 off";
+my $text_off = "";
 #my $text_off = $ENV{TEXT_OFF} || $indicator;
 my $color_on  = $ENV{COLOR_ON} || "#00FF00";
 my $color_off = $ENV{COLOR_OFF} || "#222222";
