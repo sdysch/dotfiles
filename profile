@@ -29,6 +29,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# my location
 export LOCATION="Manchester"
 
 # === config file locations ===
@@ -39,6 +40,9 @@ export XDG_DATA_HOME=$HOME/.local/share
 # ==== environment variables ====
 
 # ==== dotfiles ====
+export GNUPGHOME=$HOME/.config/gnupg
+export HISTFILE=$HOME/.config/zsh/history
+export NOTMUCH_CONFIG=$HOME/.config/notmuch/notmuchrc
 export ZDOTDIR=$HOME/.config/zsh
 export _Z_DATA=$HOME/.local/share/z
 
