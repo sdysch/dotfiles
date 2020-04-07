@@ -6,6 +6,7 @@
 INSTALLDIR=$(pwd)
 
 CMUSINSTALLDIR="${HOME}/.config/cmus"
+DUNSTINSTALLDIR="${HOME}/.config/dunst"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
 I3INSTALLDIR="${HOME}/.config/i3"
 NEWSBOATINSTALLDIR="$HOME/.config/newsboat"
@@ -19,6 +20,7 @@ ZDOTDIR="$HOME/.config/zsh"
 
 # make directories
 mkdir -p $CMUSINSTALLDIR
+mkdir -p $DUNSTINSTALLDIR
 mkdir -p $I3BLOCKSINSTALLDIR
 mkdir -p $I3INSTALLDIR
 mkdir -p $NEWSBOATINSTALLDIR
@@ -60,6 +62,9 @@ ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $ZDOTDIR/.zshrc
+
+# dunst
+ln -fsn $INSTALLDIR/dunst/dunstrc $DUNSTINSTALLDIR/dunstrc
 
 # taskwarrior
 ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $TASKRC
