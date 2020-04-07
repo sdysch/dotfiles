@@ -11,6 +11,7 @@ sudo make install
 * Run `notmuch setup` to setup mail sorting
 * Link muttrc config
 * source this file in muttrc generated from mutt wizard
+* run mbsync `mbsync gmail`
 
 ```
 ln -fsn path/to/dotfiles/mutt/config.muttrc $HOME/.config/mutt/config.muttrc
