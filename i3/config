@@ -201,6 +201,20 @@ client.focused_inactive $black     $darkslate $white       $black     $darkslate
 client.urgent           $darkblack $darkred   $brightwhite $darkred   $darkred
 client.background       $black
 
+# i3 gaps
+for_window [class="^.*"] border pixel 2
+smart_gaps on
+gaps inner 10
+gaps outer 10
+bindsym $mod+z gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current minus 5
+
+# borders
+bindsym $mod+Shift+t border toggle
+smart_borders on
+new_window pixel 3
+new_float pixel 3
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -246,13 +260,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill
 # caps lock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 $STATUSBAR
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+12 $STATUSBAR
-
-# i3 gaps
-for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
-bindsym $mod+z gaps outer current plus 5
-bindsym $mod+Shift+z gaps outer current minus 5
 
 # cmus
 bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
