@@ -6,7 +6,9 @@ dmenu
 dpkg-dev
 evince
 firefox
+fontconfig
 fonts-humor-sans
+fonts-noto-color-emoji
 g++
 gcc
 gfortran
