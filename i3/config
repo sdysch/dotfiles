@@ -167,7 +167,8 @@ client.urgent           #900000 #900000 #ffffff #2b2b2b
 
 # status bar
 bar {
-	font pango:hermit 9, FontAwesome 9
+	font pango:mono 9, FontAwesome 9
+	#font pango:hermit 9, FontAwesome 9
 	status_command $STATUSBAR
     position top
 	height 26
