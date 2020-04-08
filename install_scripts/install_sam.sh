@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# install everything and sym link config files to their correct locations
+# === install everything and sym link config files to their correct locations ====
+# TODO - need a better way to manage dotfiles for multiple computers???
+# This works, for now, so why change it?
 
-# installation locations
+#  ===== installation locations =====
 INSTALLDIR=$(pwd)
 
 CMUSINSTALLDIR="${HOME}/.config/cmus"
@@ -18,7 +20,7 @@ TMUXINSTALLDIR="${HOME}/.config/tmux"
 VIMINSTALLDIR=$HOME/.vim
 ZDOTDIR="$HOME/.config/zsh"
 
-# make directories
+# ==== make directories ====
 mkdir -p $CMUSINSTALLDIR
 mkdir -p $DUNSTINSTALLDIR
 mkdir -p $I3BLOCKSINSTALLDIR
@@ -33,9 +35,9 @@ mkdir -p $VIMINSTALLDIR
 mkdir -p $ZDOTDIR
 
 
-# actually install the various packages
-# Order matters(?), clone taskwarrior backup before installing
-# the package to prevent the directory being overwritten
+#  ===== actually install the various packages =====
+# Order matters(?), clone my taskwarrior backup before installing the package to prevent the directory being overwritten
+
 if [[ "$1" == "install" ]]; then
 	echo "cloning taskwarrior"
 	git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
@@ -49,55 +51,63 @@ fi
 
 # ===== config files ========
 
-# install dotfiles for me
+# === git ===
 ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
 ln -fsn ${INSTALLDIR}/git/gitignore_global ~/.gitignore_global
+
+# ==== zsh ====
 ln -fsn ${INSTALLDIR}/p10k.zsh $ZDOTDIR/.p10k.zsh
-ln -fsn ${INSTALLDIR}/profile $HOME/.profile
-ln -fsn ${INSTALLDIR}/ssh/config ~/.ssh/config
-ln -fsn ${INSTALLDIR}/tmux/tmux.common.conf ~/.config/tmux/common.conf
-ln -fsn ${INSTALLDIR}/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
-ln -fsn ${INSTALLDIR}/vim/vimrc ~/.vim/vimrc
 ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
 ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $ZDOTDIR/.zshrc
 
-# dunst
-ln -fsn $INSTALLDIR/dunst/dunstrc $DUNSTINSTALLDIR/dunstrc
+# ==== profile =====
+ln -fsn ${INSTALLDIR}/profile $HOME/.profile
 
-# taskwarrior
+# ===== ssh =====
+ln -fsn ${INSTALLDIR}/ssh/config ~/.ssh/config
+
+# ==== tmux ====
+ln -fsn ${INSTALLDIR}/tmux/tmux.common.conf ~/.config/tmux/common.conf
+ln -fsn ${INSTALLDIR}/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
+
+# ==== vim ====
+ln -fsn ${INSTALLDIR}/vim/vimrc ~/.vim/vimrc
+
+# ===== taskwarrior =====
 ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $TASKRC
 
-# install i3 config
+# NOTE, i3 is installed with a separate script (see docs/i3)
+# ===== i3 config =====
 ln -fsn ${INSTALLDIR}/i3/config $I3INSTALLDIR/config
 ln -fsn ${INSTALLDIR}/i3blocks/i3blocks.config $I3BLOCKSINSTALLDIR/config
 
-# nitrogen config
+# ==== nitrogen config =====
 ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ${NITROGENINSTALLDIR}/nitrogen.cfg
 ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
 
-# cmus
+# ===== cmus =====
 ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
 ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
 ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
 
-# xfce4 config
+# ====== xfce4 terminal =====
 ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
 
-# newsboat
+# ===== newsboat =====
 ln -fsn ${INSTALLDIR}/newsboat/config $NEWSBOATINSTALLDIR/config
 ln -fsn ${INSTALLDIR}/newsboat/urls $NEWSBOATINSTALLDIR/urls
 
-# ===== scripts ========
+# ===== scripts (to be added to path) ========
 
-# link custom scripts
+# ====== link custom scripts =======
 for file in scripts/*; do
 	script=$(echo $file | sed "s/scripts\///g")
 	ln -fsn ${INSTALLDIR}/scripts/$script $SCRIPTINSTALLDIR/$script
 done
 
-# link custom scripts
+# ===== i3blocks scripts ======
 for file in i3blocks/scripts/*; do
 	script=$(echo $file | sed "s/i3blocks\/scripts\///g")
 	ln -fsn ${INSTALLDIR}/i3blocks/scripts/$script $SCRIPTINSTALLDIR/$script
