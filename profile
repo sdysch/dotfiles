@@ -33,25 +33,27 @@ fi
 export LOCATION="Manchester"
 
 # === config file locations ===
-# TODO, replace hardcoded $HOME/.config with $XDG_CONFIG_HOME
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
 # ==== environment variables ====
 
 # ==== dotfiles ====
-export GNUPGHOME=$HOME/.config/gnupg
-export HISTFILE=$HOME/.config/zsh/history
-export NOTMUCH_CONFIG=$HOME/.config/notmuch/notmuchrc
-export ZDOTDIR=$HOME/.config/zsh
-export _Z_DATA=$HOME/.local/share/z
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
+export HISTFILE=$XDG_CONFIG_HOME/zsh/history
+export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export _Z_DATA=$XDG_DATA_HOME/z
 
 # ==== programs ====
+
 # default editor
 export EDITOR=vim
 
 # image viewer
 export IMAGEVIEWER="ristretto"
+
+export PROMPT_EOL_MARK=""
 
 # status bar
 export STATUSBAR="i3blocks"
@@ -60,24 +62,23 @@ export STATUSBAR="i3blocks"
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
 
-export PROMPT_EOL_MARK=""
-
-
 # taskwarrior
-export TASKDATA=$HOME/.config/task
-export TASKRC=$HOME/.config/task/taskrc
+export TASKDATA=$XDG_CONFIG_HOME/task
+export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+
+# ==== personal ====
+
+# directory where wallpapers/icons are stored
+export ICONSDIR="$HOME/dotfiles_harmonised/icons"
+export WALLPAPERSDIR="$HOME/dotfiles_harmonised/wallpapers"
 
 # thesis
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
 
 # to do list
-export TODOLISTDIR="$HOME/.config/todolist"
+export TODOLISTDIR="$XDG_CONFIG_HOME/todolist"
 export PATH=$PATH:"${TODOLISTDIR}/scripts"
 
 # to do list backup (repo is private from git)
 export TODOBACKUP="$HOME/Documents/todolist-backup"
 export PATH=$PATH:"${TODOBACKUP}/scripts"
-
-# directory where wallpapers/icons are stored
-export ICONSDIR="$HOME/dotfiles_harmonised/icons"
-export WALLPAPERSDIR="$HOME/dotfiles_harmonised/wallpapers"
