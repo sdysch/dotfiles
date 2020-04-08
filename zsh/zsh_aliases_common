@@ -1,7 +1,7 @@
 # common aliases
 
 # grep
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -n'
 
 # human readable memory by default
 alias du="du -h"
