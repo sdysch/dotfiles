@@ -27,3 +27,6 @@ alias thesis="open ${thesisDir}/thesis.pdf"
 
 # open backgammon image
 alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
+
+# calcurse
+alias calcurse="calcurse -D $CALCURSECONFIG"

@@ -50,6 +50,8 @@ export _Z_DATA=$XDG_DATA_HOME/z
 # default editor
 export EDITOR=vim
 
+export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse
+
 # image viewer
 export IMAGEVIEWER="ristretto"
 

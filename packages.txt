@@ -1,4 +1,5 @@
 binutils
+calcurse
 cmake
 cmus
 curl

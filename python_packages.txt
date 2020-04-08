@@ -3,6 +3,7 @@ jupyter
 matplotlib
 nose
 numpy
+oauth2client
 pandas
 scipy
 sympy
