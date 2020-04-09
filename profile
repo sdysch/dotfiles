@@ -44,6 +44,7 @@ export HISTFILE=$XDG_CONFIG_HOME/zsh/history
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export _Z_DATA=$XDG_DATA_HOME/z
+export PASSWORD_STORE_DIR=$HOME/.password_store
 
 # ==== programs ====
 
