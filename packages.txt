@@ -64,4 +64,5 @@ xautolock
 xclip
 xdotool
 xlibmesa-glu-dev
+zathura
 zsh

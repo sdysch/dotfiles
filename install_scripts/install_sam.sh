@@ -7,6 +7,7 @@
 #  ===== installation locations =====
 INSTALLDIR=$(pwd)
 
+#TODO - use $XDG_CONFIG_HOME??
 CMUSINSTALLDIR="${HOME}/.config/cmus"
 DUNSTINSTALLDIR="${HOME}/.config/dunst"
 I3BLOCKSINSTALLDIR="${HOME}/.config/i3blocks"
@@ -19,6 +20,7 @@ TERMINALINSTALLDIR="${HOME}/.config/xfce4/terminal"
 TMUXINSTALLDIR="${HOME}/.config/tmux"
 VIMINSTALLDIR=$HOME/.vim
 ZDOTDIR="$HOME/.config/zsh"
+ZATHURAINSTALLDIR="$HOME/.config/zathura"
 
 # ==== make directories ====
 mkdir -p $CMUSINSTALLDIR
@@ -33,6 +35,7 @@ mkdir -p $TERMINALINSTALLDIR
 mkdir -p $TMUXINSTALLDIR
 mkdir -p $VIMINSTALLDIR
 mkdir -p $ZDOTDIR
+mkdir -p $ZATHURAINSTALLDIR
 
 
 #  ===== actually install the various packages =====
@@ -99,6 +102,9 @@ ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
 # ===== newsboat =====
 ln -fsn ${INSTALLDIR}/newsboat/config $NEWSBOATINSTALLDIR/config
 ln -fsn ${INSTALLDIR}/newsboat/urls $NEWSBOATINSTALLDIR/urls
+
+# ====== zathura =======
+ln -fsn ${INSTALLDIR}/zathura/zathurarc $ZATHURAINSTALLDIR/zathurarc
 
 # ===== scripts (to be added to path) ========
 

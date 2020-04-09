@@ -51,7 +51,7 @@ export PASSWORD_STORE_DIR=$HOME/.password-store
 # default programs
 export EDITOR="vim"
 export IMAGEVIEWER="ristretto"
-export READER="evince"
+export READER="zathura"
 export STATUSBAR="i3blocks"
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
