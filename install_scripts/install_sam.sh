@@ -91,6 +91,7 @@ ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
 ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
 ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
 ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
+ln -fsn ${INSTALLDIR}/cmus/status_display_program.sh ${CMUSINSTALLDIR}/status_display_program.sh
 
 # ====== xfce4 terminal =====
 ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
