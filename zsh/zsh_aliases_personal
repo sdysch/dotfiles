@@ -30,3 +30,6 @@ alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 
 # calcurse
 alias calcurse="calcurse -D $CALCURSECONFIG"
+
+#gnu pass
+alias pgp="pass git push origin master"
