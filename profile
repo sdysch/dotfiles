@@ -48,22 +48,17 @@ export PASSWORD_STORE_DIR=$HOME/.password-store
 
 # ==== programs ====
 
-# default editor
-export EDITOR=vim
-
-export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse
-
-# image viewer
+# default programs
+export EDITOR="vim"
 export IMAGEVIEWER="ristretto"
-
-export PROMPT_EOL_MARK=""
-
-# status bar
+export READER="evince"
 export STATUSBAR="i3blocks"
-
-# terminal
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
+
+# calcurse
+export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse
+export PROMPT_EOL_MARK=""
 
 # taskwarrior
 export TASKDATA=$XDG_CONFIG_HOME/task
