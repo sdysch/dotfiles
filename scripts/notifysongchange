@@ -24,5 +24,6 @@ lastSongPlaying=$(cat $tempFileStore 2>&1 /dev/null)
 #echo "Last song playing $lastSongPlaying"
 echo $currentSongPlaying > $tempFileStore
 if [ "$lastSongPlaying" != "$currentSongPlaying" ]; then
+	pkill -RTMIN+1 "${STATUSBAR:?}"
 	notify-send -i $ICONSDIR/music.jpg -u normal "Now playing" "$currentSongPlaying" -t 3
 fi
