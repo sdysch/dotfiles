@@ -28,6 +28,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
 	tmux
+	vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	z
