@@ -30,7 +30,6 @@ source $ZSH/oh-my-zsh.sh
 
 # common aliases
 source $ZDOTDIR/.zsh_aliases
-source $ZDOTDIR/.zsh_aliases_personal
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh

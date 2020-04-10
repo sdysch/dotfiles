@@ -62,7 +62,7 @@ export PROMPT_EOL_MARK=""
 
 # taskwarrior
 export TASKDATA=$XDG_CONFIG_HOME/task
-export TASKRC=$XDG_CONFIG_HOME/task/taskrc
+export TASKRC=$XDG_CONFIG_HOME/taskwarrior/.taskrc
 
 # ==== personal ====
 
