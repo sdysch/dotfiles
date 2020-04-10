@@ -55,6 +55,7 @@ python3-pip
 ranger
 rofi
 scrot
+stow
 taskwarrior
 texlive-full
 tmux
