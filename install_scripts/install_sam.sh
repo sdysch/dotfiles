@@ -60,13 +60,13 @@ ln -fsn ${INSTALLDIR}/config/git/gitignore_global ~/.gitignore_global
 
 # ==== zsh ====
 ln -fsn ${INSTALLDIR}/config/zsh/p10k.zsh $ZDOTDIR/.p10k.zsh
-ln -fsn ${INSTALLDIR}/config/zprofile $HOME/.zprofile
+ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
 ln -fsn ${INSTALLDIR}/config/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
 ln -fsn ${INSTALLDIR}/config/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
 ln -fsn ${INSTALLDIR}/config/zsh/zshrc_sam $ZDOTDIR/.zshrc
 
 # ==== profile =====
-ln -fsn ${INSTALLDIR}/config/profile $HOME/.profile
+ln -fsn ${INSTALLDIR}/profile $HOME/.profile
 
 # ===== ssh =====
 ln -fsn ${INSTALLDIR}/config/ssh/config ~/.ssh/config
