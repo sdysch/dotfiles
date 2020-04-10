@@ -48,7 +48,7 @@ if [[ "$1" == "install" ]]; then
 	git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
 
 	echo "Installing packages"
-	source install_scripts/install_packages.sh
+	source install_scripts/packages/install_packages.sh
 
 	# install crontab
 	cat crontab/crontab | crontab -
@@ -58,7 +58,7 @@ fi
 
 # === git ===
 ln -fsn ${INSTALLDIR}/config/git/gitconfig_personal $HOME/.gitconfig
-ln -fsn ${INSTALLDIR}/config/git/gitignore_global ~/.gitignore_global
+ln -fsn ${INSTALLDIR}/config/git/gitignore_global $HOME/.gitignore_global
 
 # ==== zsh ====
 ln -fsn ${INSTALLDIR}/config/zsh/p10k.zsh $ZDOTDIR/.p10k.zsh
@@ -71,14 +71,14 @@ ln -fsn ${INSTALLDIR}/config/zsh/zshrc_sam $ZDOTDIR/.zshrc
 ln -fsn ${INSTALLDIR}/profile $HOME/.profile
 
 # ===== ssh =====
-ln -fsn ${INSTALLDIR}/config/ssh/config ~/.ssh/config
+ln -fsn ${INSTALLDIR}/config/ssh/config $HOME/.ssh/config
 
 # ==== tmux ====
-ln -fsn ${INSTALLDIR}/config/tmux/tmux.common.conf ~/.config/tmux/common.conf
+ln -fsn ${INSTALLDIR}/config/tmux/tmux.common.conf $TMUXINSTALLDIR/common.conf
 ln -fsn ${INSTALLDIR}/config/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
 
 # ==== vim ====
-ln -fsn ${INSTALLDIR}/config/vim/vimrc ~/.vim/vimrc
+ln -fsn ${INSTALLDIR}/config/vim/vimrc $VIMINSTALLDIR/vimrc
 
 # ===== taskwarrior =====
 ln -fsn ${INSTALLDIR}/config/taskwarrior/taskrc $TASKRC
