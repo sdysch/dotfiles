@@ -106,6 +106,9 @@ ln -fsn ${INSTALLDIR}/newsboat/urls $NEWSBOATINSTALLDIR/urls
 # ====== zathura =======
 ln -fsn ${INSTALLDIR}/zathura/zathurarc $ZATHURAINSTALLDIR/zathurarc
 
+# ===== default applications =====
+ln -fsn ${INSTALLDIR}/mimeapps.list $XDG_CONFIG_HOME/mimeapps.list
+
 # ===== scripts (to be added to path) ========
 
 # ====== link custom scripts =======
