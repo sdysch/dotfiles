@@ -40,8 +40,12 @@ mkdir -p $ZATHURAINSTALLDIR
 mkdir -p $MUTTINSTALLDIR
 
 
+
+#====================================================================================================================================================================================================================================================
+
+
 #  ===== actually install the various packages =====
-# Order matters(?), clone my taskwarrior backup before installing the package to prevent the directory being overwritten
+# Order matters(?), clone my taskwarrior backup before installing taskwarrior to prevent the directory being overwritten
 
 if [[ "$1" == "install" ]]; then
 	echo "cloning taskwarrior"
@@ -53,6 +57,8 @@ if [[ "$1" == "install" ]]; then
 	# install crontab
 	cat crontab/crontab | crontab -
 fi
+
+#====================================================================================================================================================================================================================================================
 
 # ===== config files ========
 
