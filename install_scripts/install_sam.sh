@@ -55,70 +55,68 @@ fi
 # ===== config files ========
 
 # === git ===
-ln -fsn ${INSTALLDIR}/git/gitconfig_personal $HOME/.gitconfig
-ln -fsn ${INSTALLDIR}/git/gitignore_global ~/.gitignore_global
+ln -fsn ${INSTALLDIR}/config/git/gitconfig_personal $HOME/.gitconfig
+ln -fsn ${INSTALLDIR}/config/git/gitignore_global ~/.gitignore_global
 
 # ==== zsh ====
-ln -fsn ${INSTALLDIR}/p10k.zsh $ZDOTDIR/.p10k.zsh
-ln -fsn ${INSTALLDIR}/zprofile $HOME/.zprofile
-ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
-ln -fsn ${INSTALLDIR}/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
-ln -fsn ${INSTALLDIR}/zsh/zshrc_sam $ZDOTDIR/.zshrc
+ln -fsn ${INSTALLDIR}/config/zsh/p10k.zsh $ZDOTDIR/.p10k.zsh
+ln -fsn ${INSTALLDIR}/config/zprofile $HOME/.zprofile
+ln -fsn ${INSTALLDIR}/config/zsh/zsh_aliases_common $ZDOTDIR/.zsh_aliases_common
+ln -fsn ${INSTALLDIR}/config/zsh/zsh_aliases_personal $ZDOTDIR/.zsh_aliases_personal
+ln -fsn ${INSTALLDIR}/config/zsh/zshrc_sam $ZDOTDIR/.zshrc
 
 # ==== profile =====
-ln -fsn ${INSTALLDIR}/profile $HOME/.profile
+ln -fsn ${INSTALLDIR}/config/profile $HOME/.profile
 
 # ===== ssh =====
-ln -fsn ${INSTALLDIR}/ssh/config ~/.ssh/config
+ln -fsn ${INSTALLDIR}/config/ssh/config ~/.ssh/config
 
 # ==== tmux ====
-ln -fsn ${INSTALLDIR}/tmux/tmux.common.conf ~/.config/tmux/common.conf
-ln -fsn ${INSTALLDIR}/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
+ln -fsn ${INSTALLDIR}/config/tmux/tmux.common.conf ~/.config/tmux/common.conf
+ln -fsn ${INSTALLDIR}/config/tmux/tmux.conf $TMUXINSTALLDIR/tmux.conf
 
 # ==== vim ====
-ln -fsn ${INSTALLDIR}/vim/vimrc ~/.vim/vimrc
+ln -fsn ${INSTALLDIR}/config/vim/vimrc ~/.vim/vimrc
 
 # ===== taskwarrior =====
-ln -fsn ${INSTALLDIR}/taskwarrior/taskrc $TASKRC
+ln -fsn ${INSTALLDIR}/config/taskwarrior/taskrc $TASKRC
 
 # NOTE, i3 is installed with a separate script (see docs/i3)
 # ===== i3 config =====
-ln -fsn ${INSTALLDIR}/i3/config $I3INSTALLDIR/config
-ln -fsn ${INSTALLDIR}/i3blocks/i3blocks.config $I3BLOCKSINSTALLDIR/config
+ln -fsn ${INSTALLDIR}/config/i3/config $I3INSTALLDIR/config
+ln -fsn ${INSTALLDIR}/config/i3blocks/i3blocks.config $I3BLOCKSINSTALLDIR/config
 
 # ==== nitrogen config =====
-ln -fsn ${INSTALLDIR}/nitrogen/nitrogen.cfg ${NITROGENINSTALLDIR}/nitrogen.cfg
-ln -fsn ${INSTALLDIR}/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
+ln -fsn ${INSTALLDIR}/config/nitrogen/nitrogen.cfg ${NITROGENINSTALLDIR}/nitrogen.cfg
+ln -fsn ${INSTALLDIR}/config/nitrogen/bg-saved.cfg ${NITROGENINSTALLDIR}/bg-saved.cfg
 
 # ===== cmus =====
-ln -fsn ${INSTALLDIR}/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
-ln -fsn ${INSTALLDIR}/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
-ln -fsn ${INSTALLDIR}/cmus/rc ${CMUSINSTALLDIR}/rc
-ln -fsn ${INSTALLDIR}/cmus/status_display_program.sh ${CMUSINSTALLDIR}/status_display_program.sh
+ln -fsn ${INSTALLDIR}/config/cmus/solarized.theme ${CMUSINSTALLDIR}/solarized.theme
+ln -fsn ${INSTALLDIR}/config/cmus/tomorrow.theme ${CMUSINSTALLDIR}/tomorrow.theme
+ln -fsn ${INSTALLDIR}/config/cmus/rc ${CMUSINSTALLDIR}/rc
+ln -fsn ${INSTALLDIR}/config/cmus/status_display_program.sh ${CMUSINSTALLDIR}/status_display_program.sh
 
 # ====== xfce4 terminal =====
-ln -fsn ${INSTALLDIR}/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
+ln -fsn ${INSTALLDIR}/config/xfce4/terminal/terminalrc $TERMINALINSTALLDIR/terminalrc
 
 # ===== newsboat =====
-ln -fsn ${INSTALLDIR}/newsboat/config $NEWSBOATINSTALLDIR/config
-ln -fsn ${INSTALLDIR}/newsboat/urls $NEWSBOATINSTALLDIR/urls
+ln -fsn ${INSTALLDIR}/config/newsboat/config $NEWSBOATINSTALLDIR/config
+ln -fsn ${INSTALLDIR}/config/newsboat/urls $NEWSBOATINSTALLDIR/urls
 
 # ====== zathura =======
-ln -fsn ${INSTALLDIR}/zathura/zathurarc $ZATHURAINSTALLDIR/zathurarc
+ln -fsn ${INSTALLDIR}/config/zathura/zathurarc $ZATHURAINSTALLDIR/zathurarc
 
 # ===== default applications =====
-ln -fsn ${INSTALLDIR}/mimeapps.list $XDG_CONFIG_HOME/mimeapps.list
+ln -fsn ${INSTALLDIR}/config/mimeapps.list $XDG_CONFIG_HOME/mimeapps.list
 
 # ===== scripts (to be added to path) ========
 
 # ====== link custom scripts =======
-for file in scripts/*; do
-	script=$(echo $file | sed "s/scripts\///g")
-	ln -fsn ${INSTALLDIR}/scripts/$script $SCRIPTINSTALLDIR/$script
+for file in $INSTALLDIR/scripts/*; do
+	ln -fsn $file $SCRIPTINSTALLDIR
 done
 
 # ===== i3blocks scripts ======
-for file in i3blocks/scripts/*; do
-	script=$(echo $file | sed "s/i3blocks\/scripts\///g")
-	ln -fsn ${INSTALLDIR}/i3blocks/scripts/$script $SCRIPTINSTALLDIR/$script
+for file in $INSTALLDIR/config/i3blocks/scripts/*; do
+	ln -fsn $file $SCRIPTINSTALLDIR
 done
