@@ -6,6 +6,8 @@
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
 
+![shell](figures/screenshot.png)
+
 ## Setup
 * OS: [xubuntu](https://xubuntu.org/) 19.10 (xfce)
 	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
@@ -14,11 +16,9 @@
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * bash dotfiles for legacy purposes only
 
-![shell](figures/screenshot.png)
-
 ## Installation
 * Installation instructions can be found [here](docs/install.md)
-* I am working on a script, when I get time, to install
+* Installation with gnu stow
 
 
 * Mirror [here](https://github.com/sdysch/dotfiles)

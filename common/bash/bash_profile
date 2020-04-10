@@ -33,24 +33,5 @@ export EDITOR=vim
 # kerberos authentication
 alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
 
-# platform specific stuff
-if [[ "$(hostname)" =~ "lxplus" ]]; then
-	
-	# lxplus specific bash aliases
-	source ~/.bash_aliases_lxplus
-
-elif [ "$(uname)" == "Darwin" ]; then
-
-	# mac specific bash aliases
-	source ~/.bash_aliases_mac
-
-# personal laptop
-elif [[ "$(hostname)" =~ "Lenovo" ]]; then
-	
-	# lxplus specific bash aliases
-	source ~/.bash_aliases_sam
-
-else
-	# personal bash aliases
-	source ~/.bash_aliases_personal
-fi
+# bash aliases
+source ~/.bash_aliases
