@@ -19,6 +19,13 @@
 ## Installation
 * Installation instructions can be found [here](docs/install.md)
 * Installation with gnu stow
+* For home, clone repo to ~/dotfiles_harmonised then:
+```
+cd ~/dotfiles_harmonised
+source install_scripts/install_packages.sh
+cd home
+stow home
+```
 
 
 * Mirror [here](https://github.com/sdysch/dotfiles)
