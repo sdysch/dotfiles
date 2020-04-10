@@ -21,6 +21,7 @@ TMUXINSTALLDIR="${HOME}/.config/tmux"
 VIMINSTALLDIR=$HOME/.vim
 ZDOTDIR="$HOME/.config/zsh"
 ZATHURAINSTALLDIR="$HOME/.config/zathura"
+MUTTINSTALLDIR="$HOME/.config/mutt"
 
 # ==== make directories ====
 mkdir -p $CMUSINSTALLDIR
@@ -36,6 +37,7 @@ mkdir -p $TMUXINSTALLDIR
 mkdir -p $VIMINSTALLDIR
 mkdir -p $ZDOTDIR
 mkdir -p $ZATHURAINSTALLDIR
+mkdir -p $MUTTINSTALLDIR
 
 
 #  ===== actually install the various packages =====
@@ -105,6 +107,10 @@ ln -fsn ${INSTALLDIR}/config/newsboat/urls $NEWSBOATINSTALLDIR/urls
 
 # ====== zathura =======
 ln -fsn ${INSTALLDIR}/config/zathura/zathurarc $ZATHURAINSTALLDIR/zathurarc
+
+# ======= mutt =======
+ln -fsn $INSTALLDIR/config/mutt/signature $MUTTINSTALLDIR/signature
+ln -fsn $INSTALLDIR/config/mutt/config.muttrc $MUTTINSTALLDIR/config.muttrc
 
 # ===== default applications =====
 ln -fsn ${INSTALLDIR}/config/mimeapps.list $XDG_CONFIG_HOME/mimeapps.list
