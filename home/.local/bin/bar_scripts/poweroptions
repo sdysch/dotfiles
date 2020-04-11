@@ -7,7 +7,7 @@ REBOOTSCRIPT="$HOME/.local/bin/reboot"
 
 TEXT="Would you like to..."
 options=("Shutdown?\nReboot?\nLogout?\nQuit menu")
-chosen=$(echo -e "$options" | rofi -dmenu -theme arthur)
+chosen=$(echo -e "$options" | rofi -dmenu -theme arthur -p "Power Options:")
 #chosen=$(echo -e "$options" | dmenu -i)
 
 case $chosen in

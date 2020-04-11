@@ -46,7 +46,7 @@ bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -
 bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
 # power options
-bindsym $mod+u exec --no-startup-id poweroptions
+bindsym $mod+u exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
 
 # change focus (vim keys)
 bindsym $mod+j focus down
