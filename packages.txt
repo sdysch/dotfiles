@@ -2,6 +2,7 @@ binutils
 calcurse
 cmake
 cmus
+compton
 curl
 dmenu
 dpkg-dev

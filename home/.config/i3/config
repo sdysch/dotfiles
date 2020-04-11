@@ -230,9 +230,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# startup programs
 exec --no-startup-id nitrogen --restore
 exec pulseaudio --start
-#exec --no-startup-id synergy
+exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
 
 # open applications on specific screens/workspaces
 # https://i3wm.org/docs/userguide.html#assign_workspace
