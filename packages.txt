@@ -6,6 +6,8 @@ curl
 dmenu
 dpkg-dev
 evince
+fbi
+fim
 firefox
 fontconfig
 fonts-humor-sans

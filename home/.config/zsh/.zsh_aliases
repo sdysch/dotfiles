@@ -1,5 +1,8 @@
 # personal aliases
 
+# source common aliases
+source $ZDOTDIR/.zsh_aliases_common
+
 # ls
 alias ls="ls --color=auto"
 alias ll="ls -ltrh"
