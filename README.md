@@ -11,6 +11,7 @@
 ## Setup
 * OS: [xubuntu](https://xubuntu.org/) 19.10 (xfce)
 	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
+	* Script in .local/bin/restorewifi to fix
 * Window manager: i3wm (+gaps) alongside xfce desktop environment
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
