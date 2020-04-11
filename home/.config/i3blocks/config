@@ -1,118 +1,88 @@
 # vim: filetype=i3blocks
-
-# icons: https://fontawesome.com/cheatsheet?from=io
-
-# pango markup required for formatting within commands: https://developer.gnome.org/pygtk/stable/pango-markup-language.html
-
 align=center
 separator_block_width=20
 markup=pango
+command=~/.local/bin/bar_scripts/$BLOCK_NAME
 
 [music]
-#label=🎧
-command=cmusplaying
 interval=once
 signal=1
 separator=false
 
-[shutdown]
+[poweroptions]
 full_text=
-#full_text=Shutdown
-command=poweroptions
 color=#FF0000
 
 [open_chrome]
 full_text=
-#full_text=Google Chrome
 color=#4C8BF5
 command=google-chrome > /dev/null
 
 [open_firefox]
 full_text=
-#full_text=Firefox
 color=#FF4500
 command=firefox
 
 [open_skype]
 full_text=
-#full_text=Skype
 command=skypeforlinux
-#color=#0000ff
 color=#4C8BF5
 
 [time]
 label=🕑 
 command=date +%T
 interval=1
-#color=#ff8000
 
-[date]
+[showcalendar]
 label=📅
-command=showcalendar
 interval=3600
-#color=#FFCD46
 
 [mailbox]
 interval=180
 signal=12
-command=mailbox
 
-[tasks]
-#label=
+[taskblocklet]
 label=📝
-command=taskblocklet
 interval=once
 signal=3
 color=#39DC9D
-#color=#006e96
 
 [news]
-#label=News
-command=news
 interval=once
 signal=6
 color=#3FF4353
 
 [volume]
-command=volume2
 interval=once
 signal=2
 color=#0080ff
 
 [battery]
-command=battery2
 interval=10
-#color=#00FF00
 
 [wireless]
 command=iwgetid -r || echo "Not connected"
 label=📡
-#label= 
 interval=30
 color=#8000ff
 
 # Guess the weather hourly
-[weather]
-command=weatherreport
+[weatherreport]
 interval=18000
 signal=5
 color=#A4C2F4
 
 [keyindicator]
 label=
-command=keyindicator
 interval=once
 signal=11
 
 [cpu_usage]
-command=cpu_usage
 label=💻 
 interval=15
 
 [disk_usage]
-command=disk_usage
 label=📁
 # How frequently do I really need this?
 interval=600
 separator=false
-#color=#FFC0CB
