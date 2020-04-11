@@ -2,7 +2,7 @@
 # prints current CPU usage
 # on click, opens htop in new terminal window
 
-USAGE=$(mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 -  $12}')
+USAGE=$(mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 -  $12 "%"}')
 echo $USAGE
 case $BLOCK_BUTTON in
 	1) setsid "$TERMINAL" -e htop ;;
