@@ -57,7 +57,7 @@ else:
             return "\uf241"
         elif percent >= 25:
             return "\uf242"
-        elif battery >= 10:
+        elif percent >= 10:
             return "\uf243"
         else:
             return "\uf244"
