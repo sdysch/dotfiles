@@ -18,7 +18,7 @@ plugins=(
 	git
 	#taskwarrior
 	tmux
-	vi-mode
+	#vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	z
