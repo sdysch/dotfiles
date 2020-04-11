@@ -22,3 +22,6 @@ alias weather="curl http://wttr.in//~$LOCATION"
 
 # tmux
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+
+# corona tracker
+alias trackcorona="curl 'https://corona-stats.online?top=30&source=2&minimal=true&emojis=true'"
