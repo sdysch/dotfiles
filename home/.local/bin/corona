@@ -3,10 +3,11 @@
 # Coronavirus tracker, from https://github.com/sagarkarira/coronavirus-tracker-cli
 # call with corona [country] (defaults to UK)
 
-CMD="curl -s https://corona-stats.online/"
-CMDDefault="${CMD}UK"
+FMT="?top=15&source=2&minimal=true"
+CMDDEFAULT="https://corona-stats.online/UK"
+CMD="https://corona-stats.online/"
 if [[ $# -eq 0 ]] ; then
-	$CMDDefault
+	curl -s "$CMDDEFAULT$FMT"
 else
-	${CMD}$1
+	curl -s "$CMD$1$FMT"
 fi
