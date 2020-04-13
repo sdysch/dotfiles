@@ -1,12 +1,20 @@
+# News
 http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
 https://xubuntu.org/blog/feed "~News (Xubuntu)"
 https://arxiv.org/rss/hep-ex "~hep-ex"
+
+# reddit
+# linux
 https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
 https://www.reddit.com/r/linuxquestions.rss "~REDDIT: r/linuxquestions"
 https://www.reddit.com/r/ubuntu.rss "~REDDIT: r/ubuntu"
 https://www.reddit.com/r/vim.rss "~REDDIT: r/vim"
 https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn"
 
+# TV
+https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: r/betterCallSaul"
+
+# YouTube
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCNUAf3Ogf9ds43LORjhoEsA 
