@@ -19,39 +19,38 @@ https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: r/betterCallSaul"
 
 # YouTube
 # Computer
-"~YouTube [Computerphile]" https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA 
-"~YouTube [DistroTube]" https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg 
-"~YouTube [Engineer Man]" https://www.youtube.com/feeds/videos.xml?channel_id=UCrUL8K81R4VBzm-KOYwrcxQ 
-"~YouTube [Luke Smith]" https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
-"~YouTube [Tech With Tim]" https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg 
-"~YouTube [Tom Scott]" https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "~YouTube [Computerphile]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrUL8K81R4VBzm-KOYwrcxQ "~YouTube [Engineer Man]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YouTube [Luke Smith]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg "~YouTube [Tech With Tim]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A "~YouTube [Tom Scott]" 
 
 # Gaming (mostly Borderlands people)
-"~YouTube [Admiral Bahroo]" https://www.youtube.com/feeds/videos.xml?channel_id=UC1lXzO1Ss_1w5hS3YwSxLyQ 
-"~YouTube [DeSinc]" https://www.youtube.com/feeds/videos.xml?channel_id=UC4nJnJ-HO5vVbGlJ14rf5yg 
-"~YouTube [Game Maker's Toolkit]" https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw 
-"~YouTube [Joltzdude139]" https://www.youtube.com/feeds/videos.xml?channel_id=UCQWLfD-5sexEbVY335J8PMg 
-"~YouTube [MorninAfterKill]" https://www.youtube.com/feeds/videos.xml?channel_id=UCKw3UQ7AMPXkJ5nYxfg_Gyg 
-"~YouTube [Project Borealis]" https://www.youtube.com/feeds/videos.xml?channel_id=UCk8l6-02Nui9gbdfc1aL6Uw 
-"~YouTube [Stealth Gamer]" https://www.youtube.com/feeds/videos.xml?channel_id=UCb2PTdRGKwLjOJQtSW2YF_A 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1lXzO1Ss_1w5hS3YwSxLyQ "~YouTube [Admiral Bahroo]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4nJnJ-HO5vVbGlJ14rf5yg "~YouTube [DeSinc]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw "~YouTube [Game Maker's Toolkit]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQWLfD-5sexEbVY335J8PMg "~YouTube [Joltzdude139]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKw3UQ7AMPXkJ5nYxfg_Gyg "~YouTube [MorninAfterKill]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCk8l6-02Nui9gbdfc1aL6Uw "~YouTube [Project Borealis]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCb2PTdRGKwLjOJQtSW2YF_A "~YouTube [Stealth Gamer]" 
 
 # Skiing
-"~YouTube [Alex Wrigglesworth]" https://www.youtube.com/feeds/videos.xml?channel_id=UCNUAf3Ogf9ds43LORjhoEsA 
-"~YouTube [Candide Thovex]" https://www.youtube.com/feeds/videos.xml?channel_id=UCsFkInl7eWF0mkBbT2ATbNA 
-"~YouTube [DBT Sruh]" https://www.youtube.com/feeds/videos.xml?channel_id=UCvKlNnCgWUi1wwM5Fl9YXcQ 
-"~YouTube [GoPro]" https://www.youtube.com/feeds/videos.xml?channel_id=UCqhnX4jA0A5paNd1v-zEysw 
-"~YouTube [Harald Harb]" https://www.youtube.com/feeds/videos.xml?channel_id=UCcMg1LpFDWeZJf6pi5kEBMQ 
-"~YouTube [Jerry of the Day]" https://www.youtube.com/feeds/videos.xml?channel_id=UCzmlnH8vDQHoEb2TrC0WDCg 
-"~YouTube [Red Bull Snow]" https://www.youtube.com/feeds/videos.xml?channel_id=UCTtEhdlWz5erVK734-Gn0VQ 
-"~YouTube [Reilly McGlashan]" https://www.youtube.com/feeds/videos.xml?channel_id=UCaFDs9AxgHSYG_WZKgbPmng 
-"~YouTube [Salomon TV]" https://www.youtube.com/feeds/videos.xml?channel_id=UCCH7Ny59oLRGfw3imhL0d7A 
-"~YouTube [Skier Dan]" https://www.youtube.com/feeds/videos.xml?channel_id=UCZFVMrr1FakLs4KzxKlbFpA 
-"~YouTube [Stomp It Tutorials]" https://www.youtube.com/feeds/videos.xml?channel_id=UC1Ho5YvHCtyReazatbhBowA 
-"~YouTube [The Faction Collective]" https://www.youtube.com/feeds/videos.xml?channel_id=UCwVbnUomvVRCcdhsKUBVfRA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCNUAf3Ogf9ds43LORjhoEsA "~YouTube [Alex Wrigglesworth]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsFkInl7eWF0mkBbT2ATbNA "~YouTube [Candide Thovex]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCvKlNnCgWUi1wwM5Fl9YXcQ "~YouTube [DBT Sruh]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqhnX4jA0A5paNd1v-zEysw "~YouTube [GoPro]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcMg1LpFDWeZJf6pi5kEBMQ "~YouTube [Harald Harb]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzmlnH8vDQHoEb2TrC0WDCg "~YouTube [Jerry of the Day]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTtEhdlWz5erVK734-Gn0VQ "~YouTube [Red Bull Snow]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCaFDs9AxgHSYG_WZKgbPmng "~YouTube [Reilly McGlashan]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCH7Ny59oLRGfw3imhL0d7A "~YouTube [Salomon TV]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZFVMrr1FakLs4KzxKlbFpA "~YouTube [Skier Dan]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1Ho5YvHCtyReazatbhBowA "~YouTube [Stomp It Tutorials]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwVbnUomvVRCcdhsKUBVfRA "~YouTube [The Faction Collective]" 
 
 # Music
-"~YouTube [Snarky Puppy]" https://www.youtube.com/feeds/videos.xml?channel_id=UCo1t7ajBc5r44Ejxnod-h7Q 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo1t7ajBc5r44Ejxnod-h7Q "~YouTube [Snarky Puppy]" 
 
 # Other
-"~YouTube [Mike Boyd]" https://www.youtube.com/feeds/videos.xml?channel_id=UCIRiWCPZoUyZDbydIqitHtQ 
-"~YouTube [UK Dash Cameras]" https://www.youtube.com/feeds/videos.xml?channel_id=UCfZwNd8i7spJmLr4qq1_Gyw 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIRiWCPZoUyZDbydIqitHtQ "~YouTube [Mike Boyd]" 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfZwNd8i7spJmLr4qq1_Gyw "~YouTube [UK Dash Cameras]" 
