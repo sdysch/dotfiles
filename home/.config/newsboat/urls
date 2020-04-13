@@ -1,34 +1,37 @@
-# use URL below to generate
-# https://rss.app/
+http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
+https://xubuntu.org/blog/feed "~News (Xubuntu)"
+https://arxiv.org/rss/hep-ex "~hep-ex"
+https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
+https://www.reddit.com/r/linuxquestions.rss "~REDDIT: r/linuxquestions"
+https://www.reddit.com/r/ubuntu.rss "~REDDIT: r/ubuntu"
+https://www.reddit.com/r/vim.rss "~REDDIT: r/vim"
+https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn"
 
-# ==== News ====
-# BBC
-http://feeds.bbci.co.uk/news/rss.xml "News"
-#http://feeds.bbci.co.uk/news/uk/rss.xml "News"
-
-# xubuntu
-https://rss.app/feeds/HnlUGB2AUPzDOrjo.xml "News"
-
-# Twitter
-#https://rss.app/feeds/SpK1XRzlYFkymEye.xml "~Twitter"
-
-# ==== Work  ====
-# arXiv hep-ex
-https://arxiv.org/rss/hep-ex
-
-# ==== YouTube ====
-# Tech
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "~Tech With Tim (YouTube)"
-https://rss.app/feeds/Ba7587nLuBqkrae2.xml "~Engineer Man (YouTube)"
-https://rss.app/feeds/cuHbRjfvonA9mtkL.xml "~Distro Tube (YouTube)"
-
-# Skiing 
-https://rss.app/feeds/uJx3vSmQiwRKYIxn.xml "~Stomp It Tutorials (YouTube)"
-https://rss.app/feeds/QfpsAo90pbcT4XnC.xml "~Reilly McGlashan (YouTube)"
-https://rss.app/feeds/V7V2JtyDcaBI6GsD.xml "~Damn Skilled (YouTube)"
-https://rss.app/feeds/rvWbcINek0RwUrOK.xml "~Salomon TV (YouTube)"
-https://rss.app/feeds/RJQcbZVMlkWsWdRl.xml "~The Faction Collective (YouTube)"
-
-# Misc
-https://rss.app/feeds/byFJiIT61uz0uC7z.xml "~UK Dash Cameras (YouTube)"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCNUAf3Ogf9ds43LORjhoEsA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4JX40jDee_tINbkjycV4Sg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqhnX4jA0A5paNd1v-zEysw 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1lXzO1Ss_1w5hS3YwSxLyQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCk8l6-02Nui9gbdfc1aL6Uw 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzmlnH8vDQHoEb2TrC0WDCg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIRiWCPZoUyZDbydIqitHtQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZFVMrr1FakLs4KzxKlbFpA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwVbnUomvVRCcdhsKUBVfRA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCaFDs9AxgHSYG_WZKgbPmng 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQWLfD-5sexEbVY335J8PMg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCH7Ny59oLRGfw3imhL0d7A 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKw3UQ7AMPXkJ5nYxfg_Gyg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfZwNd8i7spJmLr4qq1_Gyw 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCb2PTdRGKwLjOJQtSW2YF_A 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1Ho5YvHCtyReazatbhBowA 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A 
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4nJnJ-HO5vVbGlJ14rf5yg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCTtEhdlWz5erVK734-Gn0VQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCvKlNnCgWUi1wwM5Fl9YXcQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrUL8K81R4VBzm-KOYwrcxQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcMg1LpFDWeZJf6pi5kEBMQ 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo1t7ajBc5r44Ejxnod-h7Q 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsFkInl7eWF0mkBbT2ATbNA 
