@@ -283,6 +283,9 @@ assign [class="Firefox"] $ws3
 assign [class="Xfce4-terminal" window_role="cmus"] $ws4
 assign [class="Xfce4-terminal" window_role="neomutt"] $ws5
 
+# open some programs in floating mode by default
+for_window [class="XClock"] floating enable
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && pkill -RTMIN+2 $STATUSBAR
