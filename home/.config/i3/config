@@ -39,14 +39,13 @@ bindsym $mod+Shift+q [class=".*"] kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack 10" -show combi
 
-# start cmus
-bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
-
 # neomutt
 bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
 # power options
 bindsym $mod+u exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
+# FIXME
+#bindsym XF86PowerOff exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
 
 # change focus (vim keys)
 bindsym $mod+j focus down
@@ -297,9 +296,15 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 $STATUSBAR
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+10 $STATUSBAR
 
 # cmus
+bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
 bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+greater exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+less exec $prev && pkill -RTMIN+1 $STATUSBAR
+
+#bindsym XF86AudioMedia exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
+bindsym XF86AudioPrev exec $prev && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # i3lock
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
