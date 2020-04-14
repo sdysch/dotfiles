@@ -45,6 +45,7 @@ libxpm-dev
 lynx
 mpv
 msmtp
+ncdu
 neofetch
 neomutt
 newsboat
