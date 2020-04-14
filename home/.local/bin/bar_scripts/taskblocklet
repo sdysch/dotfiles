@@ -1,7 +1,12 @@
 #!/bin/bash
-echo $(task status:pending count)
+TASKS=$(task status:pending count)
+ICON="📝"
+[ "$TASKS" -ge "1" ] && echo "$ICON $(task status:pending count)"
 
 case $BLOCK_BUTTON in
 	# left click = open taskwarrior
-	1) setsid "$TERMINAL" -e 'sh -c "task; sleep 10;"';;
+	#TODO - hacky way to prevent terminal exiting immediately?
+	1) setsid "$TERMINAL" -e 'sh -c "task && sleep 100"';;
+	# middle click = sync to git
+	2) setsid "$TERMINAL" -e 'sh -c "cd $TASKDATA && git push origin master"';;
 esac

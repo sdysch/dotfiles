@@ -42,7 +42,6 @@ interval=180
 signal=12
 
 [taskblocklet]
-label=📝
 interval=once
 signal=3
 color=#39DC9D
