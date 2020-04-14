@@ -5,8 +5,7 @@ ICON="📝"
 
 case $BLOCK_BUTTON in
 	# left click = open taskwarrior
-	#TODO - hacky way to prevent terminal exiting immediately?
-	1) setsid "$TERMINAL" -e 'sh -c "task && sleep 100"';;
+	1) setsid "$TERMINAL" -e task --hold;;
 	# middle click = sync to git
 	2) setsid "$TERMINAL" -e 'sh -c "cd $TASKDATA && git push origin master"';;
 esac
