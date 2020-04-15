@@ -63,6 +63,7 @@ stow
 taskwarrior
 texlive-full
 tmux
+translate-shell
 vifm
 vim
 vlc

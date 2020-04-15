@@ -34,6 +34,7 @@ uda.priority.default=
 
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
 
+#https://taskwarrior.org/docs/clog/color.html
 color.blocked=
 color.blocking=color8
 color.label=color3 on gray01
@@ -53,3 +54,4 @@ color.project.thesis=on bright red
 color.project.LepUniv=on bright blue
 color.project.computer=on green
 color.project.github_website=on cyan
+color.project.kaggle=on magenta
