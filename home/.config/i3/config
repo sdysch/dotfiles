@@ -8,11 +8,6 @@ set $term $TERMINAL
 set $laptop "eDP-1"
 set $screen "HDMI-1"
 
-# cmus controls
-set $pause --no-startup-id cmus-remote -u
-set $next --no-startup-id cmus-remote -n
-set $prev --no-startup-id cmus-remote -r
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango: DejaVu Sans Mono 10, FontAwesome 10
@@ -296,6 +291,10 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 $STATUSBAR
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 $STATUSBAR
 
 # cmus
+set $pause --no-startup-id cmus-remote -u
+set $next --no-startup-id cmus-remote -n
+set $prev --no-startup-id cmus-remote -r
+
 bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
 bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+greater exec $next && pkill -RTMIN+1 $STATUSBAR
