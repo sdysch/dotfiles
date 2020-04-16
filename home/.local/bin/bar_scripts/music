@@ -4,8 +4,6 @@ info=$(cmus-remote -Q 2> /dev/null)
 icon="🎶"
 
 if [ "$?" -ne 0 ]; then
-	echo ""
-	#echo "Not playing"
 	exit 0
 fi
 
@@ -22,5 +20,7 @@ case $BLOCK_BUTTON in
 	3) cmus-remote -n && pkill -RTMIN+1 "${STATUSBAR:?}";;
 esac
 
-cmd="$icon $artist - <i>$title</i>"
-echo $cmd
+if [ "$status" == "paused" ] || [ "$status" == "playing" ]; then
+	cmd="$icon $artist - <i>$title</i>"
+	echo $cmd
+fi
