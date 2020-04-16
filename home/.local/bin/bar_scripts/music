@@ -4,6 +4,7 @@ info=$(cmus-remote -Q 2> /dev/null)
 icon="🎶"
 
 if [ "$?" -ne 0 ]; then
+	echo ""
 	exit 0
 fi
 

@@ -5,6 +5,7 @@
 info=$(cmus-remote -Q 2> /dev/null)
 
 if [ "$?" -ne 0 ]; then
+	pkill -RTMIN+1 "${STATUSBAR:?}"
 	exit 0
 fi
 
