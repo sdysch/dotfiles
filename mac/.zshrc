@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 source $HOME/.zsh_aliases
-source $HOME/.zsh_aliases_mac
+source $HOME/.zsh_aliases_common
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
