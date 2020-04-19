@@ -1,8 +1,18 @@
 #!/bin/bash
 
-info=$(cmus-remote -Q 2> /dev/null)
-icon="🎶"
+# first, make any potential changes to cmus state (play, pause, skip, repeat)
+case $BLOCK_BUTTON in
+	# left click = toggle pause
+	1) cmus-remote -u && pkill -RTMIN+1 "${STATUSBAR:?}";;
+	# middle click = previous
+	2) cmus-remote -r && pkill -RTMIN+1 "${STATUSBAR:?}";;
+	# right click = next
+	3) cmus-remote -n && pkill -RTMIN+1 "${STATUSBAR:?}";;
+esac
 
+
+# get updated cmus info
+info=$(cmus-remote -Q 2> /dev/null)
 if [ "$?" -ne 0 ]; then
 	echo ""
 	exit 0
@@ -12,16 +22,13 @@ status=$(echo "$info" | grep "^status " | cut -d " " -f 2)
 artist=$(echo "$info" | grep "^tag artist " | tail -c +12)
 title=$(echo "$info" | grep "^tag title " | tail -c +11)
 
-case $BLOCK_BUTTON in
-	# left click = pause
-	1) cmus-remote -u && pkill -RTMIN+1 "${STATUSBAR:?}";;
-	# middle click = previous
-	2) cmus-remote -r && pkill -RTMIN+1 "${STATUSBAR:?}";;
-	# right click = next
-	3) cmus-remote -n && pkill -RTMIN+1 "${STATUSBAR:?}";;
-esac
-
 if [ "$status" == "paused" ] || [ "$status" == "playing" ]; then
+	if [ "$status" == "paused" ]; then
+		icon="⏸️"
+	elif [ "$status" == "playing" ]; then
+		icon="🎶"
+	fi
+
 	cmd="$icon $artist - <i>$title</i>"
 	echo $cmd
 fi
