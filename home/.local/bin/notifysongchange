@@ -1,30 +1,32 @@
 #!/bin/bash
-# hacky way to notify when cmus is playing a new song
-# TODO - find a way for cmus to send a signal when it changes song?
+## hacky way to notify when cmus is playing a new song
+## TODO - find a way for cmus to send a signal when it changes song?
 
-info=$(cmus-remote -Q 2> /dev/null)
+#info=$(cmus-remote -Q 2> /dev/null)
 
-if [ "$?" -ne 0 ]; then
-	pkill -RTMIN+1 "${STATUSBAR:?}"
-	exit 0
-fi
+#if [ "$?" -ne 0 ]; then
+	#pkill -RTMIN+1 "${STATUSBAR:?}"
+	#exit 0
+#fi
 
-status=$(echo "$info" | grep "^status " | cut -d " " -f 2)
-artist=$(echo "$info" | grep "^tag artist " | tail -c +12)
-title=$(echo "$info" | grep "^tag title " | tail -c +11)
+#status=$(echo "$info" | grep "^status " | cut -d " " -f 2)
+#artist=$(echo "$info" | grep "^tag artist " | tail -c +12)
+#title=$(echo "$info" | grep "^tag title " | tail -c +11)
 
-if [ "$status" == "paused" ] || [ "$status" == "stopped" ]; then
-	exit 0
-fi
+#if [ "$status" == "paused" ] || [ "$status" == "stopped" ]; then
+	#exit 0
+#fi
 
-# check the tempFile for the song name and print a notification if the song name is different
-tempFileStore="/tmp/cmusTempPlaying"
-currentSongPlaying="${artist} - ${title}"
-#echo "Currently playing $currentSongPlaying"
-lastSongPlaying=$(cat $tempFileStore 2>&1 /dev/null)
-#echo "Last song playing $lastSongPlaying"
-echo $currentSongPlaying > $tempFileStore
-if [ "$lastSongPlaying" != "$currentSongPlaying" ]; then
-	pkill -RTMIN+1 "${STATUSBAR:?}"
-	#notify-send -i $ICONSDIR/music.jpg -u normal "Now playing" "$currentSongPlaying" -t 3
-fi
+## check the tempFile for the song name and print a notification if the song name is different
+#tempFileStore="/tmp/cmusTempPlaying"
+#currentSongPlaying="${artist} - ${title}"
+##echo "Currently playing $currentSongPlaying"
+#lastSongPlaying=$(cat $tempFileStore 2>&1 /dev/null)
+##echo "Last song playing $lastSongPlaying"
+#echo $currentSongPlaying > $tempFileStore
+#if [ "$lastSongPlaying" != "$currentSongPlaying" ]; then
+	#pkill -RTMIN+1 "${STATUSBAR:?}"
+	##notify-send -i $ICONSDIR/music.jpg -u normal "Now playing" "$currentSongPlaying" -t 3
+#fi
+
+pkill -RTMIN+1 "${STATUSBAR:?}"
