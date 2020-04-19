@@ -35,6 +35,7 @@ export LOCATION="Manchester"
 # === config file locations ===
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
 
 # ==== environment variables ====
 
@@ -45,6 +46,7 @@ export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export _Z_DATA=$XDG_DATA_HOME/z
 export PASSWORD_STORE_DIR=$HOME/.password-store
+export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
 
 # ==== programs ====
 
@@ -63,6 +65,10 @@ export PROMPT_EOL_MARK=""
 # taskwarrior
 export TASKDATA=$XDG_CONFIG_HOME/task
 export TASKRC=$XDG_CONFIG_HOME/taskwarrior/.taskrc
+
+# less
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
 # ==== personal ====
 
