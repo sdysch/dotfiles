@@ -5,4 +5,4 @@ colorscheme tomorrow
 bind -f library < player-prev 
 bind -f library > player-next
 
-set status_display_program=~/.config/cmus/status_display_program.sh
+#set status_display_program=~/.config/cmus/status_display_program.sh
