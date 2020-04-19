@@ -1,4 +1,4 @@
 #!/bin/bash
-notify-send -i $ICONSDIR/shutdown.png -u critical "Shutdown" "Shutting down" -t 3
+notify-send -i $ICONSDIR/shutdown.png -u critical "Shutdown" "Shutting down"
 sleep 3
 shutdown -h now
