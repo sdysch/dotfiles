@@ -276,6 +276,7 @@ assign [class="Google-chrome"] $ws1
 assign [class="Skype"] $ws2
 assign [class="Firefox"] $ws3
 assign [class="Xfce4-terminal" window_role="cmus"] $ws4
+assign [class="Xfce4-terminal" window_role="vis"] $ws4
 assign [class="Xfce4-terminal" window_role="neomutt"] $ws5
 
 # open some programs in floating mode by default
@@ -295,7 +296,7 @@ set $pause --no-startup-id cmus-remote -u
 set $next --no-startup-id cmus-remote -n
 set $prev --no-startup-id cmus-remote -r
 
-bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
+bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && $term --role=vis --command=vis && pkill -RTMIN+1 $STATUSBAR"
 bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+greater exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+less exec $prev && pkill -RTMIN+1 $STATUSBAR

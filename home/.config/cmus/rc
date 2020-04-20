@@ -1,5 +1,6 @@
 # themes
-colorscheme tomorrow
+colorscheme monokai
+#colorscheme tomorrow
 
 # change to next/previous tracks
 bind -f library < player-prev 
