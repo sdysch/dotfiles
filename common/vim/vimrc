@@ -20,6 +20,7 @@ Plugin 'lervag/vimtex'
 Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'sdysch/vim-todolist-syntax'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +46,9 @@ let g:NERDTreeDirArrows=0
 " remove section C
 let g:airline_section_c = '%t'
 let g:airline_extensions = []
+
+" Goyo
+let g:goyo_width = 200
 
 " wildignores
 set wildignore=*.o,*.pyc
