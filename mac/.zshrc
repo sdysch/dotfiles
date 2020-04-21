@@ -42,3 +42,6 @@ source $HOME/.zsh_aliases_common
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# change colour of wildcard
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold

@@ -33,3 +33,6 @@ source $ZDOTDIR/.zsh_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+
+# change colour of wildcard
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
