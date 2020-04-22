@@ -148,6 +148,10 @@ set modelines=5
 " mac specific (?) to run bashrc when vim is shut
 "set shell=bash\ --login
 
+" open terminals
+:command Term  terminal
+:command Vterm vertical terminal
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " open at previous line
