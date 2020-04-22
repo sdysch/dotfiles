@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# "get a menu of Danish characters to copy" script
+
+# Must have xclip installed to even show menu.
+xclip -h 2>/dev/null || exit 1
+
+chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/danish_characters | rofi -dmenu -theme arthur -p "Choose a character")
+
+[ "$chosen" != "" ] || exit
+
+# If you run this command with an argument, it will automatically insert the character.
+echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+notify-send "'$chosen' copied to clipboard." &

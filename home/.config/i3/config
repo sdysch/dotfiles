@@ -33,6 +33,9 @@ bindsym $mod+Shift+q [class=".*"] kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack 10" -show combi
 
+# choose Danish characters
+bindsym $mod+i exec --no-startup-id ~/.local/bin/choose_danish_characters
+
 # neomutt
 bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
