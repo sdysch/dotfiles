@@ -285,6 +285,7 @@ assign [class="Xfce4-terminal" window_role="neomutt"] $ws5
 for_window [class="XClock"] floating enable
 for_window [class="Xfce4-terminal" window_role="vis"] floating enable
 for_window [class="Xfce4-terminal" window_role="vis"] resize set 1000 600
+for_window [class="Xfce4-terminal" window_role="translation"] floating enable
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
