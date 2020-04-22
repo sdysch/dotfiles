@@ -311,7 +311,8 @@ bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # i3lock
-set $lock i3lock-fancy
+set $lock ~/.local/bin/lock
+#set $lock i3lock-fancy
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
 # automatically lock screen on inactivity
 exec ~/.local/bin/check_inactivity
