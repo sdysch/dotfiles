@@ -20,7 +20,7 @@ open() {
 
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
-source $rootSource
+[ -f $rootsource ] && source $rootSource
 
 # thesis
 # navigate to thesis dir
