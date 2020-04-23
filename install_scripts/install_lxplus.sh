@@ -7,7 +7,7 @@ mkdir -p ~/.vim
 mkdir -p ~/.config/tmux
 mkdir -p ~/.ssh
 
-ln -fsn ${INSTALLDIR}/common/bash/bash_aliases_lxplus ~/.bash_aliases_lxplus
+ln -fsn ${INSTALLDIR}/common/bash/bash_aliases_lxplus ~/.bash_aliases
 ln -fsn ${INSTALLDIR}/common/bash/bash_profile ~/.bash_profile
 ln -fsn ${INSTALLDIR}/common/git/gitconfig_lxplus ~/.gitconfig
 ln -fsn ${INSTALLDIR}/common/git/gitignore_global ~/.gitignore_global
