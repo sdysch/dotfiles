@@ -6,6 +6,9 @@ if [ -f /etc/bashrc ]; then
 # ls
 alias ls="ls --color=auto"
 
+# vim
+export VIMINIT=":source ~/.config/vim/vimrc"
+
 # cd aliases
 alias cdwork="cd /afs/cern.ch/work/s/sdysch"
 #alias cdTP="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/theo_code/Analysis"
