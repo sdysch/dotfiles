@@ -47,6 +47,7 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export _Z_DATA=$XDG_DATA_HOME/z
 export PASSWORD_STORE_DIR=$HOME/.password-store
 export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 # ==== programs ====
 

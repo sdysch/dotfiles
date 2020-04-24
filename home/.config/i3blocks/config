@@ -28,6 +28,14 @@ full_text=
 command=skypeforlinux
 color=#4C8BF5
 
+[translation_DK_ENG]
+full_text=🇬🇧🇩🇰
+command=$TERMINAL -e english_to_danish --hold --role=translation
+
+[translation_ENG_DK]
+full_text=🇩🇰🇬🇧
+command=$TERMINAL -e danish_to_english --hold --role=translation
+
 [time]
 label=🕑 
 command=date +%T

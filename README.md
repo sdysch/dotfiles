@@ -24,7 +24,6 @@
 ```
 cd ~/dotfiles_harmonised
 source install_scripts/install_packages.sh
-cd home
 stow home
 ```
 

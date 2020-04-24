@@ -1,0 +1,10 @@
+#!/bin/bash
+# uses google translate API
+function translate() {
+	result=$(trans -source "Dansk" $1)
+	echo $result
+}
+
+echo "Translating DK to ENG:"
+read input
+translate $input

@@ -33,6 +33,9 @@ bindsym $mod+Shift+q [class=".*"] kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec rofi -combi-modi window#drun -theme arthur -font "hack 10" -show combi
 
+# choose Danish characters
+bindsym $mod+i exec --no-startup-id ~/.local/bin/choose_danish_characters
+
 # neomutt
 bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
@@ -285,6 +288,8 @@ assign [class="Xfce4-terminal" window_role="neomutt"] $ws5
 for_window [class="XClock"] floating enable
 for_window [class="Xfce4-terminal" window_role="vis"] floating enable
 for_window [class="Xfce4-terminal" window_role="vis"] resize set 1000 600
+for_window [class="Xfce4-terminal" window_role="translation"] floating enable
+for_window [class="ROOT"] floating enable
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
@@ -311,7 +316,8 @@ bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # i3lock
-set $lock i3lock-fancy
+set $lock ~/.local/bin/lock
+#set $lock i3lock-fancy
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
 # automatically lock screen on inactivity
 exec ~/.local/bin/check_inactivity
