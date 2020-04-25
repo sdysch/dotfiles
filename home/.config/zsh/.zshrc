@@ -22,7 +22,7 @@ plugins=(
 )
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # common aliases

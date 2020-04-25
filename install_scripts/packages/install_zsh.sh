@@ -18,6 +18,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 	echo "oh-my-zsh already installed"
 else
 	echo "Installing oh-my-zsh"
+	ZSH="${XDG_DATA_HOME/:-~/.local/share/}/oh-my-zsh"
 	export RUNZSH="no"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
