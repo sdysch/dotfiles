@@ -45,3 +45,19 @@ source $HOME/.zsh_aliases_common
 
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+
+# run as non-login shell, these are copy pasted from home/.profile (repo)
+# === config file locations ===
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+
+# === config file locations ===
+
+# zsh
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export _Z_DATA=$XDG_DATA_HOME/z
+
+# vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
