@@ -4,4 +4,4 @@
 
 [ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && exit
 [ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 35 ] &&
-notify-send -i $ICONSDIR/batteryLow.png -u critical "WARNING" "Battery less than 35%!"
+notify-send -i $ICONSDIR/batteryLow.png -u critical -t 3000 "WARNING" "Battery less than 35%!"
