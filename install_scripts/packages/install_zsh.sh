@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# make directories needed for cache files
+mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/zsh
+mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+
+
 if [[ "$SHELL" =~ .*zsh$ ]]; then
 	echo "ZSH is the current shell"
 else
