@@ -54,7 +54,7 @@ export _Z_DATA=$XDG_DATA_HOME/z
 
 # gnupg & pass
 export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
-export PASSWORD_STORE_DIR=$HOME/.password-store
+export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 
 # notmuch
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
