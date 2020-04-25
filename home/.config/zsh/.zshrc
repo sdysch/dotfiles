@@ -33,3 +33,5 @@ source $ZDOTDIR/.zsh_aliases
 
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

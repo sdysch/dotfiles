@@ -187,11 +187,11 @@ client.placeholder		$foreground	$background	$foreground	$color8		$color8
 
 # status bar
 bar {
-	font pango:mono 8.5, FontAwesome 8.5
+	font pango:mono 10, FontAwesome 8.6
 	#font pango:hermit 9, FontAwesome 9
 	status_command $STATUSBAR
     position top
-	height 26
+	height 20
 	separator_symbol " ⁞ "
 	# Remove numbers
 	#strip_workspace_numbers yes

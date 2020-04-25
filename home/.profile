@@ -29,28 +29,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# my location
-export LOCATION="Manchester"
-
-# === config file locations ===
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
-
-# ==== environment variables ====
-
-# ==== dotfiles ====
-export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
-export HISTFILE=$XDG_CONFIG_HOME/zsh/history
-export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-export _Z_DATA=$XDG_DATA_HOME/z
-export PASSWORD_STORE_DIR=$HOME/.password-store
-export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
-
-# ==== programs ====
-
 # default programs
 export EDITOR="vim"
 export IMAGEVIEWER="ristretto"
@@ -59,8 +37,37 @@ export STATUSBAR="i3blocks"
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
 
+# === config file locations ===
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+
+# === config file locations ===
+
+# my location
+export LOCATION="Manchester"
+
+# zsh
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export _Z_DATA=$XDG_DATA_HOME/z
+
+# gnupg & pass
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
+export PASSWORD_STORE_DIR=$HOME/.password-store
+
+# notmuch
+export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
+
+# ICE authority
+export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
+
+# vim
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+
 # calcurse
 export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse
+
 export PROMPT_EOL_MARK=""
 
 # taskwarrior
@@ -70,8 +77,6 @@ export TASKRC=$XDG_CONFIG_HOME/taskwarrior/.taskrc
 # less
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
-
-# ==== personal ====
 
 # directory where wallpapers/icons are stored
 export ICONSDIR="$HOME/dotfiles_harmonised/icons"
@@ -83,7 +88,5 @@ export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
 # to do list
 export TODOLISTDIR="$XDG_CONFIG_HOME/todolist"
 export PATH=$PATH:"${TODOLISTDIR}/scripts"
-
-# to do list backup (repo is private from git)
 export TODOBACKUP="$HOME/Documents/todolist-backup"
 export PATH=$PATH:"${TODOBACKUP}/scripts"
