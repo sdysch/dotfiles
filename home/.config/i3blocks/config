@@ -47,6 +47,7 @@ interval=3600
 [mailbox]
 interval=180
 signal=12
+color=#39DC9D
 
 [taskblocklet]
 interval=once
@@ -66,17 +67,13 @@ color=#0080ff
 [battery]
 interval=10
 
-[wireless]
-command=iwgetid -r || echo "Not connected"
-label=📡
+[internet]
 interval=30
-color=#8000ff
 
 # Guess the weather hourly
 [weatherreport]
 interval=18000
 signal=5
-color=#A4C2F4
 
 [keyindicator]
 label=
