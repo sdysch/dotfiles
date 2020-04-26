@@ -70,9 +70,9 @@ interval=10
 [internet]
 interval=30
 
-[nordvpnstatus]
-label=VPN:
-interval=30
+#[nordvpnstatus]
+#label=VPN:
+#interval=30
 
 # Guess the weather hourly
 [weatherreport]
