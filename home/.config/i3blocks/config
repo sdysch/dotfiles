@@ -38,7 +38,7 @@ command=$TERMINAL -e danish_to_english --hold --role=translation
 
 [clock]
 #label=🕑 
-interval=1
+interval=30
 
 [showcalendar]
 label=📅
@@ -68,6 +68,10 @@ color=#0080ff
 interval=10
 
 [internet]
+interval=30
+
+[nordvpnstatus]
+label=VPN:
 interval=30
 
 # Guess the weather hourly
