@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Installing Vundle...."
-mkdir -p ~/.config/vim/bundle/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/vim/bundle/Vundle.vim
+INSTALLDIR=${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle
+mkdir -p $INSTALLDIR
+git clone https://github.com/VundleVim/Vundle.vim.git $INSTALLDIR/Vundle.vim
 vim +PluginInstall +qall
 echo "Done"

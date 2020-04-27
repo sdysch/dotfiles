@@ -3,8 +3,8 @@ filetype off                  " required
 
 set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/vim/bundle/Vundle.vim
-call vundle#begin("~/.config/vim/bundle")
+set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
+call vundle#begin("$XDG_DATA_HOME/vim/bundle")
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
