@@ -2,6 +2,11 @@
 x-scheme-handler/mailto=userapp-Thunderbird-K498H0.desktop
 message/rfc822=userapp-Thunderbird-K498H0.desktop
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-K498H0.desktop;
