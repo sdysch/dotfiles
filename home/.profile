@@ -30,7 +30,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # default programs
-export EDITOR="vim"
+export EDITOR="nvim"
+#export EDITOR="vim"
 export IMAGEVIEWER="ristretto"
 export READER="zathura"
 export STATUSBAR="i3blocks"
