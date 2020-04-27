@@ -42,3 +42,4 @@ alias pgp="pass git push origin master"
 #alias translate_into_danish='trans -target "Dansk"'
 
 alias vim="nvim"
+alias vimdiff="nvim -d"
