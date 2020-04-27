@@ -16,7 +16,6 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 0 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc; $HOME/.local/bin/updatenews
 */3 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc; /usr/local/bin/mailsync
 
-# remove last 10000 lines from xsession-errors if
-# the size becomes > 5GB
+# remove last 10000 lines from xsession-errors if the size becomes > 5GB
 # REF: https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
-*/15 * * * * [ $(du -k $HOME/.xsession-errors | awk '{ print $1 }') -gt 5000000 ] && tail -10000 /home/$(whoami)/.xsession-errors > /home/$(whoami)/.xsession-errors
+*/5 * * * * [ $(du -k $HOME/.xsession-errors | awk '{ print $1 }') -gt 5000000 ] && tail -10000 /home/$(whoami)/.xsession-errors > /home/$(whoami)/.xsession-errors
