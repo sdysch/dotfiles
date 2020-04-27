@@ -164,3 +164,6 @@ endif
 " automatically backup todo list (see https://github.com/sdysch/todolist)
 autocmd VimLeave ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
 "autocmd BufWritePost ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
+
+" text wrapping for LaTeX files
+autocmd FileType tex set tw=100
