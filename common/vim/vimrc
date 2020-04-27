@@ -76,6 +76,12 @@ nmap <leader>r :!make<cr>
 " turn off search highlighting
 nmap <leader>n :noh<cr>
 
+" easier yanking/pasting to/from system clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>Y "*y
+noremap <Leader>P "*p
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " colour scheme and syntax
