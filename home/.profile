@@ -95,3 +95,4 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 # ssh
 export USERCERN="sdysch"
 export USERMANC="samdysch"
+export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
