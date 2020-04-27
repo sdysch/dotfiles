@@ -270,11 +270,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# startup programs
-exec --no-startup-id nitrogen --restore
-exec pulseaudio --start
-exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
-
 # open applications on specific screens/workspaces
 # https://i3wm.org/docs/userguide.html#assign_workspace
 assign [class="Google-chrome"] $ws1
@@ -324,3 +319,9 @@ exec ~/.local/bin/check_inactivity
 
 # open backgammon
 bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
+
+# === startup programs ===
+exec --no-startup-id nitrogen --restore
+exec pulseaudio --start
+exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
+exec skypeforlinux
