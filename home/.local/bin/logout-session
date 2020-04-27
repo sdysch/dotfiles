@@ -1,6 +1,7 @@
 #!/bin/bash
 # check which session we are in to call the correct logout command
-session=$(cat ~/.dmrc | grep Session | awk -F "=" '{print $2}')
+session=$DESKTOP_SESSION
+#session=$(cat ~/.dmrc | grep Session | awk -F "=" '{print $2}')
 case $session in
 	i3) i3-msg exit ;;
 	xubuntu) xfce4-session-logout --logout ;;
