@@ -48,6 +48,7 @@ msmtp
 ncdu
 neofetch
 neomutt
+neovim
 newsboat
 nitrogen
 notify-osd

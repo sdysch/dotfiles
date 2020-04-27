@@ -40,3 +40,5 @@ alias pgp="pass git push origin master"
 # google translate API
 #alias translate_from_danish='trans -source "Dansk"'
 #alias translate_into_danish='trans -target "Dansk"'
+
+alias vim="nvim"
