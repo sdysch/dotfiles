@@ -1,47 +1,51 @@
+AddKeysToAgent yes
+
+# === CERN ===
 Host lxplus
-	User sdysch
+	User ${USERCERN:-sdysch}
 	HostName lxplus.cern.ch
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
+# === Manchester ===
 Host tony
-	User sdysch
+	User ${USERMANC:-samdysch}
 	HostName tony.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
 Host higgs
-	User samdysch
+	User ${USERMANC:-samdysch}
 	HostName higgs.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
 Host pc2012
-	User samdysch
+	User ${USERMANC:-samdysch}
 	HostName pc2012.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
 Host pc2013
-	User samdysch
+	User ${USERMANC:-samdysch}
 	HostName pc2013.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
 Host pc2014
-	User samdysch
+	User ${USERMANC:-samdysch}
 	HostName pc2014.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
 
 Host hepgpu1
-	User samdysch
+	User ${USERMANC:-samdysch}
 	HostName hepgpu1.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes
