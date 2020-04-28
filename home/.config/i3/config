@@ -321,8 +321,10 @@ exec ~/.local/bin/check_inactivity
 bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 
 # === startup programs ===
+exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
+exec --no-startup-id gnome-keyring-daemon --start
 exec --no-startup-id nitrogen --restore
 exec pulseaudio --start
-exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
 exec skypeforlinux
-exec --no-startup-id gnome-keyring-daemon --start
+#https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
+exec --no-startup-id "killall xiccd"

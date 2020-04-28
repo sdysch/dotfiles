@@ -65,6 +65,7 @@ taskwarrior
 texlive-full
 tmux
 translate-shell
+unclutter
 vifm
 vim
 vlc
