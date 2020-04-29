@@ -4,6 +4,8 @@
 pgrep -x backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
 
 notify-send --app-name="rclone backup" "Running rclone backup" -t 3000
+echo "rclone 📁" > /tmp/rclone_icon
+pkill -RTMIN+14 $STATUSBAR
 
 # run the backup. Can add more locations here if needed?
 LOCATION="remote:Backups"
@@ -12,3 +14,6 @@ backups=($HOME/Documents $HOME/.ssh $HOME/.config/gnupg $HOME/.local/share/passw
 for backup in ${backups[@]}; do
 	$CMD $backup $LOCATION
 done
+
+rm -f /tmp/rclone_icon
+pkill -RTMIN+14 $STATUSBAR
