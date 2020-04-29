@@ -12,7 +12,7 @@ echo "[INFO] Backup exlude file: $EXCLUDEFILE"
 sleep 2
 
 # print list of things to be backed up
-backups=($HOME/Documents $HOME/.ssh $HOME/gnupg $HOME/.local/share/password-store)
+backups=($HOME/Documents $HOME/.ssh $HOME/.config/gnupg $HOME/.local/share/password-store)
 for backup in ${backups[@]}; do
 	echo "Backing up $backup to $BACKUPLOC"
 done
