@@ -327,4 +327,4 @@ exec --no-startup-id nitrogen --restore
 exec pulseaudio --start
 exec skypeforlinux
 #https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
-exec --no-startup-id "killall xiccd"
+#exec --no-startup-id "killall xiccd"

@@ -15,7 +15,8 @@ alias tp="$HOME/dotfiles_harmonised/home/.config/taskwarrior/task --task-git-pus
 
 # opening files
 open() {
-	xdg-open $@ 2>/dev/null
+	xdg-open $@ 2>/dev/null & 
+	disown
 }
 
 # root version
