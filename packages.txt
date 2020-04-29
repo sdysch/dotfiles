@@ -58,6 +58,7 @@ python-dev
 python3-pandas
 python3-pip
 ranger
+rclone
 rofi
 scrot
 stow
