@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# check if already running
+pgrep -x backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
+
+notify-send --app-name="rclone backup" "Running rclone backup" -t 3000
+
+# run the backup. Can add more locations here if needed?
+LOCATION="remote:Backups"
+CMD="rclone copy --exclude-from $HOME/.local/share/rclone_exclude.txt"
+backups=($HOME/Documents $HOME/.ssh $HOME/.config/gnupg $HOME/.local/share/password-store)
+for backup in ${backups[@]}; do
+	$CMD $backup $LOCATION
+done
