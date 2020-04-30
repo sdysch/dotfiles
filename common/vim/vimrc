@@ -49,6 +49,7 @@ let g:airline_extensions = []
 
 " Goyo
 let g:goyo_width = 250
+"let g:goyo_linenr = 1
 
 " wildignores
 set wildignore=*.o,*.pyc
