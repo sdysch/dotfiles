@@ -18,7 +18,7 @@ alias rt="root -l"
 alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
 
 # get weather
-alias weather="curl http://wttr.in//~$LOCATION"
+alias weather="curl -L http://wttr.in//~${LOCATION:-Manchester}"
 
 # tmux
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
