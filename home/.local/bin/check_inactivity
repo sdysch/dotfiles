@@ -2,5 +2,5 @@
 
 # automatically locks screen (i3lock) if inactive for more than 5 minutes
 time="5"
-xautolock -detectsleep -time $time -locker "$HOME/.local/bin/lock" -corners ---- -notify 30 -notifier "notify-send -u normal -- 'Screen will lock in 30 seconds.'"
+xautolock -detectsleep -time $time -locker "$HOME/.local/bin/lock" -corners ---- -notify 30 -notifier "notify-send -u normal -t 3000 -- 'Screen will lock in 30 seconds.'"
 #xautolock -detectsleep -time $time -locker "i3lock-fancy" -corners ---- -notify 30 -notifier "notify-send -u normal -- 'Screen will lock in 30 seconds.'"

@@ -22,7 +22,7 @@ plugins=(
 )
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # common aliases
@@ -33,3 +33,5 @@ source $ZDOTDIR/.zsh_aliases
 
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

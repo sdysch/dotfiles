@@ -48,6 +48,7 @@ msmtp
 ncdu
 neofetch
 neomutt
+neovim
 newsboat
 nitrogen
 notify-osd
@@ -57,6 +58,7 @@ python-dev
 python3-pandas
 python3-pip
 ranger
+rclone
 rofi
 scrot
 stow
@@ -64,6 +66,7 @@ taskwarrior
 texlive-full
 tmux
 translate-shell
+unclutter
 vifm
 vim
 vlc

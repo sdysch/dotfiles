@@ -1,9 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
+call vundle#begin("$XDG_DATA_HOME/vim/bundle")
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -48,6 +49,7 @@ let g:airline_extensions = []
 
 " Goyo
 let g:goyo_width = 250
+"let g:goyo_linenr = 1
 
 " wildignores
 set wildignore=*.o,*.pyc
@@ -74,6 +76,12 @@ nmap <leader>r :!make<cr>
 
 " turn off search highlighting
 nmap <leader>n :noh<cr>
+
+" easier yanking/pasting to/from system clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>Y "*y
+noremap <Leader>P "*p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -163,3 +171,6 @@ endif
 " automatically backup todo list (see https://github.com/sdysch/todolist)
 autocmd VimLeave ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
 "autocmd BufWritePost ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
+
+" text wrapping for LaTeX files
+autocmd FileType tex set tw=100

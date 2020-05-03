@@ -1,0 +1,26 @@
+#!/bin/bash
+#if [ $# -eq 0 ]; then
+	#echo "ERROR: Must supply a directory to backup to!"
+	#exit 1
+#fi
+BACKUPLOC="/media/sdysch/Seagate\ Slim\ Drive/Linux"
+EXCLUDEFILE="$HOME/.local/share/backup_exclude_file.txt"
+
+[ -d "$BACKUPLOC" ] || (echo "Backup location does not exist. Did you mount the USB drive?" && exit 1)
+
+# check exclude file exists
+echo "[INFO] Backup exlude file: $EXCLUDEFILE"
+[ -f "$EXCLUDEFILE" ] || (echo "Exclude file does not exist! Cannot run" && exit 1)
+sleep 2
+
+# print list of things to be backed up
+backups=($HOME/Documents $HOME/.ssh $HOME/.config/gnupg $HOME/.local/share/password-store)
+for backup in ${backups[@]}; do
+	echo "Backing up $backup to $BACKUPLOC"
+done
+
+# actually do the backup
+RSYNC="rsync -av --delete --exclude-from $EXCLUDEFILE "
+for backup in ${backups[@]}; do
+	eval $RSYNC $backup $BACKUPLOC
+done

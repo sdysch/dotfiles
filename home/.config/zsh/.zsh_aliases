@@ -15,7 +15,8 @@ alias tp="$HOME/dotfiles_harmonised/home/.config/taskwarrior/task --task-git-pus
 
 # opening files
 open() {
-	xdg-open $@ 2>/dev/null
+	xdg-open $@ 2>/dev/null & 
+	disown
 }
 
 # root version
@@ -40,3 +41,9 @@ alias pgp="pass git push origin master"
 # google translate API
 #alias translate_from_danish='trans -source "Dansk"'
 #alias translate_into_danish='trans -target "Dansk"'
+
+# alias vim to nvim
+if type nvim > /dev/null 2>&1; then
+	alias vim="nvim"
+	alias vimdiff="nvim -d"
+fi

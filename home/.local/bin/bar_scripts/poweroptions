@@ -1,7 +1,7 @@
 #!/bin/bash
 # scripts
 PROMPT="$HOME/.local/bin/prompt"
-LOGOUTSCRIPT="$HOME/.local/bin/logout"
+LOGOUTSCRIPT="$HOME/.local/bin/logout-session"
 SHUTDOWNSCRIPT="$HOME/.local/bin/shutdown_script"
 REBOOTSCRIPT="$HOME/.local/bin/reboot"
 

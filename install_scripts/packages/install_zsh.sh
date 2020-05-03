@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# make directories needed for cache files
+mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/zsh
+mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+
+
 if [[ "$SHELL" =~ .*zsh$ ]]; then
 	echo "ZSH is the current shell"
 else
@@ -9,10 +14,12 @@ else
 	exit 1
 fi
 
-if [ -d "$HOME/.oh-my-zsh" ]; then
+ZSH="${XDG_DATA_HOME/:-~/.local/share/}/oh-my-zsh"
+if [ -d $ZSH ]; then
 	echo "oh-my-zsh already installed"
 else
 	echo "Installing oh-my-zsh"
+	export RUNZSH="no"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 echo "Done"

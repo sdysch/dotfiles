@@ -1,3 +1,6 @@
+AddKeysToAgent yes
+
+# === CERN ===
 Host lxplus
 	User sdysch
 	HostName lxplus.cern.ch
@@ -5,8 +8,9 @@ Host lxplus
 	ForwardAgent yes
 	ForwardX11 yes
 
+# === Manchester ===
 Host tony
-	User sdysch
+	User samdysch
 	HostName tony.hep.manchester.ac.uk
 	ServerAliveInterval 120
 	ForwardAgent yes

@@ -36,10 +36,9 @@ command=$TERMINAL -e english_to_danish --hold --role=translation
 full_text=🇩🇰🇬🇧
 command=$TERMINAL -e danish_to_english --hold --role=translation
 
-[time]
-label=🕑 
-command=date +%T
-interval=1
+[clock]
+#label=🕑 
+interval=30
 
 [showcalendar]
 label=📅
@@ -48,6 +47,12 @@ interval=3600
 [mailbox]
 interval=180
 signal=12
+color=#39DC9D
+
+[backups]
+interval=180
+signal=14
+color=#39DC9D
 
 [taskblocklet]
 interval=once
@@ -67,17 +72,17 @@ color=#0080ff
 [battery]
 interval=10
 
-[wireless]
-command=iwgetid -r || echo "Not connected"
-label=📡
+[internet]
 interval=30
-color=#8000ff
+
+#[nordvpnstatus]
+#label=VPN:
+#interval=30
 
 # Guess the weather hourly
 [weatherreport]
 interval=18000
 signal=5
-color=#A4C2F4
 
 [keyindicator]
 label=

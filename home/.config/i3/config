@@ -187,11 +187,11 @@ client.placeholder		$foreground	$background	$foreground	$color8		$color8
 
 # status bar
 bar {
-	font pango:mono 9, FontAwesome 9
+	font pango:mono 10, FontAwesome 8.6
 	#font pango:hermit 9, FontAwesome 9
 	status_command $STATUSBAR
     position top
-	height 26
+	height 20
 	separator_symbol " ⁞ "
 	# Remove numbers
 	#strip_workspace_numbers yes
@@ -270,11 +270,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# startup programs
-exec --no-startup-id nitrogen --restore
-exec pulseaudio --start
-exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
-
 # open applications on specific screens/workspaces
 # https://i3wm.org/docs/userguide.html#assign_workspace
 assign [class="Google-chrome"] $ws1
@@ -324,3 +319,12 @@ exec ~/.local/bin/check_inactivity
 
 # open backgammon
 bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
+
+# === startup programs ===
+exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
+exec --no-startup-id gnome-keyring-daemon --start
+exec --no-startup-id nitrogen --restore
+exec pulseaudio --start
+exec skypeforlinux
+#https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
+#exec --no-startup-id "killall xiccd"

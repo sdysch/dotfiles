@@ -1,0 +1,6 @@
+*.git
+todolist-backup/
+rootInstall/
+taskwarrior/
+repos/
+backups/
