@@ -84,3 +84,9 @@ function cdEOS {
 	cd /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1
 	echo "In directory: /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1"
 }
+
+# zsh git plugin like aliases
+alias gst="git status"
+alias gc="git commit"
+alias gp="git push"
+alias gaa="git add -A"
