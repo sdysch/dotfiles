@@ -6,6 +6,8 @@ if [ -f /etc/bashrc ]; then
 # ls
 alias ls="ls --color=auto"
 
+export XDG_DATA_HOME=$HOME/.local/share
+
 # vim
 export VIMINIT=":source ~/.config/vim/vimrc"
 
