@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdcommenter'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -20,7 +21,6 @@ Plugin 'lervag/vimtex'
 Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'sdysch/vim-todolist-syntax'
-Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,9 +43,10 @@ filetype plugin on    " required
 let g:NERDTreeDirArrows=0
 
 " Airline
-" remove section C
-let g:airline_section_c = '%t'
+let g:airline_theme="behelit"
 let g:airline_extensions = []
+let g:airline_section_x = '%{strftime("%H:%M %a %d/%m/%y")}'
+let g:airline_section_y = ''
 
 " Goyo
 let g:goyo_width = 250
