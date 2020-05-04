@@ -310,6 +310,12 @@ bindsym XF86AudioPrev exec $prev && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
+# screenshots
+# Multi-screen screenshots with scrot
+bindsym --release Print exec scrot 
+# area selection screenshots
+bindsym --release Shift+Print exec scrot -s 
+
 # i3lock
 set $lock ~/.local/bin/lock
 #set $lock i3lock-fancy
