@@ -331,6 +331,7 @@ bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
 exec --no-startup-id gnome-keyring-daemon --start
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id nm-applet
 exec pulseaudio --start
 exec skypeforlinux
 #https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
