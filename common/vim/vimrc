@@ -1,6 +1,14 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Check if vundle is installed
+if ! filereadable(system('echo -n "${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle/Vundle.vim/autoload/vundle.vim"'))
+	echo "Downloading Vundle"
+	silent !mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle
+	silent !git clone https://github.com/VundleVim/Vundle.vim.git ${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle/Vundle.vim
+	autocmd VimEnter * PluginInstall
+endif
+
 set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 " set the runtime path to include Vundle and initialize
 set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
@@ -21,6 +29,7 @@ Plugin 'lervag/vimtex'
 Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'sdysch/vim-todolist-syntax'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,6 +60,10 @@ let g:airline_section_y = ''
 " Goyo
 let g:goyo_width = 250
 "let g:goyo_linenr = 1
+
+" Enable Goyo (distraction free mode) for composing emails with mutt
+autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 
 " wildignores
 set wildignore=*.o,*.pyc
