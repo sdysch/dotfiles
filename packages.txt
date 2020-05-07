@@ -42,6 +42,7 @@ libxext-dev
 libxft-dev
 libxml2-dev
 libxpm-dev
+libxrandr-dev
 lynx
 mpv
 msmtp
