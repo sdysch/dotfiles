@@ -3,6 +3,10 @@ http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
 https://xubuntu.org/blog/feed "~News (Xubuntu)"
 https://arxiv.org/rss/hep-ex "~hep-ex"
 
+# arch
+https://www.archlinux.org/feeds/news/
+#https://www.archlinux.org/feeds/packages/
+
 # reddit
 # linux
 https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
