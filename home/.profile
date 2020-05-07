@@ -65,6 +65,7 @@ export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
 
 # vim
 export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+export VIMWIKI=$HOME/Documents/vimwiki
 
 # calcurse
 export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse
