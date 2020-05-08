@@ -6,4 +6,5 @@ visualizer.fps=20
 audio.sources=pulse
 
 #Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
-colors.scheme=rainbow
+colors.scheme=nord
+#colors.scheme=rainbow
