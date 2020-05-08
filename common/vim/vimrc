@@ -59,7 +59,7 @@ let g:airline_section_x = '%{strftime("%H:%M %a %d/%m/%y")}'
 let g:airline_section_y = ''
 
 " vimwiki
-let g:vimwiki_list = [{"path" : "$VIMWIKI"}, {"path" : "$HOME/Documents/Danish"}]
+let g:vimwiki_list = [{"path" : "$VIMWIKI"}]
 
 " Goyo
 let g:goyo_width = 250
