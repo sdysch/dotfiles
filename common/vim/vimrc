@@ -53,7 +53,8 @@ filetype plugin on    " required
 let g:NERDTreeDirArrows=0
 
 " Airline
-let g:airline_theme="behelit"
+"let g:airline_theme="behelit"
+let g:airline_theme="base16_nord"
 let g:airline_extensions = []
 let g:airline_section_x = '%{strftime("%H:%M %a %d/%m/%y")}'
 let g:airline_section_y = ''

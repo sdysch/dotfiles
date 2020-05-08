@@ -174,16 +174,34 @@ set	$color13	#b294bb
 set	$color14	#8abeb7
 set	$color15	#c5c8c6
 
+# Nord theme colors
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
+
 # Theme colors
 # class                 border  	backgr. 	text    	indic.  	child_border
-# My colors
-client.background		$background
+# dark theme
+#client.background		$background
 
-client.focused         	$foreground	$background	$foreground	$foreground	$foreground
-client.unfocused       	$foreground	$background	$foreground	$color8		$color8
-client.focused_inactive	$foreground	$background	$foreground	$color8		$color8
-client.urgent			$foreground	$background	$foreground	$color8		$color8
-client.placeholder		$foreground	$background	$foreground	$color8		$color8
+#client.focused         	$foreground	$background	$foreground	$foreground	$foreground
+#client.unfocused       	$foreground	$background	$foreground	$color8		$color8
+#client.focused_inactive	$foreground	$background	$foreground	$color8		$color8
+#client.urgent			$foreground	$background	$foreground	$color8		$color8
+#client.placeholder		$foreground	$background	$foreground	$color8		$color8
 
 # status bar
 bar {
@@ -198,10 +216,20 @@ bar {
 
 	colors { 
 		#color class       border		back.			text
-		focused_workspace  $foreground  $background		#ffffff
-		active_workspace   $foreground  #555555			#ffffff
-		inactive_workspace $foreground  #000000			#888888
-		urgent_workspace   $foreground  #900000			#ffffff
+		
+		# dark theme
+		#focused_workspace  $foreground  $background		#ffffff
+		#active_workspace   $foreground  #555555			#ffffff
+		#inactive_workspace $foreground  #000000			#888888
+		#urgent_workspace   $foreground  #900000			#ffffff
+
+		# nord theme
+		background $nord0
+		statusline $nord8
+		focused_workspace  $nord3  $nord8
+		active_workspace   $nord3  $nord8
+		inactive_workspace $nord8  $nord3
+		urgent_workspace   $nord3 $nord15
 	}
 }
 
@@ -248,7 +276,7 @@ mode "$mode_gaps_outer" {
 }
 
 # borders
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 1
 bindsym $mod+Shift+t border toggle
 smart_borders on
 new_window pixel 5
