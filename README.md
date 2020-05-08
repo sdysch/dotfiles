@@ -6,7 +6,7 @@
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
 
-![shell](figures/screenshot2.png)
+![shell](figures/screenshot_nord.png)
 
 ## Setup
 * OS: [xubuntu](https://xubuntu.org/) 19.10 (xfce)

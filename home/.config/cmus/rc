@@ -1,5 +1,6 @@
 # themes
-colorscheme monokai
+colorscheme nord
+#colorscheme monokai
 #colorscheme tomorrow
 
 # change to next/previous tracks
