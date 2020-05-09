@@ -153,55 +153,26 @@ bindsym $mod+Shift+e exec xfce4-session-logout
 # open calculator
 bindsym $mod+Control+space exec mate-calculator
 
-# REF: https://github.com/Kthulu120/i3wm-themes/blob/master/Space/.i3/config
-# define some nice colors
-set	$background	#272827
-set	$foreground	#657b83
-set	$color0		#828282
-set	$color1 	#cc6666
-set	$color2 	#81a2be
-set	$color3 	#f0c674
-set	$color4 	#81a2be
-set	$color5 	#b294bb
-set	$color6		#8abeb7
-set	$color7		#c5c8c6
-set	$color8		#828282
-set	$color9		#cc6666
-set	$color10	#81a2be
-set	$color11	#f0c674
-set	$color12	#81a2be
-set	$color13	#b294bb
-set	$color14	#8abeb7
-set	$color15	#c5c8c6
+# Nord theme colors from ~/.Xresources
+set_from_resource $nord0   nord0  #2E3440
+set_from_resource $nord1   nord1  #3B4252
+set_from_resource $nord2   nord2  #434C5E
+set_from_resource $nord3   nord3  #4C566A
+set_from_resource $nord4   nord4  #D8DEE9
+set_from_resource $nord5   nord5  #E5E9F0
+set_from_resource $nord6   nord6  #ECEFF4
+set_from_resource $nord7   nord7  #8FBCBB
+set_from_resource $nord8   nord8  #88C0D0
+set_from_resource $nord9   nord9  #81A1C1
+set_from_resource $nord10  nord10 #5E81AC
+set_from_resource $nord11  nord11 #BF616A
+set_from_resource $nord12  nord12 #D08770
+set_from_resource $nord13  nord13 #EBCB8B
+set_from_resource $nord14  nord14 #A3BE8C
+set_from_resource $nord15  nord15 #B48EAD
 
-# Nord theme colors
-set $nord0   #2E3440
-set $nord1   #3B4252
-set $nord2   #434C5E
-set $nord3   #4C566A
-set $nord4   #D8DEE9
-set $nord5   #E5E9F0
-set $nord6   #ECEFF4
-set $nord7   #8FBCBB
-set $nord8   #88C0D0
-set $nord9   #81A1C1
-set $nord10  #5E81AC
-set $nord11  #BF616A
-set $nord12  #D08770
-set $nord13  #EBCB8B
-set $nord14  #A3BE8C
-set $nord15  #B48EAD
-
-# Theme colors
-# class                 border  	backgr. 	text    	indic.  	child_border
-# dark theme
-#client.background		$background
-
-#client.focused         	$foreground	$background	$foreground	$foreground	$foreground
-#client.unfocused       	$foreground	$background	$foreground	$color8		$color8
-#client.focused_inactive	$foreground	$background	$foreground	$color8		$color8
-#client.urgent			$foreground	$background	$foreground	$color8		$color8
-#client.placeholder		$foreground	$background	$foreground	$color8		$color8
+set_from_resource $background background $nord0
+set_from_resource $foreground foreground $nord4
 
 # status bar
 bar {
@@ -276,7 +247,7 @@ mode "$mode_gaps_outer" {
 }
 
 # borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 bindsym $mod+Shift+t border toggle
 smart_borders on
 new_window pixel 5

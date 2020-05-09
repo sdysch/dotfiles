@@ -27,6 +27,7 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
 Name=Nord
 ColorCursor=#D8DEE9
