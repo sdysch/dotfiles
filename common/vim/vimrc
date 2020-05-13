@@ -181,7 +181,7 @@ set modelines=5
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" open at previous line
+" open vim at previous line
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 	\| exe "normal! g'\"" | endif
@@ -193,3 +193,9 @@ autocmd VimLeave ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null)
 
 " text wrapping for LaTeX files
 autocmd FileType tex set tw=100
+
+" rerun compton when saving its config file
+autocmd BufWritePost *compton.conf !killall compton && compton -b --config ~/.config/compton/compton.conf &
+
+" Run xrdb whenever Xdefaults or Xresources are updated
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
