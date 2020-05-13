@@ -6,6 +6,7 @@
 ! Repository: https://github.com/arcticicestudio/nord-xresources
 ! License:    MIT
 
+! === nord theme colours ===
 #define nord0 #2E3440
 #define nord1 #3B4252
 #define nord2 #434C5E
@@ -45,3 +46,9 @@
 *.color13: nord15
 *.color14: nord7
 *.color15: nord6
+
+! default fonts
+*.font:            xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Regular
+*.italicFont:      xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Italic
+*.boldFont:        xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold
+*.boldItalicFont:  xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold Italic
