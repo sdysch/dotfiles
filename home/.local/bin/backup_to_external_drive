@@ -6,7 +6,7 @@
 BACKUPLOC="/media/sdysch/Seagate\ Slim\ Drive/Linux"
 EXCLUDEFILE="$HOME/.local/share/backup_exclude_file.txt"
 
-[ -d "$BACKUPLOC" ] || (echo "Backup location does not exist. Did you mount the USB drive?" && exit 1)
+eval [ -d "$BACKUPLOC" ] || (echo "Backup location does not exist. Did you mount the USB drive?" && exit 1)
 
 # check exclude file exists
 echo "[INFO] Backup exlude file: $EXCLUDEFILE"
