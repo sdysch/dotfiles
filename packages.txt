@@ -1,6 +1,7 @@
 binutils
 calcurse
 cmake
+cmatrix
 cmus
 compton
 curl
