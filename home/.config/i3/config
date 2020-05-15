@@ -313,9 +313,9 @@ bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # screenshots
 # Multi-screen screenshots with scrot
-bindsym --release Print exec scrot 
+bindsym --release Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
 # area selection screenshots
-bindsym --release Shift+Print exec scrot -s 
+bindsym --release Shift+Print exec scrot -s && notify-send -u low -t 3000 "Screenshot taken"
 
 # i3lock
 set $lock ~/.local/bin/lock
