@@ -46,3 +46,6 @@ if type nvim > /dev/null 2>&1; then
 	alias vim="nvim"
 	alias vimdiff="nvim -d"
 fi
+
+# edit vim wiki
+alias wiki="vim $VIMWIKI/index.wiki"

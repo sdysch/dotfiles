@@ -45,9 +45,12 @@ libxml2-dev
 libxpm-dev
 libxrandr-dev
 lynx
+mpc
+mpd
 mpv
 msmtp
 ncdu
+ncmpcpp
 neofetch
 neomutt
 neovim
