@@ -23,6 +23,13 @@ install_home:
 install_vim:
     stage: test_home
 
+    image: ubuntu:20.04
+
+    before_script:
+        # update apt-get
+        - apt-get update
+        - apt-get -y install vim 
+
     script:
         - install_scripts/packages/install_vim.sh
 
