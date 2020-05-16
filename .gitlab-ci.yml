@@ -4,9 +4,10 @@ variables:
 
 stages:
     - test_home
+    - test_lxplus
 
 # just tests stow - what else can I do?
-install_home_packages:
+install_home:
     stage: test_home
 
     image: ubuntu:20.04
@@ -18,3 +19,20 @@ install_home_packages:
 
     script:
         - stow home
+
+install_vim:
+    stage: test_home
+
+    script:
+        - install_scripts/packages/install_vim.sh
+
+#======================================================================================
+
+install_lxplus:
+    stage: test_lxplus
+
+    # ??
+    image: ubuntu:20.04
+
+    script:
+        - install_scripts/install_lxplus.sh
