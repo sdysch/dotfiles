@@ -28,7 +28,7 @@ install_vim:
     before_script:
         # update apt-get
         - apt-get update
-        - apt-get -y install vim 
+        - apt-get -y install vim git
 
     script:
         - source install_scripts/packages/install_vim.sh
