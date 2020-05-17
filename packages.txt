@@ -5,7 +5,6 @@ cmatrix
 cmus
 compton
 curl
-dmenu
 dpkg-dev
 evince
 fbi
