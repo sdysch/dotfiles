@@ -41,6 +41,7 @@ libssl-dev
 libx11-dev
 libxext-dev
 libxft-dev
+libxinerama-dev
 libxml2-dev
 libxpm-dev
 libxrandr-dev
