@@ -333,11 +333,12 @@ bindsym --release Shift+Print exec scrot -s && notify-send -u low -t 3000 "Scree
 set $lock ~/.local/bin/lock
 #set $lock i3lock-fancy
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
-# automatically lock screen on inactivity
-exec ~/.local/bin/check_inactivity
 
 # open backgammon
 bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
+
+# choose a password script
+bindsym $mod+Shift+p exec copy_password
 
 # === startup programs ===
 exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
@@ -346,5 +347,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec pulseaudio --start
 exec skypeforlinux
+# automatically lock screen on inactivity
+
+exec ~/.local/bin/check_inactivity
+
 #https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
 #exec --no-startup-id "killall xiccd"
