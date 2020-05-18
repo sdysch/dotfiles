@@ -179,7 +179,7 @@ set modelines=5
 :command Term  terminal
 :command Vterm vertical terminal
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" === autocmds ===
 
 " open vim at previous line
 if has("autocmd")
@@ -199,3 +199,10 @@ autocmd BufWritePost *compton.conf !killall compton && compton -b --config ~/.co
 
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Fix tex file type set
+autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+" Automatically backup vim wiki when saving
+" Uses 'backup_vimwiki' command
+autocmd BufWritePost *.wiki if executable('backup_vimwiki') | !backup_vimwiki

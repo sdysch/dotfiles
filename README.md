@@ -15,6 +15,7 @@
 * Window manager: i3wm (+gaps) alongside xfce desktop environment
 * zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 * vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
+* My [custom dmenu build](https://github.com/sdysch/dmenu)
 * bash dotfiles for legacy purposes only
 
 ## Installation

@@ -9,7 +9,8 @@ git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
 # install crontab
 cat crontab/crontab | crontab -
 
-source install_scripts/packages/install_vim.sh
-source install_scripts/packages/install_tmux.sh
-source install_scripts/packages/install_fonts.sh
-source install_scripts/packages/install_zsh.sh
+scripts=(install_vim.sh install_fonts.sh install_zsh.sh)
+for script in ${scripts[@]}; do
+	source $script
+done
+#source install_scripts/packages/install_tmux.sh
