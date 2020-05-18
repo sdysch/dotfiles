@@ -131,6 +131,18 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# move focused container to workspace and change to that workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10; workspace $ws10
+
 # move focused container between monitor and laptop screen
 bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Ctrl+h move workspace to output left
@@ -285,6 +297,7 @@ for_window [class="Xfce4-terminal" window_role="vis"] resize set 1000 600
 for_window [class="Xfce4-terminal" window_role="translation"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="Display"] floating enable
+for_window [class="Ristretto"] floating enable
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
@@ -312,19 +325,20 @@ bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # screenshots
 # Multi-screen screenshots with scrot
-bindsym --release Print exec scrot 
+bindsym --release Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
 # area selection screenshots
-bindsym --release Shift+Print exec scrot -s 
+bindsym --release Shift+Print exec scrot -s && notify-send -u low -t 3000 "Screenshot taken"
 
 # i3lock
 set $lock ~/.local/bin/lock
 #set $lock i3lock-fancy
 bindsym $mod+x exec --no-startup-id cmus-remote -U ; exec --no-startup-id $lock
-# automatically lock screen on inactivity
-exec ~/.local/bin/check_inactivity
 
 # open backgammon
 bindsym $mod+b exec "$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
+
+# choose a password script
+bindsym $mod+Shift+p exec copy_password
 
 # === startup programs ===
 exec --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
@@ -333,5 +347,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec pulseaudio --start
 exec skypeforlinux
+# automatically lock screen on inactivity
+
+exec ~/.local/bin/check_inactivity
+
 #https://bugs.launchpad.net/ubuntu/+source/xiccd/+bug/1845800
 #exec --no-startup-id "killall xiccd"

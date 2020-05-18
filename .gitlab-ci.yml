@@ -1,0 +1,45 @@
+variables:
+    GIT_DEPTH: 10
+
+
+stages:
+    - test_home
+    - test_lxplus
+
+# just tests stow - what else can I do?
+install_home:
+    stage: test_home
+
+    image: ubuntu:20.04
+
+    before_script:
+        # update apt-get
+        - apt-get update
+        - apt-get -y install stow
+
+    script:
+        - stow home
+
+install_vim:
+    stage: test_home
+
+    image: ubuntu:20.04
+
+    before_script:
+        # update apt-get
+        - apt-get update
+        - apt-get -y install vim git
+
+    script:
+        - source install_scripts/packages/install_vim.sh
+
+#======================================================================================
+
+install_lxplus:
+    stage: test_lxplus
+
+    # ??
+    image: ubuntu:20.04
+
+    script:
+        - source install_scripts/install_lxplus.sh

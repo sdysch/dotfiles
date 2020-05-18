@@ -4,6 +4,10 @@ separator_block_width=20
 markup=pango
 command=~/.local/bin/bar_scripts/$BLOCK_NAME
 
+#[activewindow]
+#interval=persist
+#command=xprop -id $(xdotool getactivewindow) | grep "WM_NAME(STRING)" | cut -d '"' -f2
+
 [music]
 interval=once
 signal=1

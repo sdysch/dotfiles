@@ -52,3 +52,6 @@
 *.italicFont:      xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Italic
 *.boldFont:        xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold
 *.boldItalicFont:  xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold Italic
+
+! dmenu 
+dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
