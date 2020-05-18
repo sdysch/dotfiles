@@ -55,3 +55,6 @@
 
 ! dmenu 
 dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
+
+! simple terminal (st)
+st.font: Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
