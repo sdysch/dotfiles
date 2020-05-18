@@ -25,7 +25,7 @@ Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'sngn/vim-i3blocks-syntax'
 Plugin 'gerw/vim-tex-syntax'
-Plugin 'lervag/vimtex'
+if executable('latexmk') | Plugin 'lervag/vimtex' | endif
 Plugin 'sdysch/vim-i3blocks-syntax'
 Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'sdysch/vim-todolist-syntax'
