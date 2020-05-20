@@ -41,8 +41,8 @@ bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
 # power options
 bindsym $mod+u exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
-# FIXME
-#bindsym XF86PowerOff exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
+bindsym $mod+Ctrl+u exec --no-startup-id ~/.local/bin/shutdown_script
+bindsym $mod+Ctrl+r exec --no-startup-id ~/.local/bin/reboot
 
 # change focus (vim keys)
 bindsym $mod+j focus down
