@@ -10,7 +10,7 @@ pkill -RTMIN+14 $STATUSBAR
 # run the backup. Can add more locations here if needed?
 LOCATION="remote:Backups"
 CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log"
-backups=($HOME/Documents $HOME/.ssh $HOME/.config/gnupg $HOME/.local/share/password-store)
+backups=($HOME/Documents $HOME/.config/gnupg $HOME/.local/share/password-store)
 for backup in ${backups[@]}; do
 	$CMD $backup $LOCATION
 done

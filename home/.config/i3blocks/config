@@ -101,4 +101,9 @@ interval=15
 label=📁
 # How frequently do I really need this?
 interval=600
+
+[uptime]
+label=⏱️
+interval=60
+command=uptime -p
 separator=false
