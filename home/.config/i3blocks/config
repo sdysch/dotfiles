@@ -105,5 +105,6 @@ interval=600
 [uptime]
 label=⏱️
 interval=60
-command=uptime -p
+#command=uptime -p
+command=uptime -p | sed "s/hours/h/; s/minutes/min/; s/seconds/sec/"
 separator=false
