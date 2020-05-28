@@ -323,6 +323,9 @@ bindsym XF86AudioPrev exec $prev && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
 bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
+# web
+bindsym $mod+w exec google-chrome
+
 # screenshots
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
