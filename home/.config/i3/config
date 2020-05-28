@@ -325,6 +325,7 @@ bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 
 # web
 bindsym $mod+w exec google-chrome
+bindsym $mod+Shift+w exec firefox
 
 # screenshots
 # Multi-screen screenshots with scrot
