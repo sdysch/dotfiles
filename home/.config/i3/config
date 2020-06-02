@@ -327,6 +327,9 @@ bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
 bindsym $mod+w exec google-chrome
 bindsym $mod+Shift+w exec firefox
 
+# skype
+bindsym $mod+s exec skypeforlinux
+
 # screenshots
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
