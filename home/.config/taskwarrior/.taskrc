@@ -53,5 +53,4 @@ color.uda.priority.M=
 color.project.thesis=on bright red
 color.project.LepUniv=on bright blue
 color.project.computer=on green
-color.project.github_website=on cyan
-color.project.kaggle=on magenta
+color.project.jobs=on magenta
