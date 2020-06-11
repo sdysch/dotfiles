@@ -1,0 +1,43 @@
+# === bspwm bindings
+
+# restart
+super + shift + r
+	bspc wm -r
+
+# kill window
+super + q
+	xdo close
+
+# Focus on window in direction
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Send window to desktop
+super + shift + {0-9}
+	bspc node -d {0-9}
+
+# Send window to desktop and swap to desktop
+super + control + {0-9}
+	bspc node -d {0-9} && bspunhide && bspc desktop -f {0-9}
+
+# Toggle fullscreen on and off
+super + f
+	bspfullscreen
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+#=== System Control ===
+# Restart hotkey damon
+super + shift + x
+	killandnotify "sxhkd" "Config reloaded" && sxhkd &
+
+
+# terminal
+super + Return
+	$TERMINAL
+
+# === Application Launchers ===
+super + d
+	dmenu_run

@@ -1,5 +1,6 @@
 awesome
 binutils
+bspwm
 calcurse
 cmake
 cmatrix
@@ -68,6 +69,7 @@ rclone
 rofi
 scrot
 stow
+sxhkd
 taskwarrior
 texlive-full
 tmux
