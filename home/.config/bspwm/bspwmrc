@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# === autostart ===
+nm-applet &
+xrdb ~/.Xresources &
+nitrogen --restore &
+compton -b --config ~/.config/compton/compton.conf &
+gnome-keyring-daemon --start &
+pulseaudio --start
+skypeforlinux
+sxhkd &
+
+# === monitors ===
+bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9
+bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+
+# === visuals ===
+bspc config window_gap		8
+bspc config top_padding		8
+bspc config bottom_padding	8
+
+bspc config focus_follows_pointer		true
+bspc config remove_disabled_monitors	true
+bspc config remove_unplugged_monitors	true
+
+# === window rules ===
+bspc rule -a XClock state=floating
