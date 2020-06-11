@@ -193,7 +193,7 @@ bar {
 	status_command $STATUSBAR
     position top
 	height 20
-	separator_symbol " ⁞ "
+	separator_symbol " | "
 	# Remove numbers
 	#strip_workspace_numbers yes
 
