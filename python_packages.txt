@@ -1,4 +1,4 @@
-i3-py
+i3ipc
 ipython
 jupyter
 matplotlib
