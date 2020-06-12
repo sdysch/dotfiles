@@ -190,7 +190,7 @@ set_from_resource $foreground foreground $nord4
 bar {
 	font pango:mono 10, FontAwesome 8.6
 	#font pango:hermit 9, FontAwesome 9
-	#status_command $STATUSBAR
+	status_command $STATUSBAR
     position top
 	height 20
 	separator_symbol " | "
@@ -355,7 +355,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/i3/scripts/autotiling.py
 exec pulseaudio --start
 exec skypeforlinux
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # automatically lock screen on inactivity
 exec ~/.local/bin/check_inactivity
