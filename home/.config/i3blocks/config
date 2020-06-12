@@ -13,24 +13,24 @@ interval=once
 signal=1
 separator=false
 
-[poweroptions]
-full_text=
-color=#FF0000
+#[poweroptions]
+#full_text=
+#color=#FF0000
 
-[open_chrome]
-full_text=
-color=#4C8BF5
-command=google-chrome > /dev/null
+#[open_chrome]
+#full_text=
+#color=#4C8BF5
+#command=google-chrome > /dev/null
 
-[open_firefox]
-full_text=
-color=#FF4500
-command=firefox
+#[open_firefox]
+#full_text=
+#color=#FF4500
+#command=firefox
 
-[open_skype]
-full_text=
-command=skypeforlinux
-color=#4C8BF5
+#[open_skype]
+#full_text=
+#command=skypeforlinux
+#color=#4C8BF5
 
 [translation_DK_ENG]
 full_text=🇬🇧🇩🇰
