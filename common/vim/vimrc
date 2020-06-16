@@ -70,6 +70,11 @@ let g:goyo_width = 250
 autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 
+" Enable Goyo (distraction free mode) if git prompts for a commit message
+" (git commit called without -m flag)"
+autocmd BufRead,BufNewFile *COMMIT_EDITMSG let g:goyo_width=80
+autocmd BufRead,BufNewFile *COMMIT_EDITMSG :Goyo
+
 " wildignores
 set wildignore=*.o,*.pyc
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
