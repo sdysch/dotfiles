@@ -53,10 +53,10 @@ interval=180
 signal=12
 color=#39DC9D
 
-[backups]
-interval=180
-signal=14
-color=#39DC9D
+#[backups]
+#interval=180
+#signal=14
+#color=#39DC9D
 
 [taskblocklet]
 interval=once
