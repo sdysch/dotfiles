@@ -2,7 +2,8 @@
 # Choose which screen setup. Uses `plugin' and `unplug' scripts
 choices=("monitor\nlaptop")
 
-chosen=$(echo -e "$choices" | rofi -dmenu)
+#chosen=$(echo -e "$choices" | rofi -dmenu)
+chosen=$(echo -e "$choices" | dmenu)
 
 case $chosen in
 	"monitor")
