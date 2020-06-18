@@ -48,13 +48,18 @@
 *.color15: nord6
 
 ! default fonts
-*.font:            xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Regular
-*.italicFont:      xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Italic
-*.boldFont:        xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold
-*.boldItalicFont:  xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold Italic
+!*.font:            xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Regular
+!*.italicFont:      xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Italic
+!*.boldFont:        xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold
+!*.boldItalicFont:  xft:Ubuntu Mono derivative Powerline:pixelsize=27:style=Bold Italic
+.font: xft:JetBrains Mono Medium:size=11
+.italicFont: xft:JetBrains Mono Italic:size=11
+*.boldFont: xft:JetBrains Mono Bold:size=11
+*.boldItalicFont: xft:JetBrains Mono Bold Italic:size=11
 
 ! dmenu 
-dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
+!dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
+dmenu.font: xft:JetBrains Mono Medium:size=12
 
 ! simple terminal (st)
-st.font: Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
+!st.font: Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
