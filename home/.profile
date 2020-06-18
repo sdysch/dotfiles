@@ -29,6 +29,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# turn off the really annoying beep
+xset -b
+
 # default programs
 export EDITOR="nvim"
 #export EDITOR="vim"
