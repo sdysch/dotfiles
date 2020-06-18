@@ -1,6 +1,12 @@
 #!/bin/bash
-sudo apt-get install $(cat packages.txt)
+
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
+pacman -S --needed - < packages.txt
 pip3 install -r python_packages.txt
+
+stow home
 
 #echo "cloning taskwarrior"
 #mkdir -p $HOME/.task
