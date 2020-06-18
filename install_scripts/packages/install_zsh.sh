@@ -14,6 +14,8 @@ else
 fi
 
 ZSH="${XDG_DATA_HOME/:-~/.local/share/}/oh-my-zsh"
+ZSH_CUSTOM="~/.local/share/oh-my-zsh/custom"
+
 if [ -d $ZSH ]; then
 	echo "oh-my-zsh already installed"
 else
@@ -24,8 +26,7 @@ fi
 echo "Done"
 
 echo "Installing zsh packages..."
-#git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.local/share/oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.local/share/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/oh-my-zsh/themes/powerlevel10k
 echo "Done"
