@@ -7,5 +7,6 @@ case $session in
 	xubuntu) xfce4-session-logout --logout ;;
 	xfce) xfce4-session-logout --logout ;;
 	bspwm) bspc quit ;;
+	dwm) killall dwm;;
 	*) notify-send --app-name="logout script" "logout script" "Not sure what to do";;
 esac
