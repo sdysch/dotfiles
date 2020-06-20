@@ -2,6 +2,7 @@
 
 # dwm autostart programs (consider adding to customised xinitrc in the future?)
 compton -b --config ~/.config/compton/compton.conf &
+dwmblocks &
 gnome-keyring-daemon --start &
 nitrogen --restore &
 nm-applet &
