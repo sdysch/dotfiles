@@ -6,4 +6,5 @@ gnome-keyring-daemon --start &
 nitrogen --restore &
 nm-applet &
 pulseaudio --start &
+skypeforlinux &
 ~/.local/bin/check_inactivity &
