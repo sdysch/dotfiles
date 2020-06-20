@@ -31,6 +31,7 @@ Plugin 'sdysch/vim-tqfolder-syntax'
 Plugin 'sdysch/vim-todolist-syntax'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
