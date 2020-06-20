@@ -1,12 +1,15 @@
+---News---
 # News
 http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
 https://xubuntu.org/blog/feed "~News (Xubuntu)"
 https://arxiv.org/rss/hep-ex "~hep-ex"
 
+
 # arch
-https://www.archlinux.org/feeds/news/
+#https://www.archlinux.org/feeds/news/
 #https://www.archlinux.org/feeds/packages/
 
+---reddit---
 # reddit
 # linux
 https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
@@ -14,14 +17,14 @@ https://www.reddit.com/r/linuxquestions.rss "~REDDIT: r/linuxquestions"
 https://www.reddit.com/r/ubuntu.rss "~REDDIT: r/ubuntu"
 https://www.reddit.com/r/vim.rss "~REDDIT: r/vim"
 https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn"
+https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: r/betterCallSaul"
 
+---xkcd---
 # xkcd
 https://xkcd.com/atom.xml
 
-# TV
-https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: r/betterCallSaul"
-
 # YouTube
+---Linux---
 # Computer
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "~YouTube [Computerphile]" 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrUL8K81R4VBzm-KOYwrcxQ "~YouTube [Engineer Man]" 
@@ -32,15 +35,17 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~Y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "~YouTube [Brodie Robertson]"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg "~YouTube [Wolfgang's Channel]"
 
+#---Gaming-----
 # Gaming (mostly Borderlands people)
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1lXzO1Ss_1w5hS3YwSxLyQ "~YouTube [Admiral Bahroo]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4nJnJ-HO5vVbGlJ14rf5yg "~YouTube [DeSinc]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw "~YouTube [Game Maker's Toolkit]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCQWLfD-5sexEbVY335J8PMg "~YouTube [Joltzdude139]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCKw3UQ7AMPXkJ5nYxfg_Gyg "~YouTube [MorninAfterKill]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCk8l6-02Nui9gbdfc1aL6Uw "~YouTube [Project Borealis]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCb2PTdRGKwLjOJQtSW2YF_A "~YouTube [Stealth Gamer]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC1lXzO1Ss_1w5hS3YwSxLyQ "~YouTube [Admiral Bahroo]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC4nJnJ-HO5vVbGlJ14rf5yg "~YouTube [DeSinc]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw "~YouTube [Game Maker's Toolkit]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCQWLfD-5sexEbVY335J8PMg "~YouTube [Joltzdude139]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCKw3UQ7AMPXkJ5nYxfg_Gyg "~YouTube [MorninAfterKill]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCk8l6-02Nui9gbdfc1aL6Uw "~YouTube [Project Borealis]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCb2PTdRGKwLjOJQtSW2YF_A "~YouTube [Stealth Gamer]" 
 
+---Skiing---
 # Skiing
 https://www.youtube.com/feeds/videos.xml?channel_id=UCNUAf3Ogf9ds43LORjhoEsA "~YouTube [Alex Wrigglesworth]" 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsFkInl7eWF0mkBbT2ATbNA "~YouTube [Candide Thovex]" 
@@ -56,8 +61,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC1Ho5YvHCtyReazatbhBowA "~Y
 https://www.youtube.com/feeds/videos.xml?channel_id=UCwVbnUomvVRCcdhsKUBVfRA "~YouTube [The Faction Collective]" 
 
 # Music
-https://www.youtube.com/feeds/videos.xml?channel_id=UCo1t7ajBc5r44Ejxnod-h7Q "~YouTube [Snarky Puppy]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCo1t7ajBc5r44Ejxnod-h7Q "~YouTube [Snarky Puppy]" 
 
 # Other
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIRiWCPZoUyZDbydIqitHtQ "~YouTube [Mike Boyd]" 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCfZwNd8i7spJmLr4qq1_Gyw "~YouTube [UK Dash Cameras]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCIRiWCPZoUyZDbydIqitHtQ "~YouTube [Mike Boyd]" 
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCfZwNd8i7spJmLr4qq1_Gyw "~YouTube [UK Dash Cameras]" 

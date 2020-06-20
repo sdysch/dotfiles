@@ -26,3 +26,7 @@ color listnormal_unread cyan default bold
 color listfocus_unread yellow default bold
 color info red black bold
 color article cyan default
+
+# syntax highlighting
+highlight all "---.*---" magenta default bold
+highlight feedlist ".*(0/0))" black

@@ -28,6 +28,7 @@ i3lock
 i3lock-fancy
 i3status
 isync
+kitty
 libasound2-dev
 libavahi-compat-libdnssd-dev
 libcairo2-dev
