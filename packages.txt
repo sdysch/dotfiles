@@ -104,5 +104,6 @@ xcb-proto
 xclip
 xdotool
 xlibmesa-glu-dev
+youtube-dl
 zathura
 zsh
