@@ -4,7 +4,6 @@ cmake
 cmus
 compton
 curl
-dmenu
 evince
 firefox
 fontconfig
