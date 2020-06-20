@@ -19,3 +19,5 @@ alias cdThesis="cd ~/Documents/Manchester/PhD/thesis"
 # open with Preview
 alias previewOpen="open -a Preview"
 
+# vim wiki
+export VIMWIKI=$HOME/Documents/vimwiki
