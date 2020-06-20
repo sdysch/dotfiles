@@ -34,9 +34,17 @@ export EDITOR="nvim"
 #export EDITOR="vim"
 export IMAGEVIEWER="ristretto"
 export READER="zathura"
-export STATUSBAR="i3blocks"
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
+
+# choose status bar dependent on login session
+if [ "$DESKTOP_SESSION" == "i3" ]; then
+	export STATUSBAR="i3blocks"
+fi
+
+if [ "$DESKTOP_SESSION" == "dwm" ]; then
+	export STATUSBAR="dwmblocks"
+fi
 
 # === config file locations ===
 export XDG_CONFIG_HOME=$HOME/.config
