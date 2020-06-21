@@ -6,8 +6,8 @@ SHUTDOWNSCRIPT="$HOME/.local/bin/shutdown_script"
 REBOOTSCRIPT="$HOME/.local/bin/reboot"
 
 TEXT="Would you like to..."
-chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
 options=("Shutdown?\nReboot?\nLogout?\nQuit menu")
+chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
 
 case $chosen in
 	"Shutdown?")
