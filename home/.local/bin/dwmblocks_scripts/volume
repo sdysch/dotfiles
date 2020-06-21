@@ -1,0 +1,36 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+	1) setsid "$TERMINAL" -e pavucontrol & ;;
+esac
+
+# check if we have speakers plugged in or not
+speaker=""
+pactl list sinks | grep -q Lexicon && speaker="on"
+
+# lexicon not plugged in -> default output
+if [ -z "$speaker" ]; then
+	volstat="$(pactl list sinks)"
+	mutestring=$volstat
+
+# lexicon plugged in -> output Sink #0
+else
+	mutestring=$(pactl list sinks | perl -000ne 'if(/Sink #0/){/(Mute:.*)/; print "$1\n"}')
+	volstat=$(pactl list sinks | perl -000ne 'if(/Sink #0/){/(Volume:.*)/; print "$1\n"}')
+fi
+
+echo "$mutestring" | grep -q "Mute: yes" && printf "\\n" && exit
+
+
+# scrape volume info
+vol="$(echo "$volstat" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
+
+if [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -lt "30" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+printf "%s %s%%\\n" "$icon" "$vol"
