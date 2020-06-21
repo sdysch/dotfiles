@@ -36,10 +36,13 @@ bindsym $mod+i exec --no-startup-id ~/.local/bin/choose_danish_characters
 # neomutt
 bindsym $mod+m exec --no-startup-id "$term --role=neomutt --command=neomutt"
 
+# newsboat
+bindsym $mod+n exec --no-startup-id "$term --command=newsboat"
+
 # power options
 bindsym $mod+u exec --no-startup-id ~/.local/bin/bar_scripts/poweroptions
-bindsym $mod+Ctrl+u exec --no-startup-id ~/.local/bin/shutdown_script
-bindsym $mod+Ctrl+r exec --no-startup-id ~/.local/bin/reboot
+#bindsym $mod+Ctrl+u exec --no-startup-id ~/.local/bin/shutdown_script
+#bindsym $mod+Ctrl+r exec --no-startup-id ~/.local/bin/reboot
 
 # change focus (vim keys)
 bindsym $mod+j focus down
@@ -295,11 +298,6 @@ for_window [class="ROOT"] floating enable
 for_window [class="Display"] floating enable
 for_window [class="Ristretto"] floating enable
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && pkill -RTMIN+2 $STATUSBAR
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+2 $STATUSBAR
-
 # caps/num lock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 $STATUSBAR
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 $STATUSBAR
@@ -309,15 +307,18 @@ set $pause --no-startup-id cmus-remote -u
 set $next --no-startup-id cmus-remote -n
 set $prev --no-startup-id cmus-remote -r
 
+# cmus and audio
 bindsym $mod+c exec --no-startup-id "$term --role=cmus --command=cmus && $term --role=vis --command=vis && pkill -RTMIN+1 $STATUSBAR"
-bindsym $mod+p exec $pause && pkill -RTMIN+1 $STATUSBAR
-bindsym $mod+greater exec $next && pkill -RTMIN+1 $STATUSBAR
-bindsym $mod+less exec $prev && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioPrev  exec $prev && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioNext  exec $next && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioPlay  exec $pause && pkill -RTMIN+1 $STATUSBAR
+bindsym XF86AudioPause exec $pause && pkill -RTMIN+1 $STATUSBAR
 
-#bindsym XF86AudioMedia exec --no-startup-id "$term --role=cmus --command=cmus && pkill -RTMIN+1 $STATUSBAR"
-bindsym XF86AudioPrev exec $prev && pkill -RTMIN+1 $STATUSBAR
-bindsym XF86AudioNext exec $next && pkill -RTMIN+1 $STATUSBAR
-bindsym XF86AudioPlay exec $pause && pkill -RTMIN+1 $STATUSBAR
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% && pkill -RTMIN+2 $STATUSBAR
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% && pkill -RTMIN+2 $STATUSBAR
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+2 $STATUSBAR
+
 
 # web
 bindsym $mod+w exec google-chrome
@@ -328,9 +329,9 @@ bindsym $mod+s exec skypeforlinux
 
 # screenshots
 # Multi-screen screenshots with scrot
-bindsym --release Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
+bindsym --release Shift+Print exec scrot && notify-send -u low -t 3000 "Screenshot taken" 
 # area selection screenshots
-bindsym --release Shift+Print exec scrot -s && notify-send -u low -t 3000 "Screenshot taken"
+bindsym --release Print exec scrot -s && notify-send -u low -t 3000 "Screenshot taken"
 
 # i3lock
 set $lock ~/.local/bin/lock
