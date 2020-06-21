@@ -5,6 +5,7 @@ for battery in /sys/class/power_supply/BAT?
 do
 	# Get its remaining capacity and charge status.
 	capacity=$(cat "$battery"/capacity) || break
-	 echo "$capacity% battery"
+	status=$(cat "$battery"/status) || break
+	 echo "$capacity% battery $status"
 
 done | sed 's/ *$//'

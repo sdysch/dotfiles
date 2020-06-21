@@ -19,5 +19,5 @@ case "$clock" in
 esac
 
 #printf '%s %s%s\n' "$(date '+%Y %b %d (%a)')" "$icon" "$(date '+%I:%M%p')"
-#echo $icon $(date +%H:%M)
-echo $(date +%H:%M)
+echo $icon $(date +%H:%M)
+#echo $(date +%H:%M)
