@@ -3,6 +3,8 @@
 http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
 https://xubuntu.org/blog/feed "~News (Xubuntu)"
 https://arxiv.org/rss/hep-ex "~hep-ex"
+# my feeble attempts to read Danish news to practice Danish
+https://www.dr.dk/nyheder/service/feeds/allenyheder "~News (dr.dk)"
 
 
 # arch
