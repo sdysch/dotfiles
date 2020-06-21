@@ -13,5 +13,4 @@ install dmenu
 install dwm
 install st
 install slock
-
-git clone git@github.com:sdysch/dwmblocks.git ~/Documents/repos/dwmblocks
+install dwmblocks
