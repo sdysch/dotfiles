@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Loop through all attached batteries.
+for battery in /sys/class/power_supply/BAT?
+do
+	# Get its remaining capacity and charge status.
+	capacity=$(cat "$battery"/capacity) || break
+
+	 icon=""
+	 [ "$capacity" -le 75 ] && icon=""
+	 [ "$capacity" -le 50 ] && icon=""
+	 [ "$capacity" -le 25 ] && icon=""
+
+	 echo "$icon $capacity"
+
+done | sed 's/ *$//'
