@@ -1,5 +1,2 @@
 #!/bin/bash
 df -h | grep /dev/nvme0n1p6 | awk '{print $5}'
-case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e ncdu ;;
-esac

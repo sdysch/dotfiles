@@ -1,9 +1,5 @@
 #!/bin/bash
 
-case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e pavucontrol & ;;
-esac
-
 # check if we have speakers plugged in or not
 speaker=""
 pactl list sinks | grep -q Lexicon && speaker="on"
