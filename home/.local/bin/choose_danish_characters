@@ -5,8 +5,7 @@
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1
 
-#chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/danish_characters | rofi -dmenu -theme arthur -p "Choose a character")
-chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/danish_characters | dmenu -p "Choose a character" -l 6)
+chosen=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/danish_characters | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose a character" -l 6)
 
 [ "$chosen" != "" ] || exit
 
