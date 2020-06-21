@@ -24,9 +24,9 @@ title=$(echo "$info" | grep "^tag title " | tail -c +11)
 
 if [ "$status" == "paused" ] || [ "$status" == "playing" ]; then
 	if [ "$status" == "paused" ]; then
-		icon=""
+		icon="Paused: "
 	elif [ "$status" == "playing" ]; then
-		icon=""
+		icon="Playing: "
 	fi
 
 	cmd="$icon $artist - <i>$title</i>"
