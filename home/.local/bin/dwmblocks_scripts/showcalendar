@@ -5,16 +5,3 @@
 
 cmd=$(date '+%a, %d/%m/%Y')
 echo $cmd
-
-case $BLOCK_BUTTON in
-	1) setsid cal -3 | rofi \
-		-dmenu \
-		-markup-rows \
-		-no-fullscreen \
-		-hide-scrollbar \
-		-width 40 \
-		-location 2 \
-		-p "$cmd" \
-		--fake-transparency=true \
-		-theme DarkBlue ;;
-esac

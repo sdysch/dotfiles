@@ -3,9 +3,5 @@
 # Show wifi 📶 and percent strength or 📡 if none.
 # Show 🌐 if connected to ethernet or ❎ if none.
 
-case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e nmtui & ;;
-esac
-
 grep -q "down" /sys/class/net/w*/operstate ||
 	wifiicon="$(grep "^\s*w" /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%" }')"
