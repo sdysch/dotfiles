@@ -1,7 +1,6 @@
 #!/bin/bash
 TASKS=$(task status:pending count)
-ICON="📝"
-[ "$TASKS" -ge "1" ] && echo "$ICON $(task status:pending count)"
+[ "$TASKS" -ge "1" ] && echo "$(task status:pending count) tasks"
 
 case $BLOCK_BUTTON in
 	# left click = open taskwarrior
