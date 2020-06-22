@@ -1,2 +1,2 @@
 #!/bin/bash
-$HOME/.local/bin/notifysongchange "$@" &
+pkill -RTMIN+1 "${STATUSBAR:?}"

@@ -18,6 +18,6 @@ if [ "$status" == "paused" ] || [ "$status" == "playing" ]; then
 		icon="Playing: "
 	fi
 
-	cmd="$icon $artist - <i>$title</i>"
-	echo $cmd
+	cmd="$icon $artist - $title"
+	echo -e $cmd
 fi
