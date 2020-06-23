@@ -103,10 +103,10 @@ nmap <leader>r :!make<cr>
 nmap <leader>n :noh<cr>
 
 " easier yanking/pasting to/from system clipboard
-noremap <Leader>y "+y
-noremap <Leader>p "+p
-noremap <Leader>Y "*y
-noremap <Leader>P "*p
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>Y "*y
+noremap <leader>P "*p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
