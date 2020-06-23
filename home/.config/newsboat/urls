@@ -1,10 +1,13 @@
 ---News---
 # News
-http://feeds.bbci.co.uk/news/rss.xml "~News (BBC)"
-https://xubuntu.org/blog/feed "~News (Xubuntu)"
-https://arxiv.org/rss/hep-ex "~hep-ex"
+http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
+https://xubuntu.org/blog/feed "~News [Xubuntu]"
 # my feeble attempts to read Danish news to practice Danish
-https://www.dr.dk/nyheder/service/feeds/allenyheder "~News (dr.dk)"
+https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
+
+---Physics---
+https://arxiv.org/rss/hep-ex "~arXiv [hep-ex]"
+https://arxiv.org/rss/hep-ph "~arXiv [hep-ph]"
 
 
 # arch
@@ -14,12 +17,12 @@ https://www.dr.dk/nyheder/service/feeds/allenyheder "~News (dr.dk)"
 ---reddit---
 # reddit
 # linux
-https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
-https://www.reddit.com/r/linuxquestions.rss "~REDDIT: r/linuxquestions"
-https://www.reddit.com/r/ubuntu.rss "~REDDIT: r/ubuntu"
-https://www.reddit.com/r/vim.rss "~REDDIT: r/vim"
-https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn"
-https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: r/betterCallSaul"
+https://www.reddit.com/r/linux.rss "~REDDIT: [r/linux]"
+https://www.reddit.com/r/linuxquestions.rss "~REDDIT: [r/linuxquestions]"
+https://www.reddit.com/r/ubuntu.rss "~REDDIT: [r/ubuntu]"
+https://www.reddit.com/r/vim.rss "~REDDIT: [r/vim]"
+https://www.reddit.com/r/unixporn.rss "~REDDIT: [r/unixporn]"
+https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: [r/betterCallSaul]"
 
 ---xkcd---
 # xkcd
