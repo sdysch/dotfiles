@@ -1,6 +1,7 @@
 [user]
 	email = samuel.dysch@cern.ch
 	name = Samuel Dysch
+	signingkey = BB74ED1A7F786A32
 [http]
 	postBuffer = 209715200
 	emptyAuth = true
@@ -13,3 +14,5 @@
 	#pager = cat
 [pager]
 	branch = false
+[commit]
+	gpgsign = true
