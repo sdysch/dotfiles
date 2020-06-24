@@ -8,7 +8,7 @@ notify-send "📰 Updating RSS feeds..."
 
 pgrep -x newsboat >/dev/null && /usr/bin/xdotool key --window "$(/usr/bin/xdotool search --name newsboat)" R && exit
 
-echo 🔃 > /tmp/newsupdate
+echo "" > /tmp/newsupdate
 pkill -RTMIN+6 $STATUSBAR
 /usr/bin/newsboat -x reload
 rm -f /tmp/newsupdate
