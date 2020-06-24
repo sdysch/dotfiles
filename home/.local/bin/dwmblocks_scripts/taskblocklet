@@ -1,3 +1,4 @@
 #!/bin/bash
+ICON=""
 TASKS=$(task status:pending count)
-echo "Tasks: $TASKS"
+echo "$ICON $TASKS"
