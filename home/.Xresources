@@ -60,6 +60,10 @@
 ! dmenu 
 !dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
 dmenu.font: xft:JetBrains Mono Medium:size=12
+dmenu.background: #2E3440
+dmenu.foreground: #D8DEE9
+dmenu.selbackground:#A3BE8C
+dmenu.selforeground: #434C5E
 
 ! simple terminal (st)
 !st.font: Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
