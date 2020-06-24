@@ -1,4 +1,6 @@
 #!/bin/sh
 
-grep -q "down" /sys/class/net/w*/operstate || strength="$(grep "^\s*w" /proc/net/wireless | awk '{ print int($3 * 100 / 70) "%" }')"
-echo "$(iwgetid -r)" $strength
+grep -q "down" /sys/class/net/w*/operstate && wifiicon="📡" ||
+	wifiicon="$(grep "^\s*w" /proc/net/wireless | awk '{ print "📶", int($3 * 100 / 70) "%" }')"
+
+printf "%s %s\n" "$wifiicon $(iwgetid -r)" "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate)"
