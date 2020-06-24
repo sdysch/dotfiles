@@ -15,18 +15,18 @@ else
 	volstat=$(pactl list sinks | perl -000ne 'if(/Sink #0/){/(Volume:.*)/; print "$1\n"}')
 fi
 
-echo "$mutestring" | grep -q "Mute: yes" && printf "🔇" && exit
+echo "$mutestring" | grep -q "Mute: yes" && printf "ﱝ" && exit
 
 
 # scrape volume info
 vol="$(echo "$volstat" | grep '[0-9]\+%' | sed "s,.* \([0-9]\+\)%.*,\1,;1q")"
 
 if [ "$vol" -gt "70" ]; then
-	icon="🔊"
+	icon=""
 elif [ "$vol" -lt "30" ]; then
-	icon="🔈"
+	icon="奔"
 else
-	icon="🔉"
+	icon="墳"
 fi
 
 printf "%s %s%%\\n" "$icon" "$vol"
