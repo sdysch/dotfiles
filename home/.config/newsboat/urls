@@ -1,7 +1,6 @@
 ---News---
 # News
 http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
-https://xubuntu.org/blog/feed "~News [Xubuntu]"
 # my feeble attempts to read Danish news to practice Danish
 https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
 
@@ -9,6 +8,10 @@ https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
 https://arxiv.org/rss/hep-ex "~arXiv [hep-ex]"
 https://arxiv.org/rss/hep-ph "~arXiv [hep-ph]"
 
+
+---Linux---
+https://distrowatch.com/news/dw.xml "~DistroWatch [Latest news and updates]"
+https://xubuntu.org/blog/feed "~Xubuntu [blog]"
 
 # arch
 #https://www.archlinux.org/feeds/news/
@@ -28,7 +31,7 @@ https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: [r/betterCallSaul]"
 # xkcd
 https://xkcd.com/atom.xml
 
-# YouTube
+---YouTube---
 ---Linux---
 # Computer
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "~YouTube [Computerphile]" 
