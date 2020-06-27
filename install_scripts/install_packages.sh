@@ -1,16 +1,12 @@
 #!/bin/bash
 
 mkdir -p ~/.local/bin
-mkdir -p ~/.local/share
+mkdir -p ~/.local/share/fonts
 
-pacman -S --needed - < packages.txt
-pip3 install -r python_packages.txt
+sudo pacman -S --needed - < packages.txt
+sudo pip3 install -r python_packages.txt
 
 stow home
-
-#echo "cloning taskwarrior"
-#mkdir -p $HOME/.task
-#git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
 
 # install crontab
 cat crontab/crontab | crontab -
@@ -19,5 +15,3 @@ cat crontab/crontab | crontab -
 #for script in ${scripts[@]}; do
 	#source $script
 #done
-
-#source install_scripts/packages/install_tmux.sh
