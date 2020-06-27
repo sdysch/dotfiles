@@ -1,3 +1,6 @@
+---Unread---
+"query:Unread Articles:unread = \"yes\""
+
 ---News---
 # News
 http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
