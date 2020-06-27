@@ -1,5 +1,1 @@
-#!/bin/bash
-
-icon=" "
-clock=$(date '+%I')
-echo $icon $(date +%H:%M)
+../bar_scripts/clock

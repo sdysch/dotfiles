@@ -59,7 +59,7 @@
 
 ! dmenu 
 !dmenu.font: xft:Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular
-dmenu.font: xft:JetBrains Mono Medium:size=12
+!dmenu.font: xft:JetBrains Mono Medium:size=12
 
 ! simple terminal (st)
 !st.font: Ubuntu Mono derivative Powerline:pixelsize=15:style=Regular

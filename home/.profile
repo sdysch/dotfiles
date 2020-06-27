@@ -29,9 +29,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# turn off the really annoying beep
-xset -b
-
 # default programs
 export EDITOR="nvim"
 #export EDITOR="vim"
@@ -100,3 +97,7 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 export USERCERN="sdysch"
 export USERMANC="samdysch"
 export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
+
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+	pgrep dwm || startx
+fi
