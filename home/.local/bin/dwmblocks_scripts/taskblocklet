@@ -1,4 +1,1 @@
-#!/bin/bash
-ICON=""
-TASKS=$(task status:pending count)
-echo "$ICON $TASKS"
+../bar_scripts/taskblocklet

@@ -1,2 +1,1 @@
-#!/bin/bash
-df -h | grep /dev/nvme0n1p6 | awk '{print $5}'
+../bar_scripts/disk_usage

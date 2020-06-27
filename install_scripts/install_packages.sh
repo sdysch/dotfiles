@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# make these directories so that stow does not copy everything into git repo
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/fonts
+mkdir -p ~/.config
+mkdir -p ~/.config/pulse
+mkdir -p ~/.ssh
 
 sudo pacman -S --needed - < packages.txt
 sudo pip3 install -r python_packages.txt

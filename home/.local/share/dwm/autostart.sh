@@ -1,9 +1,12 @@
 #!/bin/bash
-
 # dwm autostart programs
-nm-applet &
 compton -b --config ~/.config/compton/compton.conf &
-pulseaudio --start &
-~/.local/bin/check_inactivity &
+dunst &
+dwmblocks &
 nitrogen --restore &
-#gnome-keyring-daemon --start &
+nm-applet &
+#pulseaudio --start &
+~/.local/bin/check_inactivity &
+gnome-keyring-daemon --start &
+# turn off the really annoying beep
+xset -b
