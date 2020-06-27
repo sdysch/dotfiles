@@ -7,14 +7,14 @@ mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 
 if [[ "$SHELL" =~ .*zsh$ ]]; then
 	echo "ZSH is the current shell"
+	ZSH="${XDG_DATA_HOME/:-~/.local/share/}/oh-my-zsh"
+	ZSH_CUSTOM="~/.local/share/oh-my-zsh/custom"
+
 else
 	echo "Changing shell from ${SHELL} to zsh"
 	chsh -s "$(which zsh)" "$USER"
 	echo -e "Please log out and log back in to apply shell changes, then rerun install_zsh.sh"
 fi
-
-ZSH="${XDG_DATA_HOME/:-~/.local/share/}/oh-my-zsh"
-ZSH_CUSTOM="~/.local/share/oh-my-zsh/custom"
 
 if [ -d $ZSH ]; then
 	echo "oh-my-zsh already installed"
