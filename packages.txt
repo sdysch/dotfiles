@@ -44,6 +44,7 @@ texlive-most
 tmux
 translate-shell
 ttf-font-awesome
+unzip
 vifm
 vim
 vlc
