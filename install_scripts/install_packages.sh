@@ -4,13 +4,12 @@
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/.config
-mkdir -p ~/.config/pulse
 mkdir -p ~/.ssh
 
 sudo pacman -S --needed - < packages.txt
 sudo pip3 install -r python_packages.txt
 
-stow home
+stow --no-folding home
 
 # install crontab
 cat crontab/crontab | crontab -
