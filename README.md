@@ -25,7 +25,7 @@
 ```
 cd ~/dotfiles_harmonised
 source install_scripts/install_packages.sh
-stow home
+stow --no-folding home
 ```
 
 
