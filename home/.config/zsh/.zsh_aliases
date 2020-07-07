@@ -52,3 +52,6 @@ alias wiki="vim $VIMWIKI/index.wiki"
 
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
+
+# literally just for screenshots
+alias neofetch="clear && neofetch --ascii_distro Xubuntu"
