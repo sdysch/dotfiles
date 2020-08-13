@@ -15,4 +15,4 @@
 [pager]
 	branch = false
 [commit]
-	gpgsign = true
+	gpgsign = false
