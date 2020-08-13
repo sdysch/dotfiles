@@ -16,8 +16,9 @@ ln -fsn ${INSTALLDIR}/common/git/gitignore_global ~/.gitignore_global
 ln -fsn ${INSTALLDIR}/common/vim/vimrc ~/.config/vim/vimrc
 
 # do not use zsh on lxplus - xTauFW is not compatible?
-#ln -fsn ${INSTALLDIR}/common/zsh/zsh_aliases_lxplus ~/.zsh_aliases_lxplus
-#ln -fsn ${INSTALLDIR}/common/zsh/zshrc_lxplus ~/.zshrc
+ln -fsn ${INSTALLDIR}/common/zsh/zshrc_lxplus ~/.zshrc
+ln -fsn ${INSTALLDIR}/common/zsh/zsh_aliases_lxplus ~/.zsh_aliases_lxplus
+ln -fsn ${INSTALLDIR}/common/zsh/zsh_aliases_common ~/.zsh_aliases_common
 
 mkdir -p ~/.ssh
 ln -fsn ${INSTALLDIR}/config/ssh/config ~/.ssh/config
