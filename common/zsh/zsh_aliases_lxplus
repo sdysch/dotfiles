@@ -1,6 +1,10 @@
 # ls
 alias ls="ls --color=auto"
-alias ll="ls -ltrh"
+
+export XDG_DATA_HOME=$HOME/.local/share
+
+# vim
+export VIMINIT=":source ~/.config/vim/vimrc"
 
 # cd aliases
 alias cdwork="cd /afs/cern.ch/work/s/sdysch"
@@ -77,3 +81,6 @@ function cdEOS {
 	cd /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1
 	echo "In directory: /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1"
 }
+
+# default editor
+export EDITOR=vim
