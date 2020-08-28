@@ -4,12 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/afs/cern.ch/user/s/sdysch/.oh-my-zsh"
 
-#DEFAULT_USER=$(whoami)
-#DEFAULT_USER="Sam"
-
 # theme
-#ZSH_THEME="agnoster"
-# REF: https://github.com/Powerlevel9k/powerlevel9k
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user time dir vcs)
@@ -29,15 +24,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Preferred editor for local and remote sessions
-#if [[ -n $SSH_CONNECTION ]]; then
-  #export EDITOR='vim'
-#else
-  #export EDITOR='mvim'
-#fi
-
 # common aliases
 source $HOME/.zsh_aliases_common
 
 # lxplus 
-source $HOME/.zsh_aliases_lxplus
+source $HOME/.zsh_aliases
