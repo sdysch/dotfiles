@@ -8,6 +8,7 @@ mkdir -p ~/.config/tmux
 mkdir -p ~/.ssh
 mkdir -p ~/.cache/zsh
 
+ln -fsn ${INSTALLDIR}/lxplus/.bash_aliases ~/.bash_aliases
 ln -fsn ${INSTALLDIR}/lxplus/.bash_profile ~/.bash_profile
 ln -fsn ${INSTALLDIR}/lxplus/.bashrc ~/.bashrc
 
