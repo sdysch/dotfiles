@@ -8,10 +8,10 @@ mkdir -p ~/.config/tmux
 mkdir -p ~/.ssh
 mkdir -p ~/.cache/zsh
 
-ln -fsn ${INSTALLDIR}/common/bash/bash_aliases_lxplus ~/.bash_aliases
-ln -fsn ${INSTALLDIR}/common/bash/bash_profile ~/.bash_profile
+ln -fsn ${INSTALLDIR}/lxplus/.bash_profile ~/.bash_profile
+ln -fsn ${INSTALLDIR}/lxplus/.bashrc ~/.bashrc
 
-ln -fsn ${INSTALLDIR}/common/git/gitconfig_lxplus ~/.gitconfig
+ln -fsn ${INSTALLDIR}/lxplus/.gitconfig ~/.gitconfig
 ln -fsn ${INSTALLDIR}/common/git/gitignore_global ~/.gitignore_global
 
 #ln -fsn ${INSTALLDIR}/common/tmux/tmux.common.conf ~/.config/tmux/common.conf
