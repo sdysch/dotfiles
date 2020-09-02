@@ -1,7 +1,7 @@
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-   . /etc/bashrc
-   fi
+## Source global definitions
+#if [ -f /etc/bashrc ]; then
+   #. /etc/bashrc
+   #fi
 
 # ls
 alias ls="ls --color=auto"
