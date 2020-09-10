@@ -20,8 +20,11 @@ do
 done
 
 # Call task, commit files and push if flag is set.
+session=$DESKTOP_SESSION
+case $session in
+	i3) pkill -RTMIN+3 $STATUSBAR
+esac
 task $@
-pkill -RTMIN+3 $STATUSBAR
 cd $TASKDATA
 git add -A
 git commit -m "$TASK_COMMAND" > /dev/null
