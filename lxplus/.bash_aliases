@@ -15,18 +15,20 @@ export VIMINIT=":source ~/.config/vim/vimrc"
 alias cdwork="cd /afs/cern.ch/work/s/sdysch"
 #alias cdTP="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/theo_code/Analysis"
 alias cdxTau="cd /afs/cern.ch/work/s/sdysch/private/xTauFramework"
-alias cdCxAOD="cd /afs/cern.ch/work/s/sdysch/private/CxAODFramework"
-alias cdTP="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/updated/Analysis/"
-alias cdFB="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/precise_TauID/"
-alias cdLepUniv="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/Analysis"
-alias cdGenerator="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/LepUnivGeneratorStudy"
-alias cdPlotGen="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/LepUnivGenStudyPlotting/"
-alias cdHAPPy="cd /afs/cern.ch/work/s/sdysch/private/HAPPy"
-alias cdTES="cd /afs/cern.ch/work/s/sdysch/private/TES"
+#alias cdCxAOD="cd /afs/cern.ch/work/s/sdysch/private/CxAODFramework"
+#alias cdTP="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/updated/Analysis/"
+#alias cdFB="cd /afs/cern.ch/work/s/sdysch/private/tag_probe/precise_TauID/"
+#alias cdGenerator="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/LepUnivGeneratorStudy"
+#alias cdPlotGen="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/LepUnivGenStudyPlotting/"
+#alias cdHAPPy="cd /afs/cern.ch/work/s/sdysch/private/HAPPy"
+#alias cdTES="cd /afs/cern.ch/work/s/sdysch/private/TES"
 # THOR/loki
-alias cdLOKI="cd /afs/cern.ch/work/s/sdysch/private/loki"
-alias cdTHOR="cd /afs/cern.ch/work/s/sdysch/private/THOR/THOR/"
-alias setupLOKI='setupATLAS -q && lsetup "root 6.14.04-x86_64-slc6-gcc62-opt" && source setup.sh'
+#alias cdLOKI="cd /afs/cern.ch/work/s/sdysch/private/loki"
+#alias cdTHOR="cd /afs/cern.ch/work/s/sdysch/private/THOR/THOR/"
+#alias setupLOKI='setupATLAS -q && lsetup "root 6.14.04-x86_64-slc6-gcc62-opt" && source setup.sh'
+
+alias cdLepUniv="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/Analysis"
+alias cdNeutrino="cd /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino"
 
 # LSF
 alias bjobs="bjobs -w"
