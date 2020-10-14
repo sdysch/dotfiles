@@ -6,6 +6,7 @@
 http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
 # my feeble attempts to read Danish news to practice Danish
 https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
+https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast "Mads & Monopolet podcast"
 
 ---Physics---
 https://arxiv.org/rss/hep-ex "~arXiv [hep-ex]"
@@ -30,6 +31,8 @@ https://www.reddit.com/r/ubuntu.rss "~REDDIT: [r/ubuntu]"
 https://www.reddit.com/r/vim.rss "~REDDIT: [r/vim]"
 https://www.reddit.com/r/unixporn.rss "~REDDIT: [r/unixporn]"
 https://www.reddit.com/r/betterCallSaul.rss "~REDDIT: [r/betterCallSaul]"
+https://www.reddit.com/r/sourdough.rss "~REDDIT: [r/sourdough]"
+https://www.reddit.com/r/sourdoh.rss "~REDDIT: [r/sourdoh]"
 
 ---xkcd---
 # xkcd
