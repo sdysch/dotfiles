@@ -24,3 +24,6 @@ export VIMWIKI=$HOME/Documents/vimwiki
 
 # MadGraph binary
 alias runMG=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/MadGraph/MG5_aMC_v2_8_1/bin/mg5_aMC
+
+# rivet
+alias rivet_console=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/rivetInstall/rivet/build/rivet_console
