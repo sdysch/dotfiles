@@ -1,0 +1,18 @@
+#!/bin/bash
+# automatically backup vimwiki
+
+[ -d $VIMWIKI ] || exit 1
+
+PWD=$(pwd)
+
+# add files, commit, push
+cd $VIMWIKI
+git add -A > /dev/null
+timestamp=$(date)
+message="Vim wiki automatically backed up at ${timestamp}"
+git commit -m "$message" > /dev/null
+git push origin master > /dev/null
+echo $message
+
+# go back to previous directory
+cd $PWD
