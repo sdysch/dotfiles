@@ -8,7 +8,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 
 # # environment variables
 # default editor
-export EDITOR=vim
+#export EDITOR=vim
+export EDITOR=nvim
+alias vim="nvim"
 
 # taskwarrior
 export TASKDIR=$HOME/.task
