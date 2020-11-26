@@ -82,6 +82,14 @@ function setupRUCIO {
 	getProxy
 	lsetup rucio
 }
+#
+function setupNeutrino {
+	setupATLAS -q
+	lsetup git
+	asetup --restore
+	source setupAnalysis.sh || echo "Did not find script!"
+	cd ../run
+}
 
 # change to eos ntuple productions
 function cdEOS {
