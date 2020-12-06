@@ -74,4 +74,5 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[36m\]\u\[\e[m\] \[\e[31m\]@\[\e[m\] \[\e[32m\]\h\[\e[m\] \[\e[31m\]in\[\e[m\] \[\e[33m\]\W\[\e[m\] \[\e[35m\]\`parse_git_branch\`\[\e[m\] \[\e[34m\]\d\[\e[m\] \[\e[34m\]\A\[\e[m\] \\$ "
+#export PS1="\[\e[36m\]\u\[\e[m\] \[\e[31m\]@\[\e[m\] \[\e[32m\]\h\[\e[m\] \[\e[31m\]in\[\e[m\] \[\e[33m\]\W\[\e[m\] \[\e[35m\]\`parse_git_branch\`\[\e[m\] \[\e[34m\]\d\[\e[m\] \[\e[34m\]\A\[\e[m\] \\$"
+export PS1="\[\e[36m\]\u\[\e[m\] \[\e[31m\]@\[\e[m\] \[\e[32m\]\h\[\e[m\] \[\e[31m\]in\[\e[m\] \[\e[33m\]\W\[\e[m\] \[\e[35m\]\`parse_git_branch\`\[\e[m\] \[\e[34m\]\d\[\e[m\] \[\e[34m\]\A\[\e[m\]\n \[\e[1;37m\]→\[\e[0m\] "
