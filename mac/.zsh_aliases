@@ -10,8 +10,10 @@ alias lookBusy="hexdump -C < /dev/urandom | grep 'f'"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # ls
-alias ls="ls -G"
-alias ll="ls -ltrh"
+#alias ls="ls -G"
+#alias ll="ls -ltrh"
+alias ls="exa"
+alias ll="exa -l --sort newest --color=always"
 
 # change to my thesis directory :'(
 alias cdThesis="cd ~/Documents/Manchester/PhD/thesis"
