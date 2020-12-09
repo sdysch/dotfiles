@@ -13,7 +13,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo -e "[on ${BRANCH}${STAT}]"
 	else
 		echo ""
 	fi
@@ -55,9 +55,9 @@ function parse_git_dirty {
 }
 
 #export PS1="\[\e[36m\]\u\[\e[m\] \[\e[31m\]@\[\e[m\] \[\e[32m\]\h\[\e[m\] \[\e[31m\]in\[\e[m\] \[\e[33m\]\W\[\e[m\] \[\e[35m\]\`parse_git_branch\`\[\e[m\] \[\e[34m\]\d\[\e[m\] \[\e[34m\]\A\[\e[m\]\n \[\e[1;37m\]→\[\e[0m\] "
-PROMPTDATETIME="\[\e[0;1;38;5;196m\][\d \A\]]\e[m\]"
+PROMPTDATETIME="\[\e[0;1;38;5;84m\][\d \A\]]\e[m\]"
 PROMPTUSER="\[\e[0;1;38;5;45m\]\u\[\e[m\] \[\e[0;1;97m\]@\[\e[m\] \[\e[0;1;38;5;49m\]\h\[\e[m\]"
-PROMPTDIR="\[\e[0;1;97m\]in \[\e[0;1;38;5;126m\]\w\[\e[m\]"
-PROMPTGIT="\[\e[0;1;4;53;38;5;208m\]\`parse_git_branch\`"
-PROMPTCHAR="\[\e[0;1;97m\]▶\[\e[0m\]"
+PROMPTDIR="\[\e[0;1;97m\]in \[\e[0;1;38;5;200m\]\w\[\e[m\]"
+PROMPTGIT="\[\e[0;1;38;5;214m\]\`parse_git_branch\`"
+PROMPTCHAR="\[\e[0;1;97m\]→\[\e[0m\]"
 export PS1="$PROMPTDATETIME $PROMPTUSER $PROMPTDIR $PROMPTGIT\n$PROMPTCHAR "
