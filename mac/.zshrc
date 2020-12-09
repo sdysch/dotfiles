@@ -63,3 +63,7 @@ export _Z_DATA=$XDG_DATA_HOME/z
 
 # vim
 export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+
+# locales for mac
+export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
