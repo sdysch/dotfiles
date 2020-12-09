@@ -1,27 +1,7 @@
 # bash profile
 
-# custom ls 
-alias ll="ls -ltrh"
-
-# grep
-alias grep='grep --color=auto'
-
-# human readable memory by default
-alias du="du -h"
-alias df="df -h"
-
-# being careful about what I move and delete
-alias rm="rm -i"
-alias mv="mv -i"
-
-# remove ROOT splash screen
-alias rt="root -l"
-
 # default editor
 export EDITOR=vim
-
-# kerberos authentication
-alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
 
 # bash aliases
 source ~/.bash_aliases
