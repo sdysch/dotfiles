@@ -1,6 +1,4 @@
-awesome
 binutils
-bspwm
 calcurse
 cmake
 cmake-data
@@ -84,9 +82,7 @@ python-dev
 python3-pandas
 python3-pip
 python3-xcbgen
-ranger
 rclone
-rofi
 scrot
 stow
 sxhkd
@@ -95,7 +91,6 @@ texlive-full
 tmux
 translate-shell
 unclutter
-vifm
 vim
 vlc
 xautolock
