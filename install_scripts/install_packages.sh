@@ -7,9 +7,9 @@ mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 sudo apt-get install $(cat packages.txt)
 pip3 install -r python_packages.txt
 
-echo "cloning taskwarrior"
-mkdir -p $HOME/.task
-git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
+#echo "cloning taskwarrior"
+#mkdir -p $HOME/.task
+#git clone https://github.com/sdysch/taskwarrior_backups.git $HOME/.task/
 
 # install crontab
 cat crontab/crontab | crontab -
