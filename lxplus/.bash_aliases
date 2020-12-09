@@ -5,6 +5,27 @@
 
 # ls
 alias ls="ls --color=auto"
+#
+# custom ls 
+alias ll="ls -ltrh"
+
+# grep
+alias grep='grep --color=auto'
+
+# human readable memory by default
+alias du="du -h"
+alias df="df -h"
+#
+# kerberos authentication
+alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
+
+# being careful about what I move and delete
+alias rm="rm -i"
+alias mv="mv -i"
+
+# remove ROOT splash screen
+alias rt="root -l"
+
 
 export XDG_DATA_HOME=$HOME/.local/share
 
