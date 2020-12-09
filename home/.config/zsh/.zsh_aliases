@@ -4,8 +4,17 @@
 source $ZDOTDIR/.zsh_aliases_common
 
 # ls
-alias ls="ls --color=auto"
-alias ll="ls -ltrh"
+#alias ls="ls --color=auto"
+#alias ll="ls -ltrh"
+
+# exa over ls
+if type exa-linux-x86_64 > /dev/null 2>&1; then
+	alias ls="exa-linux-x86_64"
+	alias ll="ls -l --sort newest --color=always"
+else
+	alias ls="ls --color=auto"
+	alias ll="ls -ltrh"
+fi
 
 # taskwarrior
 alias task="$HOME/.config/taskwarrior/task"
