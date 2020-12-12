@@ -28,6 +28,16 @@ source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/z/z.sh
 
+# Enable searching through history
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# prompt
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
