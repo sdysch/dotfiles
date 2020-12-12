@@ -9,11 +9,11 @@
 ![shell](figures/screenshot3.png)
 
 ## Setup
-* OS: [xubuntu](https://xubuntu.org/) 19.10 (xfce)
+* OS: [xubuntu](https://xubuntu.org/) 20.04 (xfce)
 	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
 	* Script in .local/bin/restorewifi to fix
 * Window manager: [dwm](https://github.com/sdysch/dwm)
-* zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+* zsh
 * (neo)vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * My [custom dmenu build](https://github.com/sdysch/dmenu)
 * bash dotfiles for legacy purposes only
