@@ -38,5 +38,14 @@ bindkey -v
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
 
+# setup autocompletion
+autoload -Uz compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+
+# save history
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=$HISTFILE
+
 # aliases
 source $ZDOTDIR/.zsh_aliases
