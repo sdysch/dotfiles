@@ -12,6 +12,8 @@ ZLOC="~/private/z/z.sh"
 export _Z_DATA=$XDG_DATA_HOME/z
 
 # === PS1 ===
+# how many directories to show in prompt
+PROMPT_DIRTRIM=3
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
