@@ -36,3 +36,6 @@ alias gc="git commit -v"
 alias gd="git diff"
 alias gst="git status"
 alias gp="git push"
+
+# alias vim to nvim
+[[ "$EDITOR" == "nvim" ]] && alias vim="nvim" && alias vimdiff="nvim -d"

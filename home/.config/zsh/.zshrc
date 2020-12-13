@@ -35,6 +35,12 @@ bindkey -v
 # setup autocompletion
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
+# save history
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=$HISTFILE
+#setopt SHARE_HISTORY
+
 # common aliases
 source $ZDOTDIR/.zsh_aliases
 
