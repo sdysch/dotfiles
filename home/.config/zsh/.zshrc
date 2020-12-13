@@ -25,6 +25,10 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
+# enable ctrl a/e to jump to beginning/end of line
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
 # enable vi mode
 bindkey -v
 
