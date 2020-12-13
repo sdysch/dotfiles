@@ -1,7 +1,7 @@
 # mac specific bash aliases
 
 # common
-source $HOME/.zsh_aliases_common
+source $ZDOTDIR/.zsh_aliases_common
 
 # bored
 alias lookBusy="hexdump -C < /dev/urandom | grep 'f'"
@@ -30,3 +30,6 @@ alias runMG=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/MadGraph/MG5_aM
 
 # rivet
 alias rivet_console=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/rivetInstall/rivet/build/rivet_console
+
+# editor
+alias vim="nvim"
