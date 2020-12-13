@@ -27,8 +27,6 @@ alias mv="mv -i"
 alias rt="root -l"
 
 
-export XDG_DATA_HOME=$HOME/.local/share
-
 # vim
 export VIMINIT=":source ~/.config/vim/vimrc"
 
