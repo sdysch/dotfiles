@@ -25,6 +25,9 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
+# enable vi mode
+bindkey -v
+
 # setup autocompletion
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
