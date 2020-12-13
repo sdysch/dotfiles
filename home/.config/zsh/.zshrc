@@ -5,33 +5,31 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
-# ===================================================
-#				oh-my-zsh related
-# ===================================================
-# theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# plugins
-plugins=(
-	git
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-	z
-)
+# zsh plugins
+ZSH_PLUGINS=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH_PLUGINS/z/z.sh
 
-# Path to your oh-my-zsh installation.
-export ZSH="$XDG_DATA_HOME/oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+# Enable searching through history
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# setup autocompletion
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 # common aliases
 source $ZDOTDIR/.zsh_aliases
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
-
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
-
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

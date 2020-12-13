@@ -14,7 +14,9 @@ else
 fi
 
 echo "Installing zsh packages..."
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.local/share/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/powerlevel10k
+INSTALL=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions $INSTALL/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $INSTALL/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $INSTALL/powerlevel10k
+git clone https://github.com/rupa/z.git $INSTALL/z
 echo "Done"

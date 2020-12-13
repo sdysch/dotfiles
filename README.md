@@ -13,10 +13,9 @@
 	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
 	* Script in .local/bin/restorewifi to fix
 * Window manager: [dwm](https://github.com/sdysch/dwm)
-* zsh
+* zsh (bash on lxplus)
 * (neo)vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * My [custom dmenu build](https://github.com/sdysch/dmenu)
-* bash dotfiles for legacy purposes only
 
 ## Installation
 * Installation instructions can be found [here](docs/install.md)
