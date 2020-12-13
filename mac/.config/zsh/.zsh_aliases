@@ -33,4 +33,4 @@ alias rivet_console=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/rivetIn
 
 # editor
 alias vim="nvim"
-alias vimdiff="nvim -d
+alias vimdiff="nvim -d"
