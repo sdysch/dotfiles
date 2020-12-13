@@ -30,7 +30,3 @@ alias runMG=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/MadGraph/MG5_aM
 
 # rivet
 alias rivet_console=$HOME/Documents/Manchester/PostDoc/majorana_neutrino/rivetInstall/rivet/build/rivet_console
-
-# editor
-alias vim="nvim"
-alias vimdiff="nvim -d"
