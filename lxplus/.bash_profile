@@ -7,8 +7,8 @@ export EDITOR=vim
 # bash aliases
 source ~/.bash_aliases
 
-ZLOC="~/private/z/z.sh"
-[ -f $ZLOC ] && source $ZLOC
+ZLOC=~/private/z/z.sh
+[[ -f "$ZLOC" ]] && source $ZLOC
 export _Z_DATA=$XDG_DATA_HOME/z
 
 # === PS1 ===
