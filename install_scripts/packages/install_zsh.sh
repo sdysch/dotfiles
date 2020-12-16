@@ -13,6 +13,7 @@ else
 	echo -e "Please log out and log back in to apply shell changes, then rerun install_zsh.sh"
 fi
 
+# FIXME submodules? 
 echo "Installing zsh packages..."
 INSTALL=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions $INSTALL/zsh-autosuggestions

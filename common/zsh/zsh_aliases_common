@@ -38,4 +38,4 @@ alias gst="git status"
 alias gp="git push"
 
 # alias vim to nvim
-[[ "$EDITOR" == "nvim" ]] && alias vim="nvim" && alias vimdiff="nvim -d"
+[[ "$EDITOR" == "/usr/bin/nvim" ]] && alias vim="nvim" && alias vimdiff="nvim -d"
