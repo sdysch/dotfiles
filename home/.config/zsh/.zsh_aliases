@@ -57,7 +57,8 @@ alias wiki="vim $VIMWIKI/index.wiki"
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
 
 # literally just for screenshots
-alias neofetch="clear && neofetch --ascii_distro Xubuntu"
+#alias neofetch="clear && neofetch --ascii_distro Xubuntu"
+alias neofetch="neofetch --ascii_distro Xubuntu"
 
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
