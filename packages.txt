@@ -1,4 +1,5 @@
 binutils
+bspwm
 calcurse
 cmake
 cmake-data
