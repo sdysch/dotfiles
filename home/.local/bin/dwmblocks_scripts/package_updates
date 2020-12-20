@@ -1,0 +1,3 @@
+#!/bin/bash
+upgrades="$(aptitude search '~U' | wc -l)"
+echo "$upgrades"

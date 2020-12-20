@@ -1,3 +1,4 @@
+aptitude
 binutils
 bspwm
 calcurse

@@ -1,5 +1,12 @@
 #!/bin/bash
 # prints current CPU usage
 
-USAGE=$(mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 -  $12 "%"}')
-echo $USAGE
+#USAGE=$(mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " '{print 100 -  $12 "%"}')
+#echo $USAGE
+read cpu a b c previdle rest < /proc/stat
+prevtotal=$((a+b+c+previdle))
+sleep 0.5
+read cpu a b c idle rest < /proc/stat
+total=$((a+b+c+idle))
+cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+echo "$cpu%"
