@@ -1,0 +1,3 @@
+alacritty
+kitty
+texmaker
