@@ -1,8 +1,12 @@
-# === bspwm bindings
+# === bspwm bindings ===
 
-# restart
+# restart bspwm
 super + shift + r
 	bspc wm -r
+
+# quit bspwm
+super + shift + Escape
+  prompt "Are you sure you would like to quit this Xsession" "bspc quit"
 
 # kill window
 super + q
@@ -11,6 +15,10 @@ super + q
 # Focus on window in direction
 super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
+
+# Change to desktop {0-9}
+super + {0-9}
+	bspc desktop -f {0-9}
 
 # Send window to desktop
 super + shift + {0-9}
