@@ -1,4 +1,4 @@
-*.git/**
+.git/**
 /todolist-backup/**
 /rootInstall/**
 /taskwarrior/**
@@ -6,6 +6,11 @@
 /backups/**
 /vimwiki/**
 /CVs/**
-/Manchester/PhD/LepUniv-meetings
-/Manchester/PhD/ANA-STDM-2019-21-INT1
-/Manchester/PostDoc/majorana_neutrino/majorana-neutrino-meetings
+
+/Manchester/PhD/LepUniv-meetings/**
+/Manchester/PhD/ANA-STDM-2019-21-INT1/**
+/Manchester/PostDoc/majorana_neutrino/majorana-neutrino-meetings/**
+/Manchester/talks/**
+/Manchester/PhD/thesis/**
+/Manchester/PhD/year1_report/**
+/Manchester/PhD/viva/viva-slides/**
