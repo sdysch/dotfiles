@@ -5,6 +5,9 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 # backup todo list every 3 hours
 #0 */3 * * * backup-todo-list
 
+# backup vimwiki every 3 hours
+0 */3 * * * . $HOME/.zprofile; . $HOME/.zshrc; backup_vimwiki
+
 # check battery status every 5 minutes
 */5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc;  $HOME/.local/bin/check_battery
 
@@ -22,5 +25,5 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 */5 * * * * [ $(du -k $HOME/.xsession-errors | awk '{ print $1 }') -gt 1000000 ] && echo " " > $HOME/.xsession-errors
 
 # rclone backups every 3 hours
-#0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
+0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
 

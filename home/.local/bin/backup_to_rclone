@@ -3,17 +3,17 @@
 # check if already running
 pgrep -x backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
 
-notify-send --app-name="rclone backup" "Running rclone backup" -t 3000
-echo "📁 🔃" > /tmp/rclone_icon
-pkill -RTMIN+14 $STATUSBAR
+notify-send "🔃 Running backup" -t 3000
+#echo "🔃" > /tmp/rclone_icon
+#pkill -RTMIN+14 $STATUSBAR
 
 # run the backup. Can add more locations here if needed?
 LOCATION="remote:Backups"
-CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log"
+CMD="rclone copy --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log"
 backups=($HOME/Documents $HOME/.config/gnupg $HOME/.local/share/password-store)
 for backup in ${backups[@]}; do
 	$CMD $backup $LOCATION
 done
 
-rm -f /tmp/rclone_icon
-pkill -RTMIN+14 $STATUSBAR
+#rm -f /tmp/rclone_icon
+#pkill -RTMIN+14 $STATUSBAR
