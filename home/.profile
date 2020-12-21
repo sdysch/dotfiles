@@ -39,13 +39,11 @@ export TERMINAL="xfce4-terminal"
 #export TERMINAL="kitty"
 
 # choose status bar dependent on login session
-if [ "$DESKTOP_SESSION" == "i3" ]; then
-	export STATUSBAR="i3blocks"
-fi
-
-if [ "$DESKTOP_SESSION" == "dwm" ]; then
-	export STATUSBAR="dwmblocks"
-fi
+case "$DESKTOP_SESSION" in
+	i3) export STATUSBAR="i3blocks";;
+	dwm) export STATUSBAR="dwmblocks";;
+	*) export STATUSBAR="";;
+esac
 
 # === config file locations ===
 export XDG_CONFIG_HOME=$HOME/.config
