@@ -8,7 +8,7 @@ for battery in /sys/class/power_supply/BAT?
 do
 	# Get its remaining capacity and charge status.
 	capacity=$(cat "$battery"/capacity) || break
-	status=$(cat "$battery"/status | sed "s/Charging//" | sed "s/Discharging//" | sed "s/Full//")
+	status=$(cat "$battery"/status | sed "s/Charging//" | sed "s/Discharging//" | sed "s/Full//" | sed "s/Unknown/?/")
 
 	 [ "$capacity" -le 100 ] && icon=""
 	 [ "$capacity" -le 75 ] && icon=""
