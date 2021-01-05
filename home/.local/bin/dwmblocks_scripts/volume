@@ -15,7 +15,7 @@ else
 	volstat=$(pactl list sinks | perl -000ne 'if(/Sink #0/){/(Volume:.*)/; print "$1\n"}')
 fi
 
-echo "$mutestring" | grep -q "Mute: yes" && printf "ﱝ 0%" && exit
+echo "$mutestring" | grep -q "Mute: yes" && printf "ﱝ" && exit
 
 
 # scrape volume info
