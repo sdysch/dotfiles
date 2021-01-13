@@ -43,7 +43,7 @@ alias cdxTau="cd /afs/cern.ch/work/s/sdysch/private/xTauFramework"
 #alias cdTES="cd /afs/cern.ch/work/s/sdysch/private/TES"
 # THOR/loki
 #alias cdLOKI="cd /afs/cern.ch/work/s/sdysch/private/loki"
-#alias cdTHOR="cd /afs/cern.ch/work/s/sdysch/private/THOR/THOR/"
+alias cdTHOR="cd /afs/cern.ch/work/s/sdysch/private/TauIDGenDependence/THOR"
 #alias setupLOKI='setupATLAS -q && lsetup "root 6.14.04-x86_64-slc6-gcc62-opt" && source setup.sh'
 
 alias cdLepUniv="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/Analysis"
