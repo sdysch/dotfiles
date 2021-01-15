@@ -89,7 +89,7 @@ export PATH=$PATH:/afs/cern.ch/user/s/sdysch/private/pandamonium
 function retryAllFailedJobs {
 	failedJobs=pandamon | grep finished | awk '{print $2}'
 	#echo $failedJobs
-	"panda-resub-taskid $failedJobs
+	panda-resub-taskid $failedJobs
 }
 
 # setup panda
