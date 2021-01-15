@@ -86,7 +86,11 @@ export RUCIO_ACCOUNT=sdysch
 export PATH=$PATH:/afs/cern.ch/user/s/sdysch/private/pandamonium
 
 # retry all failed grid jobs
-alias retryAllFailedJobs="panda-resub-taskid $(pandamon | grep finished | awk {'print $2'})"
+function retryAllFailedJobs {
+	failedJobs=pandamon | grep finished | awk '{print $2}'
+	#echo $failedJobs
+	"panda-resub-taskid $failedJobs
+}
 
 # setup panda
 function setupPANDA {
