@@ -105,7 +105,7 @@ function setupRUCIO {
 	getProxy
 	lsetup rucio
 }
-#
+
 function setupNeutrino {
 	setupATLAS -q
 	lsetup git
@@ -118,6 +118,19 @@ function setupNeutrino {
 function cdEOS {
 	cd /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1
 	echo "In directory: /eos/user/s/sdysch/LepUniv/LepUniv_ntuples/ntup/$1"
+}
+
+# search for samples
+function findSamples {
+	command -v rucio > /dev/null || setupRUCIO
+	#rucio ls user.sdysch:*sdysch*TauID_v02*_Ta | grep CONTAINER | awk -F "|" {'print $2'} | sort > samples.txt
+	rucio ls $1 | grep CONTAINER | awk -F "|" {'print $2'} | sort
+}
+
+# wrapper for findSamples, but with my scope set
+function findMySamples {
+	command -v rucio > /dev/null || setupRUCIO
+	rucio ls user.sdysch:*sdysch$1 | grep CONTAINER | awk -F "|" {'print $2'} | sort
 }
 
 # zsh git plugin like aliases
