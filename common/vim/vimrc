@@ -91,6 +91,7 @@ let maplocalleader = ','
 " Fast saving and quitting
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
+nmap <leader>qa :qa<cr>
 
 " fugitive shortcuts
 nmap <leader>gs :Gstatus<cr>
