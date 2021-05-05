@@ -190,8 +190,9 @@ set modelines=5
 :command Term  terminal
 :command Vterm vertical terminal
 
-" Stop accidentally opening command window
+" Stop accidentally opening command window and ex mode
 map q: :q
+map Q :q
 
 " === autocmds ===
 
