@@ -222,3 +222,6 @@ autocmd BufRead,BufNewFile *.tex set filetype=tex
 " Automatically backup vim wiki when saving
 " Uses 'backup_vimwiki' command
 autocmd BufWritePost *.wiki if executable('backup_vimwiki') | !backup_vimwiki
+
+" setting my custom QFramework vim syntax files, without having to put modelines in each file 
+autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.txt set filetype=TQFolder
