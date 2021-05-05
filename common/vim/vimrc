@@ -166,7 +166,12 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-" open terminals
+nnoremap <leader>- :split<CR>
+nnoremap <leader>\| :vsplit<CR>
+
+" Navigate tabs with shift-{h,l}
+noremap <S-l> gt
+noremap <S-h> gT
 
 set undolevels=1000
 
@@ -184,6 +189,9 @@ set modelines=5
 " open terminals
 :command Term  terminal
 :command Vterm vertical terminal
+
+" Stop accidentally opening command window
+map q: :q
 
 " === autocmds ===
 
