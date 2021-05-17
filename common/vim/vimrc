@@ -60,9 +60,6 @@ let g:airline_extensions = []
 let g:airline_section_x = '%{strftime("%H:%M %a %d/%m/%y")}'
 let g:airline_section_y = ''
 
-" vimwiki
-let g:vimwiki_list = [{"path" : "$VIMWIKI"}]
-
 " Goyo
 let g:goyo_width = 250
 "let g:goyo_linenr = 1
@@ -225,3 +222,23 @@ autocmd BufWritePost *.wiki if executable('backup_vimwiki') | !backup_vimwiki
 
 " setting my custom QFramework vim syntax files, without having to put modelines in each file 
 autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.txt set filetype=TQFolder
+
+" === vimwiki configuration ===
+" vimwiki
+let g:vimwiki_list = [{"path" : "$VIMWIKI"}]
+let g:wiki_root    = "$VIMWIKI"
+
+" Open the work todo file of the wiki
+function WikiTodo()
+  let path = fnameescape(expand(g:wiki_root)) . '/todo.wiki'
+  execute 'e ' . path
+endfunction
+
+" Open the work todo file of the wiki
+function WikiNotes()
+  let path = fnameescape(expand(g:wiki_root)) . '/notes.wiki'
+  execute 'e ' . path
+endfunction
+
+nmap <Leader>wt :call WikiTodo() <cr>
+nmap <Leader>wn :call WikiNotes() <cr>

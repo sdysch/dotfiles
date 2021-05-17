@@ -52,6 +52,9 @@ alias pgp="pass git push origin master"
 
 # edit vim wiki
 alias wiki="vim $VIMWIKI/index.wiki"
+alias wikitodo="vim $VIMWIKI/todo.wiki"
+alias wikinotes="vim $VIMWIKI/notes.wiki"
+alias notes="wikinotes"
 
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
