@@ -242,3 +242,15 @@ endfunction
 
 nmap <Leader>wt :call WikiTodo() <cr>
 nmap <Leader>wn :call WikiNotes() <cr>
+
+" === ctrlp configuration ===
+" ctrlp ignore directories
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" open new file in vertical split
+let g:ctrlp_open_new_file = 'v'
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("h")': ['<c-v>', '<2-LeftMouse>', '<Enter>'],
+    \ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
+    \ }
