@@ -46,7 +46,6 @@ libmpdclient-dev
 libmysqlclient-dev
 libpcre3-dev
 libpulse-dev
-libqt4-dev
 libssl-dev
 libx11-dev
 libxcb-composite0-dev
@@ -88,7 +87,6 @@ rclone
 scrot
 stow
 sxhkd
-taskwarrior
 texlive-full
 tmux
 translate-shell
