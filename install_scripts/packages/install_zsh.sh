@@ -8,9 +8,13 @@ mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 if [[ "$SHELL" =~ .*zsh$ ]]; then
 	echo "ZSH is the current shell"
 else
-	echo "Changing shell from ${SHELL} to zsh"
-	chsh -s "$(which zsh)" "$USER"
-	echo -e "Please log out and log back in to apply shell changes, then rerun install_zsh.sh"
+	if [[ $CI ]]; then
+		echo "Skipping shell change as we are running inside CI"
+	else
+		echo "Changing shell from ${SHELL} to zsh"
+		chsh -s "$(which zsh)" "$USER"
+		echo -e "Please log out and log back in to apply shell changes, then rerun install_zsh.sh"
+	fi
 fi
 
 # FIXME submodules? 

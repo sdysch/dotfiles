@@ -3,40 +3,26 @@ variables:
 
 
 stages:
-    - test_home
-    - test_lxplus
+    - install
 
-# just tests stow - what else can I do?
 install_home:
-    stage: test_home
+    stage: install
 
     image: ubuntu:20.04
 
     before_script:
         # update apt-get
         - apt-get update
-        - apt-get -y install stow
+        - apt-get --assume-yes install stow vim git
 
     script:
-        - stow home
-
-install_vim:
-    stage: test_home
-
-    image: ubuntu:20.04
-
-    before_script:
-        # update apt-get
-        - apt-get update
-        - apt-get -y install vim git
-
-    script:
-        - source install_scripts/packages/install_vim.sh
+        - source install_scripts/install_packages.sh
+        - stow --no-folding home
 
 #======================================================================================
 
 install_lxplus:
-    stage: test_lxplus
+    stage: install
 
     # ??
     image: ubuntu:20.04
