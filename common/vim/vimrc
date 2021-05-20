@@ -100,6 +100,9 @@ nmap <leader>r :!make<cr>
 " turn off search highlighting
 nmap <leader>n :noh<cr>
 
+" show registers
+nmap <leader>s :registers<cr>
+
 " easier yanking/pasting to/from system clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
