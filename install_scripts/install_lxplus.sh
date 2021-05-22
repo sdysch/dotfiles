@@ -10,6 +10,7 @@ mkdir -p ~/.cache/zsh
 
 ln -fsn ${INSTALLDIR}/lxplus/.bash_aliases ~/.bash_aliases
 ln -fsn ${INSTALLDIR}/lxplus/.bash_profile ~/.bash_profile
+ln -fsn ${INSTALLDIR}/lxplus/.bash_prompt ~/.bash_prompt
 ln -fsn ${INSTALLDIR}/lxplus/.bashrc ~/.bashrc
 
 ln -fsn ${INSTALLDIR}/lxplus/.gitconfig ~/.gitconfig
