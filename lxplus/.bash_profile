@@ -14,3 +14,8 @@ export _Z_DATA=$XDG_DATA_HOME/z
 
 # PS1
 source ~/.bash_prompt
+
+# set vi mode
+set -o vi
+# and re-enable edit-and-execute-command, as this is sometimes nice to use too 
+bind -m vi-insert '"\C-x\C-e": edit-and-execute-command'
