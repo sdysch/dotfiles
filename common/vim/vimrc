@@ -32,6 +32,7 @@ Plugin 'sdysch/vim-todolist-syntax'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vimwiki/vimwiki'
 if v:version > 704 | Plugin 'ap/vim-css-color' | endif
+Plugin 'junegunn/vim-peekaboo'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -99,9 +100,6 @@ nmap <leader>r :!make<cr>
 
 " turn off search highlighting
 nmap <leader>n :noh<cr>
-
-" show registers
-nmap <leader>s :registers<cr>
 
 " easier yanking/pasting to/from system clipboard
 noremap <leader>y "+y
