@@ -1,3 +1,4 @@
+cookiecutter
 i3ipc
 ipython
 jupyter
