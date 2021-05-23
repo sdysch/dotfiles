@@ -15,7 +15,11 @@ export _Z_DATA=$XDG_DATA_HOME/z
 # PS1
 source ~/.bash_prompt
 
+# ==== key bindings ====
 # set vi mode
 set -o vi
-# and re-enable edit-and-execute-command, as this is sometimes nice to use too 
+# re-enable some emacs-style bindings that I am used to
 bind -m vi-insert '"\C-x\C-e": edit-and-execute-command'
+bind -m vi-insert '"\C-l": clear-screen'
+bind -m vi-insert '"\C-a": beginning-of-line'
+bind -m vi-insert '"\C-e": end-of-line'
