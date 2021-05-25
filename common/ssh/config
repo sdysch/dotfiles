@@ -1,52 +1,55 @@
-AddKeysToAgent yes
-
 # === CERN ===
 Host lxplus
 	User sdysch
 	HostName lxplus.cern.ch
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 # === Manchester ===
 Host tony
 	User samdysch
 	HostName tony.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 Host higgs
 	User samdysch
 	HostName higgs.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 Host pc2012
 	User samdysch
 	HostName pc2012.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 Host pc2013
 	User samdysch
 	HostName pc2013.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 Host pc2014
 	User samdysch
 	HostName pc2014.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
 
 Host hepgpu1
 	User samdysch
 	HostName hepgpu1.hep.manchester.ac.uk
-	ServerAliveInterval 120
 	ForwardAgent yes
 	ForwardX11 yes
+	ForwardX11Trusted yes
+
+# general
+Host *
+	ServerAliveInterval 120
+	AddKeysToAgent yes
