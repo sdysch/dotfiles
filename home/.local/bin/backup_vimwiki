@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # automatically backup vimwiki
 
 [ -d $VIMWIKI ] || exit 1
@@ -16,3 +16,6 @@ echo $message
 
 # go back to previous directory
 cd $PWD
+
+# if we have dwmblocks, send signal to update
+command -v > /dev/null && pkill -RTMIN+3 dwmblocks
