@@ -65,3 +65,6 @@ alias neofetch="neofetch --ascii_distro Xubuntu"
 
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
+
+# print out how many (top-level) todo items I have left
+alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
