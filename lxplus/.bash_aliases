@@ -139,3 +139,7 @@ alias gc="git commit"
 alias gp="git push"
 alias gaa="git add -A"
 alias gb="git branch"
+
+# bind autocomplete to aliases that I will need it for
+__git_complete gp _git_push
+__git_complete gb _git_branch
