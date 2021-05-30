@@ -104,3 +104,6 @@ export PATH=$PATH:"${TODOBACKUP}/scripts"
 export USERCERN="sdysch"
 export USERMANC="samdysch"
 export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
+
+# ruby
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
