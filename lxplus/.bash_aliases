@@ -46,6 +46,8 @@ alias cdTHOR="cd /afs/cern.ch/work/s/sdysch/private/TauIDGenDependence/THOR"
 alias cdLOKI="cd /afs/cern.ch/work/s/sdysch/private/TauIDGenDependence/loki/loki"
 alias setupLOKI='setupATLAS -q && lsetup "root 6.20.06-x86_64-centos7-gcc8-opt" && source setup.sh'
 
+alias cdHiggs="cd /afs/cern.ch/work/s/sdysch/private/SSHiggs/"
+
 alias cdLepUniv="cd /afs/cern.ch/work/s/sdysch/private/LepUniv/Analysis"
 alias cdNeutrino="cd /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino"
 
