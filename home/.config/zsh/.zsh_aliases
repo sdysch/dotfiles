@@ -30,6 +30,7 @@ open() {
 # root version
 rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
 [ -f "$rootSource" ] && source $rootSource
+unset rootSource
 
 # thesis
 # navigate to thesis dir
@@ -68,3 +69,10 @@ alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes
 
 # print out how many (top-level) todo items I have left
 alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
+
+# madgraph binary
+MGVERSION="MG5_aMC_v3_1_1"
+MGPATH="/home/sdysch/Documents/Manchester/PostDoc/MadGraphInstall/$MGVERSION/bin"
+alias runMG="$MGPATH"
+unset MGVERSION
+unset MGPATH
