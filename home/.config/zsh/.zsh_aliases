@@ -51,12 +51,6 @@ alias pgp="pass git push origin master"
 #alias translate_from_danish='trans -source "Dansk"'
 #alias translate_into_danish='trans -target "Dansk"'
 
-# edit vim wiki
-alias wiki="vim $VIMWIKI/index.wiki"
-alias wikitodo="vim $VIMWIKI/todo.wiki"
-alias wikinotes="vim $VIMWIKI/notes.wiki"
-alias notes="wikinotes"
-
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
 
@@ -66,9 +60,6 @@ alias neofetch="neofetch --ascii_distro Xubuntu"
 
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-
-# print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
 
 # madgraph binary
 MGVERSION="MG5_aMC_v3_1_1"
