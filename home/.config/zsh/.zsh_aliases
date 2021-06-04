@@ -64,6 +64,6 @@ alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes
 # madgraph binary
 MGVERSION="MG5_aMC_v3_1_1"
 MGPATH="/home/sdysch/Documents/Manchester/PostDoc/MadGraphInstall/$MGVERSION/bin"
-alias runMG="$MGPATH"
+alias runMG="$MGPATH/mg5_aMC"
 unset MGVERSION
 unset MGPATH
