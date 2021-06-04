@@ -28,7 +28,7 @@ open() {
 }
 
 # root version
-rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
+rootSource="/home/sdysch/Documents/rootInstall/root/bin/thisroot.sh"
 [ -f "$rootSource" ] && source $rootSource
 unset rootSource
 
