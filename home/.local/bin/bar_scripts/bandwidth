@@ -8,6 +8,7 @@ case $BLOCK_BUTTON in
 ❎: no ethernet
 🌐: ethernet working
 " ;;
+	*) echo "Don't know what to do"
 esac
 
 [ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="📡" ||
