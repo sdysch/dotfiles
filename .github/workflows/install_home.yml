@@ -8,3 +8,16 @@ jobs:
         - run: apt-get --assume-yes install stow vim git
         - run: source install_scripts/install_packages.sh
         - run: stow --no-folding home
+
+
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Installation
+    runs-on: ubuntu-latest
+    steps:
+      - run: apt-get update
+      - run: apt-get --assume-yes install stow vim git
+      - run: source install_scripts/install_packages.sh
+      - run: stow --no-folding home
+
