@@ -21,11 +21,11 @@ install_home:
 
 #======================================================================================
 
-install_lxplus:
-    stage: install
+#install_lxplus:
+    #stage: install
 
-    # ??
-    image: ubuntu:20.04
+    ## ??
+    #image: ubuntu:20.04
 
-    script:
-        - source install_scripts/install_lxplus.sh
+    #script:
+        #- source install_scripts/install_lxplus.sh

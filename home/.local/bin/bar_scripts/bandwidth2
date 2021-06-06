@@ -75,7 +75,7 @@ case "$unit" in
 esac
 
 scalar=$((bytes_per_unit * dt))
-init_line=$(cat /proc/net/dev | grep "^[ ]*$iface:")
+init_line=$(grep "^[ ]*$iface:" /proc/net/dev)
 if [ -z "$init_line" ]; then
     echo Interface not found in /proc/net/dev: "$iface"
     exit 1

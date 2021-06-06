@@ -18,3 +18,8 @@ scripts=(install_vim.sh install_fonts.sh install_zsh.sh)
 for script in ${scripts[@]}; do
 	source install_scripts/packages/$script
 done
+
+# don't want to install these inside CI
+if [[ ! ${CI} ]]; then
+	source install_scripts/packages/install_suckless.sh
+fi

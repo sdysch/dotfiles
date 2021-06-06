@@ -1,6 +1,7 @@
 # dotfiles
 
 [![pipeline status](https://gitlab.com/sdysch/dotfiles/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles/-/commits/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/sdysch/dotfiles/badge)](https://www.codefactor.io/repository/github/sdysch/dotfiles)
 
 ## My dotfiles
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
@@ -23,6 +24,7 @@
 ### Home
 * Installation with gnu stow
 * Clone repo to `~/dotfiles`, then:
+* For home, clone repo to ~/dotfiles then:
 ```
 cd ~/dotfiles
 source install_scripts/install_packages.sh
@@ -44,6 +46,5 @@ stow --no-folding mac
 cd ~/dotfiles
 source install_scripts/install_lxplus.sh
 ```
-
 
 * Mirror [here](https://github.com/sdysch/dotfiles)

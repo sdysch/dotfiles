@@ -1,0 +1,10 @@
+name: Installation
+on: [push]
+jobs:
+    dist:
+        runs-on: ubuntu-latest
+    steps:
+        run: apt-get update
+        run: apt-get --assume-yes install stow vim git
+        run: source install_scripts/install_packages.sh
+        run: stow --no-folding home
