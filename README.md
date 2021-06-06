@@ -48,4 +48,18 @@ cd ~/dotfiles
 source install_scripts/install_lxplus.sh
 ```
 
+### Manchester
+* Clone repo to `~/dotfiles`, then:
+```
+cd ~/dotfiles
+source install_scripts/install_manchester.sh
+```
+
+For Manchester, to do anything useful with git, be sure to do
+```
+setupATLAS
+lsetup git
+```
+on a machine with cvmfs available. The default git version (1.7.1) is _way_ too old....
+
 * Mirror [here](https://github.com/sdysch/dotfiles)
