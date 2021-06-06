@@ -4,6 +4,7 @@ jobs:
     Installation:
         runs-on: ubuntu-latest
         steps:
+            - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
             - name: Checkout repository code
             - uses: actions/checkout@v2
             - run: |
