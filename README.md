@@ -24,7 +24,7 @@
  
 ### Home
 * Installation with gnu stow
-* For home, clone repo to ~/dotfiles then:
+* For home, clone repo to `~/dotfiles` then:
 ```
 cd ~/dotfiles
 source install_scripts/install_packages.sh
