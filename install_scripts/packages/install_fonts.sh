@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "Installing powerline fonts..."
+pwd=$(pwd)
 cd /tmp
 
 if [ $? -ne 0 ]; then
@@ -25,4 +26,11 @@ if [ $? -ne 0 ]; then
 fi
 
 rm -rf fonts
+
+cd $pwd
+if [ $? -ne 0 ]; then
+	echo "Could not change back to original directory, something went wrong"
+	exit 1
+fi
+
 echo "Done"
