@@ -1,7 +1,8 @@
 name: Installation
 on: [push]
-jobs: install_home
-    runs-on: ubuntu-latest
+jobs:
+    dist:
+        runs-on: ubuntu-latest
     steps:
         name: Update
         - run: apt-get update
