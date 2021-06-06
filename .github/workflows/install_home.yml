@@ -4,7 +4,7 @@ jobs:
     Installation:
         runs-on: ubuntu-latest
         steps:
-            run: |
+            - run: |
                 apt-get update
                 apt-get --assume-yes install stow vim git
                 source install_scripts/install_packages.sh
