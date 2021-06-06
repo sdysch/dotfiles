@@ -1,1 +1,1 @@
-../common/bash/bash_profile
+.bash_aliases
