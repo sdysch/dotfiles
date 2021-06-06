@@ -20,10 +20,10 @@
 
 ## Installation
 * Some installation instructions can be found [here](docs/install.md), but they may be out of date
+* Clone repo to `~/dotfiles`, then follow system specific instructions below
  
 ### Home
 * Installation with gnu stow
-* Clone repo to `~/dotfiles`, then:
 * For home, clone repo to ~/dotfiles then:
 ```
 cd ~/dotfiles
@@ -33,10 +33,11 @@ stow --no-folding home
 
 ### mac
 * Installation with gnu stow
-* Clone repo to `~/dotfiles`, then:
 ```
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 cd ~/dotfiles
-source install_scripts/install_packages.sh
+cat packages/cask.txt packages/leaves.txt | xargs brew install
 stow --no-folding mac
 ```
 
