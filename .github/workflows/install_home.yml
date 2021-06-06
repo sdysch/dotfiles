@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: |
-                apt-get update
-                apt-get --assume-yes install stow vim git
+                sudo apt-get update
+                sudo apt-get --assume-yes install stow vim git
                 source install_scripts/install_packages.sh
                 stow --no-folding home
