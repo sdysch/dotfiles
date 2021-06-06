@@ -9,4 +9,4 @@ jobs:
                 sudo apt-get --assume-yes install stow vim git
                 source install_scripts/install_packages.sh
                 stow --no-folding home
-                uses: actions/checkout@v2
+              - uses: actions/checkout@v2
