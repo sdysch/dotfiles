@@ -1,6 +1,7 @@
 # dotfiles_harmonised
 
 [![pipeline status](https://gitlab.com/sdysch/dotfiles_harmonised/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles_harmonised/-/commits/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/sdysch/dotfiles/badge)](https://www.codefactor.io/repository/github/sdysch/dotfiles)
 
 ## My dotfiles
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
