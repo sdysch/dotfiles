@@ -2,11 +2,11 @@ name: Install
 on: [push]
 jobs:
     Installation:
-    runs-on: ubuntu-latest
-    steps:
-        - uses: actions/checkout@v2
-        run: |
-            apt-get update
-            apt-get --assume-yes install stow vim git
-            source install_scripts/install_packages.sh
-            stow --no-folding home
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            run: |
+                apt-get update
+                apt-get --assume-yes install stow vim git
+                source install_scripts/install_packages.sh
+                stow --no-folding home
