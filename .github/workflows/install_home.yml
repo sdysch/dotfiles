@@ -2,11 +2,11 @@ name: Install
 on: [push]
 jobs:
     Installation:
-        runs-on: ubuntu-latest
+        runs-on: "ubuntu-latest"
         steps:
-            - name: Checkout repository
-                uses: actions/checkout@v2
-            - run: |
+            - name: "Checkout repository"
+              uses: "actions/checkout@v2"
+              run: |
                 cd ${{ github.workspace }}
                 sudo apt-get update
                 sudo apt-get --assume-yes install stow vim git
