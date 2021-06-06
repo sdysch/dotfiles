@@ -1,6 +1,6 @@
-# dotfiles_harmonised
+# dotfiles
 
-[![pipeline status](https://gitlab.com/sdysch/dotfiles_harmonised/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles_harmonised/-/commits/master)
+[![pipeline status](https://gitlab.com/sdysch/dotfiles/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles/-/commits/master)
 [![CodeFactor](https://www.codefactor.io/repository/github/sdysch/dotfiles/badge)](https://www.codefactor.io/repository/github/sdysch/dotfiles)
 
 ## My dotfiles
@@ -21,9 +21,9 @@
 ## Installation
 * Installation instructions can be found [here](docs/install.md)
 * Installation with gnu stow
-* For home, clone repo to ~/dotfiles_harmonised then:
+* For home, clone repo to ~/dotfiles then:
 ```
-cd ~/dotfiles_harmonised
+cd ~/dotfiles
 source install_scripts/install_packages.sh
 stow --no-folding home
 ```

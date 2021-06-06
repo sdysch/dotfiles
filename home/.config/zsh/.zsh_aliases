@@ -20,7 +20,7 @@ fi
 alias task="$HOME/.config/taskwarrior/task"
 alias t="task"
 # NOTE call absolute path to modified task script!
-alias tp="$HOME/dotfiles_harmonised/home/.config/taskwarrior/task --task-git-push"
+alias tp="$HOME/dotfiles/home/.config/taskwarrior/task --task-git-push"
 
 # opening files
 open() {
