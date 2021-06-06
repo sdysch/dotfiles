@@ -20,7 +20,7 @@ fi
 alias task="$HOME/.config/taskwarrior/task"
 alias t="task"
 # NOTE call absolute path to modified task script!
-alias tp="$HOME/dotfiles_harmonised/home/.config/taskwarrior/task --task-git-push"
+alias tp="$HOME/dotfiles/home/.config/taskwarrior/task --task-git-push"
 
 # opening files
 open() {
@@ -28,8 +28,9 @@ open() {
 }
 
 # root version
-rootSource="/home/sdysch/Documents/rootInstall/build/bin/thisroot.sh"
+rootSource="/home/sdysch/Documents/rootInstall/root/bin/thisroot.sh"
 [ -f "$rootSource" ] && source $rootSource
+unset rootSource
 
 # thesis
 # navigate to thesis dir
@@ -50,12 +51,6 @@ alias pgp="pass git push origin master"
 #alias translate_from_danish='trans -source "Dansk"'
 #alias translate_into_danish='trans -target "Dansk"'
 
-# edit vim wiki
-alias wiki="vim $VIMWIKI/index.wiki"
-alias wikitodo="vim $VIMWIKI/todo.wiki"
-alias wikinotes="vim $VIMWIKI/notes.wiki"
-alias notes="wikinotes"
-
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
 
@@ -66,5 +61,9 @@ alias neofetch="neofetch --ascii_distro Xubuntu"
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 
-# print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
+# madgraph binary
+MGVERSION="MG5_aMC_v3_1_1"
+MGPATH="/home/sdysch/Documents/Manchester/PostDoc/MadGraphInstall/$MGVERSION/bin"
+alias runMG="$MGPATH/mg5_aMC"
+unset MGVERSION
+unset MGPATH
