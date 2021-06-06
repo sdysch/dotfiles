@@ -4,8 +4,8 @@ jobs:
     Installation:
     runs-on: ubuntu-latest
     steps:
-      - run: apt-get update
-      - run: apt-get --assume-yes install stow vim git
-      - run: source install_scripts/install_packages.sh
-      - run: stow --no-folding home
-
+        run: |
+            apt-get update
+            apt-get --assume-yes install stow vim git
+            source install_scripts/install_packages.sh
+            stow --no-folding home
