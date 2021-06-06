@@ -4,7 +4,6 @@ jobs:
     Installation:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
             run: |
                 apt-get update
                 apt-get --assume-yes install stow vim git
