@@ -87,8 +87,8 @@ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
 # directory where wallpapers/icons are stored
-export ICONSDIR="$HOME/dotfiles_harmonised/icons"
-export WALLPAPERSDIR="$HOME/dotfiles_harmonised/wallpapers"
+export ICONSDIR="$HOME/dotfiles/icons"
+export WALLPAPERSDIR="$HOME/dotfiles/wallpapers"
 
 # thesis
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
