@@ -67,3 +67,8 @@ MGPATH="/home/sdysch/Documents/Manchester/PostDoc/MadGraphInstall/$MGVERSION/bin
 alias runMG="$MGPATH/mg5_aMC"
 unset MGVERSION
 unset MGPATH
+
+# for Manchester VPN (required for ssh connection)
+# FIXME - in ssh config, use ProxyCommand?
+alias connectManchester="globalprotect connect --portal vpnconnect.manchester.ac.uk"
+alias disconnectManchester="globalprotect disable"
