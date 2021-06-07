@@ -18,4 +18,4 @@ echo $message
 cd $PWD
 
 # if we have dwmblocks, send signal to update
-command -v dwmblocks > /dev/null && pkill -RTMIN+3 dwmblocks
+#command -v dwmblocks > /dev/null && pkill -RTMIN+3 dwmblocks
