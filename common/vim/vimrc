@@ -224,6 +224,8 @@ autocmd BufWritePost *.wiki if executable('backup_vimwiki') | !backup_vimwiki
 
 " setting my custom QFramework vim syntax files, without having to put modelines in each file 
 autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.txt set filetype=TQFolder
+autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.tqf set filetype=TQFolder
+autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/share/config/cuts/*.def set filetype=TQFolder
 
 " === vimwiki configuration ===
 " vimwiki
