@@ -2,11 +2,13 @@ cookiecutter
 i3ipc
 ipython
 jupyter
+keras
 matplotlib
 nose
 numpy
 oauth2client
 pandas
 scipy
+sklearn
 sympy
 tensorflow

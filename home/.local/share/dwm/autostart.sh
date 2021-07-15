@@ -9,3 +9,4 @@ nm-applet &
 pulseaudio --start &
 skypeforlinux &
 ~/.local/bin/check_inactivity &
+xfce4-power-manager
