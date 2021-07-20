@@ -5,7 +5,7 @@ function install() {
 	INSTALLDIR="$HOME/Documents/repos/$1"
 	mkdir -p $INSTALLDIR
 	git clone git@github.com:sdysch/$1.git $INSTALLDIR
-	cd $INSTALLDIR/$1
+	cd $INSTALLDIR
 	sudo make install
 }
 
