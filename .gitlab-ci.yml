@@ -16,7 +16,7 @@ install_home:
         - apt-get --assume-yes install stow vim git
 
     script:
-        - source install_scripts/install_packages.sh
+        - source install_scripts/install_xubuntu.sh
         - stow --no-folding home
 
 #======================================================================================

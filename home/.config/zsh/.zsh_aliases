@@ -52,7 +52,7 @@ alias pgp="pass git push origin master"
 #alias translate_into_danish='trans -target "Dansk"'
 
 # cmus
-alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR:?}"
+alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 
 # literally just for screenshots
 #alias neofetch="clear && neofetch --ascii_distro Xubuntu"

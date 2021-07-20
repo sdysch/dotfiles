@@ -10,5 +10,5 @@ jobs:
                 cd ${{ github.workspace }}
                 sudo apt-get update
                 sudo apt-get --assume-yes install stow vim git
-                source install_scripts/install_packages.sh
+                source install_scripts/install_xubuntu.sh
                 stow --no-folding home
