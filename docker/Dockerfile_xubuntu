@@ -1,5 +1,6 @@
 # REF: https://www.jamesridgway.co.uk/dotfiles-with-github-travis-ci-and-docker/
 FROM ubuntu:20.04
+ENV DOCKER=yes
 
 # update
 RUN apt-get -qq update
@@ -12,42 +13,21 @@ RUN usermod -aG sudo testuser
 RUN echo "testuser   ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers
 
 # add dotfiles
-ADD . /home/testuser/dotfiles
-RUN chown -R testuser:testuser /home/testuser
+ADD . /home/testuser/dotfiles/
 
 # switch to test user
+RUN chown -R testuser:testuser /home/testuser
 USER testuser
 ENV HOME /home/testuser
 WORKDIR /home/testuser/dotfiles
 
-# Run setup
-# Create expected directories
-RUN mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"
-RUN mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}"
-RUN mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
-
-# Skip install of these packages - many of these are not needed for testing
-#RUN sudo apt-get install $(cat packages/packages_xubuntu.txt)
-#RUN pip3 install -r packages/python_packages.txt
-
-# Install packages with less trivial setup
-RUN alias vim="nvim"
-RUN install_scripts/packages/install_vim.sh
-RUN install_scripts/packages/install_fonts.sh
-RUN install_scripts/packages/install_zsh.sh
+# run the install
+RUN install_scripts/install_xubuntu.sh
 
 # simlink dotfiles
 # overwrite $HOME/.profile
 RUN rm -f $HOME/.profile
 RUN stow --no-folding home
-
-# suckless
-# use sed to replace ssh with https
-RUN sed -i 's/git@github.com:/https:\/\/github.com\//' install_scripts/packages/install_suckless.sh
-
-# need a place to put desktop session entry for dwm
-RUN sudo mkdir -p /usr/share/xsessions
-RUN install_scripts/packages/install_suckless.sh
 
 WORKDIR /home/testuser/
 

@@ -2,10 +2,15 @@
 
 [![pipeline status](https://gitlab.com/sdysch/dotfiles/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles/-/commits/master)
 [![CodeFactor](https://www.codefactor.io/repository/github/sdysch/dotfiles/badge)](https://www.codefactor.io/repository/github/sdysch/dotfiles)
+[![Docker pulls](https://img.shields.io/docker/pulls/sdysch/dotfiles.svg)](https://hub.docker.com/r/sdysch/dotfiles)
+[![Docker Image Size](https://img.shields.io/docker/image-size/sdysch/dotfiles/latest)](https://hub.docker.com/r/sdysch/dotfiles/tags?name=latest)
 
 ## My dotfiles
  * If you are reading this, then I probably wouldn't bother or waste your time. This is just a store for the various configuration files that I use, across the machines that I work on.
  * That being said, if you wish to steal anything, (as I undoubtedly have), then please be my guest!
+ * If you _really_ want, a docker image of my xubuntu dotfiles can be found [here](https://hub.docker.com/r/sdysch/dotfiles)
+	 * **Disclaimer**. I wrote this image, partly as a way for me to learn docker, but also as a proper way to test the installation of my dotfiles on a new machine
+	 * PRs welcome if you find a bug ;)
 
 ![shell](figures/screenshot3.png)
 
@@ -27,7 +32,7 @@
 * For home, clone repo to `~/dotfiles` then:
 ```
 cd ~/dotfiles
-source install_scripts/install_packages.sh
+source install_scripts/install_xubuntu.sh
 stow --no-folding home
 ```
 
