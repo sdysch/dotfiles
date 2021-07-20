@@ -12,7 +12,7 @@
 	 * **Disclaimer**. I wrote this image, partly as a way for me to learn docker, but also as a proper way to test the installation of my dotfiles on a new machine
 	 * PRs welcome if you find a bug ;)
 
-![shell](figures/screenshot3.png)
+![shell](https://gitlab.com/sdysch/dotfiles/-/raw/master/figures/screenshot3.png)
 
 ## Setup
 * OS: [xubuntu](https://xubuntu.org/) 20.04 (xfce)
