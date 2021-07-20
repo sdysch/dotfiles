@@ -3,7 +3,8 @@ FROM ubuntu:20.04
 
 # update
 RUN apt-get -qq update
-RUN apt-get install git sudo zsh stow make vim libx11-dev build-essential -qq -y
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install git sudo zsh stow make neovim \
+	libx11-dev build-essential curl wget libxrandr-dev libxi-dev libxinerama-dev libxft-dev -qq -y
 
 # creating test user, with no sudo password
 RUN useradd -m -s /bin/zsh testuser
@@ -21,7 +22,7 @@ WORKDIR /home/testuser/dotfiles
 
 # Run setup
 # Create expected directories
-RUN mkdir -p "${XDG_CONFIG_HOME:-=$HOME/.config}"
+RUN mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"
 RUN mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}"
 RUN mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 
@@ -30,6 +31,7 @@ RUN mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 #RUN pip3 install -r packages/python_packages.txt
 
 # Install packages with less trivial setup
+RUN alias vim="nvim"
 RUN install_scripts/packages/install_vim.sh
 RUN install_scripts/packages/install_fonts.sh
 RUN install_scripts/packages/install_zsh.sh
@@ -42,6 +44,11 @@ RUN stow --no-folding home
 # suckless
 # use sed to replace ssh with https
 RUN sed -i 's/git@github.com:/https:\/\/github.com\//' install_scripts/packages/install_suckless.sh
+
+# need a place to put desktop session entry for dwm
+RUN sudo mkdir -p /usr/share/xsessions
 RUN install_scripts/packages/install_suckless.sh
 
-CMD ["/bin/bash"]
+WORKDIR /home/testuser/
+
+CMD ["/bin/zsh", "--login"]
