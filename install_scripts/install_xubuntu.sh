@@ -6,7 +6,8 @@ mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 
 # don't want to install many packages for each CI run
 # they are also not needed for the docker container
-if [[ ! ${CI} ]] || [[ $DOCKER != "yes" ]] ; then
+echo $DOCKER
+if [[ ! ${CI} ]] && [[ $DOCKER != "yes" ]] ; then
 	sudo apt-get install $(cat packages/packages_xubuntu.txt)
 	pip3 install -r packages/python_packages.txt
 
