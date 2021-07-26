@@ -5,6 +5,6 @@
 dwmblocks &
 nitrogen --restore &
 nm-applet &
-pulseaudio --start &
+#pulseaudio --start &
 ~/.local/bin/check_inactivity &
 xfce4-power-manager
