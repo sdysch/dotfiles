@@ -1,2 +1,3 @@
-ttf-meslo-nerd-font-powerlevel10k
+libxft-bgra
 nerd-fonts-meslo
+ttf-meslo-nerd-font-powerlevel10k

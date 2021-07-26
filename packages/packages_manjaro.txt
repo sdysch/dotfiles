@@ -5,6 +5,7 @@ cmake
 cmus
 compton
 curl
+dunst
 evince
 firefox
 fontconfig
@@ -33,6 +34,7 @@ ttf-font-awesome
 vifm
 vim
 vlc
+wireless_tools
 xautolock
 xclip
 xdotool
