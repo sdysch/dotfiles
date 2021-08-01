@@ -27,6 +27,7 @@ noto-fonts-emoji
 pass
 scrot
 stow
+sxiv
 texlive-most
 tmux
 translate-shell
