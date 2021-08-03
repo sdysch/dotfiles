@@ -132,7 +132,8 @@ function findSamples {
 # wrapper for findSamples, but with my scope set
 function findMySamples {
 	command -v rucio > /dev/null || setupRUCIO
-	rucio ls user.sdysch:*sdysch*$1 | grep CONTAINER | awk -F "|" '{print $2}' | sort | sed "s/ //g"
+	#rucio ls user.sdysch:*sdysch*$1 | grep CONTAINER | awk -F "|" '{print $2}' | sort | sed "s/ //g"
+	rucio ls user.sdysch:*sdysch*$1* | grep CONTAINER | awk -F "|" '{print $2}' | sort | sed "s/ //g"
 }
 
 # zsh git plugin like aliases
