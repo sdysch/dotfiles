@@ -9,6 +9,7 @@ numpy
 oauth2client
 pandas
 scipy
+seaborn
 sklearn
 sympy
 tensorflow
