@@ -13,6 +13,9 @@ source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/z/z.sh
 
+# gpg
+export GPG_TTY=$(tty)
+
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
 
