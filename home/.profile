@@ -113,3 +113,7 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
 # zoom
 export SSB_HOME="$XDG_DATA_HOME"/zoom
+
+# matplotlib, jupyter/ipython
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
