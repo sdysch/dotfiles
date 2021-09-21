@@ -1,3 +1,4 @@
 libxft-bgra
 nerd-fonts-meslo
 ttf-meslo-nerd-font-powerlevel10k
+google-chrome
