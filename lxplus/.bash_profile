@@ -11,6 +11,7 @@ source ~/.bash_aliases
 ZLOC=~/private/z/z.sh
 [[ -f "$ZLOC" ]] && source $ZLOC
 export _Z_DATA=$XDG_DATA_HOME/z
+unset ZLOC
 
 # PS1
 source ~/.bash_prompt
