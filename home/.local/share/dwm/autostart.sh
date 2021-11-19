@@ -7,6 +7,6 @@ gnome-keyring-daemon --start &
 nitrogen --restore &
 nm-applet &
 pulseaudio --start &
-skypeforlinux &
+#skypeforlinux &
 ~/.local/bin/check_inactivity &
 xfce4-power-manager
