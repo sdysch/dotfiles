@@ -13,3 +13,4 @@ seaborn
 sklearn
 sympy
 tensorflow
+torch
