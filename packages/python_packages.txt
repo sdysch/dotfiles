@@ -4,6 +4,7 @@ ipython
 jupyter
 keras
 matplotlib
+nltk
 nose
 numpy
 oauth2client
