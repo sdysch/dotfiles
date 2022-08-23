@@ -16,6 +16,11 @@ source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/z/z.sh
 
+# conda autocomplete
+fpath+=$ZSH_PLUGINS/conda-zsh-completion
+compinit conda
+
+
 # Enable searching through history
 bindkey '^R' history-incremental-pattern-search-backward
 
@@ -41,8 +46,23 @@ SAVEHIST=10000000
 HISTFILE=$HISTFILE
 #setopt SHARE_HISTORY
 
-# common aliases
-source $ZDOTDIR/.zsh_aliases
-
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/sdysch/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/sdysch/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sdysch/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/sdysch/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# common aliases
+source $ZDOTDIR/.zsh_aliases

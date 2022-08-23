@@ -117,3 +117,6 @@ export SSB_HOME="$XDG_DATA_HOME"/zoom
 # matplotlib, jupyter/ipython
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+
+# conda
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
