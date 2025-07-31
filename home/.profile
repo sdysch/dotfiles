@@ -48,6 +48,7 @@ esac
 # === config file locations ===
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
 # === config file locations ===
@@ -113,6 +114,9 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 
 # zoom
 export SSB_HOME="$XDG_DATA_HOME"/zoom
+
+# python
+export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
 
 # matplotlib, jupyter/ipython
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
