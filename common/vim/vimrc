@@ -112,7 +112,7 @@ noremap <leader>P "*p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " colour scheme and syntax
-colorscheme koehler
+colorscheme slate
 syntax on
 
 " indentation
