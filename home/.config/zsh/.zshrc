@@ -16,6 +16,9 @@ source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/z/z.sh
 
+# zsh autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+
 # conda autocomplete
 fpath+=$ZSH_PLUGINS/conda-zsh-completion
 compinit conda
