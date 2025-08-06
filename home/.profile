@@ -124,3 +124,6 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 # conda
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+
+# NVM
+export NVM_DIR="$XDG_DATA_HOME"/nvm

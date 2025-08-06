@@ -17,22 +17,23 @@ call vundle#begin("$XDG_DATA_HOME/vim/bundle")
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdcommenter'
-Plugin 'mboughaba/i3config.vim'
+"Plugin 'mboughaba/i3config.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'sngn/vim-i3blocks-syntax'
 Plugin 'gerw/vim-tex-syntax'
 if executable('latexmk') | Plugin 'lervag/vimtex' | endif
-Plugin 'sdysch/vim-i3blocks-syntax'
-Plugin 'sdysch/vim-tqfolder-syntax'
-Plugin 'sdysch/vim-todolist-syntax'
+"Plugin 'sdysch/vim-i3blocks-syntax'
+"Plugin 'sdysch/vim-tqfolder-syntax'
+"Plugin 'sdysch/vim-todolist-syntax'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vimwiki/vimwiki'
 if v:version > 704 | Plugin 'ap/vim-css-color' | endif
 Plugin 'junegunn/vim-peekaboo'
+Plugin 'github/copilot.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
