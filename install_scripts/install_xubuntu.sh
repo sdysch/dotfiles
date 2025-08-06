@@ -9,7 +9,6 @@ mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
 echo $DOCKER
 if [[ ! ${CI} ]] && [[ $DOCKER != "yes" ]] ; then
 	sudo apt-get install $(cat packages/packages_xubuntu.txt)
-	# pip3 install -r packages/python_packages.txt
 
 	# install crontab
 	cat crontab/crontab | crontab -
