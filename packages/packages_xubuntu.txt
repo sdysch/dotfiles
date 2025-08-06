@@ -72,7 +72,6 @@ ncdu
 ncmpcpp
 neofetch
 neomutt
-neovim
 newsboat
 nitrogen
 notify-osd

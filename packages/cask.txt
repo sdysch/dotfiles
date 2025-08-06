@@ -1,4 +1,0 @@
-alacritty
-kitty
-texmaker
-amethyst
