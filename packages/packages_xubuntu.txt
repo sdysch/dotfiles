@@ -67,15 +67,12 @@ lynx
 mpc
 mpd
 mpv
-msmtp
 ncdu
 ncmpcpp
 neofetch
-neomutt
 newsboat
 nitrogen
 notify-osd
-notmuch
 pass
 pkg-config
 python-dev
