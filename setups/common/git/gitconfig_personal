@@ -1,5 +1,5 @@
 [user]
-	name = Samuel Dezso Dysch
+	name = Samuel Dezso Salling-Dysch
 	email = sdysch94@gmail.com
 	signingkey = BA13D726781FE1EC
 [alias]
@@ -16,3 +16,5 @@
 	gpgsign = true
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
