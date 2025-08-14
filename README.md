@@ -1,6 +1,6 @@
 # dotfiles
 
-[![pipeline status](https://gitlab.com/sdysch/dotfiles/badges/master/pipeline.svg)](https://gitlab.com/sdysch/dotfiles/-/commits/master)
+[![Install Xubuntu](https://github.com/sdysch/dotfiles/actions/workflows/install_xubuntu.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/install_xubuntu.yml)
 [![Docker pulls](https://img.shields.io/docker/pulls/sdysch/dotfiles.svg)](https://hub.docker.com/r/sdysch/dotfiles)
 [![Docker Image Size](https://img.shields.io/docker/image-size/sdysch/dotfiles/latest)](https://hub.docker.com/r/sdysch/dotfiles/tags?name=latest)
 
