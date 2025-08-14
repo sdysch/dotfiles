@@ -11,5 +11,5 @@ jobs:
                 sudo apt-get update
                 sudo apt-get --assume-yes install stow vim git
                 source install_scripts/install_xubuntu.sh
-                pushd setups
-                stow --no-folding xubuntu --target=$HOME
+                # pushd setups
+                # stow --no-folding xubuntu --target=$HOME
