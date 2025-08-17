@@ -1,0 +1,11 @@
+#!/bin/bash
+TASKS=$(task status:pending count)
+ICON="📝"
+[ "$TASKS" -ge "1" ] && echo "$ICON $(task status:pending count)"
+
+case $BLOCK_BUTTON in
+	# left click = open taskwarrior
+	1) setsid "$TERMINAL" -e task --hold;;
+	# middle click = sync to git
+	2) setsid "$TERMINAL" -e 'sh -c "cd $TASKDATA && git push origin master"';;
+esac

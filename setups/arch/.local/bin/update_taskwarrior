@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# check data directory exists
+if [ ! -d "$TASKDIR" ]; then
+	echo "Could not load task directory!"
+	exit 1
+fi
+
+cd $TASKDIR
+git pull origin master
