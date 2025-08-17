@@ -4,9 +4,10 @@ function install() {
 	sleep 1
 	INSTALLDIR="$HOME/Documents/repos/$1"
 	mkdir -p $INSTALLDIR
-	git clone git@github.com:sdysch/$1.git $INSTALLDIR
-	cd $INSTALLDIR
+	git clone https://github.com/sdysch/$1.git $INSTALLDIR
+	pushd $INSTALLDIR
 	sudo make install
+	popd
 }
 
 install dmenu

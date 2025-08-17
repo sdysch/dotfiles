@@ -1,0 +1,4 @@
+#!/bin/sh
+ICON=""
+TASKS=$(cat $VIMWIKI/todo.wiki | grep "^$(printf '\t')\*" | wc -l)
+echo "$ICON $TASKS tasks left"
