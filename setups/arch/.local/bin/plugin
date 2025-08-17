@@ -1,0 +1,4 @@
+#!/bin/bash
+# plugin laptop, switch on monitor
+xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --right-of eDP-1 && nitrogen --restore
+#xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --left-of eDP-1 && nitrogen --restore

@@ -1,0 +1,8 @@
+*.git
+todolist-backup/
+rootInstall/
+taskwarrior/
+repos/
+backups/
+Manchester/PostDoc/MadGraphInstall
+Manchester/PostDoc/SSHiggs_signalGeneration

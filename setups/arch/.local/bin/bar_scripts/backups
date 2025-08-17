@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# displays icon if rclone backup is running
+# on click, display tail of backup log
+
+icon="$(cat "/tmp/rclone_icon")"
+echo $icon
+
+BACKUPLOG="/tmp/rclone_log.log"
+case $BLOCK_BUTTON in
+		1) [ -f $BACKUPLOG ] && $TERMINAL --drop-down -e "tail -f $BACKUPLOG" ;;
+esac

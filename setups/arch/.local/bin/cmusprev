@@ -1,0 +1,9 @@
+#!/bin/sh
+
+retVal=$?
+
+if [ "$retVal" -ne 0 ]; then
+	exit 0
+fi
+
+cmus-remote -r

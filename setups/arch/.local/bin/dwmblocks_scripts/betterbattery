@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Prints all batteries, their percentage remaining and an emoji corresponding
+# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+
+# Loop through all attached batteries.
+for battery in /sys/class/power_supply/BAT?
+do
+	# Get its remaining capacity and charge status.
+	capacity=$(cat "$battery"/capacity) || break
+	status=$(cat "$battery"/status | sed "s/Charging//" | sed "s/Discharging//" | sed "s/Full//" | sed "s/Unknown/?/")
+
+	 [ "$capacity" -le 100 ] && icon=""
+	 [ "$capacity" -le 75 ] && icon=""
+	 [ "$capacity" -le 50 ] && icon=""
+	 [ "$capacity" -le 25 ] && icon=""
+
+	 echo "$icon $capacity% $status"
+
+done | sed 's/ *$//'
