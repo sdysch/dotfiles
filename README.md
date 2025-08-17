@@ -33,6 +33,19 @@ cd setups
 stow --no-folding xubuntu --target=$HOME
 ```
 
+### Arch
+_Still WIP_
+* On top of a base arch install + Xorg
+* Installation with gnu stow
+* For home, clone repo to `~/dotfiles` then:
+```
+cd ~/dotfiles
+source install_scripts/install_arch.sh
+cd setups
+stow --no-folding arch --target=$HOME
+```
+* Then reboot
+
 ### Deprecated setups
 These are setups that I no longer use, the tag with these setups still in use is [https://github.com/sdysch/dotfiles/releases/tag/before_removing_legacy_configs](before_removing_legacy_configs)
 
