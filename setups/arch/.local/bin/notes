@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#notesfile="$HOME/.notes"
-notesfile="$XDG_DATA_HOME/notes"
-[ -f $notesfile ] || touch $notesfile
-
-mousepad $notesfile
