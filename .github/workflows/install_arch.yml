@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           set -euo pipefail
-          pacman -Sy --noconfirm stow git base-devel zsh
+          pacman -Sy --noconfirm stow git base-devel zsh neovim
 
       - name: Run install script
         run: |
