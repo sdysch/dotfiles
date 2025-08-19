@@ -11,7 +11,7 @@ jobs:
               run: |
                 cd ${{ github.workspace }}
                 sudo apt-get update
-                sudo apt-get --assume-yes install stow git zsh
+                sudo apt-get --assume-yes install stow git zsh libx11-dev
 
             - name: "Install Xubuntu setup"
               run: |
