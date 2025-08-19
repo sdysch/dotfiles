@@ -1,8 +1,7 @@
 # dotfiles
 
 [![Install Xubuntu](https://github.com/sdysch/dotfiles/actions/workflows/install_xubuntu.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/install_xubuntu.yml)
-[![Docker pulls](https://img.shields.io/docker/pulls/sdysch/dotfiles.svg)](https://hub.docker.com/r/sdysch/dotfiles)
-[![Docker Image Size](https://img.shields.io/docker/image-size/sdysch/dotfiles/latest)](https://hub.docker.com/r/sdysch/dotfiles/tags?name=latest)
+[![Install Arch](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml)
 
 ## My dotfiles
  *  This is a store for the various configuration files that I use, across the machines that I work on.
