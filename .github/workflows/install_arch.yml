@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           set -euo pipefail
-          pacman -Sy --noconfirm stow git base-devel zsh neovim cmake
+          pacman -Sy --noconfirm stow git base-devel zsh neovim cmake xorgproto libx11 libxinerama libxft
 
       - name: Run install script
         run: |
