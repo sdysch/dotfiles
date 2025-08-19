@@ -14,17 +14,15 @@ if [[ ! ${CI} ]] ; then
 	systemctl enable cronie
 	cat crontab/crontab | crontab -
 
-fi
+	# AUR
+	pushd /tmp
+	git clone https://aur.archlinux.org/yay-git.git
+	cd yay-git
+	makepkg -s
+	popd
 
-# AUR
-pushd /tmp
-git clone https://aur.archlinux.org/yay-git.git
-cd yay-git
-makepkg -s
-popd
-
-if [[ ! ${CI} ]]; then
 	yay -S $(cat packages/packages_AUR.txt)
+
 fi
 
 
