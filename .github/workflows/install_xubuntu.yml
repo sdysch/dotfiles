@@ -29,7 +29,8 @@ jobs:
             - name: "Check nvim"
               run: nvim --headless -c 'echo "nvim okay"' -c 'qa!'  
 
-            - name: "Check dwm and dwm blocks"
+            - name: "Check suckless"
               run: |
                 which dwm
                 which dwmblocks
+                which dmenu
