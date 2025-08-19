@@ -4,25 +4,42 @@ on:
     paths:
       - 'setups/common/**'
       - 'setups/arch/**'
+
 jobs:
-    Installation:
-        runs-on: "ubuntu-latest"
-        steps:
-            - name: "Checkout repository"
-              uses: "actions/checkout@v4"
+  Installation:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+      options: --init
 
-            - name: "Test install inside arch container"
-              run: |
-                docker run --rm -v "$PWD:/dotfiles" -w /dotfiles archlinux:latest \
-                 bash -c 'set -euo pipefail
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-                 # install dependencies
-                 pacman -Sy --noconfirm stow git base-devel zsh
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          pacman -Sy --noconfirm stow git base-devel zsh
 
-                 # run install script
-                 source install_scripts/install_arch.sh
+      - name: Run install script
+        run: |
+          set -euo pipefail
+          source install_scripts/install_arch.sh
 
-                # stow configs
-                cd setups
-                stow --no-folding arch --target=$HOME --adopt
-              '
+      - name: Stow configs
+        run: |
+          set -euo pipefail
+          cd setups
+          stow --no-folding arch --target=$HOME --adopt
+
+      - name: "Check zsh"
+        run: zsh -i -c 'echo "zsh okay"'
+
+      - name: "Check nvim"
+        run: nvim --headless -c 'echo "nvim okay"' -c 'qa!'  
+
+      - name: "Check suckless"
+        run: |
+          which dwm
+          which dwmblocks
+          which dmenu
