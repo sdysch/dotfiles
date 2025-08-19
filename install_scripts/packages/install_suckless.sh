@@ -10,6 +10,8 @@ function install() {
 	popd
 }
 
+mkdir -p /usr/share/xsessions
+
 install dmenu
 install dwm
 install st
