@@ -1,0 +1,28 @@
+name: Install Xubuntu
+on:
+  push:
+    paths:
+      - 'setups/common/**'
+      - 'setups/arch/**'
+jobs:
+    Installation:
+        runs-on: "ubuntu-latest"
+        steps:
+            - name: "Checkout repository"
+              uses: "actions/checkout@v4"
+
+            - name: "Test install inside arch container"
+              run: |
+                docker run --rm -v "$PWD:/dotfiles" -w /dotfiles archlinux:latest \
+                 bash -c 'set -euo pipefail
+
+                 # install dependencies
+                 pacman -Sy --noconfirm stow git base-devel zsh
+
+                 # run install script
+                 source install_scripts/install_arch.sh
+
+                # stow configs
+                cd setups
+                stow --no-folding arch --target=$HOME --adopt
+              '
