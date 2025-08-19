@@ -1,5 +1,5 @@
 name: Install Arch
-on [push]:
+on: [push]
   #push:
   #  paths:
   #    - 'setups/common/**'
