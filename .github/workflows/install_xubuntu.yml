@@ -5,11 +5,33 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Checkout repository"
-              uses: "actions/checkout@v2"
-            - run: |
+              uses: "actions/checkout@v3"
+
+            - name: "Install minimal programs and update"
+              run: |
                 cd ${{ github.workspace }}
                 sudo apt-get update
-                sudo apt-get --assume-yes install stow vim git
+                sudo apt-get --assume-yes install stow git
+
+            - name: "Install Xubuntu setup"
+              run: |
                 source install_scripts/install_xubuntu.sh
-                # pushd setups
-                # stow --no-folding xubuntu --target=$HOME
+
+            - name: "Stow configs"
+              run: |
+                pushd setups
+                export HOME=/tmp/home
+                mkdir -p $HOME
+                stow --no-folding xubuntu --target=$HOME
+                popd
+
+            - name: "Check zsh"
+              run: zsh -i -c 'echo "zsh okay"'
+
+            - name: "Check nvim"
+              run: nvim --headless -c 'echo "nvim okay"' -c 'qa!'  
+
+            - name: "Check dwm and dwm blocks"
+              run: |
+                which dwm
+                which dwmblocks
