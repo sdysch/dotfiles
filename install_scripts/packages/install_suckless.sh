@@ -14,6 +14,6 @@ mkdir -p /usr/share/xsessions
 
 install dmenu
 install dwm
-install st
+# install st
 # install slock
 install dwmblocks
