@@ -1,11 +1,15 @@
 name: Install Xubuntu
-on: [push]
+on:
+  push:
+    paths:
+      - 'setups/common/**'
+      - 'setups/xubuntu/**'
 jobs:
     Installation:
         runs-on: "ubuntu-latest"
         steps:
             - name: "Checkout repository"
-              uses: "actions/checkout@v3"
+              uses: "actions/checkout@v4"
 
             - name: "Install minimal programs and update"
               run: |
