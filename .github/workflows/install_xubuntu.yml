@@ -11,7 +11,7 @@ jobs:
               run: |
                 cd ${{ github.workspace }}
                 sudo apt-get update
-                sudo apt-get --assume-yes install stow git
+                sudo apt-get --assume-yes install stow git zsh
 
             - name: "Install Xubuntu setup"
               run: |
@@ -20,9 +20,7 @@ jobs:
             - name: "Stow configs"
               run: |
                 pushd setups
-                export HOME=/tmp/home
-                mkdir -p $HOME
-                stow --no-folding xubuntu --target=$HOME
+                stow --no-folding xubuntu --target=$HOME --adopt
                 popd
 
             - name: "Check zsh"
