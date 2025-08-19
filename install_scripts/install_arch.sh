@@ -14,25 +14,25 @@ if [[ ! ${CI} ]] ; then
 	systemctl enable cronie
 	cat crontab/crontab | crontab -
 
-	# AUR
-	pushd /tmp
-	git clone https://aur.archlinux.org/yay-git.git
-	cd yay-git
-	makepkg -s
-	popd
-	yay -S $(cat packages/packages_AUR.txt)
+fi
 
+# AUR
+pushd /tmp
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -s
+popd
+
+if [[ ! ${CI} ]]; then
+	yay -S $(cat packages/packages_AUR.txt)
 fi
 
 
-scripts=(fonts zsh)
+scripts=(fonts zsh vim)
 for script in ${scripts[@]}; do
 	source install_scripts/packages/"install_${script}.sh"
 done
 
-# don't want to install these inside CI
-if [[ ! ${CI} ]]; then
-	# create a place to put desktop session entry for dwm
-	sudo mkdir -p /usr/share/xsessions
-	source install_scripts/packages/install_suckless.sh
-fi
+# create a place to put desktop session entry for dwm
+sudo mkdir -p /usr/share/xsessions
+source install_scripts/packages/install_suckless.sh
