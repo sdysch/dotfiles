@@ -1,4 +1,4 @@
-name: Install Xubuntu
+name: Install Arch
 on:
   push:
     paths:
