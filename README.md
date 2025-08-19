@@ -6,19 +6,14 @@
 
 ## My dotfiles
  *  This is a store for the various configuration files that I use, across the machines that I work on.
- * If you _really_ want, a docker image of my xubuntu dotfiles can be found [here](https://hub.docker.com/r/sdysch/dotfiles)
-	 * **Disclaimer**. I wrote this image, partly as a way for me to learn docker, but also as a proper way to test the installation of my dotfiles on a new machine
 
-![shell](https://github.com/sdysch/dotfiles/-/raw/master/figures/screenshot3.png)
+![shell](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot3.png)
 
 ## Daily setup
-* OS: [xubuntu](https://xubuntu.org/)
-	* Trouble setting up wireless drivers. See https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
-	* Script in .local/bin/restorewifi to fix
-* Window manager: [dwm](https://github.com/sdysch/dwm)
+* Window manager: [dwm](https://github.com/sdysch/dwm) + [dwmblocks](https://github.com/sdysch/dwmblocks)
 * zsh (bash on lxplus)
 * (neo)vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
-* My [custom dmenu build](https://github.com/sdysch/dmenu)
+* Launcher: [dmenu](https://github.com/sdysch/dmenu)
 
 ## Installation
 * Clone repo to `~/dotfiles`, then follow system specific instructions below
