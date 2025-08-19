@@ -1,9 +1,9 @@
 name: Install Arch
-on: [push]
-  #push:
-  #  paths:
-  #    - 'setups/common/**'
-  #    - 'setups/arch/**'
+on: 
+  push:
+    paths:
+      - 'setups/common/**'
+      - 'setups/arch/**'
 
 jobs:
   Installation:
