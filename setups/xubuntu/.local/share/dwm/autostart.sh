@@ -9,4 +9,5 @@ nm-applet &
 pulseaudio --start &
 #skypeforlinux &
 ~/.local/bin/check_inactivity &
+dunst &
 xfce4-power-manager
