@@ -16,6 +16,7 @@ i3lock
 imagemagick
 isync
 libnotify
+libreoffice-still
 lightdm
 lightdm-webkit2-greeter
 lynx
