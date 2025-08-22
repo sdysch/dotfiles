@@ -34,3 +34,6 @@ done
 # create a place to put desktop session entry for dwm
 sudo mkdir -p /usr/share/xsessions
 source install_scripts/packages/install_suckless.sh
+
+# enable login manager
+systemctl enable lightdm.service
