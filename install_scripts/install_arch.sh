@@ -36,4 +36,6 @@ sudo mkdir -p /usr/share/xsessions
 source install_scripts/packages/install_suckless.sh
 
 # enable login manager
-systemctl enable lightdm.service
+if [[ ! ${CI} ]] ; then
+	systemctl enable lightdm.service
+fi
