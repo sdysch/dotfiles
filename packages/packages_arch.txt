@@ -37,6 +37,7 @@ pavucontrol
 picom
 pulseaudio
 pulseaudio
+python
 ranger
 rclone
 rofi
@@ -50,6 +51,7 @@ unzip
 unzip
 vim
 vlc
+wget
 xautolock
 xclip
 xdotool
