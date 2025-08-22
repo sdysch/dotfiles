@@ -16,6 +16,8 @@ i3lock
 imagemagick
 isync
 libnotify
+lightdm
+lightdm-webkit2-greeter
 lynx
 make
 mpv
