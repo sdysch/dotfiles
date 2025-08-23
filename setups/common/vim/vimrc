@@ -211,7 +211,7 @@ autocmd VimLeave ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null)
 autocmd FileType tex set tw=100
 
 " rerun compton when saving its config file
-autocmd BufWritePost *compton.conf !killall compton && compton -b --config ~/.config/compton/compton.conf &
+autocmd BufWritePost *compton.conf !killall picom && picom -b --config ~/.config/compton/compton.conf &
 
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %

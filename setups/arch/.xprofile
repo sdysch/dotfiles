@@ -42,6 +42,7 @@ dwmblocks &
 nitrogen --restore &
 nm-applet &
 pulseaudio --start &
+picom -b --config ~/.config/compton/compton.conf &
 ~/.local/bin/check_inactivity &
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     eval "$(ssh-agent -s)"

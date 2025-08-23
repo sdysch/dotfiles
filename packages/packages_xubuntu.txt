@@ -6,7 +6,6 @@ cmake
 cmake-data
 cmatrix
 cmus
-compton
 curl
 dpkg-dev
 evince
@@ -74,6 +73,7 @@ newsboat
 nitrogen
 notify-osd
 pass
+picom
 pkg-config
 python-dev
 python3-pandas
