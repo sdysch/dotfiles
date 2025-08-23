@@ -18,6 +18,7 @@ isync
 libnotify
 libreoffice-still
 lightdm
+lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
 lynx
 make
