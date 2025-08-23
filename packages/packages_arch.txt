@@ -4,6 +4,7 @@ cmake
 cmus
 cronie
 curl
+dolphin
 dunst
 evince
 eza
@@ -12,6 +13,7 @@ fontconfig
 gcc
 git
 htop
+hyprland
 i3lock
 imagemagick
 isync
@@ -27,7 +29,6 @@ ncdu
 neovim
 neovim
 network-manager-applet
-network-manager-applet
 nitrogen
 nm-connection-editor
 notify-osd
@@ -42,6 +43,7 @@ python
 ranger
 rclone
 rofi
+rofi
 scrot
 scrot
 stow
@@ -52,6 +54,7 @@ unzip
 unzip
 vim
 vlc
+waybar
 wget
 xautolock
 xclip
