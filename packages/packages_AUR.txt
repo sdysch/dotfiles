@@ -2,4 +2,5 @@ google-chrome
 lightdm-webkit-theme-aether
 lightdm-webkit2-greeter
 nerd-fonts-meslo
+swaylock-effects
 ttf-meslo-nerd-font-powerlevel10k

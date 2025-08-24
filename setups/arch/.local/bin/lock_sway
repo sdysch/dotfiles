@@ -1,0 +1,17 @@
+#!/bin/sh
+
+swaylock \
+    --effect-blur 5 \
+    --screenshots \
+    --clock \
+    --indicator \
+    --indicator-radius 100 \
+    --indicator-thickness 8 \
+    --inside-color 1c1c1c88 \
+    --ring-color 5e81acff \
+    --line-color 4c566a44 \
+    --key-hl-color a3be8cff \
+    --separator-color 00000000 \
+    --text-wrong-color bf616aff \
+    --fade-in 0.2 \
+    --effect-pixelate 5

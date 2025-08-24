@@ -216,6 +216,9 @@ autocmd BufWritePost *compton.conf !killall picom && picom -b --config ~/.config
 " rerun dunst when saving its config file
 autocmd BufWritePost *dunstrc !restart_dunst
 
+" rerun waybar when saving its config file
+autocmd BufWritePost *waybar/config.jsonc !killall waybar && waybar & disown
+
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
