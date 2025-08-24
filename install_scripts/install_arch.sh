@@ -12,7 +12,7 @@ if [[ ! ${CI} ]] ; then
 
 	# install crontab
 	systemctl enable cronie
-	cat crontab/crontab | crontab -
+	cat crontab/crontab_arch | crontab -
 
 	# AUR
 	pushd /tmp

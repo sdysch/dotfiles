@@ -10,7 +10,7 @@ if [[ ! ${CI} ]] && [[ $DOCKER != "yes" ]] ; then
 	sudo apt-get install $(cat packages/packages_xubuntu.txt)
 
 	# install crontab
-	cat crontab/crontab | crontab -
+	cat crontab/crontab_xubuntu | crontab -
 
 fi
 
