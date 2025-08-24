@@ -16,6 +16,7 @@ gcc
 git
 htop
 hyprland
+hyprpaper
 i3lock
 imagemagick
 isync
