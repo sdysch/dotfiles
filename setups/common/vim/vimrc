@@ -213,6 +213,9 @@ autocmd FileType tex set tw=100
 " rerun compton when saving its config file
 autocmd BufWritePost *compton.conf !killall picom && picom -b --config ~/.config/compton/compton.conf &
 
+" rerun dunst when saving its config file
+autocmd BufWritePost *dunstrc !restart_dunst
+
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
