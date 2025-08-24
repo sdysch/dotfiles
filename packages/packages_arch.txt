@@ -1,4 +1,6 @@
 binutils
+bluez
+bluez-utils
 chromium
 cmake
 cmus
