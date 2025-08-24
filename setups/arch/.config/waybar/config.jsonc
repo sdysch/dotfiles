@@ -7,11 +7,11 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/pacman"
+        "custom/pacman",
+		"cpu",
+		"custom/diskfree"
     ],
     "modules-right": [
-		"cpu",
-		"custom/diskfree",
 		"pulseaudio",
 		"battery",
 		"backlight",
