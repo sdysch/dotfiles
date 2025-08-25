@@ -60,6 +60,7 @@ window#waybar.hidden {
 #network,
 #clock,
 #custom-pacman,
+#custom-weather,
 #tray {
   border-radius: 4px;
   margin: 4px 3px;
@@ -156,3 +157,7 @@ tooltip label {
   color: #eceff4;
 }
 
+#custom-weather {
+  background-color: #ebcb8b;
+  color: #2e3440;
+}
