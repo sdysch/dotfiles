@@ -1,13 +1,22 @@
-#!/bin/bash
-# scripts
+#!/bin/sh
 PROMPT="$HOME/.local/bin/prompt"
 LOGOUTSCRIPT="$HOME/.local/bin/logout-session"
 SHUTDOWNSCRIPT="$HOME/.local/bin/shutdown_script"
 REBOOTSCRIPT="$HOME/.local/bin/reboot"
 
+use_rofi=false
+if [ "$1" = '-r' ]; then
+    use_rofi=true
+    shift
+fi
+
 TEXT="Would you like to..."
 options=("Shutdown?\nReboot?\nLogout?\nQuit menu")
-chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+if $use_rofi; then
+	chosen=$(echo -e "$options" | rofi -dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+else
+	chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+fi
 
 case $chosen in
 	"Shutdown?")

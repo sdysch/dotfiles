@@ -1,9 +1,20 @@
-#!/bin/bash
-#REF: https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/prompt
+#!/bin/sh
 
-# A dmenu binary prompt script.
-# Gives a dmenu prompt labeled with $1 to perform command $2.
-# For example:
-# `./prompt "Do you want to shutdown?" "shutdown -h now"`
+use_rofi=false
 
-[ "$(printf "No\\nYes" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -i -p "$1" -l 2)" = "Yes" ] && $2
+# check for -r flag
+if [ "$1" = '-r' ]; then
+    use_rofi=true
+    shift
+fi
+
+prompt="$1"
+cmd="$2"
+
+if $use_rofi; then
+    choice="$(printf 'No\nYes' | rofi -dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -i -p "$prompt" -l 2)"
+else
+    choice="$(printf 'No\nYes' | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -i -p "$prompt" -l 2)"
+fi
+
+[ "$choice" = 'Yes' ] && $cmd

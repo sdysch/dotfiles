@@ -6,13 +6,20 @@
 ## My dotfiles
  *  This is a store for the various configuration files that I use, across the machines that I work on.
 
-![shell](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot3.png)
+![xubuntu](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot3.png)
+![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch_wayland.png)
 
-## Daily setup
+## Xubuntu setup
 * Window manager: [dwm](https://github.com/sdysch/dwm) + [dwmblocks](https://github.com/sdysch/dwmblocks)
-* zsh (bash on lxplus)
+* zsh 
 * (neo)vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Launcher: [dmenu](https://github.com/sdysch/dmenu)
+
+## Arch setup
+* Window manager: wayland (hyprland) + waybar / X (dwm) + dwmblocks
+* zsh 
+* (neo)vim + [Vundle](https://github.com/VundleVim/Vundle.vim)
+* Launcher: rofi
 
 ## Installation
 * Clone repo to `~/dotfiles`, then follow system specific instructions below

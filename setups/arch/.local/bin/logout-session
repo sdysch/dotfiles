@@ -8,5 +8,6 @@ case $session in
 	xfce) xfce4-session-logout --logout ;;
 	bspwm) bspc quit ;;
 	dwm) killall dwm;;
+	hyprland) hyprctl dispatch exit 1;;
 	*) notify-send --app-name="logout script" "logout script" "Not sure what to do";;
 esac

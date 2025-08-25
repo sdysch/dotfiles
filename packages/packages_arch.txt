@@ -4,6 +4,7 @@ bluez-utils
 brightnessctl
 chromium
 cmake
+cmatrix
 cmus
 cronie
 curl
@@ -11,11 +12,13 @@ dolphin
 dunst
 evince
 eza
+fastfetch
 firefox
 fontconfig
 gcc
 git
 grim
+htop
 htop
 hyprland
 hyprpaper
