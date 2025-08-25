@@ -10,21 +10,28 @@ if [ "$1" = '-r' ]; then
     shift
 fi
 
-TEXT="Would you like to..."
-options=("Shutdown?\nReboot?\nLogout?\nQuit menu")
 if $use_rofi; then
-	chosen=$(echo -e "$options" | rofi -dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+    PROMPT_CMD=("$PROMPT" "-r")
 else
-	chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+    PROMPT_CMD=("$PROMPT")
+fi
+
+TEXT="Would you like to..."
+options="Shutdown?\nReboot?\nLogout?\nQuit menu"
+
+if $use_rofi; then
+    chosen=$(echo -e "$options" | rofi -dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
+else
+    chosen=$(echo -e "$options" | dmenu -fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p "Choose an option: " -l 4 -i)
 fi
 
 case $chosen in
-	"Shutdown?")
-	source "$PROMPT" "Shutdown?" "$SHUTDOWNSCRIPT";;
-	"Reboot?")
-	source "$PROMPT" "Reboot?" "$REBOOTSCRIPT";;
-	"Logout?")
-	source "$PROMPT" "Logout?" "$LOGOUTSCRIPT";;
-	"Quit menu?")
-		break;;
+    "Shutdown?")
+        "${PROMPT_CMD[@]}" "Shutdown?" "$SHUTDOWNSCRIPT";;
+    "Reboot?")
+        "${PROMPT_CMD[@]}" "Reboot?" "$REBOOTSCRIPT";;
+    "Logout?")
+        "${PROMPT_CMD[@]}" "Logout?" "$LOGOUTSCRIPT";;
+    "Quit menu?")
+        exit 0;;
 esac
