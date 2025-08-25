@@ -1,0 +1,9 @@
+#!/bin/sh
+
+swayidle -w \
+	timeout 570 'notify-send -i $ICONSDIR/warning.png "Screen locking in 30s"' \
+	timeout 600 'lock_sway' \
+	timeout 600 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep 'lock_sway'
+

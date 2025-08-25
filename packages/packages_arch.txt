@@ -1,3 +1,4 @@
+biber
 binutils
 bluez
 bluez-utils
@@ -57,7 +58,8 @@ rofi
 scrot
 scrot
 stow
-texlive-most
+swayidle
+texlive
 tmux
 ttf-font-awesome
 unzip
