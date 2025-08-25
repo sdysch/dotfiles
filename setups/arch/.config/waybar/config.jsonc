@@ -15,6 +15,7 @@
 		"cpu",
 		"custom/diskfree",
 		"pulseaudio",
+		"pulseaudio#mic",
 		"battery",
 		"backlight",
         "clock",
@@ -45,7 +46,8 @@
             "high": 50,
             "medium": 5,
             "low": 0
-        }
+        },
+		"on-click": "$TERMINAL -e htop"
     },
     "memory": {
         "interval": 5,
@@ -98,10 +100,14 @@
     "pulseaudio": {
 		"format": "{icon} {volume}%",
 		"format-muted": " muted",
-		"format-source": " {volume}%",
-		"format-source-muted": " muted",
 		"on-click": "pavucontrol",
 		"format-icons":["", "", ""]
+	},
+	"pulseaudio#mic": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": " muted",
+		"on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 	},
 	"backlight": {
 		"device": "intel_backlight",
