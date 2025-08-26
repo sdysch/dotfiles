@@ -57,6 +57,7 @@ rofi
 rofi
 scrot
 scrot
+spotify-launcher
 stow
 swayidle
 texlive
