@@ -1,0 +1,15 @@
+#!/bin/sh
+WALLPAPERS_DIR="$HOME/dotfiles/wallpapers/rotation"
+WALLPAPERS=("$WALLPAPERS_DIR"/*)
+
+
+# Pick one at random
+RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
+
+# preload
+hyprctl hyprpaper preload "$RANDOM_WALLPAPER"
+
+# Apply it to all monitors
+hyprctl hyprpaper wallpaper "eDP-1,$RANDOM_WALLPAPER"
+hyprctl hyprpaper wallpaper "HDMI-1,$RANDOM_WALLPAPER"
+hyprctl hyprpaper wallpaper "HDMI-A-2,$RANDOM_WALLPAPER"

@@ -18,3 +18,6 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 # rclone backups every 3 hours
 0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
 
+# rotate wallpapers every 5 mins
+*/5 * * * * . $HOME/.zprofile; . $HOME/.zshrc; rotate_wallpapers
+
