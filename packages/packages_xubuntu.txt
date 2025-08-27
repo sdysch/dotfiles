@@ -74,7 +74,9 @@ nitrogen
 notify-osd
 pass
 picom
+picom
 pkg-config
+playerctl
 python-dev
 python3-pandas
 python3-pip
