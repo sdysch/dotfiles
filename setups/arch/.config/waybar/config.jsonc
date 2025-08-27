@@ -5,23 +5,23 @@
     "height": 32,
     "modules-left": [
 		"custom/logo",
+        "clock",
 		//"systemd-failed-units",
 		//"user",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-    	"wlr/taskbar",
-		"custom/weather"
-    ],
-    "modules-right": [
-        "custom/pacman",
-		"cpu",
-		"custom/diskfree",
 		"pulseaudio",
 		"pulseaudio#mic",
 		"battery",
-		"backlight",
-        "clock",
+		"backlight"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+    	"wlr/taskbar",
+        "custom/pacman",
+		"custom/weather",
+		"cpu",
+		"custom/diskfree",
 		"tray",
 		"custom/power"
     ],
@@ -29,13 +29,12 @@
 		"format": "{icon}",
 		"on-click": "activate",
 		"format-icons": {
-			"1": "1",
-			"2": "2",
-			"3": "3",
-			"4": "4",
-			"5": "5"
+			"default": "",
+			"active": ""
 		},
-		"sort-by-number": true
+        "persistent-workspaces": {
+			"*": 2
+		}
 	},
 	"cpu": {
 		"format-critical":  "<span color='#BF616A'><b>\uF201 {usage}%</b></span>",
