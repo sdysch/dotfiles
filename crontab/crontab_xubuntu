@@ -3,7 +3,7 @@ SHELL=/bin/bash
 PATH=~/bin:/usr/bin:/bin:~/.local/bin
 
 # backup vimwiki every 3 hours
-0 */3 * * * . $HOME/.zprofile; . $HOME/.zshrc; backup_vimwiki
+0 */3 * * * . $HOME/.zprofile; . backup_vimwiki
 
 # check battery status every 5 minutes
 */5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc;  $HOME/.local/bin/check_battery
@@ -16,5 +16,5 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
 
 # rotate wallpapers every 5 mins
-*/5 * * * * . $HOME/.zprofile; . $HOME/.zshrc; rotate_wallpapers
+*/5 * * * * . $HOME/.zprofile; export DISPLAY=:0; export XAUTHORITY=$HOME/.Xauthority; . rotate_wallpapers
 
