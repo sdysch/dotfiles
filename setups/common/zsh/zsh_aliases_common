@@ -21,20 +21,11 @@ alias df="df -h"
 alias rm="rm -i"
 alias mv="mv -i"
 
-# remove ROOT splash screen
-alias rt="root -l"
-
-# kerberos authentication
-alias kcern="kinit -f -r7d -A SDYSCH@CERN.CH"
-
 # get weather
 alias weather="curl -L http://wttr.in//~${LOCATION:-Manchester}"
 
 # tmux
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
-
-# corona tracker
-alias trackcorona="curl 'https://corona-stats.online?top=30&source=2&minimal=true&emojis=true'"
 
 # git aliases
 alias g="git"
