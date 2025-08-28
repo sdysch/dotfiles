@@ -72,7 +72,7 @@ export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
 export ICEAUTHORITY=$XDG_CACHE_HOME/ICEauthority
 
 # vim
-export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
+export VIMINIT=":source $XDG_CONFIG_HOME"/nvim/init.vim
 
 # calcurse
 export CALCURSECONFIG=$XDG_CONFIG_HOME/calcurse

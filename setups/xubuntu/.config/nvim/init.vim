@@ -1,1 +1,1 @@
-../vim/vimrc
+../../../common/nvim/init.vim
