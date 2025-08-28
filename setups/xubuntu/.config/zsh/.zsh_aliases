@@ -3,34 +3,10 @@
 # source common aliases
 source $ZDOTDIR/.zsh_aliases_common
 
-# ls
-#alias ls="ls --color=auto"
-#alias ll="ls -ltrh"
-
-# exa over ls
-if type exa-linux-x86_64 > /dev/null 2>&1; then
-	alias ls="exa-linux-x86_64"
-	alias ll="ls -l --sort newest --color=always"
-else
-	alias ls="ls --color=auto"
-	alias ll="ls -ltrh"
-fi
-
-# taskwarrior
-alias task="$HOME/.config/taskwarrior/task"
-alias t="task"
-# NOTE call absolute path to modified task script!
-alias tp="$HOME/dotfiles/home/.config/taskwarrior/task --task-git-push"
-
 # opening files
 open() {
 	xdg-open $@ 2>/dev/null & 
 }
-
-# root version
-rootSource="/home/sdysch/Documents/rootInstall/root/bin/thisroot.sh"
-[ -f "$rootSource" ] && source $rootSource
-unset rootSource
 
 # thesis
 # navigate to thesis dir
@@ -47,10 +23,6 @@ alias calcurse="calcurse -D $CALCURSECONFIG"
 #gnu pass
 alias pgp="pass git push origin master"
 
-# google translate API
-#alias translate_from_danish='trans -source "Dansk"'
-#alias translate_into_danish='trans -target "Dansk"'
-
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 
@@ -60,15 +32,3 @@ alias neofetch="neofetch --ascii_distro Xubuntu"
 
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-
-# madgraph binary
-MGVERSION="MG5_aMC_v3_1_1"
-MGPATH="/home/sdysch/Documents/Manchester/PostDoc/MadGraphInstall/$MGVERSION/bin"
-alias runMG="$MGPATH/mg5_aMC"
-unset MGVERSION
-unset MGPATH
-
-# for Manchester VPN (required for ssh connection)
-# FIXME - in ssh config, use ProxyCommand?
-alias connectManchester="globalprotect connect --portal vpnconnect.manchester.ac.uk"
-alias disconnectManchester="globalprotect disable"

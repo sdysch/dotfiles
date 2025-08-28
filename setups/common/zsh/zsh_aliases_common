@@ -1,5 +1,15 @@
 # common aliases
 
+# exa over ls
+if type eza > /dev/null 2>&1; then
+	alias ls="eza --icons"
+	alias ll="ls -l --sort newest --color=always --icons"
+else
+	alias ls="ls --color=auto"
+	alias ll="ls -ltrh"
+fi
+
+
 # grep
 alias grep='grep --color=auto -n'
 
