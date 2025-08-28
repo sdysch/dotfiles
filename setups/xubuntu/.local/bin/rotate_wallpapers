@@ -1,0 +1,10 @@
+#!/bin/bash
+WALLPAPERS_DIR="$HOME/dotfiles/wallpapers/rotation"
+WALLPAPERS=("$WALLPAPERS_DIR"/*)
+
+
+# Pick one at random
+RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
+
+# Set it as the wallpaper
+nitrogen --set-scaled "$RANDOM_WALLPAPER"
