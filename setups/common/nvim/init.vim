@@ -1,53 +1,40 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
-" Check if vundle is installed
-if ! filereadable(system('echo -n "${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle/Vundle.vim/autoload/vundle.vim"'))
-	echo "Downloading Vundle"
-	silent !mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle
-	silent !git clone https://github.com/VundleVim/Vundle.vim.git ${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle/Vundle.vim
-	autocmd VimEnter * PluginInstall
+" Install vim-plug if not already installed
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
 endif
 
-set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
-" set the runtime path to include Vundle and initialize
-set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
-call vundle#begin("$XDG_DATA_HOME/vim/bundle")
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'preservim/nerdtree'
-" Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'preservim/nerdcommenter'
-"Plugin 'mboughaba/i3config.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'sngn/vim-i3blocks-syntax'
-Plugin 'gerw/vim-tex-syntax'
-if executable('latexmk') | Plugin 'lervag/vimtex' | endif
-"Plugin 'sdysch/vim-i3blocks-syntax'
-"Plugin 'sdysch/vim-tqfolder-syntax'
-"Plugin 'sdysch/vim-todolist-syntax'
-Plugin 'junegunn/goyo.vim'
-Plugin 'vimwiki/vimwiki'
-if v:version > 704 | Plugin 'ap/vim-css-color' | endif
-Plugin 'junegunn/vim-peekaboo'
-Plugin 'github/copilot.vim'
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'gerw/vim-tex-syntax'
+Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'ap/vim-css-color'
+Plug 'junegunn/vim-peekaboo'
+Plug 'github/copilot.vim'
+Plug 'gbprod/nord.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+call plug#end()
+filetype plugin on
+
 " Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,20 +43,13 @@ filetype plugin on    " required
 let g:NERDTreeDirArrows=0
 
 " Airline
-"let g:airline_theme="behelit"
 let g:airline_theme="base16_nord"
-"let g:airline_extensions = ['branch']
 let g:airline_extensions = []
 let g:airline_section_x = '%{strftime("%H:%M %a %d/%m/%y")}'
 let g:airline_section_y = ''
 
 " Goyo
 let g:goyo_width = 250
-"let g:goyo_linenr = 1
-
-" Enable Goyo (distraction free mode) for composing emails with mutt
-autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 
 " Enable Goyo (distraction free mode) if git prompts for a commit message
 " (git commit called without -m flag)"
@@ -112,7 +92,8 @@ noremap <leader>P "*p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " colour scheme and syntax
-colorscheme slate
+" colorscheme slate
+colorscheme nord
 syntax on
 
 " indentation
@@ -126,9 +107,7 @@ set tabstop=4
 set smarttab
 
 " searching
-" ignore case when searching
 set ignorecase
-" try to be smart about case when searching
 set smartcase
 set incsearch
 
@@ -203,10 +182,6 @@ if has("autocmd")
 	\| exe "normal! g'\"" | endif
 endif
 
-" automatically backup todo list (see https://github.com/sdysch/todolist)
-autocmd VimLeave ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
-"autocmd BufWritePost ~/.todolist/lists/*.todo ! (which backup-todo-list > /dev/null) && backup-todo-list
-
 " text wrapping for LaTeX files
 autocmd FileType tex set tw=100
 
@@ -228,15 +203,6 @@ autocmd BufRead,BufNewFile *.tex set filetype=tex
 " Automatically backup vim wiki when saving
 " Uses 'backup_vimwiki' command
 autocmd BufWritePost *.wiki if executable('backup_vimwiki') | !backup_vimwiki
-
-" setting my custom QFramework vim syntax files, without having to put modelines in each file 
-autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.txt set filetype=TQFolder
-autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/*.tqf set filetype=TQFolder
-autocmd BufRead,BufNewFile /afs/cern.ch/work/s/sdysch/private/MajoranaNeutrino/ssWWAnalysisCode/share/config/cuts/*.def set filetype=TQFolder
-
-" Press f3 to insert timestamp
-nmap <leader>s i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <leader>s <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " === vimwiki configuration ===
 " vimwiki
@@ -269,3 +235,8 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-v>', '<2-LeftMouse>', '<Enter>'],
     \ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
     \ }
+
+lua << EOF
+require('ibl').setup()
+EOF
+

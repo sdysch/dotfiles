@@ -8,9 +8,4 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 popd
 
-echo "Installing Vundle...."
-INSTALLDIR=${XDG_DATA_HOME:-$HOME/.local/share}/vim/bundle
-mkdir -p $INSTALLDIR
-git clone https://github.com/VundleVim/Vundle.vim.git $INSTALLDIR/Vundle.vim
-nvim +PluginInstall +qall
-echo "Done"
+nvim +PlugInstall +qall
