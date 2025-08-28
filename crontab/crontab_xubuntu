@@ -2,23 +2,11 @@
 SHELL=/bin/bash
 PATH=~/bin:/usr/bin:/bin:~/.local/bin
 
-# backup todo list every 3 hours
-#0 */3 * * * backup-todo-list
-
 # backup vimwiki every 3 hours
 0 */3 * * * . $HOME/.zprofile; . $HOME/.zshrc; backup_vimwiki
 
 # check battery status every 5 minutes
 */5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc;  $HOME/.local/bin/check_battery
-
-# Reminder to do duolingo
-#0 13 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile;  . $HOME/.zshrc;  /usr/bin/notify-send -u low -t 3000 "Reminder" "🇩🇰 Duolingo"
-#0 13 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile;  . $HOME/.zshrc;  /usr/bin/notify-send -i $ICONSDIR/DanishFlag.png -u low "Reminder" "Duolingo" -t 3
-
-# update rss feeds every hour
-#0 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc; $HOME/.local/bin/updatenews
-
-#*/3 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc; /usr/local/bin/mailsync
 
 # empty xsession-errors if the size becomes > 1GB
 # REF: https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
@@ -26,4 +14,7 @@ PATH=~/bin:/usr/bin:/bin:~/.local/bin
 
 # rclone backups every 3 hours
 0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
+
+# rotate wallpapers every 5 mins
+*/5 * * * * . $HOME/.zprofile; . $HOME/.zshrc; rotate_wallpapers
 
