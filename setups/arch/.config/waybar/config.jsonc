@@ -12,7 +12,7 @@
 		// "pulseaudio#mic",
 		"battery",
 		"backlight",
-		"custom/ncmpcpp"
+		"custom/spotify"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -173,5 +173,12 @@
 		"on-scroll-up": "mpc next",
 		"on-scroll-down": "mpc prev",
 		"on-click-right": "$TERMINAL -e ncmpcpp"
+	},
+	"custom/spotify": {
+		"exec": "spotify_status",
+		"interval": 2,
+		"on-click": "playerctl -p spotify play-pause",
+		"on-click-right": "spotify_menu",
+		"tooltip": false
 	}
 }

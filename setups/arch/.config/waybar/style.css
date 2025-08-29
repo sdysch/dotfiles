@@ -163,3 +163,9 @@ tooltip label {
     font-weight: bold;
     padding: 0 6px;
 }
+
+#custom-spotify {
+    color: #50fa7b; /* green */
+    font-weight: bold;
+    padding: 0 6px;
+}

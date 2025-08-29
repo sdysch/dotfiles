@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get current Spotify track info
+status=$(playerctl -p spotify status 2>/dev/null)
+title=$(playerctl -p spotify metadata title 2>/dev/null)
+artist=$(playerctl -p spotify metadata artist 2>/dev/null)
+
+if [ -z "$status" ]; then
+    echo "Spotify ⏹"
+    exit 0
+fi
+
+# Set icon based on play/pause
+if [ "$status" = "Playing" ]; then
+    icon="▶"
+elif [ "$status" = "Paused" ]; then
+    icon="⏸"
+else
+    icon="⏹"
+fi
+
+# Output for Waybar
+echo "$icon $artist — $title"
