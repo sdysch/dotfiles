@@ -65,6 +65,7 @@ scrot
 scrot
 speedtest-cli
 spotify-launcher
+spotifyd
 stow
 swayidle
 texlive

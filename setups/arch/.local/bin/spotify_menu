@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Spotify Rofi Menu
+action=$(echo -e "Play/Pause\nNext\nPrevious\nShow Current Track\nStop Spotify" | rofi -dmenu -i -p "Spotify")
+
+case "$action" in
+    "Play/Pause")
+        playerctl -p spotify play-pause ;;
+    "Next")
+        playerctl -p spotify next ;;
+    "Previous")
+        playerctl -p spotify previous ;;
+    "Show Current Track")
+        title=$(playerctl -p spotify metadata title)
+        artist=$(playerctl -p spotify metadata artist)
+        notify-send "Spotify" "$artist — $title" ;;
+    "Stop Spotify")
+        playerctl -p spotify stop ;;
+esac
