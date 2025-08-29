@@ -158,3 +158,8 @@ tooltip label {
   color: #eceff4;
 }
 
+#custom-ncmpcpp {
+    color: #50fa7b; /* green */
+    font-weight: bold;
+    padding: 0 6px;
+}

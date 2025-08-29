@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# REF: https://github.com/BreadOnPenguins/scripts/blob/master/dmenu_musicpicker
+
+file="$(mpc listall | rofi -dmenu -i -p '🎵 Select track' -l 20 -width 60)" || exit 0
+
+if [ -n "$file" ]; then
+    notify-send "Playing: $file"
+    mpc insert "$file"
+    mpc next >/dev/null
+fi
+

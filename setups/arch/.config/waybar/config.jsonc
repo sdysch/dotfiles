@@ -9,15 +9,16 @@
 		//"systemd-failed-units",
 		//"user",
 		"pulseaudio",
-		"pulseaudio#mic",
+		// "pulseaudio#mic",
 		"battery",
-		"backlight"
+		"backlight",
+		"custom/ncmpcpp"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-    	"wlr/taskbar",
+    	//"wlr/taskbar",
         "custom/pacman",
 		"custom/weather",
 		"cpu",
@@ -33,7 +34,7 @@
 			"active": ""
 		},
         "persistent-workspaces": {
-			"*": 2
+			"*": 1
 		}
 	},
 	"cpu": {
@@ -163,5 +164,14 @@
     "custom/weather": {
 		"interval": 3600,
 		"exec": "weather_formatted"
+	},
+	"custom/ncmpcpp": {
+		"exec": "ncmpcpp_status",
+		"interval": 2,
+		"tooltip": false,
+		"on-click": "mpc toggle",
+		"on-scroll-up": "mpc next",
+		"on-scroll-down": "mpc prev",
+		"on-click-right": "$TERMINAL -e ncmpcpp"
 	}
 }
