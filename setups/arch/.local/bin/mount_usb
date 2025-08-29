@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+# Directory where drives will be mounted
+MOUNT_DIR="/mnt"
+MENU="dmenu -i -p"
+
+# Check for -r flag (use rofi instead of dmenu)
+if [ "$1" = "-r" ]; then
+    MENU="rofi -dmenu -p"
+fi
+
+# List unmounted USB block devices (skip already mounted ones)
+drives=$(lsblk -o NAME,TRAN,FSTYPE,MOUNTPOINT -r -p | \
+    awk '$2=="usb" && $4=="" {print $1 " (" $3 ")"}')
+
+# If no drives found, exit
+[ -z "$drives" ] && { notify-send "No unmounted USB drives found"; exit 1; }
+
+# Pick drive via chosen menu
+choice=$(printf '%s\n' "$drives" | $MENU "Mount which USB drive?")
+
+# Exit if nothing chosen
+[ -z "$choice" ] && exit 0
+
+# Extract device name (first field, e.g. /dev/sdb1)
+device=$(echo "$choice" | awk '{print $1}')
+
+# Create mount point dir
+label=$(lsblk -no LABEL "$device")
+[ -z "$label" ] && label=$(basename "$device")
+mountpoint="$MOUNT_DIR/$label"
+
+sudo mkdir -p "$mountpoint"
+
+# Mount the device
+if sudo mount "$device" "$mountpoint"; then
+    notify-send "Mounted $device at $mountpoint"
+else
+    notify-send "Failed to mount $device"
+fi

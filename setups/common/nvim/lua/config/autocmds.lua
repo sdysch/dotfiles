@@ -12,16 +12,56 @@ autocmd('BufReadPost', {
 })
 
 -- Text wrapping for LaTeX
-autocmd('FileType', { pattern = 'tex', command = 'setlocal textwidth=100' })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'tex',
+  callback = function()
+    vim.opt_local.textwidth = 100
+  end
+})
 
 -- Rerun system commands on save
-autocmd('BufWritePost', { pattern = '*compton.conf', command = '!killall picom && picom -b --config ~/.config/compton/compton.conf &' })
-autocmd('BufWritePost', { pattern = '*dunstrc', command = '!restart_dunst' })
-autocmd('BufWritePost', { pattern = '*waybar/*', command = '!restart_waybar' })
-autocmd('BufWritePost', { pattern = '*Xresources,*Xdefaults', command = '!xrdb %' })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*compton.conf',
+  callback = function()
+    vim.fn.system('killall picom && picom -b --config ~/.config/compton/compton.conf &')
+  end
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*dunstrc',
+  callback = function()
+    vim.fn.system('restart_dunst')
+  end
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*waybar/*',
+  callback = function()
+    vim.fn.system('restart_waybar')
+  end
+})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = {'*Xresources','*Xdefaults'},
+  callback = function()
+    vim.fn.system('xrdb ' .. vim.fn.expand('%'))
+  end
+})
 
 -- Fix tex filetype
-autocmd({'BufRead','BufNewFile'}, { pattern = '*.tex', command = 'set filetype=tex' })
+vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {
+  pattern = '*.tex',
+  callback = function()
+    vim.bo.filetype = 'tex'
+  end
+})
 
 -- Backup Vimwiki automatically
-autocmd('BufWritePost', { pattern = '*.wiki', command = 'if executable("backup_vimwiki") | !backup_vimwiki | endif' })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*.wiki',
+  callback = function()
+    if vim.fn.executable('backup_vimwiki') == 1 then
+      vim.fn.system('backup_vimwiki')
+    end
+  end
+})
