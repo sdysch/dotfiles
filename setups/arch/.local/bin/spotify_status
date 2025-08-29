@@ -1,23 +1,50 @@
 #!/bin/bash
 
-# Get current Spotify track info
+# Spinner state file
+SPINNER_FILE="/tmp/spotify_spinner_state"
+SPINNER_CHARS="⠁⠂⠄⡀⢀⠠⠐⠈"
+
+# Read spinner state
+if [ -f "$SPINNER_FILE" ]; then
+    SPIN_INDEX=$(cat "$SPINNER_FILE")
+else
+    SPIN_INDEX=0
+fi
+
+# Spotify info
 status=$(playerctl -p spotify status 2>/dev/null)
 title=$(playerctl -p spotify metadata title 2>/dev/null)
 artist=$(playerctl -p spotify metadata artist 2>/dev/null)
+shuffle=$(playerctl -p spotify shuffle 2>/dev/null)
+loop=$(playerctl -p spotify loop 2>/dev/null)
 
+# Not running
 if [ -z "$status" ]; then
     echo "Spotify ⏹"
     exit 0
 fi
 
-# Set icon based on play/pause
+# Play/pause icon
 if [ "$status" = "Playing" ]; then
     icon="▶"
+    # Spinner for loading effect
+    spinner=${SPINNER_CHARS:$SPIN_INDEX:1}
+    SPIN_INDEX=$(( (SPIN_INDEX + 1) % ${#SPINNER_CHARS} ))
+    echo $SPIN_INDEX > "$SPINNER_FILE"
+    icon="$icon $spinner"
 elif [ "$status" = "Paused" ]; then
     icon="⏸"
 else
     icon="⏹"
 fi
 
-# Output for Waybar
-echo "$icon $artist — $title"
+# Shuffle & loop
+[ "$shuffle" = "On" ] && icon="$icon "   # nf-fa-random
+[ "$loop" != "None" ] && icon="$icon "   # nf-fa-repeat
+
+# Format text
+max_len=40
+track_text="$artist — $title"
+[ ${#track_text} -gt $max_len ] && track_text="${track_text:0:$max_len}…"
+
+echo "$icon $track_text"

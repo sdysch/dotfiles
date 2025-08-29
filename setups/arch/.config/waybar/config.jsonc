@@ -176,7 +176,7 @@
 	},
 	"custom/spotify": {
 		"exec": "spotify_status",
-		"interval": 2,
+		"interval": 1,
 		"on-click": "playerctl -p spotify play-pause",
 		"on-click-right": "spotify_menu",
 		"tooltip": false
