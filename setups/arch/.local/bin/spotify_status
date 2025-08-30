@@ -20,7 +20,7 @@ loop=$(playerctl -p spotify loop 2>/dev/null)
 
 # Not running
 if [ -z "$status" ]; then
-    echo "Spotify ⏹"
+    echo ""
     exit 0
 fi
 

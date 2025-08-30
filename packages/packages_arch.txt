@@ -16,6 +16,7 @@ dunst
 evince
 eza
 fastfetch
+ffmpeg
 firefox
 fontconfig
 gcc
@@ -70,11 +71,13 @@ stow
 swayidle
 texlive
 tmux
+tree
 ttf-font-awesome
 unzip
 unzip
 usbutils
 vim
+vlc
 vlc
 waybar
 wget
