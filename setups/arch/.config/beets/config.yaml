@@ -1,0 +1,13 @@
+directory: ~/Music/Library
+library: ~/.config/beets/musiclibrary.db
+
+import:
+  write: yes
+  copy: no
+  move: yes
+  resume: ask
+  incremental: yes
+  quiet_fallback: asis
+  timid: no
+  singletons: yes
+  group_albums: no

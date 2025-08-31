@@ -1,4 +1,5 @@
 alacritty
+beets
 biber
 binutils
 blueman
