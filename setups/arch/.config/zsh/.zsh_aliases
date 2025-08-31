@@ -19,3 +19,19 @@ alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
+
+# music
+function ytmp3() {
+	yt-dlp -o '%(playlist_index)s - %(title)s.%(ext)s' \
+       --extract-audio \
+       --audio-format mp3 \
+       --add-metadata \
+       --embed-thumbnail \
+       --metadata-from-title "%(artist)s - %(title)s" \
+       --split-chapters \
+       $1
+}
+
+function spotmp3() {
+	spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache $1
+}

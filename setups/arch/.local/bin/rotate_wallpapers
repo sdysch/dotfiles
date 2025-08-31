@@ -1,4 +1,6 @@
 #!/bin/sh
+export HYPRLAND_INSTANCE_SIGNATURE=$(cat ~/.cache/hyprland_sig)
+
 WALLPAPERS_DIR="$HOME/dotfiles/wallpapers/rotation"
 WALLPAPERS=("$WALLPAPERS_DIR"/*)
 
@@ -9,7 +11,7 @@ RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
 # preload
 hyprctl hyprpaper preload "$RANDOM_WALLPAPER"
 
-# Apply it to all monitors
-hyprctl hyprpaper wallpaper "eDP-1,$RANDOM_WALLPAPER"
-hyprctl hyprpaper wallpaper "HDMI-1,$RANDOM_WALLPAPER"
-hyprctl hyprpaper wallpaper "HDMI-A-2,$RANDOM_WALLPAPER"
+# Apply to all connected monitors
+for MON in $(/usr/bin/hyprctl monitors -j | jq -r '.[].name'); do
+    /usr/bin/hyprctl hyprpaper wallpaper "$MON,$RANDOM_WALLPAPER"
+done

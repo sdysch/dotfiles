@@ -1,23 +1,24 @@
 #NOTE Make sure there is a newline at the end of the file!!
 SHELL=/bin/bash
 PATH=~/bin:/usr/bin:/bin:~/.local/bin
+DISPLAY=:0
 
 # backup vimwiki every 3 hours
-0 */3 * * * . $HOME/.zprofile; . $HOME/.zshrc; backup_vimwiki
+0 */3 * * * . $HOME/.zprofile; . backup_vimwiki
 
 # Check for updates every hour
-0 */1 * * * . $HOME/.zprofile; . $HOME/.zshrc; check_arch_updates
+0 */1 * * * . $HOME/.zprofile; . check_arch_updates
 
 # check battery status every 5 minutes
-*/5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; . $HOME/.zshrc;  $HOME/.local/bin/check_battery
+*/5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; . $HOME/.zprofile; . $HOME/.local/bin/check_battery
 
 # empty xsession-errors if the size becomes > 1GB
 # REF: https://www.daniloaz.com/en/how-to-prevent-the-xsession-errors-file-from-growing-to-huge-size/
 */5 * * * * [ $(du -k $HOME/.xsession-errors | awk '{ print $1 }') -gt 1000000 ] && echo " " > $HOME/.xsession-errors
 
 # rclone backups every 3 hours
-0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
+0 */3 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; . $HOME/.zprofile; $HOME/.local/bin/backup_to_rclone
 
 # rotate wallpapers every 5 mins
-*/5 * * * * . $HOME/.zprofile; export DISPLAY=:0; . rotate_wallpapers
+*/5 * * * * $HOME/.zprofile; . $HOME/.local/bin/rotate_wallpapers
 
