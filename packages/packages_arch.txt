@@ -29,6 +29,7 @@ hyprpaper
 i3lock
 imagemagick
 isync
+jq
 lf
 libnotify
 libreoffice-still

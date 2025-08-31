@@ -1,0 +1,3 @@
+#!/bin/sh
+spotdl save https://open.spotify.com/playlist/7qZMZQx5RMMvYyEAxPNEZW --save-file liked_songs_export.spotdl --lyrics
+spotdl download liked_songs_export.spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache
