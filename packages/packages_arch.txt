@@ -51,6 +51,7 @@ nitrogen
 nm-connection-editor
 notify-osd
 noto-fonts-emoji
+ntfs-3g
 openssh
 pacman-contrib
 pass
