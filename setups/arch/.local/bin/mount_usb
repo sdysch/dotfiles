@@ -25,16 +25,40 @@ choice=$(printf '%s\n' "$drives" | $MENU "Mount which USB drive?")
 # Extract device name (first field, e.g. /dev/sdb1)
 device=$(echo "$choice" | awk '{print $1}')
 
+# Get filesystem type
+fstype=$(lsblk -no FSTYPE "$device")
+
 # Create mount point dir
 label=$(lsblk -no LABEL "$device")
 [ -z "$label" ] && label=$(basename "$device")
 mountpoint="$MOUNT_DIR/$label"
-
 sudo mkdir -p "$mountpoint"
 
-# Mount the device
-if sudo mount "$device" "$mountpoint"; then
+# Mount based on filesystem
+case "$fstype" in
+    ntfs)
+        # NTFS requires ntfs-3g for full read/write
+        if ! command -v ntfs-3g >/dev/null 2>&1; then
+            notify-send "ntfs-3g not installed, cannot mount NTFS"
+            exit 1
+        fi
+        sudo mount -t ntfs-3g "$device" "$mountpoint"
+        ;;
+    vfat|fat32)
+        sudo mount -t vfat -o uid=$(id -u),gid=$(id -g) "$device" "$mountpoint"
+        ;;
+    ext4|ext3|ext2)
+        sudo mount -t "$fstype" "$device" "$mountpoint"
+        ;;
+    *)
+        sudo mount "$device" "$mountpoint"
+        ;;
+esac
+
+# Notify user
+if mountpoint -q "$mountpoint"; then
     notify-send "Mounted $device at $mountpoint"
 else
     notify-send "Failed to mount $device"
 fi
+
