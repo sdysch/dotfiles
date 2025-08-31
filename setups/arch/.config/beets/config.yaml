@@ -1,13 +1,15 @@
-directory: ~/Music/Library
+directory: ~/Music/Library   # where your organized library will live
 library: ~/.config/beets/musiclibrary.db
 
 import:
+  move: yes
   write: yes
   copy: no
-  move: yes
-  resume: ask
+  autotag: no
   incremental: yes
   quiet_fallback: asis
-  timid: no
-  singletons: yes
-  group_albums: no
+
+paths:
+  default: $albumartist/$album/$track $title
+  singleton: $artist/$title
+  comp: Various Artists/$album/$track $title
