@@ -11,14 +11,36 @@ open() {
 # open backgammon image
 alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 
-#gnu pass
+# gnu pass
 alias pgp="pass git push origin master"
 
 # cmus
 alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 
-# update powerlevel10k
-alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
+# pacman
+alias p="sudo pacman"
+
+# count songs in mpd database
+function number_of_songs() {
+	if command -v mpc >/dev/null; then
+			mpc update >/dev/null 2>&1
+			mpc stats | awk -F': ' '/Songs:/ {print $2}'
+		else
+			echo "mpc not found"
+	fi
+}
+
+# check music metadata in a directory
+function check_music_metadata() {
+	shopt -s nullglob
+	for f in "$@"; do
+		echo "File: $f"
+		ffprobe -v error \
+		  -show_entries format_tags=title,album,artist \
+		  -of default=noprint_wrappers=1:nokey=0 "$f"
+		echo
+	done
+}
 
 # music
 function ytmp3() {
