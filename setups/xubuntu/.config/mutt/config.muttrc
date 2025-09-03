@@ -1,6 +1,0 @@
-# vim: filetype=neomuttrc
-set date_format="%d/%m/%y %I:%M%p"
-set signature = "~/.config/mutt/signature"
-
-# === aliases ===
-alias me sdysch94@gmail.com
