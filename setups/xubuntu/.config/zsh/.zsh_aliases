@@ -29,3 +29,6 @@ alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 # literally just for screenshots
 #alias neofetch="clear && neofetch --ascii_distro Xubuntu"
 alias neofetch="neofetch --ascii_distro Xubuntu"
+
+# wget config
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"

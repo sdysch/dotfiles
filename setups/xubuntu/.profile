@@ -121,6 +121,15 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 
 # conda
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export CONDA_DIR="$XDG_DATA_HOME/conda"
 
 # NVM
 export NVM_DIR="$XDG_DATA_HOME"/nvm
+
+# WGET
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+# LaTeX
+export TEXMFHOME=$XDG_DATA_HOME/texmf
+export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
+export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
