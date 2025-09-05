@@ -32,6 +32,7 @@ Plug('gbprod/nord.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 Plug('romgrk/barbar.nvim')
 Plug('lukas-reineke/indent-blankline.nvim')
+Plug('wellle/context.vim')
 
 vim.call('plug#end')
 
