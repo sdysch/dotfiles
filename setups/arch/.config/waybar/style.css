@@ -16,31 +16,39 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+/* Workspace buttons with Nord theme */
 #workspaces {
-  background: rgba(46, 52, 64, 0.6);
+  background: #2E3440;
   border-radius: 10px;
-  margin: 6px 5px;
-  padding: 0px 6px;
+  padding: 2px 6px;
 }
 
 #workspaces button {
-  color: #88c0d0; /* Frost */
+  color: #D8DEE9;
   background: transparent;
-  padding: 4px 4px;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  border: none;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
 }
 
-#workspaces button.occupied {
-  color: #a3be8c; /* Green */
-}
-
+/* Active workspace */
 #workspaces button.active {
-  color: #81a1c1; /* Frost */
-  text-shadow: 0 0 4px #88c0d0;
+  background: #5E81AC;   /* Frost blue */
+  color: #ECEFF4;
 }
 
+/* Hovered workspace */
 #workspaces button:hover {
-  color: #8fbcbb; /* Frost hover */
+  background: #434C5E;   /* Polar Night highlight */
+  color: #E5E9F0;
+}
+
+/* Urgent workspace (apps demanding attention) */
+#workspaces button.urgent {
+  background: #BF616A;   /* Aurora red */
+  color: #ECEFF4;
 }
 
 #cpu,
