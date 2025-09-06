@@ -41,6 +41,7 @@ lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
 lynx
 make
+mpc
 mpd
 mpv
 mpv
@@ -96,5 +97,6 @@ xfce4-terminal
 xorg-apps
 xorg-server
 xorg-xinit
+yt-dlp
 zathura
 zsh

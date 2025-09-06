@@ -6,6 +6,10 @@ pgrep -x backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
 notify-send "🔃 Running backup" -t 3000
 
 # run the backup. Can add more locations here if needed?
-LOCATION="remote:Backups"
-CMD="rclone copy --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log --ignore-existing"
+LOCATION="google_drive:arch_backups"
+CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log"
 $CMD $HOME/Documents $LOCATION/Documents
+$CMD $HOME/Music $LOCATION/Music
+$CMD $HOME/Videos $LOCATION/Videos
+
+notify-send "✅ Backup completed" -t 3000
