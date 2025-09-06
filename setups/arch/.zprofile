@@ -91,12 +91,6 @@ export WALLPAPERSDIR="$HOME/dotfiles/wallpapers"
 # thesis
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
 
-# to do list
-export TODOLISTDIR="$XDG_CONFIG_HOME/todolist"
-export PATH=$PATH:"${TODOLISTDIR}/scripts"
-export TODOBACKUP="$HOME/Documents/todolist-backup"
-export PATH=$PATH:"${TODOBACKUP}/scripts"
-
 # ssh
 export USERCERN="sdysch"
 export USERMANC="samdysch"
