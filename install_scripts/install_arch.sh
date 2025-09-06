@@ -8,7 +8,7 @@ mkdir -p $HOME/.ssh
 # don't want to install many packages for each CI run
 # they are also not needed for the docker container
 if [[ ! ${CI} ]] ; then
-	sudo pacman -S --needed - < packages.txt
+	sudo pacman -S --needed - < packages_arch.txt
 
 	# install crontab
 	systemctl enable cronie
@@ -18,10 +18,10 @@ if [[ ! ${CI} ]] ; then
 	pushd /tmp
 	git clone https://aur.archlinux.org/yay-git.git
 	cd yay-git
-	makepkg -s
+	makepkg -si
 	popd
 
-	yay -S --needed - < packages.txt
+	yay -S --needed - < packages_AUR.txt
 
 fi
 
