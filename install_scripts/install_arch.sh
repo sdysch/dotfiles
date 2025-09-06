@@ -8,7 +8,7 @@ mkdir -p $HOME/.ssh
 # don't want to install many packages for each CI run
 # they are also not needed for the docker container
 if [[ ! ${CI} ]] ; then
-	sudo pacman -S $(cat packages/packages_arch.txt)
+	sudo pacman -S --needed - < packages.txt
 
 	# install crontab
 	systemctl enable cronie
@@ -21,7 +21,7 @@ if [[ ! ${CI} ]] ; then
 	makepkg -s
 	popd
 
-	yay -S $(cat packages/packages_AUR.txt)
+	yay -S --needed - < packages.txt
 
 fi
 
