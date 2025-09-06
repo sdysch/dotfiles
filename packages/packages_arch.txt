@@ -34,6 +34,7 @@ i3lock
 imagemagick
 isync
 jq
+less
 lf
 libnotify
 libreoffice-still
@@ -71,6 +72,8 @@ ristretto
 rofi
 rofi
 rsync
+ruby
+ruby-erb
 scrot
 scrot
 speedtest-cli

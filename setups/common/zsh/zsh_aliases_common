@@ -2,8 +2,8 @@
 
 # exa over ls
 if type eza > /dev/null 2>&1; then
-	alias ls="eza --icons"
-	alias ll="eza -l --sort newest --color=always --icons"
+	alias ls="eza --icons=always"
+	alias ll="eza -l --sort newest --color=always --icons=always"
 else
 	alias ls="ls --color=auto"
 	alias ll="ls -ltrh"
