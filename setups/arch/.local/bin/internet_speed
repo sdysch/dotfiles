@@ -1,6 +1,34 @@
 #!/bin/bash
 
-# Function to convert bytes to human-readable format
+# FIXME the calculated speeds are wrong
+
+# Temp file to store previous counters
+STATE_FILE="/tmp/internet_speed_state"
+
+# Detect active interface automatically
+IFACE=$(ip route get 8.8.8.8 2>/dev/null | awk '{print $5; exit}')
+[ -z "$IFACE" ] && exit 0
+
+# Read current RX/TX bytes
+RX_NOW=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
+TX_NOW=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
+
+# Read previous counters
+if [ -f "$STATE_FILE" ]; then
+    read RX_PREV TX_PREV < "$STATE_FILE"
+else
+    RX_PREV=$RX_NOW
+    TX_PREV=$TX_NOW
+fi
+
+# Save current counters for next run
+echo "$RX_NOW $TX_NOW" > "$STATE_FILE"
+
+# Calculate speeds (bytes per second)
+RX_BPS=$((RX_NOW - RX_PREV))
+TX_BPS=$((TX_NOW - TX_PREV))
+
+# Convert to human-readable
 human_readable() {
     local BYTES=$1
     if [ $BYTES -ge 1000000 ]; then
@@ -12,38 +40,22 @@ human_readable() {
     fi
 }
 
-# Function to choose color based on speed (Nord theme)
-color_for_speed() {
-    local BYTES=$1
-    if [ $BYTES -lt 50000 ]; then
-        echo "#88C0D0"
-    elif [ $BYTES -lt 200000 ]; then
-        echo "#EBCB8B"
-    else
-        echo "#BF616A"
-    fi
-}
-
-# Detect active interface automatically
-IFACE=$(ip route get 8.8.8.8 | awk '{print $5; exit}')
-
-# Initial RX and TX bytes
-RX_PREV=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
-TX_PREV=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
-
-RX_NOW=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
-TX_NOW=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
-
-RX_BPS=$((RX_NOW - RX_PREV))
-TX_BPS=$((TX_NOW - TX_PREV))
-
-RX_PREV=$RX_NOW
-TX_PREV=$TX_NOW
-
 RX_HR=$(human_readable $RX_BPS)
 TX_HR=$(human_readable $TX_BPS)
 
-RX_COLOR=$(color_for_speed $RX_BPS)
-TX_COLOR=$(color_for_speed $TX_BPS)
+# Color based on speed (brighter Nord theme)
+color_for_speed() {
+    local BYTES=$1
+    if [ $BYTES -lt 50000 ]; then
+        echo "#8FBCBB"  # cyan
+    elif [ $BYTES -lt 200000 ]; then
+        echo "#EBCB8B"  # yellow
+    else
+        echo "#D08770"  # orange/red
+    fi
+}
 
-echo "{\"text\":\"↓ $RX_HR ↑ $TX_HR\",\"class\":\"network-speed\",\"tooltip\":\"Download: $RX_HR, Upload: $TX_HR\",\"color\":\"$RX_COLOR\"}"
+RX_COLOR=$(color_for_speed $RX_BPS)
+
+# Output JSON for Waybar
+echo "{\"text\":\"↓ $RX_HR ↑ $TX_HR\",\"color\":\"$RX_COLOR\"}"
