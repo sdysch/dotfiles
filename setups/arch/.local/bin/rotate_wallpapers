@@ -1,7 +1,7 @@
 #!/bin/sh
 export HYPRLAND_INSTANCE_SIGNATURE=$(cat ~/.cache/hyprland_sig)
 
-WALLPAPERS_DIR="$HOME/dotfiles/wallpapers/rotation"
+WALLPAPERS_DIR="$HOME/dotfiles/wallpapers"
 WALLPAPERS=("$WALLPAPERS_DIR"/*)
 
 
