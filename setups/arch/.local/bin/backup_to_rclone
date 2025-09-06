@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check if already running
-pgrep -x backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
+pgrep -f backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
 
 notify-send "🔃 Running backup" -t 3000
 
