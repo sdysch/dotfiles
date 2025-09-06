@@ -39,3 +39,12 @@ source install_scripts/packages/install_suckless.sh
 if [[ ! ${CI} ]] ; then
 	systemctl enable lightdm.service
 fi
+
+# make directories
+if [[ ! ${CI} ]] ; then
+	mkdir -p $HOME/Documents
+	mkdir -p $HOME/Music
+	mkdir -p $HOME/Pictures/screenshots
+	mkdir -p $HOME/Videos
+	mkdir -p $HOME/Downloads
+fi

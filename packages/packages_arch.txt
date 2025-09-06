@@ -1,5 +1,6 @@
 alacritty
 base-devel
+bc
 beets
 biber
 binutils
@@ -49,7 +50,6 @@ msmtp
 ncdu
 ncmpcpp
 neovim
-neovim
 network-manager-applet
 nitrogen
 nm-connection-editor
@@ -59,11 +59,10 @@ ntfs-3g
 openssh
 pacman-contrib
 pass
-pass
 pavucontrol
 picom
 pulseaudio
-pulseaudio
+pulseaudio-bluetooth
 python
 ranger
 rclone
