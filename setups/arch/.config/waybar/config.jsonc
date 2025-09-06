@@ -23,7 +23,7 @@
 		"custom/weather",
 		"cpu",
 		"custom/diskfree",
-		"custom/internet_speed",
+		//"custom/internet_speed",
 		"tray",
 		"custom/power"
     ],
