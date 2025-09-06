@@ -57,3 +57,7 @@ function ytmp3() {
 function spotmp3() {
 	spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache $1
 }
+
+function update_pacman_mirrors() {
+	sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+}

@@ -67,6 +67,7 @@ pulseaudio
 python
 ranger
 rclone
+reflector
 ristretto
 rofi
 rofi
