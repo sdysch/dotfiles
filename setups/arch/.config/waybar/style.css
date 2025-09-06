@@ -63,6 +63,7 @@ window#waybar.hidden {
 #clock,
 #custom-pacman,
 #custom-weather,
+#custom-internet_speed,
 #tray {
   border-radius: 4px;
   margin: 4px 3px;
@@ -176,4 +177,14 @@ tooltip label {
     color: #50fa7b; /* green */
     font-weight: bold;
     padding: 0 6px;
+}
+
+#custom-internet_speed {
+    background-color: #4C566A;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#custom-internet_speed:hover {
+    color: #81A1C1;
 }

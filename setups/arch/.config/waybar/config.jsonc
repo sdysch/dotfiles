@@ -23,6 +23,7 @@
 		"custom/weather",
 		"cpu",
 		"custom/diskfree",
+		"custom/internet_speed",
 		"tray",
 		"custom/power"
     ],
@@ -178,5 +179,12 @@
 		"on-click": "playerctl -p spotify play-pause",
 		"on-click-right": "spotify_menu",
 		"tooltip": false
+	},
+	"custom/internet_speed": {
+		"exec": "internet_speed",
+		"interval": 1,
+		"format": "{text}",
+		"tooltip": false,
+		"return-type": "json"
 	}
 }

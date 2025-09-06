@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Function to convert bytes to human-readable format
+human_readable() {
+    local BYTES=$1
+    if [ $BYTES -ge 1000000 ]; then
+        echo "$((BYTES/1000000))MB/s"
+    elif [ $BYTES -ge 1000 ]; then
+        echo "$((BYTES/1000))KB/s"
+    else
+        echo "${BYTES}B/s"
+    fi
+}
+
+# Function to choose color based on speed (Nord theme)
+color_for_speed() {
+    local BYTES=$1
+    if [ $BYTES -lt 50000 ]; then
+        echo "#88C0D0"
+    elif [ $BYTES -lt 200000 ]; then
+        echo "#EBCB8B"
+    else
+        echo "#BF616A"
+    fi
+}
+
+# Detect active interface automatically
+IFACE=$(ip route get 8.8.8.8 | awk '{print $5; exit}')
+
+# Initial RX and TX bytes
+RX_PREV=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
+TX_PREV=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
+
+RX_NOW=$(cat /sys/class/net/$IFACE/statistics/rx_bytes)
+TX_NOW=$(cat /sys/class/net/$IFACE/statistics/tx_bytes)
+
+RX_BPS=$((RX_NOW - RX_PREV))
+TX_BPS=$((TX_NOW - TX_PREV))
+
+RX_PREV=$RX_NOW
+TX_PREV=$TX_NOW
+
+RX_HR=$(human_readable $RX_BPS)
+TX_HR=$(human_readable $TX_BPS)
+
+RX_COLOR=$(color_for_speed $RX_BPS)
+TX_COLOR=$(color_for_speed $TX_BPS)
+
+echo "{\"text\":\"↓ $RX_HR ↑ $TX_HR\",\"class\":\"network-speed\",\"tooltip\":\"Download: $RX_HR, Upload: $TX_HR\",\"color\":\"$RX_COLOR\"}"
