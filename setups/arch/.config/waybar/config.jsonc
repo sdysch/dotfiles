@@ -125,7 +125,7 @@
     "custom/diskfree": {
         "format": "\uf108 {}",
 		"interval": 300,
-        "exec": "df --total -hl | grep 'sda3' | awk '{print $5}'"
+        "exec": "df --total -hl | grep 'nvme0n1p5' | awk '{print $5}'"
     },
     "custom/power": {
         "format": "󰤆",
