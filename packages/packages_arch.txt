@@ -90,7 +90,6 @@ vlc
 waybar
 wget
 wl-clipboard
-xautolock
 xclip
 xdotool
 xfce4-terminal
