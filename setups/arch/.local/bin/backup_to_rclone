@@ -1,15 +1,48 @@
 #!/bin/bash
 
+# backup_to_rclone.sh
+# Usage: backup_to_rclone.sh [docs|music|videos|media|all]
+# Defaults to 'all' if no argument given.
+
 # check if already running
-pgrep -f backup_to_rclone > /dev/null && { echo "Already running" ; exit; }
+pgrep -f backup_to_rclone.sh > /dev/null && { echo "Already running" ; exit; }
 
 notify-send "🔃 Running backup" -t 3000
 
-# run the backup. Can add more locations here if needed?
-LOCATION="google_drive:arch_backups"
-CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt -v --log-file=/tmp/rclone_log.log"
-$CMD $HOME/Documents $LOCATION/Documents
-$CMD $HOME/Music $LOCATION/Music
-$CMD $HOME/Videos $LOCATION/Videos
+# config
+LOCATION='google_drive:arch_backups'
+CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt \
+  --fast-list \
+  --transfers=8 \
+  --checkers=16 \
+  -v --log-file=$HOME/.local/share/rclone_backup.log"
 
-notify-send "✅ Backup completed" -t 3000
+# which sets to back up
+TARGET="${1:-all}"
+
+case "$TARGET" in
+  docs)
+    $CMD $HOME/Documents $LOCATION/Documents
+    ;;
+  media)
+    $CMD $HOME/Music $LOCATION/Music
+    $CMD $HOME/Videos $LOCATION/Videos
+    ;;
+  music)
+    $CMD $HOME/Music $LOCATION/Music
+    ;;
+  videos)
+    $CMD $HOME/Videos $LOCATION/Videos
+    ;;
+  all)
+    $CMD $HOME/Documents $LOCATION/Documents
+    $CMD $HOME/Music $LOCATION/Music
+    $CMD $HOME/Videos $LOCATION/Videos
+    ;;
+  *)
+    echo "Usage: $0 [docs|media|music|videos|all]"
+    exit 1
+    ;;
+esac
+
+notify-send "✅ Backup ($TARGET) completed" -t 3000
