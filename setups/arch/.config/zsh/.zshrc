@@ -51,6 +51,9 @@ SAVEHIST=10000000
 HISTFILE=$HISTFILE
 #setopt SHARE_HISTORY
 
+# autocorrect
+setopt correct
+
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
 #

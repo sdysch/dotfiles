@@ -11,6 +11,8 @@ RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
 # preload
 hyprctl hyprpaper preload "$RANDOM_WALLPAPER"
 
+echo $RANDOM_WALLPAPER >> /tmp/hyprpaper_wallpaper
+
 # Apply to all connected monitors
 for MON in $(/usr/bin/hyprctl monitors -j | jq -r '.[].name'); do
     /usr/bin/hyprctl hyprpaper wallpaper "$MON,$RANDOM_WALLPAPER"
