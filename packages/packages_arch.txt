@@ -17,6 +17,7 @@ curl
 dolphin
 dunst
 evince
+evince
 eza
 fakeroot
 fastfetch
@@ -65,6 +66,7 @@ picom
 pulseaudio
 pulseaudio-bluetooth
 python
+python-pip
 ranger
 rclone
 reflector
@@ -76,6 +78,7 @@ ruby
 ruby-erb
 scrot
 scrot
+sddm
 speedtest-cli
 spotify-launcher
 spotifyd

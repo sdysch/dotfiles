@@ -5,3 +5,4 @@ lightdm-webkit2-greeter
 nerd-fonts-meslo
 swaylock-effects
 ttf-meslo-nerd-font-powerlevel10k
+web-greeter

@@ -8,3 +8,4 @@ image/jpeg=ristretto.desktop
 image/png=ristretto.desktop
 image/jpg=ristretto.desktop
 image/gif=ristretto.desktop
+application/pdf=org.gnome.Evince.desktop
