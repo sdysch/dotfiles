@@ -64,6 +64,7 @@ window#waybar.hidden {
 #custom-pacman,
 #custom-weather,
 #custom-internet_speed,
+#custom-newsboat,
 #tray {
   border-radius: 4px;
   margin: 4px 3px;
@@ -187,4 +188,9 @@ tooltip label {
 
 #custom-internet_speed:hover {
     color: #81A1C1;
+}
+
+#custom-newsboat {
+	background-color: #a3be8c; /* Green */
+	color: #2e3440;
 }
