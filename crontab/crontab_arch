@@ -25,3 +25,6 @@ DISPLAY=:0
 # rotate wallpapers every 5 mins
 */5 * * * * $HOME/.zprofile; . $HOME/.local/bin/rotate_wallpapers
 
+# update RSS feeds hourly
+0 */1 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; . $HOME/.zprofile; $HOME/.local/bin/updatenews
+

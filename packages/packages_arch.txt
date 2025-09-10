@@ -54,6 +54,7 @@ ncdu
 ncmpcpp
 neovim
 network-manager-applet
+newsboat
 nitrogen
 nm-connection-editor
 notify-osd

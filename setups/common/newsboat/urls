@@ -1,0 +1,44 @@
+---Unread---
+"query:Unread Articles:unread = \"yes\""
+
+---News---
+# News
+http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
+# my feeble attempts to read Danish news to practice Danish
+https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
+https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast "Mads & Monopolet podcast"
+
+---Tech---
+https://news.ycombinator.com/rss "~News [Hacker News]"
+https://towardsdatascience.com/feed/ "~News [Towards Data Science]"
+https://www.kdnuggets.com/feed "~News [KDnuggets]"
+https://statmodeling.stat.columbia.edu/feed/ "~News [Stat Modelling]"
+https://www.databricks.com/feed "~News [databricks]"
+https://www.analyticsvidhya.com/feed/ "~News [Analytics Vidhya]"
+https://www.amazon.science/index.rss "~News [Amazon]"
+
+---Blogs---
+https://feeds.feedburner.com/FeaturedBlogPosts-DataScienceCentral "~Blog [Data Science Central]"
+https://juliasilge.com/blog/index.xml "~Blog [Julia Silge]"
+
+---ArXiv---
+https://export.arxiv.org/rss/cs "~cs"
+https://export.arxiv.org/rss/cs.AI "~cs AI"
+https://export.arxiv.org/rss/cs.LG "~cs ML"
+
+
+---Linux---
+https://distrowatch.com/news/dw.xml "~DistroWatch [Latest news and updates]"
+https://www.archlinux.org/feeds/news/ "~Arch [News]"
+https://www.archlinux.org/feeds/packages/ "~Arch [Packages]"
+https://xubuntu.org/blog/feed "~Xubuntu [blog]"
+https://suckless.org/atom.xml "~Suckless [News]"
+
+---reddit---
+# reddit
+https://www.reddit.com/r/linux.rss "~REDDIT: [r/linux]"
+https://www.reddit.com/r/archlinux.rss "~REDDIT: [r/archlinux]"
+https://www.reddit.com/r/linuxquestions.rss "~REDDIT: [r/linuxquestions]"
+https://www.reddit.com/r/neovim.rss "~REDDIT: [r/neovim]"
+https://www.reddit.com/r/vim.rss "~REDDIT: [r/vim]"
+https://www.reddit.com/r/unixporn.rss "~REDDIT: [r/unixporn]"

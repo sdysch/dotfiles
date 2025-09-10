@@ -20,6 +20,7 @@
     "modules-right": [
     	//"wlr/taskbar",
         "custom/pacman",
+        "custom/newsboat",
 		"custom/weather",
 		"cpu",
 		"custom/diskfree",
@@ -185,6 +186,14 @@
 		"interval": 1,
 		"format": "{text}",
 		"tooltip": false,
+		"return-type": "json"
+	},
+	"custom/newsboat": {
+		"exec": "unread_news",
+		"format": "{text}",
+		"tooltip": true,
+		"interval": 60,
+		"on-click": "alacritty -e newsboat",
 		"return-type": "json"
 	}
 }
