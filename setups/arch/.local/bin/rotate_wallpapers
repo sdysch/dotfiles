@@ -8,6 +8,9 @@ WALLPAPERS=("$WALLPAPERS_DIR"/*)
 # Pick one at random
 RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
 
+# restart hyprpaper if not running
+pgrep hyprpaper > /dev/null || hyprpaper & disown
+
 # preload
 hyprctl hyprpaper preload "$RANDOM_WALLPAPER"
 
