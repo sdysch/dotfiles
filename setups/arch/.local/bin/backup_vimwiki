@@ -3,19 +3,14 @@
 
 [ -d $VIMWIKI ] || exit 1
 
-PWD=$(pwd)
-
 # add files, commit, push
-cd $VIMWIKI
+pushd $VIMWIKI
 git add -A > /dev/null
 timestamp=$(date)
 message="Vim wiki automatically backed up at ${timestamp}"
 git commit -m "$message" > /dev/null
 git push origin master > /dev/null
-echo $message
+notify-send "$message"
 
 # go back to previous directory
-cd $PWD
-
-# if we have dwmblocks, send signal to update
-#command -v dwmblocks > /dev/null && pkill -RTMIN+3 dwmblocks
+popd

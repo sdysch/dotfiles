@@ -26,6 +26,7 @@ firefox
 fontconfig
 gcc
 git
+gnome-keyring
 grim
 htop
 htop

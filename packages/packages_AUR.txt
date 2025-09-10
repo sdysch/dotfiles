@@ -1,3 +1,4 @@
+archlinux-themes-sddm
 google-chrome
 intel-ucode
 lightdm-webkit-theme-aether
