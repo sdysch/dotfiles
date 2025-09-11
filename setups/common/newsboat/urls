@@ -1,44 +1,69 @@
 ---Unread---
 "query:Unread Articles:unread = \"yes\""
 
----News---
+---Combined---
+"query:Daily news:tags # \"daily\" and tags # \"news\""
+"query:Tech [skim]:tags # \"tech\" and tags # \"skim\""
+"query:Tech [longread]:tags # \"tech\" and tags # \"longread\""
+"query:Tech [company blogs]:tags # \"tech\" and tags # \"company\""
+"query:Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
+"query:Research papers:tags # \"arxiv\""
+"query:Reddit:tags # \"reddit\""
+"query:Skim:tags # \"skim\""
+
+---Individual---
 # News
-http://feeds.bbci.co.uk/news/rss.xml "~News [BBC]"
-# my feeble attempts to read Danish news to practice Danish
-https://www.dr.dk/nyheder/service/feeds/allenyheder "~News [dr.dk]"
-https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast "Mads & Monopolet podcast"
+http://feeds.bbci.co.uk/news/rss.xml bbc news daily
+https://feeds.bbci.co.uk/science/rss.xml bbc news science daily
+https://feeds.bbci.co.uk/news/world/rss.xml bbc news world daily
+https://feeds.bbci.co.uk/news/business/rss.xml bbc news business daily
+https://feeds.bbci.co.uk/news/politics/rss.xml bbc news politics daily
 
----Tech---
-https://news.ycombinator.com/rss "~News [Hacker News]"
-https://towardsdatascience.com/feed/ "~News [Towards Data Science]"
-https://www.kdnuggets.com/feed "~News [KDnuggets]"
-https://statmodeling.stat.columbia.edu/feed/ "~News [Stat Modelling]"
-https://www.databricks.com/feed "~News [databricks]"
-https://www.analyticsvidhya.com/feed/ "~News [Analytics Vidhya]"
-https://www.amazon.science/index.rss "~News [Amazon]"
+# language, my feeble attempts to read Danish news to practice Danish
+https://www.dr.dk/nyheder/service/feeds/allenyheder news lang:dk
+https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
 
----Blogs---
-https://feeds.feedburner.com/FeaturedBlogPosts-DataScienceCentral "~Blog [Data Science Central]"
-https://juliasilge.com/blog/index.xml "~Blog [Julia Silge]"
+# misc news
+https://inrix.com/feed/ news inrix
+https://www.manchester.ac.uk/about/news/tagfeed/en/tags/headlines news uom
 
----ArXiv---
-https://export.arxiv.org/rss/cs "~cs"
-https://export.arxiv.org/rss/cs.AI "~cs AI"
-https://export.arxiv.org/rss/cs.LG "~cs ML"
+# tech blogs and news
+https://deepmind.google/blog/rss.xml tech longread company
+https://engineering.fb.com/feed/ tech longread company
+https://feeds.feedburner.com/FeaturedBlogPosts-DataScienceCentral tech skim
+https://juliasilge.com/blog/index.xml tech skim
+https://medium.com/feed/kaggle-blog tech longread
+https://news.ycombinator.com/rss tech skim
+https://research.google/blog/rss/ tech longread company
+https://statmodeling.stat.columbia.edu/feed/ tech skim
+https://towardsdatascience.com/feed/ tech skim
+https://www.amazon.science/index.rss tech longread company
+https://www.analyticsvidhya.com/feed/ tech skim
+https://www.databricks.com/feed/ tech longread company
+https://www.kdnuggets.com/feed tech skim
+https://www.theseattledataguy.com/feed/ tech skim
+https://www.uber.com/en-GB/blog/london/engineering/rss/ tech longread company
+https://www.unofficialgoogledatascience.com/feeds/posts/default?alt=rss tech skim
+https://eng.lyft.com/feed tech longread company
+https://aws.amazon.com/blogs/machine-learning/feed/ tech longread company
+https://openai.com/blog/rss tech longread company
+https://www.microsoft.com/en-us/research/feed/ tech longread company
+https://ai.googleblog.com/atom.xml tech longread company
 
+# arxiv
+https://export.arxiv.org/rss/cs arxiv research cs 
+https://export.arxiv.org/rss/cs.AI arxiv research cs ai
+https://export.arxiv.org/rss/cs.LG arxiv research cs ml
 
----Linux---
-https://distrowatch.com/news/dw.xml "~DistroWatch [Latest news and updates]"
-https://www.archlinux.org/feeds/news/ "~Arch [News]"
-https://www.archlinux.org/feeds/packages/ "~Arch [Packages]"
-https://xubuntu.org/blog/feed "~Xubuntu [blog]"
-https://suckless.org/atom.xml "~Suckless [News]"
+# linux
+https://distrowatch.com/news/dw.xml news linux
+https://www.archlinux.org/feeds/news/ news linux arch official
+https://www.archlinux.org/feeds/packages/ news linux arch official
 
----reddit---
 # reddit
-https://www.reddit.com/r/linux.rss "~REDDIT: [r/linux]"
-https://www.reddit.com/r/archlinux.rss "~REDDIT: [r/archlinux]"
-https://www.reddit.com/r/linuxquestions.rss "~REDDIT: [r/linuxquestions]"
-https://www.reddit.com/r/neovim.rss "~REDDIT: [r/neovim]"
-https://www.reddit.com/r/vim.rss "~REDDIT: [r/vim]"
-https://www.reddit.com/r/unixporn.rss "~REDDIT: [r/unixporn]"
+https://www.reddit.com/r/linux.rss reddit linux daily 
+https://www.reddit.com/r/archlinux.rss reddit linux arch daily 
+https://www.reddit.com/r/linuxquestions.rss reddit linux daily 
+https://www.reddit.com/r/neovim.rss reddit daily 
+https://www.reddit.com/r/vim.rss reddit daily
+https://www.reddit.com/r/unixporn.rss reddit daily
