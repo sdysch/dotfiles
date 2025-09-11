@@ -19,6 +19,8 @@ https://feeds.bbci.co.uk/news/world/rss.xml bbc news world daily
 https://feeds.bbci.co.uk/news/business/rss.xml bbc news business daily
 https://feeds.bbci.co.uk/news/politics/rss.xml bbc news politics daily
 
+https://www.sciencedaily.com/rss/all.xml news daily science
+
 # language, my feeble attempts to read Danish news to practice Danish
 https://www.dr.dk/nyheder/service/feeds/allenyheder news lang:dk
 https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
