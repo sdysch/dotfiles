@@ -30,3 +30,5 @@ color article cyan default
 # syntax highlighting
 highlight all "---.*---" magenta default bold
 highlight feedlist ".*(0/0))" black
+
+browser google-chrome-stable
