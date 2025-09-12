@@ -26,10 +26,12 @@ https://www.dr.dk/nyheder/service/feeds/allenyheder news lang:dk
 https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
 
 # misc news
+---Misc---
 https://inrix.com/feed/ news inrix
 https://www.manchester.ac.uk/about/news/tagfeed/en/tags/headlines news uom
 
 # tech blogs and news
+---Tech---
 https://deepmind.google/blog/rss.xml tech longread company
 https://engineering.fb.com/feed/ tech longread company
 https://feeds.feedburner.com/FeaturedBlogPosts-DataScienceCentral tech skim
@@ -53,16 +55,19 @@ https://www.microsoft.com/en-us/research/feed/ tech longread company
 https://ai.googleblog.com/atom.xml tech longread company
 
 # arxiv
+---ArXiv---
 https://export.arxiv.org/rss/cs arxiv research cs 
 https://export.arxiv.org/rss/cs.AI arxiv research cs ai
 https://export.arxiv.org/rss/cs.LG arxiv research cs ml
 
 # linux
+---Linux---
 https://distrowatch.com/news/dw.xml news linux
 https://www.archlinux.org/feeds/news/ news linux arch official
 https://www.archlinux.org/feeds/packages/ news linux arch official
 
 # reddit
+---reddit---
 https://www.reddit.com/r/linux.rss reddit linux daily 
 https://www.reddit.com/r/archlinux.rss reddit linux arch daily 
 https://www.reddit.com/r/linuxquestions.rss reddit linux daily 
