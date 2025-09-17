@@ -86,6 +86,7 @@ spotify-launcher
 spotifyd
 stow
 swayidle
+sxiv
 texlive
 tmux
 tree
