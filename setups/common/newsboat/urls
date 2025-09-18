@@ -2,10 +2,15 @@
 "query:Unread Articles:unread = \"yes\""
 
 ---Combined---
-"query:Daily news:tags # \"daily\" and tags # \"news\""
+"query:All daily news:tags # \"daily\" and tags # \"news\""
+"query:BBC news:tags # \"daily\" and tags # \"news\" and tags # \"bbc\""
+"query:Daily local news:tags # \"daily\" and tags # \"news\" and tags # \"local\""
+"query:WSJ news:tags # \"news\" and tags # \"wsj\""
 "query:Tech [skim]:tags # \"tech\" and tags # \"skim\""
 "query:Tech [longread]:tags # \"tech\" and tags # \"longread\""
 "query:Tech [company blogs]:tags # \"tech\" and tags # \"company\""
+"query:python :tags # \"python\""
+"query:Company news:tags # \"news\" and tags # \"company\""
 "query:Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
 "query:Research papers:tags # \"arxiv\""
 "query:Reddit:tags # \"reddit\""
@@ -19,6 +24,13 @@ https://feeds.bbci.co.uk/news/world/rss.xml bbc news world daily
 https://feeds.bbci.co.uk/news/business/rss.xml bbc news business daily
 https://feeds.bbci.co.uk/news/politics/rss.xml bbc news politics daily
 https://feeds.bbci.co.uk/news/england/manchester/rss.xml bbc news local daily manchester
+https://www.manchestereveningnews.co.uk/?service=rss news local daily manchester MEN
+https://feeds.content.dowjones.io/public/rss/RSSWorldNews wsj world daily news
+https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness wsj business news
+https://feeds.content.dowjones.io/public/rss/RSSWSJD wsj tech news
+https://feeds.content.dowjones.io/public/rss/RSSMarketsMain wsj markets news
+https://www.ft.com/rss/home/uk ft news daily
+
 
 https://www.sciencedaily.com/rss/all.xml news daily science
 
@@ -28,8 +40,16 @@ https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
 
 # misc news
 ---Misc---
-https://inrix.com/feed/ news inrix
+https://inrix.com/feed/ news inrix company
+https://flyr.com/feed/ news flyr company
 https://www.manchester.ac.uk/about/news/tagfeed/en/tags/headlines news uom
+https://julienaismith.com/feed/ dogtraining blog
+
+# python
+---python---
+https://realpython.com/atom.xml news tech python
+https://pyfound.blogspot.com/feeds/posts/default news tech python
+https://planetpython.org/rss20.xml news tech python
 
 # tech blogs and news
 ---Tech---
