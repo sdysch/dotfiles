@@ -55,3 +55,8 @@ alias notes="wikinotes"
 # print out how many (top-level) todo items I have left
 alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
 
+# conda cleanup
+function conda_clean() {
+	conda clean --tarballs --index-cache --yes
+	conda clean --all --yes
+}
