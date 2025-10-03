@@ -33,6 +33,7 @@ Plug('nvim-tree/nvim-web-devicons')
 Plug('romgrk/barbar.nvim')
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('wellle/context.vim')
+Plug('Vigemus/iron.nvim')
 
 vim.call('plug#end')
 
@@ -52,3 +53,4 @@ require('plugins.goyo')
 require('plugins.vimwiki')
 require('plugins.ctrlp')
 require('plugins.indent')
+require('plugins.iron')
