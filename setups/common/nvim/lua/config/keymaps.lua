@@ -6,8 +6,9 @@ map('n', '<leader>q', ':q<CR>', { noremap=true, silent=true })
 map('n', '<leader>qa', ':qa<CR>', { noremap=true, silent=true })
 
 -- Fugitive
-map('n', '<leader>gs', ':Gstatus<CR>', { noremap=true, silent=true })
-map('n', '<leader>gc', ':Gcommit<CR>', { noremap=true, silent=true })
+map('n', '<leader>gs', ':Git status<CR>', { noremap=true, silent=true })
+map('n', '<leader>gc', ':Git commit<CR>', { noremap=true, silent=true })
+map('n', '<leader>gd', ':Gdiffsplit<CR>', { noremap=true, silent=true })
 
 -- Make
 map('n', '<leader>r', ':!make<CR>', { noremap=true, silent=true })
