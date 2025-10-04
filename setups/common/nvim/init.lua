@@ -34,6 +34,7 @@ Plug('romgrk/barbar.nvim')
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('wellle/context.vim')
 Plug('Vigemus/iron.nvim')
+Plug('folke/which-key.nvim')
 
 vim.call('plug#end')
 
