@@ -1,0 +1,9 @@
+[core]
+	excludesfile = ~/.config/git/gitignore_global
+	#pager = cat
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
