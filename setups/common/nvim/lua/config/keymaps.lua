@@ -54,3 +54,23 @@ map('n', '<leader>wn', ':call WikiNotes()<CR>', { noremap=true, silent=true })
 -- Disable accidental command window
 map('n', 'q:', ':q<CR>', { noremap=true })
 map('n', 'Q', ':q<CR>', { noremap=true })
+
+-- python breakpoints
+local function toggle_breakpoint()
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+  local line = vim.api.nvim_get_current_line()
+
+  -- check if the line above already has a breakpoint
+  local prev_line = vim.api.nvim_buf_get_lines(0, row - 2, row - 1, false)[1] or ''
+  if prev_line:match('breakpoint%(') then
+    -- remove the breakpoint line above
+    vim.api.nvim_buf_set_lines(0, row - 2, row - 1, false, {})
+  else
+    -- insert breakpoint() above current line, matching current indentation
+    local indent = line:match('^%s*') or ''
+    vim.api.nvim_buf_set_lines(0, row - 1, row - 1, false, { indent .. 'breakpoint()' })
+  end
+end
+
+-- map to <leader>b in Python buffers
+vim.keymap.set('n', '<leader>b', toggle_breakpoint, { buffer = true, silent = true })
