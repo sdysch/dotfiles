@@ -46,6 +46,7 @@ stow --no-folding arch --target=$HOME
 	* lightdm/sddm
 	* ssh agent
 * sddm/lightdm themes need to be installed system- not user-wide
+* If I add a config file to common, I have to first symlink to the different setps before stowing. This is a pain, but could probably write a script to do it automatically
  
 ### Xubuntu
 _Used for years before switching to arch as main, I still maintain legacy configs for now_
