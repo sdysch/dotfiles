@@ -62,7 +62,7 @@ stow --no-folding common --target=$HOME
 
 
 ### Deprecated setups
-These are setups that I no longer use, the tag with these setups still in use is [https://github.com/sdysch/dotfiles/releases/tag/before_removing_legacy_configs](before_removing_legacy_configs)
+These are setups that I no longer use, the tag with these setups still in use is [before_removing_legacy_configs](https://github.com/sdysch/dotfiles/releases/tag/before_removing_legacy_configs)
 
 #### mac
 * Installation with gnu stow
