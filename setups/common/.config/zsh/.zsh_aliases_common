@@ -9,7 +9,6 @@ else
 	alias ll="ls -ltrh"
 fi
 
-
 # grep
 alias grep='grep --color=auto -n'
 
