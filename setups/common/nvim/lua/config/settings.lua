@@ -28,6 +28,7 @@ vim.opt.whichwrap:append('<,>,h,l')
 vim.opt.modeline = true
 vim.opt.modelines = 5
 vim.opt.wildignore = {'*.o','*.pyc','*/tmp/*','*.so','*.swp','*.zip'}
+vim.env.TMPDIR = vim.fn.expand('~/.cache/nvim/tmp')
 
 -- Leader keys
 vim.g.mapleader = ','
