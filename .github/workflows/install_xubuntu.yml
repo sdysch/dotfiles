@@ -25,6 +25,7 @@ jobs:
               run: |
                 pushd setups
                 stow --no-folding xubuntu --target=$HOME --adopt
+                stow --no-folding common --target=$HOME --adopt
                 popd
 
             - name: "Check zsh"

@@ -31,6 +31,7 @@ jobs:
           set -euo pipefail
           cd setups
           stow --no-folding arch --target=$HOME --adopt
+          stow --no-folding common --target=$HOME --adopt
 
       - name: "Check zsh"
         run: zsh -i -c 'echo "zsh okay"'
