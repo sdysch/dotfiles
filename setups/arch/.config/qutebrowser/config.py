@@ -1,1 +1,0 @@
-../../../common/qutebrowser/config.py

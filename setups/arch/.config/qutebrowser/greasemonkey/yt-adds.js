@@ -1,1 +1,0 @@
-../../../../common/qutebrowser/greasemonkey/yt-adds.js

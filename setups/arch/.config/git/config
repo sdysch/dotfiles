@@ -1,1 +1,10 @@
-../../../common/git/gitconfig_personal
+[user]
+	name = Samuel Dezso Salling-Dysch
+	email = sdysch94@gmail.com
+	signingkey = BA13D726781FE1EC
+[include]
+	path = ~/.config/git/aliases
+[include]
+	path = ~/.config/git/settings
+[commit]
+	gpgsign = true
