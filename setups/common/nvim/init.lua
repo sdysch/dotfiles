@@ -15,27 +15,31 @@ local Plug = vim.fn['plug#']
 
 -- load plugins 
 vim.call('plug#begin')
--- Plug('preservim/nerdtree')
-Plug('tpope/vim-fugitive')
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
-Plug('preservim/nerdcommenter')
---Plug('ctrlpvim/ctrlp.vim')
-Plug('ibhagwan/fzf-lua')
--- Plug('gerw/vim-tex-syntax')
-Plug('lervag/vimtex')
-Plug('junegunn/goyo.vim')
-Plug('vimwiki/vimwiki')
-Plug('ap/vim-css-color')
-Plug('junegunn/vim-peekaboo')
-Plug('github/copilot.vim')
-Plug('gbprod/nord.nvim')
-Plug('nvim-tree/nvim-web-devicons')
-Plug('romgrk/barbar.nvim')
-Plug('lukas-reineke/indent-blankline.nvim')
-Plug('wellle/context.vim')
-Plug('Vigemus/iron.nvim')
-Plug('folke/which-key.nvim')
+-- Plug('preservim/nerdtree') --tree file explorer
+Plug('tpope/vim-fugitive') --git integration
+Plug('vim-airline/vim-airline') --status bar
+Plug('vim-airline/vim-airline-themes') --airline themes
+Plug('preservim/nerdcommenter') --commenting
+--Plug('ctrlpvim/ctrlp.vim') --fuzzy file finder
+Plug('ibhagwan/fzf-lua') --fuzzy file finder
+-- Plug('gerw/vim-tex-syntax') --latex syntax
+Plug('lervag/vimtex') --latex suite
+Plug('junegunn/goyo.vim') --distraction free writing
+Plug('vimwiki/vimwiki') --personal wiki
+Plug('ap/vim-css-color') --css color preview
+Plug('junegunn/vim-peekaboo') --enhanced register viewing
+Plug('github/copilot.vim') --github copilot
+Plug('gbprod/nord.nvim') --nord colorscheme
+Plug('nvim-tree/nvim-web-devicons') --file icons
+Plug('romgrk/barbar.nvim') --tabline
+Plug('lukas-reineke/indent-blankline.nvim') --indentation guides
+Plug('wellle/context.vim') --context awareness, shows function/class name at top
+Plug('Vigemus/iron.nvim') --interactive REPLs, better way of jupyter-like notebooks with a focus on reproducability
+Plug('folke/which-key.nvim') --keybinding popup
+Plug('nvim-treesitter/nvim-treesitter') --better syntax highlighting
+Plug('nvim-tree/nvim-tree.lua') --file explorer
+Plug('numToStr/FTerm.nvim') --floating terminal
+Plug('emmanueltouzery/decisive.nvim') --view csv files
 
 vim.call('plug#end')
 
@@ -57,3 +61,5 @@ require('plugins.ctrlp')
 require('plugins.indent')
 require('plugins.iron')
 require('plugins.fzf-lua')
+require('plugins.nvim-treesitter')
+require('plugins.nvim-tree')
