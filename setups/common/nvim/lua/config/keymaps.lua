@@ -62,6 +62,10 @@ map('n', 'Q', ':q<CR>', { noremap=true })
 map('n', '<leader>z', ":lua require('FTerm').open()<CR>") --open terminal
 map('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").close()<CR>') --preserves session
 
+-- decisive csv
+map("n", "<leader>csa", ":lua require('decisive').align_csv({})<cr>") --align csv
+map("n", "<leader>csA", ":lua require('decisive').align_csv_clear({})<cr>") --clear alignment
+
 -- python breakpoints
 local function toggle_breakpoint()
   local row = vim.api.nvim_win_get_cursor(0)[1]
