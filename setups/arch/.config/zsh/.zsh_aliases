@@ -20,6 +20,16 @@ alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
 # pacman
 alias p="sudo pacman"
 
+# edit vim wiki
+export VIMWIKI=$HOME/Documents/vimwiki
+alias wiki="vim $VIMWIKI/index.wiki"
+alias wikitodo="vim $VIMWIKI/todo.wiki"
+alias wikinotes="vim $VIMWIKI/notes.wiki"
+alias notes="wikinotes"
+
+# print out how many (top-level) todo items I have left
+alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
+
 # count songs in mpd database
 function number_of_songs() {
 	if command -v mpc >/dev/null; then
