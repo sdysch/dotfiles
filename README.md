@@ -12,14 +12,14 @@
 ## OS setups
 ### Arch setup
 * Window manager: wayland ([hyprland](./setups/arch/.config/hyprland)) + [waybar](./setups/arch/.config/waybar) / [dwm](https://github.com/sdysch/dwm) + [dwmblocks](https://github.com/sdysch/dwmblocks)
-* [zsh](./setups/arch/.config/zsh)
-* [(neo)vim](./setups/common/nvim) + [vim-plug](https://github.com/junegunn/vim-plug)
+* [zsh](./setups/common/.config/zsh)
+* [(neo)vim](./setups/common/.config/nvim) + [vim-plug](https://github.com/junegunn/vim-plug)
 * Launcher: [rofi](./setups/arch/.config/rofi)
 
 ### Xubuntu setup
 * Window manager: [dwm](https://github.com/sdysch/dwm) + [dwmblocks](https://github.com/sdysch/dwmblocks)
-* [zsh](./setups/xubuntu/.config/zsh)
-* [(neo)vim](./setups/common/nvim) + [vim-plug](https://github.com/junegunn/vim-plug)
+* [zsh](./setups/common/.config/zsh)
+* [(neo)vim](./setups/common/.config/nvim) + [vim-plug](https://github.com/junegunn/vim-plug)
 * Launcher: [dmenu](https://github.com/sdysch/dmenu)
 
 ## Installation
