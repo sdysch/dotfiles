@@ -43,3 +43,5 @@ __pycache__/
 
 # parquet
 *.parquet
+
+.envrc
