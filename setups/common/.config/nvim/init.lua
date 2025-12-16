@@ -17,8 +17,9 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 -- Plug('preservim/nerdtree') --tree file explorer
 Plug('tpope/vim-fugitive') --git integration
-Plug('vim-airline/vim-airline') --status bar
-Plug('vim-airline/vim-airline-themes') --airline themes
+-- Plug('vim-airline/vim-airline') --status bar
+-- Plug('vim-airline/vim-airline-themes') --airline themes
+Plug('nvim-lualine/lualine.nvim') --status bar
 Plug('preservim/nerdcommenter') --commenting
 --Plug('ctrlpvim/ctrlp.vim') --fuzzy file finder
 Plug('ibhagwan/fzf-lua') --fuzzy file finder
@@ -63,3 +64,4 @@ require('plugins.iron')
 require('plugins.fzf-lua')
 require('plugins.nvim-treesitter')
 require('plugins.nvim-tree')
+require('plugins.lualine')
