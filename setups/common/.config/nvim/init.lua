@@ -15,15 +15,10 @@ local Plug = vim.fn['plug#']
 
 -- load plugins 
 vim.call('plug#begin')
--- Plug('preservim/nerdtree') --tree file explorer
 Plug('tpope/vim-fugitive') --git integration
--- Plug('vim-airline/vim-airline') --status bar
--- Plug('vim-airline/vim-airline-themes') --airline themes
 Plug('nvim-lualine/lualine.nvim') --status bar
 Plug('preservim/nerdcommenter') --commenting
---Plug('ctrlpvim/ctrlp.vim') --fuzzy file finder
 Plug('ibhagwan/fzf-lua') --fuzzy file finder
--- Plug('gerw/vim-tex-syntax') --latex syntax
 Plug('lervag/vimtex') --latex suite
 Plug('junegunn/goyo.vim') --distraction free writing
 Plug('vimwiki/vimwiki') --personal wiki
@@ -37,10 +32,10 @@ Plug('lukas-reineke/indent-blankline.nvim') --indentation guides
 Plug('wellle/context.vim') --context awareness, shows function/class name at top
 Plug('Vigemus/iron.nvim') --interactive REPLs, better way of jupyter-like notebooks with a focus on reproducability
 Plug('folke/which-key.nvim') --keybinding popup
-Plug('nvim-treesitter/nvim-treesitter') --better syntax highlighting
 Plug('nvim-tree/nvim-tree.lua') --file explorer
 Plug('numToStr/FTerm.nvim') --floating terminal
 Plug('emmanueltouzery/decisive.nvim') --view csv files
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) --better syntax highlighting
 
 vim.call('plug#end')
 
