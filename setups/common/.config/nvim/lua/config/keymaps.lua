@@ -84,4 +84,4 @@ local function toggle_breakpoint()
 end
 
 -- map to <leader>b in Python buffers
-vim.keymap.set('n', '<leader>b', toggle_breakpoint, { buffer = true, silent = true })
+vim.keymap.set('n', '<leader>B', toggle_breakpoint, { buffer = true, silent = true })

@@ -28,6 +28,7 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 # python
 alias uvr="uv run"
+alias uvrdb="uv run --with pdbpp"
 
 # git aliases
 alias g="git"
