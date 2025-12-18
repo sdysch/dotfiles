@@ -30,9 +30,31 @@ vim.opt.modelines = 5
 vim.opt.wildignore = {'*.o','*.pyc','*/tmp/*','*.so','*.swp','*.zip'}
 vim.env.TMPDIR = vim.fn.expand('~/.cache/nvim/tmp')
 
--- Leader keys
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
-
 vim.api.nvim_create_user_command('Term', 'terminal', {})
 vim.api.nvim_create_user_command('Vterm', 'vertical terminal', {})
+
+-- goyo
+vim.g.goyo_width = 250
+
+-- Activate Goyo for git commits
+vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {
+  pattern = '*COMMIT_EDITMSG',
+  callback = function()
+    vim.g.goyo_width = 120
+    vim.cmd('Goyo')
+  end,
+})
+
+-- vimwiki
+vim.g.vimwiki_list = {{ path = os.getenv('VIMWIKI') }}
+vim.g.wiki_root = os.getenv('VIMWIKI')
+
+function WikiTodo()
+  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/todo.wiki')
+  vim.cmd('e ' .. path)
+end
+
+function WikiNotes()
+  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/notes.wiki')
+  vim.cmd('e ' .. path)
+end
