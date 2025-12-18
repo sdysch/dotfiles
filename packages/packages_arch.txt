@@ -14,6 +14,7 @@ cmatrix
 cmus
 cronie
 curl
+direnv
 dolphin
 dunst
 evince
@@ -91,6 +92,8 @@ sxiv
 texlive
 tmux
 tree
+tree-sitter
+tree-sitter-cli
 ttf-font-awesome
 unzip
 unzip
