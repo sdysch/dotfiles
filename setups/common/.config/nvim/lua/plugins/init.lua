@@ -47,12 +47,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
-  -- indentation guides
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-  },
-
   -- context awareness
   { 'wellle/context.vim', event = 'BufReadPost' },
 
