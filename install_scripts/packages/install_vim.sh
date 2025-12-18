@@ -8,4 +8,4 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 popd
 
-nvim +PlugInstall +qall
+nvim --headless -u ~/.config/nvim/init.lua -c "Lazy install" -c "qa"
