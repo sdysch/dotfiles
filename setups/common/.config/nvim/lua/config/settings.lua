@@ -82,3 +82,4 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.wo[0][0].foldmethod = 'expr'
 vim.cmd('set nofoldenable') -- start with all folds open
+vim.opt.foldlevel = 99
