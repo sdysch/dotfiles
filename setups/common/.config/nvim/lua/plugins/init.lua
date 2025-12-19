@@ -25,6 +25,7 @@ return {
   -- wiki
   {
     'vimwiki/vimwiki',
+    lazy = false,
     ft = { 'wiki', 'markdown' },
   },
 
