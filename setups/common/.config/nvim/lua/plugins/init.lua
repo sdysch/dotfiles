@@ -62,4 +62,7 @@ return {
   -- csv viewer
   { 'emmanueltouzery/decisive.nvim', ft = { 'csv' } },
 
+  -- tree sitter
+  { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' }
+
 }
