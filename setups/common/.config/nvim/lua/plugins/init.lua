@@ -30,11 +30,11 @@ return {
   },
 
   -- UI helpers
-  { 'ap/vim-css-color', ft = { 'css', 'html' } },
+  { 'ap/vim-css-color', lazy = false },
   { 'junegunn/vim-peekaboo', event = 'VeryLazy' },
 
   -- copilot
-  { 'github/copilot.vim', event = 'InsertEnter' },
+  -- { 'github/copilot.vim', lazy = false },
 
   -- colorscheme
   { 'gbprod/nord.nvim', lazy = false, priority = 1000 },
