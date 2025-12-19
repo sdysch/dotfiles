@@ -2,7 +2,7 @@
 return {
 
   -- git
-  { 'tpope/vim-fugitive', cmd = { 'Git', 'G' } },
+  { 'tpope/vim-fugitive', cmd = { 'Git', 'G', 'Gstatus', 'Gdiffsplit'} },
 
   -- commenting
   { 'preservim/nerdcommenter', keys = { 'gc', 'gcc' } },
