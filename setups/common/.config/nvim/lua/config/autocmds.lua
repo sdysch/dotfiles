@@ -65,3 +65,14 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     end
   end
 })
+
+-- vimwiki syntax
+vim.api.nvim_create_augroup('vimwiki_ft', { clear = true })
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  group = 'vimwiki_ft',
+  pattern = '*.wiki',
+  callback = function()
+    vim.bo.filetype = 'vimwiki'
+  end,
+})
