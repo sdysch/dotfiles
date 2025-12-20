@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     ft = { "python" },
     dependencies = {
       "mason-org/mason.nvim",
