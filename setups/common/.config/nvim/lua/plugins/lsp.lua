@@ -2,7 +2,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
-    ft = { "python" },
     dependencies = {
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
@@ -12,11 +11,13 @@ return {
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright" },
+        ensure_installed = { "pyright", "bashls", "sqls", "yamlls", "jsonls", "marksman" },
+        automatic_installation = true,
       })
 
-      -- NEW Neovim 0.11+ LSP config
+      -- LSP configs
       vim.lsp.config.pyright = {
+        filetypes = { "python" },
         settings = {
           python = {
             analysis = {
@@ -28,8 +29,21 @@ return {
         },
       }
 
-      -- Enable the server
-      vim.lsp.enable("pyright")
+      vim.lsp.config.bashls = { filetypes = { "sh", "bash", "zsh" } }
+      vim.lsp.config.sqls = { filetypes = { "sql" } }
+      vim.lsp.config.yamlls = { filetypes = { "yaml" } }
+      vim.lsp.config.jsonls = { filetypes = { "json" } }
+      vim.lsp.config.marksman = { filetypes = { "markdown" } }
+
+      -- Enable servers
+      vim.lsp.enable({
+        "pyright",
+        "bashls",
+        "sqls",
+        "yamlls",
+        "jsonls",
+        "marksman",
+      })
     end,
   },
 }
