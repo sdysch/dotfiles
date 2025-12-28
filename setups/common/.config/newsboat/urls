@@ -78,6 +78,10 @@ https://www.microsoft.com/en-us/research/feed/ tech longread company
 https://ai.googleblog.com/atom.xml tech longread company
 https://github.blog/feed/ tech github skim
 https://github.blog/news-insights/product-news/feed/ tech github skim
+https://www.theregister.com/software/ai_ml/headlines.atom news tech skim
+https://www.theregister.com/software/applications/headlines.atom news tech skim
+https://www.theregister.com/software/databases/headlines.atom news tech skim
+
 
 # arxiv
 ---ArXiv---
@@ -90,6 +94,10 @@ https://export.arxiv.org/rss/cs.LG arxiv research cs ml
 https://distrowatch.com/news/dw.xml news linux
 https://www.archlinux.org/feeds/news/ news linux arch official
 https://www.archlinux.org/feeds/packages/ news linux arch packages
+
+# misc
+https://dotfyle.com/this-week-in-neovim/rss.xml news linux nvim skim
+https://dotfyle.com/neovim/plugins/rss.xml news linux nvim skim
 
 # reddit
 ---reddit---
