@@ -30,6 +30,9 @@ alias notes="wikinotes"
 # print out how many (top-level) todo items I have left
 alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
 
+# mounting storage drive, I always forget this. # TODO check location in function
+alias mount_seagate="sudo mount -t ntfs-3g /dev/sda1 /mnt"
+
 # count songs in mpd database
 function number_of_songs() {
 	if command -v mpc >/dev/null; then
