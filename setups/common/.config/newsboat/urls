@@ -98,6 +98,7 @@ https://www.archlinux.org/feeds/packages/ news linux arch packages
 # misc
 https://dotfyle.com/this-week-in-neovim/rss.xml news linux nvim skim
 https://dotfyle.com/neovim/plugins/rss.xml news linux nvim skim
+https://neovim.io/news.xml news linux nvim skim
 
 # reddit
 ---reddit---
