@@ -1,0 +1,17 @@
+# source common aliases
+source $ZDOTDIR/.zsh_aliases_common
+
+# kubectl
+if [ $commands[kubectl] ]; then
+	source <(kubectl completion zsh)
+fi
+
+
+# restart everything
+function restart_dbs() {
+	FORECAST_REPO_DIR="$HOME/Documents/repos/forecasts-runner"
+	pushd $FORECAST_REPO_DIR || (echo "Check location of forecasts-runner, cannot find $FORECAST_REPO_DIR" && return)
+	uv run cloudsql start-proxy --db pace-replica
+	uv run cloudsql start-proxy --db sibyl-replica
+	popd
+}
