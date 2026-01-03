@@ -30,6 +30,9 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias uvr="uv run"
 alias uvrdb="uv run --with pdbpp"
 
+# dotfile management
+alias dotfiles="cd $HOME/dotfiles"
+
 # git aliases
 alias g="git"
 alias ga="git add"
