@@ -1,15 +1,19 @@
 # REF: https://raw.githubusercontent.com/oliverwiegers/dotfiles/refs/heads/prod/extra/firefox/vimium_search_engines
 
+# search engines
 g: https://www.google.com/search?q=%s Google
 gm: https://www.google.com/maps?q=%s Google Maps
 d: https://duckduckgo.com/?q=%s DuckDuckGo
-qw: https://www.qwant.com/?q=%s&t=all
+qw: https://www.qwant.com/?q=%s&t=all Qwant
+aw: https://wiki.archlinux.org/index.php?search=%s Arch Wiki
 
 yt: https://www.youtube.com/results?search_query=%s YouTube
 
+# shopping
 a: https://www.amazon.com/exec/obidos/external-search/?field-keywords=%s&mode=blended Amazon
 e: https://www.ebay.com/sch/?_nkw=%s eBay
 
+# code
 gh: https://github.com/search?q=%s GitHub
 
 # Find your way from your home to places using Google Maps
