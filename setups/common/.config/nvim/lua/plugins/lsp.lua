@@ -20,6 +20,8 @@ return {
         filetypes = { "python" },
         settings = {
           python = {
+          	venvPath = '.',
+          	venv = '.venv',
             analysis = {
               typeCheckingMode = "basic",
               autoSearchPaths = true,
