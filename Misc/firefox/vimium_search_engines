@@ -10,7 +10,7 @@ aw: https://wiki.archlinux.org/index.php?search=%s Arch Wiki
 yt: https://www.youtube.com/results?search_query=%s YouTube
 
 # shopping
-a: https://www.amazon.com/exec/obidos/external-search/?field-keywords=%s&mode=blended Amazon
+a: https://www.amazon.co.uk/s?k=%s Amazon
 e: https://www.ebay.com/sch/?_nkw=%s eBay
 
 # code
