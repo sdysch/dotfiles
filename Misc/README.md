@@ -3,5 +3,5 @@
 * rc.local: mount windows partition (read only) at boot
 
 * firefox (manual install sadly):
-	* custom vimium omnibar searches
+	* custom vimium vomnibar searches
 	* css theme

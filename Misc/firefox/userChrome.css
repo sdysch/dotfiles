@@ -1,0 +1,97 @@
+/*─────────────────────────────────*/
+/*   Minimal Nord Firefox UI Theme  */
+/*─────────────────────────────────*/
+
+/* Base colors */
+:root {
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --snow: #D8DEE9;
+  --frost: #8FBCBB;
+}
+
+/*─────────────────────────────────*/
+/* Backgrounds */
+#navigator-toolbox,
+#TabsToolbar,
+#toolbar-menubar,
+#urlbar,
+#PanelUI,
+#browser-panel {
+  background-color: var(--nord1) !important;
+  color: var(--snow) !important;
+}
+
+/* Tab Bar */
+#tabbrowser-tabs {
+  background: var(--nord0) !important;
+}
+
+/* Active Tab */
+.tabbrowser-tab[selected="true"] {
+  background: var(--nord2) !important;
+  color: var(--snow) !important;
+}
+
+/* Inactive Tabs */
+.tabbrowser-tab {
+  background: var(--nord1) !important;
+  color: var(--snow) !important;
+}
+
+/* Hovered Tab */
+.tabbrowser-tab:hover {
+  background: var(--nord3) !important;
+}
+
+/* URL/Text */
+#urlbar .urlbar-input {
+  color: var(--snow) !important;
+}
+
+/* Buttons (close, pin, reload, etc) */
+#navigator-toolbox toolbarbutton,
+.titlebar-buttonbox-container .titlebar-button {
+  fill: var(--snow) !important;
+}
+
+/*─────────────────────────────────*/
+/* Minimal Borders */
+#navigator-toolbox,
+#TabsToolbar {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab {
+  border: none !important;
+}
+
+/* Focus outline — subtle */
+:focus {
+  outline: 1px solid var(--frost) !important;
+  outline-offset: 0px !important;
+}
+
+/*─────────────────────────────────*/
+/* Hide some UI clutter (optional) */
+#fullscreen-button,
+#findbar-container {
+  display: none !important;
+}
+
+/*─────────────────────────────────*/
+/* Optional: Compact mode */
+#navigator-toolbox,
+#TabsToolbar > .toolbar-items {
+  padding: 2px 4px !important;
+}
+
+.tabbrowser-tab {
+  margin: 0px 2px !important;
+}
+
+/*─────────────────────────────────*/
+
