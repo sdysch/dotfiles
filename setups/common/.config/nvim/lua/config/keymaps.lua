@@ -66,6 +66,7 @@ map('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").close()<CR>') --preserve
 map("n", "<leader>csa", ":lua require('decisive').align_csv({})<cr>") --align csv
 map("n", "<leader>csA", ":lua require('decisive').align_csv_clear({})<cr>") --clear alignment
 
+-- === python ===
 -- python breakpoints
 local function toggle_breakpoint()
   local row = vim.api.nvim_win_get_cursor(0)[1]
@@ -85,6 +86,16 @@ end
 
 -- map to <leader>b in Python buffers
 vim.keymap.set('n', '<leader>B', toggle_breakpoint, { buffer = true, silent = true })
+
+-- python boilerplate imports FIXME not ideal as I may not always want everything
+vim.keymap.set({ 'n', 'i' }, '<leader>ip', function()
+  vim.api.nvim_put({
+    'import pandas as pd',
+    'import numpy as np',
+    'import matplotlib.pyplot as plt',
+    'import seaborn as sns'
+  }, 'l', true, true)
+end, { buffer = true, desc = 'Insert common Python imports' })
 
 -- fzf
 local fzf = require('fzf-lua')
