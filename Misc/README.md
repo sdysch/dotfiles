@@ -5,3 +5,6 @@
 * firefox (manual install sadly):
 	* custom vimium vomnibar searches
 	* css theme
+
+* bash
+	* legacy bash prompt with git status
