@@ -50,6 +50,8 @@ then
 	alias vim="nvim"
 	alias vimdiff="nvim -d"
 fi
+alias v="vim"
+alias n="nvim"
 
 # conda cleanup
 function conda_clean() {
