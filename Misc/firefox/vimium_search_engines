@@ -18,3 +18,8 @@ gh: https://github.com/search?q=%s GitHub
 
 # Find your way from your home to places using Google Maps
 home: https://www.google.com/maps/dir/home/%s
+
+# translate languages to english (google translate)
+dk: https://translate.google.co.uk/?sl=da&tl=en&text=%s&op=translate Danish Translation
+hu: https://translate.google.co.uk/?hu=da&tl=en&text=%s&op=translate Hungarian Translation
+fr: https://translate.google.co.uk/?sl=fr&tl=en&text=%s&op=translate French Translation
