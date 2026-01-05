@@ -8,9 +8,6 @@ os.environ['PAGER'] = 'less -R'
 
 # === config ===
 class Config(pdb.DefaultConfig):
-    # shortcuts
-    editor = 'e'
-
     # colours
     setbgcolor = 'dark'
     use_pygments = True
