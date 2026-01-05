@@ -45,6 +45,7 @@ return {
   -- tabline
   {
     'romgrk/barbar.nvim',
+    lazy = false,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
