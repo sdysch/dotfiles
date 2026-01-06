@@ -112,3 +112,35 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+-- === copying files ===
+-- copy filename
+vim.keymap.set('n', '<leader>cf', function()
+  vim.fn.setreg('+', vim.fn.expand('%:t'))
+end, { desc = 'Copy filename' })
+
+-- copy filepath
+vim.keymap.set('n', '<leader>cp', function()
+  vim.fn.setreg('+', vim.fn.expand('%:p'))
+end, { desc = 'Copy file path' })
+
+-- copy filepath relative to git repo head
+local function copy_git_relative_path()
+  local file = vim.fn.expand('%:p')
+  if file == '' then
+    vim.notify('No file', vim.log.levels.WARN)
+    return
+  end
+
+  local git_root = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
+  if vim.v.shell_error ~= 0 or not git_root then
+    vim.notify('Not in a git repo', vim.log.levels.ERROR)
+    return
+  end
+
+  local rel_path = file:sub(#git_root + 2)
+  vim.fn.setreg('+', rel_path)
+  vim.notify(rel_path, vim.log.levels.INFO)
+end
+
+vim.keymap.set('n', '<leader>cg', copy_git_relative_path, { desc = 'Copy path relative to git root' })
