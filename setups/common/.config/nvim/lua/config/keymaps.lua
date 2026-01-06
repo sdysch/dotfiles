@@ -36,7 +36,10 @@ map('n', '<C-Up>', ':resize +3<CR>', { noremap=true, silent=true })
 map('n', '<C-Down>', ':resize -3<CR>', { noremap=true, silent=true })
 map('n', '<leader>-', ':split<CR>', { noremap=true })
 map('n', '<leader>\\', ':vsplit<CR>', { noremap=true })
-map('n', '<leader>=', '<C-w>=', { noremap = true, silent = true })
+map('n', '<leader>=', '<C-w>=', { noremap=true, silent=true })
+map('n', '<leader>sp', ':split ', { noremap=true, silent=false, desc='Split and edit file'})
+map('n', '<leader>vsp', ':vsplit ', { noremap=true, silent=false, desc='V split and edit file'})
+
 
 -- Tabs
 map('n', '<S-l>', 'gt', { noremap=true })
@@ -57,6 +60,10 @@ map('n', '<leader>wn', ':call WikiNotes()<CR>', { noremap=true, silent=true })
 -- Disable accidental command window
 map('n', 'q:', ':q<CR>', { noremap=true })
 map('n', 'Q', ':q<CR>', { noremap=true })
+
+-- vim native terminal
+map('n', '<leader>vt', ':vertical terminal<CR>', { noremap=true, silent=false, desc='Open vertical split terminal'})
+map('n', '<leader>t', ':terminal<CR>', { noremap=true, silent=false, desc='Open split terminal'})
 
 -- FTerm floating terminal
 map('n', '<leader>z', ":lua require('FTerm').open()<CR>") --open terminal
@@ -85,7 +92,7 @@ local function toggle_breakpoint()
 end
 
 -- map to <leader>b in Python buffers
-vim.keymap.set('n', '<leader>B', toggle_breakpoint, { buffer = true, silent = true })
+vim.keymap.set('n', '<leader>B', toggle_breakpoint, { buffer = true, silent = true, desc = 'toggle python breakpoint' })
 
 -- python boilerplate imports FIXME not ideal as I may not always want everything
 vim.keymap.set({ 'n', 'i' }, '<leader>ip', function()
