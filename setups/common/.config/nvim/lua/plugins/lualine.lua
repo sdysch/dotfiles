@@ -36,23 +36,14 @@ return {
       icon = '',
     }
 
-	local progress = {
-	  function()
-		local current = vim.fn.line('.')
-		local total = vim.fn.line('$')
-
-		if total <= 1 then
-		  return ''
-		end
-
-		local chars = { '', '', '', '' }
-		local ratio = current / total
-		local index = math.max(1, math.min(#chars, math.ceil(ratio * #chars)))
-
-		return chars[index] .. ' ' .. math.floor(ratio * 100) .. '%'
-	  end,
-	}
-
+	local function progress()
+		local current_line = vim.fn.line(".")
+		local total_lines = vim.fn.line("$")
+		local chars = { "", "", "" }
+		local line_ratio = current_line / total_lines
+		local index = math.ceil(line_ratio * #chars)
+		return chars[index] .. " " .. math.floor(line_ratio * 100) .. "%%"
+	end
 
     lualine.setup({
       options = {
@@ -70,7 +61,7 @@ return {
         lualine_c = { diagnostics },
         lualine_x = { diff, 'fileformat', 'filetype' },
         lualine_y = { 'location' },
-        -- lualine_z = { progress },
+        lualine_z = { progress },
       },
 
       extensions = { 'nvim-tree' },
