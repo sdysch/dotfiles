@@ -2,7 +2,6 @@ base-devel
 binutils
 calcurse
 cmake
-cmus
 compton
 curl
 dunst

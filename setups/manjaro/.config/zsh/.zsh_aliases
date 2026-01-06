@@ -23,8 +23,5 @@ alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 #gnu pass
 alias pgp="pass git push origin master"
 
-# cmus
-alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
-
 # update powerlevel10k
 alias update_powerlevel10k="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
