@@ -6,7 +6,6 @@ calcurse
 cmake
 cmake-data
 cmatrix
-cmus
 curl
 dpkg-dev
 evince
