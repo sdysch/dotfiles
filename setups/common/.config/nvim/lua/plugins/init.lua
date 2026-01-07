@@ -50,7 +50,7 @@ return {
   },
 
   -- context awareness
-  { 'wellle/context.vim', event = 'BufReadPost' },
+  { 'nvim-treesitter/nvim-treesitter-context', lazy = false},
 
   -- which-key
   {

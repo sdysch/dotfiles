@@ -76,3 +76,20 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
     vim.bo.filetype = 'vimwiki'
   end,
 })
+
+-- autocreate missing directories on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+  callback = function()
+    local dir = vim.fn.fnamemodify(vim.fn.expand('%'), ':p:h')
+    if vim.fn.isdirectory(dir) == 0 then
+      vim.fn.mkdir(dir, 'p')
+    end
+  end,
+})
+
+-- start terminal splits in insert mode (why else would you open a terminal?)
+vim.api.nvim_create_autocmd('TermOpen', {
+  callback = function()
+    vim.cmd('startinsert')
+  end,
+})
