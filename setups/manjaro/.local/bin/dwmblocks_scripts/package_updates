@@ -1,4 +1,0 @@
-#!/bin/bash
-#TODO
-upgrades="$(aptitude search '~U' | wc -l)"
-echo " $upgrades"

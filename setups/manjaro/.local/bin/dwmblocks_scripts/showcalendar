@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cmd=$(date '+%a, %d/%m/%Y')
-echo $cmd

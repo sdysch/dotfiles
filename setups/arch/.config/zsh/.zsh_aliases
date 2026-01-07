@@ -14,9 +14,6 @@ alias backgammon="$IMAGEVIEWER $WALLPAPERSDIR/boardgames/backgammon.jpg"
 # gnu pass
 alias pgp="pass git push origin master"
 
-# cmus
-alias cmus="cmus && pkill -RTMIN+1 ${STATUSBAR}"
-
 # pacman
 alias p="sudo pacman"
 
