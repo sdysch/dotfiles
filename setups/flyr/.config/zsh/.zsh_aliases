@@ -23,3 +23,7 @@ function restart_dbs() {
 	uv run cloudsql start-proxy --db sibyl-replica
 	popd
 }
+
+# coder
+alias clogin="coder login 'https://coder.http.sci-val-forecasting-01.internal.pace.work/'"
+alias cssh="coder ssh"
