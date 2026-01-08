@@ -1,50 +1,69 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"
-mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}"
-mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}"
-mkdir -p $HOME/.ssh
+# === helpers ===
+is_ci() {
+    [[ -n '${CI:-}' ]]
+}
 
-# don't want to install many packages for each CI run
-# they are also not needed for the docker container
-if [[ ! ${CI} ]] ; then
-	sudo pacman -S --needed - < packages_arch.txt
+log() {
+    printf '[+] %s\n' '$1'
+}
 
-	# install crontab
-	systemctl enable cronie
-	cat crontab/crontab_arch | crontab -
+# === XDG directory spec ===
+log 'Creating XDG directories'
+mkdir -p \
+    '${XDG_CONFIG_HOME:-$HOME/.config}' \
+    '${XDG_DATA_HOME:-$HOME/.local/share}' \
+    '${XDG_CACHE_HOME:-$HOME/.cache}' \
+    '$HOME/.ssh'
 
-	# AUR
-	pushd /tmp
-	git clone https://aur.archlinux.org/yay-git.git
-	cd yay-git
-	makepkg -si
-	popd
+# === install packages (non-CI) ===
+if ! is_ci; then
+    log 'Installing pacman packages'
+    sudo pacman -S --needed --noconfirm - < packages_arch.txt
 
-	yay -S --needed - < packages_AUR.txt
+    log 'Enabling cron'
+    sudo systemctl enable cronie.service
+    crontab crontab/crontab_arch
 
+	# === AUR ===
+	if ! command -v yay >/dev/null 2>&1; then
+        log 'Installing yay'
+        tmpdir=$(mktemp -d)
+        git clone https://aur.archlinux.org/yay-git.git '$tmpdir/yay-git'
+        (
+            cd '$tmpdir/yay-git'
+            makepkg -si --noconfirm
+        )
+        rm -rf '$tmpdir'
+    fi
+
+    log 'Installing AUR packages'
+    yay -S --needed --noconfirm - < packages_AUR.txt
 fi
 
 
-scripts=(fonts zsh vim)
+scripts=(fonts zsh)
 for script in ${scripts[@]}; do
 	source install_scripts/packages/"install_${script}.sh"
 done
 
-# create a place to put desktop session entry for dwm
-sudo mkdir -p /usr/share/xsessions
-source install_scripts/packages/install_suckless.sh
-
-# enable login manager
-if [[ ! ${CI} ]] ; then
-	systemctl enable lightdm.service
+# === enable login manager ===
+if ! is_ci; then
+    log 'Enabling LightDM'
+    sudo systemctl enable lightdm.service
 fi
 
-# make directories
-if [[ ! ${CI} ]] ; then
-	mkdir -p $HOME/Documents
-	mkdir -p $HOME/Music
-	mkdir -p $HOME/Pictures/screenshots
-	mkdir -p $HOME/Videos
-	mkdir -p $HOME/Downloads
+# === user directories ===
+if ! is_ci; then
+    log 'Creating user directories'
+    mkdir -p \
+        '$HOME/Documents' \
+        '$HOME/Music' \
+        '$HOME/Pictures/screenshots' \
+        '$HOME/Videos' \
+        '$HOME/Downloads'
 fi
+
+log 'Bootstrap complete'
