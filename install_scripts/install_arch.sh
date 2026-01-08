@@ -113,7 +113,7 @@ if ! is_ci; then
             cd "$tmpdir/yay-git"
             makepkg -si --noconfirm
         )
-        rm -rf '$tmpdir'
+        rm -rf "$tmpdir"
     fi
 
     log 'Installing AUR packages'
