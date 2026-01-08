@@ -90,10 +90,10 @@ _install_zsh() {
 # === XDG directory spec ===
 log 'Creating XDG directories'
 mkdir -p \
-    '${XDG_CONFIG_HOME:-$HOME/.config}' \
-    '${XDG_DATA_HOME:-$HOME/.local/share}' \
-    '${XDG_CACHE_HOME:-$HOME/.cache}' \
-    '$HOME/.ssh'
+    "${XDG_CONFIG_HOME:-$HOME/.config}" \
+    "${XDG_DATA_HOME:-$HOME/.local/share}" \
+    "${XDG_CACHE_HOME:-$HOME/.cache}" \
+    "$HOME/.ssh"
 
 # === install packages (non-CI) ===
 if ! is_ci; then
@@ -110,7 +110,7 @@ if ! is_ci; then
         tmpdir=$(mktemp -d)
         git clone https://aur.archlinux.org/yay-git.git '$tmpdir/yay-git'
         (
-            cd '$tmpdir/yay-git'
+            cd "$tmpdir/yay-git"
             makepkg -si --noconfirm
         )
         rm -rf '$tmpdir'
