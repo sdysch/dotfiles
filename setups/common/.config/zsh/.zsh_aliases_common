@@ -28,6 +28,7 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 # python
 alias uvr="uv run"
+alias uvs="uv sync"
 alias uvrdb="uv run --with pdbpp"
 
 # dotfile management
