@@ -3,11 +3,11 @@ set -Eeuo pipefail
 
 # === helpers ===
 is_ci() {
-    [[ -n '${CI:-}' ]]
+    [[ -n "${CI:-}" ]]
 }
 
 log() {
-    printf '[+] %s\n' '$1'
+    printf "[+] %s\n" "$1"
 }
 
 clone_if_missing() {
