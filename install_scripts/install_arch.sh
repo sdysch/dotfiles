@@ -25,15 +25,15 @@ clone_if_missing() {
 _install_fonts() {
 	# tmp dir
 	tmpdir=$(mktemp -d)
-	git clone --depth=1 https://github.com/powerline/fonts.git '$tmpdir/fonts'
-	pushd '$tmpdir/fonts'
+	git clone --depth=1 https://github.com/powerline/fonts.git "$tmpdir/fonts"
+	pushd "$tmpdir/fonts"
 	./install.sh
 	popd > /dev/null
 }
 
 _install_zsh() {
-	DATA_HOME='${XDG_DATA_HOME:-$HOME/.local/share}'
-	CACHE_HOME='${XDG_CACHE_HOME:-$HOME/.cache}'
+	DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+	CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 	ZSH_DATA_DIR="$DATA_HOME/zsh"
 	ZSH_CACHE_DIR="$CACHE_HOME/zsh"
@@ -55,7 +55,7 @@ _install_zsh() {
 			fi
 
 			log "Changing shell to zsh"
-			chsh -s "$(command -v zsh)" "$USER"
+			chsh -s "$(command -v zsh)"
 
 			log "Please log out and log back in to apply shell changes"
 			log "Then rerun this script"
