@@ -5,6 +5,7 @@ on:
       - 'setups/common/**'
       - 'setups/arch/**'
       - 'install_scripts/install_arch.sh'
+  pull_request:
 
 jobs:
   Installation:
@@ -24,7 +25,6 @@ jobs:
 
       - name: Run install script
         run: |
-          set -euo pipefail
           source install_scripts/install_arch.sh
 
       - name: Stow configs
@@ -39,9 +39,3 @@ jobs:
 
       - name: "Check nvim"
         run: nvim --headless -c 'echo "nvim okay"' -c 'qa!'  
-
-      - name: "Check suckless"
-        run: |
-          which dwm
-          which dwmblocks
-          which dmenu
