@@ -31,18 +31,7 @@ _install_fonts() {
 	popd > /dev/null
 }
 
-_install_zsh() {
-	DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-	CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-
-	ZSH_DATA_DIR="$DATA_HOME/zsh"
-	ZSH_CACHE_DIR="$CACHE_HOME/zsh"
-	PLUGIN_DIR="$DATA_HOME/zsh_plugins"
-
-	log "Creating directories"
-	mkdir -p "$ZSH_DATA_DIR" "$ZSH_CACHE_DIR" "$PLUGIN_DIR"
-
-	# === shell change ===
+_change_shell_to_zsh() {
 	if [[ "${SHELL:-}" == *zsh ]]; then
 		log "zsh is already the current shell"
 	else
@@ -60,32 +49,66 @@ _install_zsh() {
 			log "CI detected; skipping shell change"
 		fi
 	fi
+}
+
+_install_zsh() {
+	DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+	CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+
+	ZSH_DATA_DIR="$DATA_HOME/zsh"
+	ZSH_CACHE_DIR="$CACHE_HOME/zsh"
+	PLUGIN_DIR="$DATA_HOME/zsh_plugins"
+
+	log "Creating directories"
+	mkdir -p "$ZSH_DATA_DIR" "$ZSH_CACHE_DIR" "$PLUGIN_DIR"
 
 	# === plugins ===
 	log "Installing zsh plugins"
 
-	clone_if_missing \
-	'https://github.com/zsh-users/zsh-autosuggestions' \
-	"$PLUGIN_DIR/zsh-autosuggestions"
+	PLUGINS=(
+		'https://github.com/zsh-users/zsh-autosuggestions'
+		'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+		'https://github.com/romkatv/powerlevel10k.git'
+		'https://github.com/rupa/z.git'
+		'https://github.com/esc/conda-zsh-completion'
+	)
 
-	clone_if_missing \
-		'https://github.com/zsh-users/zsh-syntax-highlighting.git' \
-		"$PLUGIN_DIR/zsh-syntax-highlighting"
-
-	clone_if_missing \
-		'https://github.com/romkatv/powerlevel10k.git' \
-		"$PLUGIN_DIR/powerlevel10k"
-
-	clone_if_missing \
-		'https://github.com/rupa/z.git' \
-		"$PLUGIN_DIR/z"
-
-	clone_if_missing \
-		'https://github.com/esc/conda-zsh-completion' \
-		"$PLUGIN_DIR/conda-zsh-completion"
+	for repo in "${PLUGINS[@]}"; do
+		clone_if_missing "$repo" "$PLUGIN_DIR/$(basename "$repo" .git)"
+	done
 
 	log "Done"
 }
+
+_install_packages() {
+	if ! is_ci; then
+		log 'Installing pacman packages'
+		sudo pacman -S --needed --noconfirm - < packages_arch.txt
+
+		log 'Enabling cron'
+		sudo systemctl enable cronie.service
+		crontab crontab/crontab_arch
+
+		# === AUR ===
+		if ! command -v yay >/dev/null 2>&1; then
+			log 'Installing yay'
+			tmpdir=$(mktemp -d)
+			git clone https://aur.archlinux.org/yay-git.git '$tmpdir/yay-git'
+			(
+				cd "$tmpdir/yay-git"
+				makepkg -si --noconfirm
+			)
+			rm -rf "$tmpdir"
+		fi
+
+		log 'Installing AUR packages'
+		yay -S --needed --noconfirm - < packages_AUR.txt
+	fi
+}
+
+# ===================================================
+#						MAIN
+# ===================================================
 
 # === XDG directory spec ===
 log 'Creating XDG directories'
@@ -96,36 +119,17 @@ mkdir -p \
     "$HOME/.ssh"
 
 # === install packages (non-CI) ===
-if ! is_ci; then
-    log 'Installing pacman packages'
-    sudo pacman -S --needed --noconfirm - < packages_arch.txt
-
-    log 'Enabling cron'
-    sudo systemctl enable cronie.service
-    crontab crontab/crontab_arch
-
-	# === AUR ===
-	if ! command -v yay >/dev/null 2>&1; then
-        log 'Installing yay'
-        tmpdir=$(mktemp -d)
-        git clone https://aur.archlinux.org/yay-git.git '$tmpdir/yay-git'
-        (
-            cd "$tmpdir/yay-git"
-            makepkg -si --noconfirm
-        )
-        rm -rf "$tmpdir"
-    fi
-
-    log 'Installing AUR packages'
-    yay -S --needed --noconfirm - < packages_AUR.txt
-fi
+log 'Installing packages, pacman & AUR'
+_install_packages
 
 # === install powerline fonts ===
 log 'Installing powerline fonts'
 _install_fonts
 
 # === install zsh ===
-log 'Installing zsh'
+log 'Changing shell'
+_change_shell_to_zsh
+log 'Installing zsh plugins'
 _install_zsh
 
 # === enable login manager ===
