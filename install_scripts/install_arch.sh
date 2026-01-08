@@ -47,8 +47,6 @@ _install_zsh() {
 		log "zsh is already the current shell"
 	else
 		if ! is_ci; then
-			log "CI detected; skipping shell change"
-		else
 			if ! command -v zsh >/dev/null 2>&1; then
 				log "ERROR: zsh is not installed"
 				exit 1
@@ -56,9 +54,10 @@ _install_zsh() {
 
 			log "Changing shell to zsh"
 			chsh -s "$(command -v zsh)"
-
 			log "Please log out and log back in to apply shell changes"
 			log "Then rerun this script"
+		else
+			log "CI detected; skipping shell change"
 		fi
 	fi
 
