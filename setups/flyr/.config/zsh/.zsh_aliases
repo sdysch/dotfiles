@@ -6,6 +6,14 @@ if [ $commands[kubectl] ]; then
 	source <(kubectl completion zsh)
 fi
 
+alias get_forecasting_credentials="gcloud container clusters --project=pacervn-sci-val-forecasting-01 get-credentials sci-val-forecasting-01 --region=europe-west2"
+alias get_backtest_credentials="gcloud container clusters --project=pacervn-forecasting-backtests get-credentials forecasting-backtests --region=europe-west2"
+alias kuttle="kuttle gke_pacervn-sci-val-forecasting-01_europe-west2_sci-val-forecasting-01"
+
+# bumpver
+alias bumpm="SKIP=no-commit-to-branch bumpver update --tag final --minor"
+alias bumpa="SKIP=no-commit-to-branch bumpver update --tag final --alpha"
+alias bumpp="SKIP=no-commit-to-branch bumpver update --tag final --patch"
 
 # restart everything
 function restart_dbs() {
