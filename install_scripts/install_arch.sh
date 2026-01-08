@@ -93,7 +93,7 @@ _install_packages() {
 		if ! command -v yay >/dev/null 2>&1; then
 			log 'Installing yay'
 			tmpdir=$(mktemp -d)
-			git clone https://aur.archlinux.org/yay-git.git '$tmpdir/yay-git'
+			git clone https://aur.archlinux.org/yay-git.git "$tmpdir/yay-git"
 			(
 				cd "$tmpdir/yay-git"
 				makepkg -si --noconfirm
@@ -142,11 +142,11 @@ fi
 if ! is_ci; then
     log 'Creating user directories'
     mkdir -p \
-        '$HOME/Documents' \
-        '$HOME/Music' \
-        '$HOME/Pictures/screenshots' \
-        '$HOME/Videos' \
-        '$HOME/Downloads'
+        "$HOME/Documents" \
+        "$HOME/Music" \
+        "$HOME/Pictures/screenshots" \
+        "$HOME/Videos" \
+        "$HOME/Downloads"
 fi
 
 log 'Bootstrap complete'
