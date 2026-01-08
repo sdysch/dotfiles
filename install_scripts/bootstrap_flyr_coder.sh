@@ -23,10 +23,13 @@ function _install_configs(){
 	popd
 }
 
-function _install_fonts(){
-	pushd $DOTFILES_INSTALLDIR
-	source ${PACKAGE_INSTALLPATH}_fonts.sh
-	popd
+_install_fonts() {
+	# tmp dir
+	tmpdir=$(mktemp -d)
+	git clone --depth=1 https://github.com/powerline/fonts.git '$tmpdir/fonts'
+	pushd '$tmpdir/fonts'
+	./install.sh
+	popd > /dev/null
 }
 
 function _install_vim(){
