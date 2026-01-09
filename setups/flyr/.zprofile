@@ -34,4 +34,4 @@ export _Z_DATA=$XDG_DATA_HOME/z
 export VIMWIKI=$HOME/Documents/vimwiki
 
 # python
-export PYTHONBREAKPOINT=pdb.set_trace
+export PYTHONBREAKPOINT=pdbpp.set_trace
