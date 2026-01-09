@@ -73,6 +73,7 @@ python-pip
 ranger
 rclone
 reflector
+ripgrep
 ristretto
 rofi
 rofi
