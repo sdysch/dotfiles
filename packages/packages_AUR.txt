@@ -4,6 +4,7 @@ intel-ucode
 lightdm-webkit-theme-aether
 lightdm-webkit2-greeter
 nerd-fonts-meslo
+opencode
 swaylock-effects
 ttf-meslo-nerd-font-powerlevel10k
 web-greeter
