@@ -7,12 +7,12 @@ PACKAGE_INSTALLPATH="dotfiles/install_scripts/packages/install"
 NVIM_VERSION="v0.11.5"
 TREESITTER_VERSION="v0.26.3"
 
-function _install_deps(){
+function _install_deps() {
 	sudo apt-get -y update
 	sudo apt-get install -y neovim tmux stow eza zsh direnv cmake cargo nodejs npm fzf
 }
 
-function _install_configs(){
+function _install_configs() {
 	cd $DOTFILES_INSTALLDIR
 	git clone --depth=1 $DOTFILES_REPO
 
@@ -26,16 +26,13 @@ function _install_configs(){
 _install_fonts() {
 	# tmp dir
 	tmpdir=$(mktemp -d)
-	git clone --depth=1 https://github.com/powerline/fonts.git '$tmpdir/fonts'
-	pushd '$tmpdir/fonts'
+	git clone --depth=1 https://github.com/powerline/fonts.git "$tmpdir/fonts"
+	pushd "$tmpdir/fonts"
 	./install.sh
 	popd > /dev/null
 }
 
-function _install_vim(){
-	# pushd $DOTFILES_INSTALLDIR
-	# source ${PACKAGE_INSTALLPATH}_vim.sh
-	# popd
+function _install_vim() {
 
 	# pull requested version
 	pushd /tmp
@@ -47,7 +44,7 @@ function _install_vim(){
 	popd
 }
 
-function _install_zsh(){
+function _install_zsh() {
 	# first change shell to zsh
 	# chsh -s /usr/bin/zsh
 	sudo chsh -s $(which zsh)
@@ -56,11 +53,24 @@ function _install_zsh(){
 	pushd $DOTFILES_INSTALLDIR
 	echo "Installing zsh packages..."
 	INSTALL=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
+
+	PLUGINS=(
+		'https://github.com/zsh-users/zsh-autosuggestions'
+		'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+		'https://github.com/romkatv/powerlevel10k.git'
+		'https://github.com/rupa/z.git'
+		'https://github.com/esc/conda-zsh-completion'
+	)
 	git clone https://github.com/zsh-users/zsh-autosuggestions $INSTALL/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $INSTALL/zsh-syntax-highlighting
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $INSTALL/powerlevel10k
 	git clone https://github.com/rupa/z.git $INSTALL/z
 	git clone https://github.com/esc/conda-zsh-completion $INSTALL/conda-zsh-completion
+
+	for repo in "${PLUGINS[@]}"; do
+		git clone $repo "$INSTALL/$(basename "$repo" .git)"
+	done
+
 	echo "Done"
 	popd
 
@@ -68,7 +78,7 @@ function _install_zsh(){
 	echo "Logout and log back in"
 }
 
-function _install_tree_sitter(){
+function _install_tree_sitter() {
 	# need a more up to date version of tree sitter than what is in apt
 	pushd /tmp
 	curl -L https://github.com/tree-sitter/tree-sitter/releases/download/$TREESITTER_VERSION/tree-sitter-linux-x64.gz | gunzip > tree-sitter
