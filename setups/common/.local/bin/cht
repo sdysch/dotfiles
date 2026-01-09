@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+CHT_URL='https://cht.sh'
+TOPICS_FILE="${HOME}/.local/share/cht/choices"
+
+usage() {
+  cat <<EOF
+Usage:
+  cht <topic> <query>
+  cht            # interactive mode
+EOF
+}
+
+# --- read topic list ---
+if [ ! -f "$TOPICS_FILE" ]; then
+  echo "Topic file not found: $TOPICS_FILE"
+  exit 1
+fi
+mapfile -t topics < "$TOPICS_FILE"
+
+choose_topic() {
+  printf '%s\n' "${topics[@]}" |
+    nl -w2 -s'. '
+  printf '\nSelect topic number: '
+  read -r num
+  printf '%s\n' "${topics[$((num-1))]}"
+}
+
+# --- main ---
+if [ "$1" = '-h' ] || [ "$1" = '--help' ]; then
+  usage
+  exit 0
+fi
+
+if [ -z "$1" ]; then
+  topic=$(choose_topic)
+  [ -z "$topic" ] && exit 0
+  printf 'Query for %s: ' "$topic"
+  read -r query
+else
+  topic=$1
+  shift
+  query=$*
+fi
+
+[ -z "$query" ] && exit 0
+query=${query// /+}
+
+curl -s "$CHT_URL/$topic/$query" | less -R
