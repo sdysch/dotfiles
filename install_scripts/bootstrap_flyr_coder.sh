@@ -7,100 +7,128 @@ PACKAGE_INSTALLPATH="dotfiles/install_scripts/packages/install"
 NVIM_VERSION="v0.11.5"
 TREESITTER_VERSION="v0.26.3"
 
-function _install_deps() {
-	sudo apt-get -y update
-	sudo apt-get install -y neovim tmux stow eza zsh direnv cmake cargo nodejs npm fzf
+ZSH_PLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins"
+NVIM_INSTALL_DIR="$HOME/.local/bin"
+
+# === helpers ===
+log() {
+    printf '\n\033[1;34m==> %s\033[0m\n' "$1"
+}
+require_cmd() {
+    command -v "$1" >/dev/null 2>&1 || {
+        echo "Missing required command: $1" >&2
+        exit 1
+    }
 }
 
-function _install_configs() {
-	cd $DOTFILES_INSTALLDIR
-	git clone --depth=1 $DOTFILES_REPO
+_install_deps() {
+    log 'Installing system dependencies'
+    sudo apt-get update -y
+    sudo apt-get install -y \
+        tmux \
+        stow \
+        eza \
+        zsh \
+        direnv \
+        cargo \
+        nodejs \
+        npm \
+        fzf \
+        curl \
+        git \
+		ripgrep \
+		golang-go
+}
 
-	# symlink configs
-	pushd dotfiles/setups
-	stow --no-folding flyr --target=$HOME
-	stow --no-folding common --target=$HOME
-	popd
+_install_configs() {
+	log 'Installing dotfiles'
+	if [[ -d "$DOTFILES_DIR/.git" ]]; then
+		log 'Dotfiles already exist, skipping clone'
+	else
+		git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_DIR"
+	fi
+	pushd "$DOTFILES_DIR/setups" >/dev/null
+	stow --no-folding flyr --target="$HOME"
+	stow --no-folding common --target="$HOME"
+	popd >/dev/null
 }
 
 _install_fonts() {
-	# tmp dir
-	tmpdir=$(mktemp -d)
-	git clone --depth=1 https://github.com/powerline/fonts.git "$tmpdir/fonts"
-	pushd "$tmpdir/fonts"
-	./install.sh
-	popd > /dev/null
+	log 'Installing fonts'
+	pushd "$DOTFILES_DIR" >/dev/null
+	source "${PACKAGE_INSTALLPATH}_fonts.sh"
+	popd >/dev/null
 }
 
-function _install_vim() {
+_install_vim() {
 
-	# pull requested version
-	pushd /tmp
+	log "Installing neovim $NVIM_VERSION"
+
+	require_cmd curl
+
+	tmpdir="$(mktemp -d)"
+	pushd "$tmpdir" >/dev/null
+
 	curl -L -o nvim.appimage https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux-x86_64.appimage
+	chmod +x nvim.appimage
 	./nvim.appimage --appimage-extract
-	sudo mv squashfs-root /opt/nvim
-	sudo rm /usr/local/bin/nvim
-	sudo ln -s /opt/nvim/usr/bin/nvim /usr/local/bin/nvim
-	popd
+
+	# sudo mv squashfs-root /opt/nvim
+	# sudo ln -sf /opt/nvim/usr/bin/nvim $NVIM_INSTALL_DIR
+	mv squashfs-root ~/.local/bin/nvim-app
+	ln -s ~/.local/bin/nvim-app/usr/bin/nvim ~/.local/bin/nvim
+
+	popd > /dev/null
+	rm -rf "$tmpdir"
 }
 
-function _install_zsh() {
-	# first change shell to zsh
+_change_shell_to_zsh() {
+	
+	log "Changing shell to zsh"
 	# chsh -s /usr/bin/zsh
-	sudo chsh -s $(which zsh)
+	# sudo chsh -s $(which zsh)
+	sudo chsh -s $(which zsh) $USER
 
-	# install zsh plugins
-	pushd $DOTFILES_INSTALLDIR
-	echo "Installing zsh packages..."
-	INSTALL=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
-
-	PLUGINS=(
-		'https://github.com/zsh-users/zsh-autosuggestions'
-		'https://github.com/zsh-users/zsh-syntax-highlighting.git'
-		'https://github.com/romkatv/powerlevel10k.git'
-		'https://github.com/rupa/z.git'
-		'https://github.com/esc/conda-zsh-completion'
-	)
-	git clone https://github.com/zsh-users/zsh-autosuggestions $INSTALL/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $INSTALL/zsh-syntax-highlighting
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $INSTALL/powerlevel10k
-	git clone https://github.com/rupa/z.git $INSTALL/z
-	git clone https://github.com/esc/conda-zsh-completion $INSTALL/conda-zsh-completion
-
-	for repo in "${PLUGINS[@]}"; do
-		git clone $repo "$INSTALL/$(basename "$repo" .git)"
-	done
-
-	echo "Done"
-	popd
-
-	# reload configs
-	echo "Logout and log back in"
 }
 
-function _install_tree_sitter() {
-	# need a more up to date version of tree sitter than what is in apt
-	pushd /tmp
-	curl -L https://github.com/tree-sitter/tree-sitter/releases/download/$TREESITTER_VERSION/tree-sitter-linux-x64.gz | gunzip > tree-sitter
+_install_zsh() {
+
+	log 'Configuring zsh'
+
+	mkdir -p "$ZSH_PLUGIN_DIR"
+
+	log 'Installing zsh plugins'
+	git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGIN_DIR/zsh-autosuggestions" || true
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting" || true
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_PLUGIN_DIR/powerlevel10k" || true
+	git clone https://github.com/rupa/z.git "$ZSH_PLUGIN_DIR/z" || true
+	git clone https://github.com/esc/conda-zsh-completion "$ZSH_PLUGIN_DIR/conda-zsh-completion" || true
+}
+
+_install_tree_sitter() {
+	log "Installing tree-sitter $TREESITTER_VERSION"
+
+	require_cmd curl
+	tmpdir="$(mktemp -d)"
+	pushd "$tmpdir" >/dev/null
+
+	curl -L "https://github.com/tree-sitter/tree-sitter/releases/download/$TREESITTER_VERSION/tree-sitter-linux-x64.gz" | gunzip > tree-sitter
 	chmod +x tree-sitter
 	sudo mv tree-sitter /usr/local/bin/tree-sitter
-	popd
+
+	popd >/dev/null
+	rm -rf "$tmpdir"
 }
 
-# install packages that I use
+# ====================================================================================================
+#											Main
+# ====================================================================================================
+
 _install_deps
-
-# install and symlink configs
 _install_configs
-
-# terminal fonts
 _install_fonts
-
-# vim
 _install_vim
-
-# tree-sitter
 _install_tree_sitter
-
-# install zsh
 _install_zsh
+
+log 'Bootstrap complete'

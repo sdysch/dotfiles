@@ -7,7 +7,7 @@ is_ci() {
 }
 
 log() {
-    printf "[+] %s\n" "$1"
+    printf '\n\033[1;34m==> %s\033[0m\n' "$1"
 }
 
 clone_if_missing() {
