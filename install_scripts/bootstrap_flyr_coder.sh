@@ -36,7 +36,8 @@ _install_deps() {
         fzf \
         curl \
         git \
-	ripgrep
+		ripgrep \
+		golang-go
 }
 
 _install_configs() {
