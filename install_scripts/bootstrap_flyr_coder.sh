@@ -8,6 +8,7 @@ NVIM_VERSION="v0.11.5"
 TREESITTER_VERSION="v0.26.3"
 
 ZSH_PLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins"
+NVIM_INSTALL_DIR="$HOME/.local/bin"
 
 # === helpers ===
 log() {
@@ -20,7 +21,7 @@ require_cmd() {
     }
 }
 
-install_deps() {
+_install_deps() {
     log 'Installing system dependencies'
     sudo apt-get update -y
     sudo apt-get install -y \
@@ -38,7 +39,7 @@ install_deps() {
         git
 }
 
-install_configs() {
+_install_configs() {
 	log 'Installing dotfiles'
 	if [[ -d "$DOTFILES_DIR/.git" ]]; then
 		log 'Dotfiles already exist, skipping clone'
@@ -51,14 +52,14 @@ install_configs() {
 	popd >/dev/null
 }
 
-install_fonts() {
+_install_fonts() {
 	log 'Installing fonts'
 	pushd "$DOTFILES_DIR" >/dev/null
 	source "${PACKAGE_INSTALLPATH}_fonts.sh"
 	popd >/dev/null
 }
 
-function _install_vim() {
+_install_vim() {
 
 	log "Installing neovim $NVIM_VERSION"
 
@@ -72,12 +73,12 @@ function _install_vim() {
 	./nvim.appimage --appimage-extract
 
 	sudo mv squashfs-root /opt/nvim
-	sudo ln -sf /opt/nvim/usr/bin/nvim /usr/local/bin/nvim
+	sudo ln -sf /opt/nvim/usr/bin/nvim $NVIM_INSTALL_DIR
 	popd > /dev/null
 	rm -rf "$tmpdir"
 }
 
-function _install_zsh() {
+_install_zsh() {
 
 	log 'Configuring zsh'
 
@@ -99,7 +100,7 @@ function _install_zsh() {
 	echo "Logout and log back in"
 }
 
-function _install_tree_sitter() {
+_install_tree_sitter() {
 	log "Installing tree-sitter $TREESITTER_VERSION"
 
 	require_cmd curl
