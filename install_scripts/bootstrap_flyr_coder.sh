@@ -30,13 +30,13 @@ _install_deps() {
         eza \
         zsh \
         direnv \
-        cmake \
         cargo \
         nodejs \
         npm \
         fzf \
         curl \
-        git
+        git \
+	ripgrep
 }
 
 _install_configs() {
@@ -72,20 +72,27 @@ _install_vim() {
 	chmod +x nvim.appimage
 	./nvim.appimage --appimage-extract
 
-	sudo mv squashfs-root /opt/nvim
-	sudo ln -sf /opt/nvim/usr/bin/nvim $NVIM_INSTALL_DIR
+	# sudo mv squashfs-root /opt/nvim
+	# sudo ln -sf /opt/nvim/usr/bin/nvim $NVIM_INSTALL_DIR
+	mv squashfs-root ~/.local/bin/nvim-app
+	ln -s ~/.local/bin/nvim-app/usr/bin/nvim ~/.local/bin/nvim
+
 	popd > /dev/null
 	rm -rf "$tmpdir"
+}
+
+_change_shell_to_zsh() {
+	
+	log "Changing shell to zsh"
+	# chsh -s /usr/bin/zsh
+	# sudo chsh -s $(which zsh)
+	sudo chsh -s $(which zsh) $USER
+
 }
 
 _install_zsh() {
 
 	log 'Configuring zsh'
-
-	# first change shell to zsh
-	# chsh -s /usr/bin/zsh
-	# sudo chsh -s $(which zsh)
-	sudo chsh -s $(which zsh) $USER
 
 	mkdir -p "$ZSH_PLUGIN_DIR"
 
@@ -95,9 +102,6 @@ _install_zsh() {
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_PLUGIN_DIR/powerlevel10k" || true
 	git clone https://github.com/rupa/z.git "$ZSH_PLUGIN_DIR/z" || true
 	git clone https://github.com/esc/conda-zsh-completion "$ZSH_PLUGIN_DIR/conda-zsh-completion" || true
-
-	# reload configs
-	echo "Logout and log back in"
 }
 
 _install_tree_sitter() {
