@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Emoji picker: menu shows emoji + name, only emoji is copied
+# Works with space-delimited files
+
+EMOJI_FILE="${XDG_DATA_HOME:-$HOME/.local/share}/emoji_list"
+
+# Ensure emoji file exists
+if [ ! -f "$EMOJI_FILE" ]; then
+  mkdir -p "$(dirname "$EMOJI_FILE")"
+  cat > "$EMOJI_FILE" <<'EOF'
+😀 Grinning Face
+😂 Face With Tears of Joy
+🥰 Smiling Face With Hearts
+😎 Smiling Face With Sunglasses
+🤔 Thinking Face
+🙌 Raising Hands
+🎉 Party Popper
+🔥 Fire
+💡 Light Bulb
+❤️ Red Heart
+👩‍💻 Woman Technologist
+🇩🇰 Flag: Denmark
+EOF
+fi
+
+# Menu program
+MENU_PROGRAM="dmenu"
+MENU_ARGS="-fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9' -sf '#434C5E' -p 'Choose an emoji' -l 10"
+
+if [ "$1" = "-r" ]; then
+  MENU_PROGRAM="rofi"
+  MENU_ARGS="-dmenu -i -p 'Choose an emoji'"
+fi
+
+# Show menu
+selected=$($MENU_PROGRAM $MENU_ARGS < "$EMOJI_FILE")
+[ -n "$selected" ] || exit 0
+
+# Extract only the emoji (everything before the first space)
+# Use bash parameter expansion for robustness
+emoji="${selected%% *}"
+
+# Copy to clipboard (cross-platform)
+if command -v wl-copy >/dev/null 2>&1; then
+    echo -n "$emoji" | wl-copy
+elif command -v xclip >/dev/null 2>&1; then
+    echo -n "$emoji" | xclip -selection clipboard
+elif command -v pbcopy >/dev/null 2>&1; then
+    echo -n "$emoji" | pbcopy
+else
+    echo "No clipboard tool found (wl-copy, xclip, pbcopy)" >&2
+    exit 1
+fi
+
+# Notify
+command -v notify-send >/dev/null 2>&1 && notify-send "'$emoji' copied to clipboard." &
