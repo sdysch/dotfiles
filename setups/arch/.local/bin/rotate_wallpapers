@@ -1,22 +1,25 @@
-#!/bin/sh
+#!/bin/bash
 export HYPRLAND_INSTANCE_SIGNATURE=$(cat ~/.cache/hyprland_sig)
+
+# HYPRCTL=/usr/bin/hyprctl
+# JQ=/usr/bin/jq
+# HPRP=/usr/bin/hyprpaper
+
+HYPRCTL=hyprctl
+JQ=jq
+HPRP=hyprpaper
 
 WALLPAPERS_DIR="$HOME/dotfiles/wallpapers"
 WALLPAPERS=("$WALLPAPERS_DIR"/*)
 
-
 # Pick one at random
 RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
-
-# restart hyprpaper if not running
-pgrep hyprpaper > /dev/null || hyprpaper & disown
-
-# preload
-hyprctl hyprpaper preload "$RANDOM_WALLPAPER"
-
 echo $RANDOM_WALLPAPER >> /tmp/hyprpaper_wallpaper
 
-# Apply to all connected monitors
-for MON in $(/usr/bin/hyprctl monitors -j | jq -r '.[].name'); do
-    /usr/bin/hyprctl hyprpaper wallpaper "$MON,$RANDOM_WALLPAPER"
+# start hyprpaperif not running
+pgrep hyprpaper > /dev/null || ($HPRP & disown; sleep 0.2)
+
+# Apply to all monitors
+for MON in $($HYPRCTL monitors -j | $JQ -r '.[].name'); do
+    $HYPRCTL $HPRP wallpaper "$MON,$RANDOM_WALLPAPER"
 done
