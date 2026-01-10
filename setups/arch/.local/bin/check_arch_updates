@@ -11,5 +11,5 @@ fi
 updates="$((updates_arch + updates_aur))"
 
 if [ "$updates" -gt 0 ]; then
-    notify-send -u normal "$updates_arch Arch updates, $updates_aur AUR updates are available"
+    notify-send -i dialog-information "Info" -u normal "$updates_arch Arch updates, $updates_aur AUR updates are available"
 fi
