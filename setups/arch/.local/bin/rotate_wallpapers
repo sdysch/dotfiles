@@ -9,7 +9,7 @@ HYPRCTL=hyprctl
 JQ=jq
 HPRP=hyprpaper
 
-WALLPAPERS_DIR="$HOME/dotfiles/wallpapers"
+WALLPAPERS_DIR="/home/sdysch/dotfiles/wallpapers"
 WALLPAPERS=("$WALLPAPERS_DIR"/*)
 
 # Pick one at random
