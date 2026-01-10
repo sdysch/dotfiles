@@ -37,6 +37,7 @@ i3lock
 imagemagick
 isync
 jq
+lazygit
 less
 lf
 libnotify
