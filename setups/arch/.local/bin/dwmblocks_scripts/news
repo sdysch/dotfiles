@@ -1,4 +1,0 @@
-#!/bin/bash
-
-ICON=""
-cat /tmp/newsupdate 2>/dev/null || echo "$ICON $(newsboat -x print-unread | awk '{ print $1}' | sed s/^0$//g)$(cat ~/.config/newsboat/.update 2>/dev/null)"

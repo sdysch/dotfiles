@@ -1,3 +1,0 @@
-#!/bin/bash
-disk=$(df -h | grep /dev/sda3 | awk '{print $5}')
-echo " $disk"

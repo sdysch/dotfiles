@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# REF: https://github.com/BreadOnPenguins/
+
+# Ensure playerctl-loop is running
+pidof -x playerctl-loop >/dev/null 2>&1 || playerctl-loop >/dev/null 2>&1 &
+
+# Format state file (0 = artist-title, 1 = album-title)
+FORMAT_FILE="/tmp/player_mus_format"
+[ ! -f "$FORMAT_FILE" ] && echo "0" > "$FORMAT_FILE"
+read FORMAT < "$FORMAT_FILE"
+
+# Players priority: Spotify > mpv > mpd
+MUSIC_PLAYING_PLAYERS="spotify mpv mpd"
+
+# Metadata format
+[ "$FORMAT" -eq 0 ] && META="{{ trunc(artist,17) }} - {{ trunc(title,17) }}" || META="{{ trunc(album,17) }} - {{ trunc(title,17) }}"
+
+# Loop through players and display first one that is playing
+DISPLAYED=0
+for PLAYER in $MUSIC_PLAYING_PLAYERS; do
+    STATUS=$(playerctl --player=$PLAYER status 2>/dev/null)
+    [ "$STATUS" != "Playing" ] && continue
+
+    # Player-specific icon
+    case $PLAYER in
+        spotify) ICON=" " ;;   # Spotify
+        mpd) ICON=" " ;;       # Music note
+        mpv) ICON=" " ;;       # Video
+        *) ICON=" " ;;         # Default
+    esac
+
+    echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+    DISPLAYED=1
+    break
+done
+
+# If nothing is playing, show paused MPD or Spotify
+if [ "$DISPLAYED" -eq 0 ]; then
+    for PLAYER in mpd spotify; do
+        STATUS=$(playerctl --player=$PLAYER status 2>/dev/null)
+        [ "$STATUS" != "Paused" ] && continue
+
+        case $PLAYER in
+            spotify) ICON=" ❚❚ " ;;
+            mpd) ICON=" ❚❚ " ;;
+        esac
+
+        echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+        DISPLAYED=1
+        break
+    done
+fi

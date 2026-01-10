@@ -134,7 +134,7 @@ window#waybar.hidden {
 
 /***** MEDIA *****/
 #custom-ncmpcpp,
-#custom-spotify {
+#custom-music {
   color: @white;
   font-weight: bold;
   padding: 0 8px;
