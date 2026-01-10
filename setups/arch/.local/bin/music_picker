@@ -1,13 +1,28 @@
 #!/bin/sh
 
-# REF: https://github.com/BreadOnPenguins/scripts/blob/master/dmenu_musicpicker
+MPD_MUSIC_DIR="/home/sdysch/Music"
 
+# Let user pick a track
 file="$(mpc listall | rofi -dmenu -i -p '🎵 Select track' -l 20 -width 60)" || exit 0
 
 if [ -n "$file" ]; then
-	track="$(basename "$file")"
-	notify-send -i dialog-information "Playing $track"
-    mpc insert "$file"
-    mpc next >/dev/null
-fi
+    # Full path on disk (for ffprobe)
+    fullpath="$MPD_MUSIC_DIR/$file"
 
+    # Get metadata (title, artist)
+    title="$(ffprobe -v error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 "$fullpath")"
+    artist="$(ffprobe -v error -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 "$fullpath")"
+    track="${artist:-Unknown Artist} — ${title:-$(basename "$file")}"
+
+    # Add or play depending on MPD status
+    if mpc status | grep -q 'playing'; then
+        mpc add "$file"
+        msg="Queuing"
+    else
+        mpc add "$file"
+        mpc play
+        msg="Playing"
+    fi
+
+    notify-send -i dialog-information "$msg $track"
+fi
