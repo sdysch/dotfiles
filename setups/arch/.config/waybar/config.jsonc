@@ -9,7 +9,7 @@
         "pulseaudio",
         "battery",
         "backlight",
-        "custom/spotify"
+        "custom/music"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -119,12 +119,11 @@
         "on-click-right": "$TERMINAL -e ncmpcpp"
     },
 
-    "custom/spotify": {
-        "exec": "spotify_status",
+    "custom/music": {
+        "exec": "musicplayer",
         "interval": 1,
         "tooltip": false,
-        "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "spotify_menu"
+        "on-click": "playerctl play-pause"
     },
 
     "custom/newsboat": {

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-icon=" "
-clock=$(date '+%I')
-echo $icon $(date +%H:%M)

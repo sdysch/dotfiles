@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# i3blocks calendar
-# When clicked, brings up cal
-
-icon=""
-cmd=$(date '+%a, %d/%m/%Y')
-echo $icon $cmd

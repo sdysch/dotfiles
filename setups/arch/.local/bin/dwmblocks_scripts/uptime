@@ -1,3 +1,0 @@
-#!/bin/bash
-time=$(uptime -p | sed 's/hours/h/; s/minutes/min/; s/seconds/sec/')
-echo " $time"
