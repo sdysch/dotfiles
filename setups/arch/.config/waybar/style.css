@@ -1,196 +1,212 @@
+/***** NORD PALETTE *****/
+@define-color bg       rgba(46, 52, 64, 0.65); /* Polar Night glass */
+@define-color bg-solid #2e3440;
+@define-color bg-alt   rgba(59, 66, 82, 0.75);
+@define-color fg       #eceff4;
+@define-color fg-dim   #d8dee9;
+
+@define-color frost    #5e81ac;
+@define-color cyan     #88c0d0;
+@define-color green    #a3be8c;
+@define-color yellow   #ebcb8b;
+@define-color red      #bf616a;
+@define-color purple   #b48ead;
+@define-color orange   #d08770;
+
+/***** GLOBAL *****/
 * {
   border: none;
-  font-family: 'JetbrainsMono Nerd Font';
+  font-family: 'JetBrainsMono Nerd Font';
   font-size: 13px;
-  min-height: 10px;
+  min-height: 0;
 }
 
 window#waybar {
-  background-color: #2e3440;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  color: #eceff4;
+  background: @bg;
+  color: @fg;
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
 }
 
 window#waybar.hidden {
   opacity: 0.2;
 }
 
-/* Workspace buttons with Nord theme */
+/***** WORKSPACES *****/
 #workspaces {
-  background: #2E3440;
+  background: @bg-alt;
   border-radius: 10px;
   padding: 2px 6px;
 }
 
 #workspaces button {
-  color: #D8DEE9;
   background: transparent;
-  border: none;
+  color: @fg-dim;
   padding: 4px 8px;
   margin: 2px;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease;
 }
 
-/* Active workspace */
 #workspaces button.active {
-  background: #5E81AC;   /* Frost blue */
-  color: #ECEFF4;
+  background: @frost;
+  color: @fg;
 }
 
-/* Hovered workspace */
 #workspaces button:hover {
-  background: #434C5E;   /* Polar Night highlight */
-  color: #E5E9F0;
+  background: rgba(94, 129, 172, 0.35);
 }
 
-/* Urgent workspace (apps demanding attention) */
 #workspaces button.urgent {
-  background: #BF616A;   /* Aurora red */
-  color: #ECEFF4;
+  background: @red;
+  color: @fg;
 }
 
+/***** MODULE BASE STYLE *****/
 #cpu,
 #memory,
-#custom-kernel,
-#custom-power,
-#custom-diskfree,
 #battery,
 #backlight,
 #pulseaudio,
 #network,
 #clock,
-#custom-pacman,
-#custom-weather,
-#custom-internet_speed,
-#custom-newsboat,
-#tray {
-  border-radius: 4px;
+#tray,
+#custom-* {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 8px;
   margin: 4px 3px;
   padding: 2px 12px;
-  background-color: #3b4252;
-  color: #eceff4;
 }
 
-/* Custom modules */
-#custom-kernel {
-  background-color: #bf616a; /* Red */
-}
-
-#custom-pacman {
-  background-color: #81a1c1; /* Blue Frost */
-}
-
-#custom-power {
-  margin-right: 6px;
-  background-color: #5e81ac; /* Blue */
-}
-
-#custom-diskfree {
-  background-color: #ebcb8b; /* Yellow */
-  color: #2e3440;
-}
-
-#custom-logo {
-  padding: 0 7px;
-  margin-left: 5px;
-  font-size: 15px;
-  border-radius: 8px 0px 0px 8px;
-  color: #88c0d0;
-}
-
-/* System modules */
+/***** STATE-BASED ACCENTS *****/
+/* CPU / Memory */
 #cpu {
-  background-color: #b48ead; /* Purple */
-  color: #2e3440;
+  color: @purple;
 }
 
 #memory {
-  background-color: #88c0d0; /* Cyan */
-  color: #2e3440;
+  color: @cyan;
 }
 
+/* Battery */
 #battery {
-  background-color: #b48ead; /* Purple */
-  color: #eceff4;
+  color: @fg;
+}
+
+#battery.charging {
+  color: @yellow;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: #bf616a; /* Red */
-  color: #eceff4;
+  color: @red;
 }
 
-#battery.charging {
-  background-color: #a3be8c; /* Green */
-  color: #2e3440;
-}
-
-#backlight {
-  background-color: #ebcb8b; /* Yellow */
-  color: #2e3440;
-}
-
+/* Audio / Network */
 #pulseaudio {
-  background-color: #5e81ac; /* Blue */
-  color: #eceff4;
+  color: @white;
 }
 
 #network {
-  background-color: #8fbcbb; /* Frost */
-  color: #2e3440;
-  padding-right: 17px;
+  color: @cyan;
+  padding-right: 16px;
 }
 
+/* Backlight */
+#backlight {
+  color: @white;
+}
+
+/* Clock */
 #clock {
-  background-color: #a3be8c; /* Green */
-  color: #2e3440;
+  color: @frost;
 }
 
-#custom-weather {
-  background-color: #d08770; /* Orange */
-  color: #2e3440;
+/***** CUSTOM MODULES *****/
+#custom-kernel { color: @red; }
+#custom-pacman { color: @white; }
+#custom-diskfree { color: @white; }
+#custom-weather { color: @white; }
+#custom-newsboat { color: @white; }
+#custom-internet_speed { color: @fg-dim; }
+
+/***** MEDIA *****/
+#custom-ncmpcpp,
+#custom-spotify {
+  color: @white;
+  font-weight: bold;
+  padding: 0 8px;
 }
 
-/* Tooltips */
+/***** TOOLTIP *****/
 tooltip {
+  background: @bg-solid;
+  color: @fg;
   border-radius: 8px;
-  padding: 15px;
-  background-color: #4c566a;
-  color: #eceff4;
+  padding: 10px;
 }
 
 tooltip label {
-  padding: 5px;
-  background-color: #4c566a;
-  color: #eceff4;
+  padding: 4px;
 }
 
-#custom-ncmpcpp {
-    color: #50fa7b; /* green */
-    font-weight: bold;
-    padding: 0 6px;
+/* Right module group */
+/* Right module group */
+.modules-right > * {
+    margin: 4px 8px;       /* space between modules */
+    padding: 4px 16px;     /* internal padding for pill shape */
+    border-radius: 12px;   /* pill-shaped */
+    background: rgba(59, 66, 82, 0.75);  /* Nord glass alternative bg */
+    transition: all 0.2s ease;
 }
 
-#custom-spotify {
-    color: #50fa7b; /* green */
-    font-weight: bold;
-    padding: 0 6px;
+/* Hover effect */
+.modules-right > *:hover {
+    background: rgba(94, 129, 172, 0.35); /* subtle frost-blue glow */
 }
 
-#custom-internet_speed {
-    background-color: #4C566A;
-    font-weight: bold;
-    padding: 0 10px;
+
+/* reduce spacing on last module */
+#custom-power {
+    padding-right: 10px;  /* optional, smaller so it fits */
 }
 
-#custom-internet_speed:hover {
-    color: #81A1C1;
+/* Make diskfree larger */
+#custom-diskfree {
+    padding: 6px 18px;        /* increase padding horizontally and vertically */
+    font-size: 14px;           /* slightly bigger text */
+    min-width: 20px;           /* ensures pill doesn’t shrink too much */
+    border-radius: 14px;       /* keep pill shape consistent */
 }
 
+/* Make weather larger */
+#custom-weather {
+    padding: 6px 18px;        /* increase padding horizontally and vertically */
+    font-size: 14px;           /* slightly bigger text */
+    min-width: 60px;           /* ensures pill doesn’t shrink too much */
+    border-radius: 14px;       /* keep pill shape consistent */
+}
+
+/* Make pacman larger */
+#custom-pacman {
+    padding: 6px 18px;        /* increase padding horizontally and vertically */
+    font-size: 14px;           /* slightly bigger text */
+    min-width: 20px;           /* ensures pill doesn’t shrink too much */
+    border-radius: 14px;       /* keep pill shape consistent */
+}
+
+/* Make newsboat larger */
 #custom-newsboat {
-	background-color: #a3be8c; /* Green */
-	color: #2e3440;
+    padding: 6px 18px;        /* increase padding horizontally and vertically */
+    font-size: 14px;           /* slightly bigger text */
+    min-width: 20px;           /* ensures pill doesn’t shrink too much */
+    border-radius: 14px;       /* keep pill shape consistent */
 }
+
+/* Optional hover glow to match other modules */
+#custom-weather:hover {
+    background: rgba(94, 129, 172, 0.35);
+}
+

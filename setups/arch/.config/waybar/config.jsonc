@@ -4,196 +4,143 @@
     "spacing": 0,
     "height": 32,
     "modules-left": [
-		"custom/logo",
+        "custom/logo",
         "clock",
-		//"systemd-failed-units",
-		//"user",
-		"pulseaudio",
-		// "pulseaudio#mic",
-		"battery",
-		"backlight",
-		"custom/spotify"
+        "pulseaudio",
+        "battery",
+        "backlight",
+        "custom/spotify"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-    	//"wlr/taskbar",
         "custom/pacman",
         "custom/newsboat",
-		"custom/weather",
-		"cpu",
-		"custom/diskfree",
-		//"custom/internet_speed",
-		"tray",
-		"custom/power"
+        "custom/weather",
+        "cpu",
+        "custom/diskfree",
+        "tray",
+        "custom/power"
     ],
+
     "hyprland/workspaces": {
-		"format": "{name}",
-		"on-click": "activate",
-        "persistent-workspaces": {
-			"*": 1
-		},
-		"disable-scroll": false,
-		"sort-by-number": true
-	},
-	"cpu": {
-		"format-critical":  "<span color='#BF616A'><b>\uF201 {usage}%</b></span>",
-        "format-high":      "<span color='#D08770'>\uF201 {usage}%</span>",
-        "format-medium":    "<span color='#A3BE8C'>\uF201 {usage}%</span>",
-        "format-low":       "<span color='#4C566A'>\uF201 {usage}%</span>",
-        "tooltip": false,
-        "interval": 2,
-        "states": {
-            "critical": 80,
-            "high": 50,
-            "medium": 5,
-            "low": 0
-        },
-		"on-click": "$TERMINAL -e htop"
+        "format": "{name}",
+        "on-click": "activate",
+        "persistent-workspaces": { "*": 1 },
+        "disable-scroll": false,
+        "sort-by-number": true
     },
+
+	"cpu": {
+		"interval": 2,
+		"tooltip": false,
+		"on-click": "$TERMINAL -e htop",
+		"format-critical": "<span color='#BF616A'><b> {usage}%</b></span>",
+		"format-high": "<span color='#5E81AC'> {usage}%</span>",
+		"format-medium": "<span color='#81A1C1'> {usage}%</span>",
+		"format-low": "<span color='#ECEFF4'> {usage}%</span>",
+		"states": { "critical": 80, "high": 50, "medium": 5, "low": 0 }
+	},
+
     "memory": {
         "interval": 5,
         "format": "Mem: {}%",
         "max-length": 15
     },
-    "tray": {
-        "spacing": 10
-    },
+
+    "tray": { "spacing": 10 },
+
     "clock": {
-        "tooltip-format": "{calendar}",
-		"format": "{:%H:%M, %d/%m/%Y}"
+        "format": "{:%H:%M, %d/%m/%Y}",
+        "tooltip-format": "{calendar}"
     },
+
     "battery": {
         "format": "{capacity}% {icon}",
-        "format-icons": {
-            "charging": [
-                "󰢜",
-                "󰂆",
-                "󰂇",
-                "󰂈",
-                "󰢝",
-                "󰂉",
-                "󰢞",
-                "󰂊",
-                "󰂋",
-                "󰂅"
-            ],
-            "default": [
-                "󰁺",
-                "󰁻",
-                "󰁼",
-                "󰁽",
-                "󰁾",
-                "󰁿",
-                "󰂀",
-                "󰂁",
-                "󰂂",
-                "󰁹"
-            ]
-        },
-        "format-full": "Charged ",
         "interval": 5,
-        "states": {
-            "warning": 20,
-            "critical": 10
+        "tooltip": false,
+        "states": { "warning": 20, "critical": 10 },
+        "format-icons": {
+            "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+            "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
         },
-        "tooltip": false
+        "format-full": "Charged "
     },
+
     "pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-muted": " muted",
-		"on-click": "pavucontrol",
-		"format-icons":["", "", ""]
-	},
-	"pulseaudio#mic": {
-		"format": "{format_source}",
-		"format-source": " {volume}%",
-		"format-source-muted": " muted",
-		"on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-	},
-	"backlight": {
-		"device": "intel_backlight",
-		"format": "{percent}% {icon}",
-		"format-icons": ["", ""]
-	},
-    "custom/pacman": {
-		"format": "\uf013 {}",
-		"interval": 3600,
-		"exec": "checkupdates | wc -l"
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
     },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+
+    "custom/pacman": {
+        "format": "\uf013 {}",
+        "interval": 3600,
+        "exec": "checkupdates | wc -l"
+    },
+
     "custom/diskfree": {
         "format": "\uf108 {}",
-		"interval": 300,
+        "interval": 300,
         "exec": "df --total -hl | grep 'nvme0n1p5' | awk '{print $5}'"
     },
+
     "custom/power": {
         "format": "󰤆",
         "tooltip": false,
         "on-click": "poweroptions -r"
     },
+
     "custom/logo": {
         "format": "  ",
         "tooltip": false
     },
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"all-outputs": true,
-		"active-first": true,
-		"tooltip-format": "{name}",
-		"on-click": "activate",
-		"on-click-middle": "close",
-		"ignore-list": [
-		  "rofi"
-		]
-	},
-	"systemd-failed-units": {
-		"hide-on-ok": false,
-		"format": "✗ {nr_failed}",
-		"format-ok": "✓",
-		"system": true,
-		"user": false
-	},
-	"user": {
-        "format": "{user} (up {work_d} days ↑) ",
-        "interval": 60,
-        "height": 30,
-        "width": 30,
-        "icon": false
-	},
+
     "custom/weather": {
-		"interval": 3600,
-		"exec": "weather_formatted"
-	},
-	"custom/ncmpcpp": {
-		"exec": "ncmpcpp_status",
-		"interval": 2,
-		"tooltip": false,
-		"on-click": "mpc toggle",
-		"on-scroll-up": "mpc next",
-		"on-scroll-down": "mpc prev",
-		"on-click-right": "$TERMINAL -e ncmpcpp"
-	},
-	"custom/spotify": {
-		"exec": "spotify_status",
-		"interval": 1,
-		"on-click": "playerctl -p spotify play-pause",
-		"on-click-right": "spotify_menu",
-		"tooltip": false
-	},
-	"custom/internet_speed": {
-		"exec": "internet_speed",
-		"interval": 1,
-		"format": "{text}",
-		"tooltip": false,
-		"return-type": "json"
-	},
-	"custom/newsboat": {
-		"exec": "unread_news",
-		"format": "{text}",
-		"tooltip": true,
-		"interval": 60,
-		"on-click": "alacritty -e newsboat",
-		"return-type": "json"
-	}
+        "exec": "weather_formatted",
+        "interval": 3600
+    },
+
+    "custom/ncmpcpp": {
+        "exec": "ncmpcpp_status",
+        "interval": 2,
+        "tooltip": false,
+        "on-click": "mpc toggle",
+        "on-scroll-up": "mpc next",
+        "on-scroll-down": "mpc prev",
+        "on-click-right": "$TERMINAL -e ncmpcpp"
+    },
+
+    "custom/spotify": {
+        "exec": "spotify_status",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "spotify_menu"
+    },
+
+    "custom/newsboat": {
+        "exec": "unread_news",
+        "interval": 60,
+        "tooltip": true,
+        "format": "{text}",
+        "on-click": "alacritty -e newsboat",
+        "return-type": "json"
+    },
+
+    "custom/internet_speed": {
+        "exec": "internet_speed",
+        "interval": 1,
+        "tooltip": false,
+        "format": "{text}",
+        "return-type": "json"
+    }
 }
