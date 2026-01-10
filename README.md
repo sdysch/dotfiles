@@ -31,12 +31,16 @@ stow --no-folding common --target=$HOME
 * Then reboot
 
 #### Annoyances
-* Have to enable many systemd services manually (non-exhaustive list)
-	* network manager
-	* cron
-	* bluetooth
-	* lightdm/sddm
-	* ssh agent
+* Have to enable many systemd services manually (non-exhaustive list), I haven't kept good records of what I've done
+* Partial list with `systemctl list-units --type=service --state=running`
+	* mpd-mpris.service
+	* pipewire.service
+	* pulseaudio.service
+	* bluetooth.service
+	* cronie.service
+	* NetworkManager.service
+	* sddm.service
+	* wpa_supplicant.service
 * sddm/lightdm themes need to be installed system- not user-wide
 
 ### Xubuntu

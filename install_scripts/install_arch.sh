@@ -85,10 +85,6 @@ _install_packages() {
 		log 'Installing pacman packages'
 		sudo pacman -S --needed --noconfirm - < packages_arch.txt
 
-		log 'Enabling cron'
-		sudo systemctl enable cronie.service
-		crontab crontab/crontab_arch
-
 		# === AUR ===
 		if ! command -v yay >/dev/null 2>&1; then
 			log 'Installing yay'
@@ -131,12 +127,6 @@ log 'Changing shell'
 _change_shell_to_zsh
 log 'Installing zsh plugins'
 _install_zsh
-
-# === enable login manager ===
-if ! is_ci; then
-    log 'Enabling LightDM'
-    sudo systemctl enable lightdm.service
-fi
 
 # === user directories ===
 if ! is_ci; then
