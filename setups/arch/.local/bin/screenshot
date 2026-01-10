@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Path and filename
+FILE=~/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+# Take screenshot
+grim "$FILE"
+
+# Optional: create a small thumbnail for the notification
+THUMB=~/Pictures/screenshots/last_screenshot_thumb.png
+convert "$FILE" -resize 256x256\> "$THUMB"  # requires imagemagick
+
+# Show notification with preview
+notify-send -u low -t 3000 -i "$THUMB" "Screenshot taken" "$FILE"
