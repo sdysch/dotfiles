@@ -4,8 +4,7 @@
 
  *  This is a store for the various configuration files that I use, across the machines that I work on.
 
-![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch_wayland.png)
-![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch_wayland2.png)
+![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch.png)
 
 ## OS setups
 ### Arch setup
