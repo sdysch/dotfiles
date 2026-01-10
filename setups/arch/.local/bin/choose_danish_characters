@@ -37,4 +37,4 @@ else
 fi
 
 # Notify
-notify-send -i dialog-information "Info" "'$chosen' copied to clipboard." &
+notify-send -i dialog-information "$chosen" " copied to clipboard." &
