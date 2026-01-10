@@ -47,6 +47,8 @@ alias gst="git status"
 alias gp="git push"
 alias gs="git switch"
 
+alias lg="lazygit"
+
 # alias vim to nvim
 if [[ "$EDITOR" == "/usr/bin/nvim" ]] || [[ "$EDITOR" == "nvim" ]]
 then

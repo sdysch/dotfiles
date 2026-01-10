@@ -54,4 +54,4 @@ else
 fi
 
 # Notify
-command -v notify-send >/dev/null 2>&1 && notify-send "'$emoji' copied to clipboard." &
+command -v notify-send >/dev/null 2>&1 && notify-send -i dialog-information "$emoji" "copied to clipboard." &
