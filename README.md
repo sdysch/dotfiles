@@ -33,12 +33,13 @@ stow --no-folding common --target=$HOME
 #### Annoyances
 * Have to enable many systemd services manually (non-exhaustive list), I haven't kept good records of what I've done
 * Partial list with `systemctl list-units --type=service --state=running`
-	* mpd-mpris.service
-	* pipewire.service
-	* pulseaudio.service
+	* NetworkManager.service
 	* bluetooth.service
 	* cronie.service
-	* NetworkManager.service
+	* mpd-mpris.service
+	* mpd.service
+	* pipewire.service
+	* pulseaudio.service
 	* sddm.service
 	* wpa_supplicant.service
 * sddm/lightdm themes need to be installed system- not user-wide
