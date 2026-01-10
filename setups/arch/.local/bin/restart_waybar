@@ -6,4 +6,4 @@ fi
 waybar &
 disown
 
-notify-send "Waybar restarted"
+notify-send -i dialog-information "Info" -i dialog-information "Info" "Waybar restarted"

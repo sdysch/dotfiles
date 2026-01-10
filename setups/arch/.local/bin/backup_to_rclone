@@ -7,7 +7,7 @@
 # check if already running
 pgrep -f backup_to_rclone.sh > /dev/null && { echo "Already running" ; exit; }
 
-notify-send "🔃 Running backup" -t 3000
+notify-send -i dialog-information "Info" "🔃 Running backup" -t 3000
 
 # config
 LOCATION='google_drive:arch_backups'
@@ -45,4 +45,4 @@ case "$TARGET" in
     ;;
 esac
 
-notify-send "✅ Backup ($TARGET) completed" -t 3000
+notify-send -i dialog-information "Info" -i dialog-information "Info" "✅ Backup ($TARGET) completed" -t 3000
