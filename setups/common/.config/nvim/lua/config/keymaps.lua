@@ -10,6 +10,12 @@ map('n', '<leader>gs', ':Git status<CR>', { noremap=true, silent=true })
 map('n', '<leader>gc', ':Git commit<CR>', { noremap=true, silent=true })
 map('n', '<leader>gd', ':Gdiffsplit<CR>', { noremap=true, silent=true })
 
+-- Lazy git
+vim.keymap.set('n', '<leader>lg', function()
+  vim.fn.termopen('lazygit')
+  vim.cmd('startinsert')
+end, { desc = 'Lazygit (terminal)' })
+
 -- Make
 map('n', '<leader>r', ':!make<CR>', { noremap=true, silent=true })
 
