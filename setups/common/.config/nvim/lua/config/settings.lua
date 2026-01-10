@@ -30,7 +30,7 @@ vim.opt.modelines = 5
 vim.opt.wildignore = {'*.o','*.pyc','*/tmp/*','*.so','*.swp','*.zip'}
 vim.env.TMPDIR = vim.fn.expand('~/.cache/nvim/tmp')
 
-vim.opt.grepprg = 'rg --vimgrep --smart-case'
+vim.opt.grepprg = 'rg --vimgrep --smart-case --hidden'
 vim.opt.grepformat = '%f:%l:%c:%m'
 
 vim.api.nvim_create_user_command('Term', 'terminal', {})
