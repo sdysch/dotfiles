@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 ROFI='rofi -dmenu -i -p'
-TERMINAL='foot'
 TOPICS_FILE="${HOME}/.local/share/cht/choices"
 
 # --- read topics ---
@@ -20,5 +19,4 @@ query=$($ROFI "query for $topic")
 [ -z "$query" ] && exit 0
 
 # --- run terminal script ---
-# $TERMINAL sh -c "cht '$topic' '$query'"
-$TERMINAL sh -c "cht '$topic' '$query' | less -R"
+$TERMINAL -e sh -c "cht '$topic' '$query' | less -R"
