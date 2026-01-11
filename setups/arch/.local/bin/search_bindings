@@ -1,0 +1,15 @@
+#!/bin/sh
+# Display Hyprland keybindings in Rofi
+
+# Dependencies check
+command -v hyprctl >/dev/null 2>&1 || { echo "hyprctl not found"; exit 1; }
+command -v jq >/dev/null 2>&1 || { echo "jq not found"; exit 1; }
+command -v rofi >/dev/null 2>&1 || { echo "rofi not found"; exit 1; }
+
+# Format Hyprland bindings
+BINDINGS=$(hyprctl binds -j | jq -r '
+  .[] | "\(.modifiers // "") + \(.key) → \(.dispatcher) \(.arg // "") \(.description // "")"
+')
+
+# Launch Rofi menu
+SELECTED=$(echo "$BINDINGS" | rofi -dmenu -i -p "Hyprland keybinds")
