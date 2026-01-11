@@ -1,4 +1,5 @@
 /***** NORD PALETTE *****/
+@define-color white    #eceff4; /* alias to fg */
 @define-color bg       rgba(46, 52, 64, 0.65); /* Polar Night glass */
 @define-color bg-solid #2e3440;
 @define-color bg-alt   rgba(59, 66, 82, 0.75);
@@ -71,7 +72,14 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray,
-#custom-* {
+#custom-logo,
+#custom-music,
+#custom-pacman,
+#custom-newsboat,
+#custom-weather,
+#custom-diskfree,
+#custom-power
+{
   background: @bg-alt;
   color: @fg;
   border-radius: 8px;
@@ -153,7 +161,6 @@ tooltip label {
 }
 
 /* Right module group */
-/* Right module group */
 .modules-right > * {
     margin: 4px 8px;       /* space between modules */
     padding: 4px 16px;     /* internal padding for pill shape */
@@ -166,47 +173,3 @@ tooltip label {
 .modules-right > *:hover {
     background: rgba(94, 129, 172, 0.35); /* subtle frost-blue glow */
 }
-
-
-/* reduce spacing on last module */
-#custom-power {
-    padding-right: 10px;  /* optional, smaller so it fits */
-}
-
-/* Make diskfree larger */
-#custom-diskfree {
-    padding: 6px 18px;        /* increase padding horizontally and vertically */
-    font-size: 14px;           /* slightly bigger text */
-    min-width: 20px;           /* ensures pill doesn’t shrink too much */
-    border-radius: 14px;       /* keep pill shape consistent */
-}
-
-/* Make weather larger */
-#custom-weather {
-    padding: 6px 18px;        /* increase padding horizontally and vertically */
-    font-size: 14px;           /* slightly bigger text */
-    min-width: 60px;           /* ensures pill doesn’t shrink too much */
-    border-radius: 14px;       /* keep pill shape consistent */
-}
-
-/* Make pacman larger */
-#custom-pacman {
-    padding: 6px 18px;        /* increase padding horizontally and vertically */
-    font-size: 14px;           /* slightly bigger text */
-    min-width: 20px;           /* ensures pill doesn’t shrink too much */
-    border-radius: 14px;       /* keep pill shape consistent */
-}
-
-/* Make newsboat larger */
-#custom-newsboat {
-    padding: 6px 18px;        /* increase padding horizontally and vertically */
-    font-size: 14px;           /* slightly bigger text */
-    min-width: 20px;           /* ensures pill doesn’t shrink too much */
-    border-radius: 14px;       /* keep pill shape consistent */
-}
-
-/* Optional hover glow to match other modules */
-#custom-weather:hover {
-    background: rgba(94, 129, 172, 0.35);
-}
-

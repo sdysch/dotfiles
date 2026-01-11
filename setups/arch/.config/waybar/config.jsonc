@@ -109,16 +109,6 @@
         "interval": 3600
     },
 
-    "custom/ncmpcpp": {
-        "exec": "ncmpcpp_status",
-        "interval": 2,
-        "tooltip": false,
-        "on-click": "mpc toggle",
-        "on-scroll-up": "mpc next",
-        "on-scroll-down": "mpc prev",
-        "on-click-right": "$TERMINAL -e ncmpcpp"
-    },
-
     "custom/music": {
         "exec": "musicplayer",
         "interval": 1,
