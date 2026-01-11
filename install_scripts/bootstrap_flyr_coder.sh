@@ -103,6 +103,7 @@ _install_zsh() {
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_PLUGIN_DIR/powerlevel10k" || true
 	git clone https://github.com/rupa/z.git "$ZSH_PLUGIN_DIR/z" || true
 	git clone https://github.com/esc/conda-zsh-completion "$ZSH_PLUGIN_DIR/conda-zsh-completion" || true
+	git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_PLUGIN_DIR/zsh-you-should-use" || true
 }
 
 _install_tree_sitter() {
