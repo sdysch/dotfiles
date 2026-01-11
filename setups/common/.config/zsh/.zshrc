@@ -14,6 +14,8 @@ ZSH_PLUGINS=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH_PLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
+source $ZSH_PLUGINS/conda-zsh-completion/conda-zsh-completion.plugin.zsh
 source $ZSH_PLUGINS/z/z.sh
 
 # zsh autosuggestions
@@ -40,6 +42,9 @@ bindkey -v
 
 # setup autocompletion
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+
+# uv autocomplete
+eval "$(uv generate-shell-completion zsh)"
 
 # save history
 HISTSIZE=10000000

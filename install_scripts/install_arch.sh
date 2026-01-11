@@ -71,6 +71,7 @@ _install_zsh() {
 		'https://github.com/romkatv/powerlevel10k.git'
 		'https://github.com/rupa/z.git'
 		'https://github.com/esc/conda-zsh-completion'
+		'git@github.com:MichaelAquilina/zsh-you-should-use.git'
 	)
 
 	for repo in "${PLUGINS[@]}"; do
