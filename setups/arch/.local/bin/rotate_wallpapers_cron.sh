@@ -8,7 +8,7 @@ export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export HYPRLAND_INSTANCE_SIGNATURE=$(cat "$HOME/.cache/hyprland_sig")
 
 # Directory with wallpapers
-WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
+WALLPAPER_DIR="$HOME/dotfiles/wallpapers/current_rotation"
 WALLPAPERS=("$WALLPAPER_DIR"/*)
 
 # Pick one at random
