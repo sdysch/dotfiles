@@ -69,7 +69,6 @@ map('n', 'Q', ':q<CR>', { noremap=true })
 
 -- vim native terminal
 map('n', '<leader>vt', ':vertical terminal<CR>', { noremap=true, silent=false, desc='Open vertical split terminal'})
-map('n', '<leader>t', ':terminal<CR>', { noremap=true, silent=false, desc='Open split terminal'})
 
 -- FTerm floating terminal
 map('n', '<leader>z', ":lua require('FTerm').open()<CR>") --open terminal
