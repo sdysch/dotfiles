@@ -27,10 +27,24 @@ alias weather="curl -L http://wttr.in//~${LOCATION:-Manchester}"
 # tmux
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
-# python
+# === python ===
+# uv
+alias uva="uv add"
+alias uvi='uv init'
+alias uvinw='uv init --no-workspace'
+alias uvl='uv lock'
+alias uvp='uv pip'
 alias uvr="uv run"
-alias uvs="uv sync"
 alias uvrdb="uv run --with pdbpp"
+alias uvrm='uv remove'
+alias uvs="uv sync"
+alias uvv='uv venv'
+
+# conda cleanup
+function conda_clean() {
+	conda clean --tarballs --index-cache --yes
+	conda clean --all --yes
+}
 
 # dotfile management
 alias dotfiles="cd $HOME/dotfiles"
@@ -57,9 +71,3 @@ then
 fi
 alias v="vim"
 alias n="nvim"
-
-# conda cleanup
-function conda_clean() {
-	conda clean --tarballs --index-cache --yes
-	conda clean --all --yes
-}
