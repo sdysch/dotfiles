@@ -60,7 +60,7 @@
         "format": "{capacity}% {icon}",
         "interval": 5,
         "tooltip": false,
-        "states": { "warning": 20, "critical": 10 },
+        "states": { "warning": 30, "critical": 15 },
         "format-icons": {
             "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
             "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
