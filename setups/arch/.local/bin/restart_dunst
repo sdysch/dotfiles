@@ -6,4 +6,4 @@ fi
 dunst &
 disown
 
-notify-send -i dialog-information "Info" "Dunst restarted"
+notify_info "Info" "Dunst restarted"

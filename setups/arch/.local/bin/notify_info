@@ -1,0 +1,1 @@
+notify-send -i dialog-information "$1" "$2"
