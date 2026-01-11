@@ -66,12 +66,12 @@ _install_zsh() {
 	log "Installing zsh plugins"
 
 	PLUGINS=(
-		'https://github.com/zsh-users/zsh-autosuggestions'
+		'https://github.com/zsh-users/zsh-autosuggestions.git'
 		'https://github.com/zsh-users/zsh-syntax-highlighting.git'
 		'https://github.com/romkatv/powerlevel10k.git'
 		'https://github.com/rupa/z.git'
-		'https://github.com/esc/conda-zsh-completion'
-		'git@github.com:MichaelAquilina/zsh-you-should-use.git'
+		'https://github.com/esc/conda-zsh-completion.git'
+		'https://github.com/MichaelAquilina/zsh-you-should-use.git'
 	)
 
 	for repo in "${PLUGINS[@]}"; do
