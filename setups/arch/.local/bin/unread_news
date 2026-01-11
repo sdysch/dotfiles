@@ -1,16 +1,11 @@
 #!/bin/bash
 
-NUM_HEADLINES=5
+# Fetch unread items once
+unread=$(newsboat -x print-unread | awk '{ print $1 }')
 
-# Get unread count
-unread=$(newsboat -x print-unread | awk '{print $1}')
-
-# Get latest headlines
-headlines=$(newsboat -x print-unread | head -n "$NUM_HEADLINES" | awk '{$1=""; print substr($0,2)}' | sed 's/"/\\"/g' | paste -sd '\\n' -)
-
-# Print one-line JSON
+# Output JSON
 if [ "$unread" -gt 0 ]; then
-    printf '{"text":"📰 %s","tooltip":"%s"}' "$unread" "$headlines"
+    printf '{"text":"📰 %s","tooltip":"%s"}\n' "$unread" "$unread Unread articles"
 else
-    printf '{"text":"📰 0","tooltip":"No unread articles"}'
+    printf '{"text":"📰 0","tooltip":"No unread articles"}\n'
 fi

@@ -1,5 +1,7 @@
-#show-read-feeds no
+show-read-feeds no
 auto-reload yes
+max-items 1000
+
 
 bind-key j down
 bind-key k up
@@ -31,4 +33,4 @@ color article cyan default
 highlight all "---.*---" magenta default bold
 highlight feedlist ".*(0/0))" black
 
-browser google-chrome-stable
+browser firefox

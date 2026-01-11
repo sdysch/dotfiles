@@ -4,11 +4,9 @@
 
 ping -q -c 1 1.1.1.1 > /dev/null || exit
 
-notify-send -i dialog-information "Info" "📰 Updating RSS feeds..."
+notify-send -i dialog-information "Info" " Updating RSS feeds..."
 
 pgrep -x newsboat >/dev/null && /usr/bin/xdotool key --window "$(/usr/bin/xdotool search --name newsboat)" R && exit
 
-echo "" > /tmp/newsupdate
 newsboat -x reload
-rm -f /tmp/newsupdate
 notify-send -i dialog-information "Info" "📰 RSS feed update complete."
