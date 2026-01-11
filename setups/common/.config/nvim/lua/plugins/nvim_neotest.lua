@@ -8,11 +8,11 @@ return {
     "nvim-neotest/neotest-python"
   },
   keys = {
-    { "<leader>nr", function() require("neotest").run.run() end, desc = "Neotest: run nearest test" },
-    { "<leader>nf", function() require("neotest").run.run(vim.fn.expand('%')) end, desc = "Neotest: run tests in file" },
-    { "<leader>na", function() require("neotest").run.run({ suite = true }) end, desc = "Neotest: run all tests" },
-    { "<leader>ns", function() require("neotest").summary.toggle() end, desc = "Neotest: toggle summary" },
-    { "<leader>nl", function() require("neotest").run.run_last() end, desc = "Neotest: run last test" },
+    { "<leader>tr", function() require("neotest").run.run() end, desc = "Neotest: run nearest test" },
+    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand('%')) end, desc = "Neotest: run tests in file" },
+    { "<leader>ta", function() require("neotest").run.run({ suite = true }) end, desc = "Neotest: run all tests" },
+    { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Neotest: toggle summary" },
+    { "<leader>tl", function() require("neotest").run.run_last() end, desc = "Neotest: run last test" },
   },
   config = function()
     require("neotest").setup({
