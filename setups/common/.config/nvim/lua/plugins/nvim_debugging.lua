@@ -5,12 +5,23 @@ return {
 		'mfussenegger/nvim-dap-python',
 	},
 	keys = {
+		-- basic
 		{ '<leader>dt', '<cmd>DapViewToggle<cr>' },
 		{ '<leader>db', '<cmd>DapToggleBreakpoint<cr>' },
 		{ '<leader>de', '<cmd>DapEval<cr>' },
 		{ '<leader>dc', '<cmd>DapContinue<cr>' },
 		{ '<leader>dw', '<cmd>DapViewWatch<cr>' },
 		{ '<leader>dl', '<cmd>DapShowLog<cr>' },
+
+		-- Stepping with arrow keys
+		{ '<Right>', '<cmd>DapStepOver<cr>', desc = 'Step over' },
+		{ '<Down>',  '<cmd>DapStepInto<cr>', desc = 'Step into' },
+		{ '<Up>',    '<cmd>DapStepOut<cr>',  desc = 'Step out' },
+
+		-- Frame navigation
+		{ '<leader>du', '<cmd>DapUp<cr>', desc = 'Up frame' },
+		{ '<leader>dd', '<cmd>DapDown<cr>', desc = 'Down frame' },
+
 	},
 	config = function()
 		local dap = require('dap')
