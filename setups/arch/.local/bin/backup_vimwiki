@@ -10,7 +10,7 @@ timestamp=$(date)
 message="Vim wiki automatically backed up at ${timestamp}"
 git commit -m "$message" > /dev/null
 git push origin master > /dev/null
-notify-send -i dialog-information "Info" "$message"
+notify_info "Info" "$message"
 
 # go back to previous directory
 popd
