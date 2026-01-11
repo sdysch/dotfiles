@@ -1,0 +1,94 @@
+return {
+	'mfussenegger/nvim-dap',
+	dependencies = {
+		'igorlfs/nvim-dap-view',
+		'mfussenegger/nvim-dap-python',
+	},
+	keys = {
+		{ '<leader>dt', '<cmd>DapViewToggle<cr>' },
+		{ '<leader>db', '<cmd>DapToggleBreakpoint<cr>' },
+		{ '<leader>dc', '<cmd>DapContinue<cr>' },
+		{ '<leader>dw', '<cmd>DapViewWatch<cr>' },
+		{ '<leader>dl', '<cmd>DapShowLog<cr>' },
+	},
+	config = function()
+		local dap = require('dap')
+
+		----------------------------------------------------------------
+		-- Dynamically select a Python adapter:
+		--   1. Use uv venv python if debugpy is installed
+		--   2. Otherwise run adapter via `uv run --with debugpy`
+		----------------------------------------------------------------
+		local function python_adapter()
+			-- Check whether debugpy exists in the uv venv
+			vim.fn.system({
+				'uv',
+				'run',
+				'python',
+				'-c',
+				'import debugpy',
+			})
+
+			if vim.v.shell_error == 0 then
+				-- Stable case: adapter runs directly in venv
+				local python = vim.fn.system({
+					'uv',
+					'run',
+					'python',
+					'-c',
+					'import sys; print(sys.executable)',
+				})
+
+				python = vim.fn.trim(python)
+
+				return {
+					type = 'executable',
+					command = python,
+					args = { '-m', 'debugpy.adapter' },
+				}
+			end
+
+			-- Fallback: run adapter through uv with ephemeral debugpy
+			vim.notify(
+				'debugpy not found in uv venv; using uv run --with debugpy adapter',
+				vim.log.levels.INFO
+			)
+
+			return {
+				type = 'executable',
+				command = 'uv',
+				args = {
+					'run',
+					'--with',
+					'debugpy',
+					'python',
+					'-m',
+					'debugpy.adapter',
+				},
+			}
+		end
+
+		dap.adapters.python = python_adapter()
+
+		----------------------------------------------------------------
+		-- Python launch configuration (program always runs via uv)
+		----------------------------------------------------------------
+		dap.configurations.python = {
+			{
+				type = 'python',
+				request = 'launch',
+				name = 'uv run (auto debugpy)',
+				program = '${file}',
+				cwd = vim.loop.cwd(),
+				console = 'integratedTerminal',
+				runInTerminal = true,
+
+				preLaunchTask = function()
+					local cmd = 'uv run ' .. vim.fn.expand('${file}')
+					print('DAP launching:', cmd)
+					return cmd
+				end,
+			},
+		}
+	end,
+}
