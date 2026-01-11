@@ -7,12 +7,22 @@ return {
 	keys = {
 		{ '<leader>dt', '<cmd>DapViewToggle<cr>' },
 		{ '<leader>db', '<cmd>DapToggleBreakpoint<cr>' },
+		{ '<leader>de', '<cmd>DapEval<cr>' },
 		{ '<leader>dc', '<cmd>DapContinue<cr>' },
 		{ '<leader>dw', '<cmd>DapViewWatch<cr>' },
 		{ '<leader>dl', '<cmd>DapShowLog<cr>' },
 	},
 	config = function()
 		local dap = require('dap')
+
+		-- setup breakpoint colours
+		-- Red breakpoint for Nord theme
+		vim.fn.sign_define('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+		vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#BF616A', bold = true })
+
+		-- Green arrow for stopped line
+		vim.fn.sign_define('DapStopped', { text = '▶', texthl = 'DapStopped', linehl = '', numhl = '' })
+		vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#A3BE8C', bold = true })
 
 		----------------------------------------------------------------
 		-- Dynamically select a Python adapter:
