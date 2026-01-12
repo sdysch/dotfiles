@@ -6,9 +6,10 @@ map('n', '<leader>q', ':q<CR>', { noremap=true, silent=true })
 map('n', '<leader>qa', ':qa<CR>', { noremap=true, silent=true })
 
 -- Fugitive
-map('n', '<leader>gs', ':Git status<CR>', { noremap=true, silent=true })
-map('n', '<leader>gc', ':Git commit<CR>', { noremap=true, silent=true })
-map('n', '<leader>gd', ':Gdiffsplit<CR>', { noremap=true, silent=true })
+map('n', '<leader>gs', ':Git status<CR>', { noremap=true, silent=true, desc = 'Git status' })
+map('n', '<leader>gc', ':Git commit<CR>', { noremap=true, silent=true, desc = 'Git commit' })
+map('n', '<leader>gd', ':Gdiffsplit<CR>', { noremap=true, silent=true, desc = 'Git diffsplit' })
+map('n', '<leader>gt', ':G difftool<CR>', { noremap=true, silent=true, desc = 'Git difftool' })
 
 -- Lazy git
 vim.keymap.set('n', '<leader>lg', function()
@@ -54,9 +55,6 @@ map('n', '<S-h>', 'gT', { noremap=true })
 -- Buffers
 map('n', '<Leader>b', ':buffers<CR>:buffer ', { noremap=true, silent=true })
 map('n', '<Leader>bd', ':bdelete<CR>', { noremap=true, silent=true })
-map('n', '<Leader>bn', ':bnext<CR>', { noremap=true, silent=true })
-map('n', '<Leader>bp', ':bprevious<CR>', { noremap=true, silent=true }) map('n', '<Leader>bl', ':blast<CR>', { noremap=true, silent=true })
-map('n', '<Leader>bf', ':bfirst<CR>', { noremap=true, silent=true })
 
 
 -- Wiki shortcuts
@@ -122,12 +120,12 @@ vim.keymap.set('n', '<leader>fc', ':FzfLua commands<CR>', { desc = 'FzfLua: Show
 
 
 -- LSP keymaps
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" } )
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Hover description" } )
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true, desc = "List all uses" } )
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename project wide" } )
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick fixes" } )
+vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Error diagnostics" } )
 
 -- === copying files ===
 -- copy filename
