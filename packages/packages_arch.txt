@@ -85,6 +85,7 @@ ruby-erb
 scrot
 scrot
 sddm
+slurp
 speedtest-cli
 spotify-launcher
 spotifyd

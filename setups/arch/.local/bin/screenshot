@@ -1,14 +1,31 @@
 #!/bin/sh
 
-# Path and filename
-FILE=~/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+DIR="$HOME/Pictures/screenshots"
+mkdir -p "$DIR"
+
+FILE="$DIR/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+
+USE_SELECTION=0
+
+# Parse options
+while getopts "s" opt; do
+    case "$opt" in
+        s) USE_SELECTION=1 ;;
+    esac
+done
 
 # Take screenshot
-grim "$FILE"
+if [ "$USE_SELECTION" -eq 1 ]; then
+    SELECTION=$(slurp) || exit 1
+    [ -z "$SELECTION" ] && exit 1
+    grim -g "$SELECTION" "$FILE"
+else
+    grim "$FILE"
+fi
 
-# Optional: create a small thumbnail for the notification
-THUMB=~/Pictures/screenshots/last_screenshot_thumb.png
-convert "$FILE" -resize 256x256\> "$THUMB"  # requires imagemagick
+# Thumbnail for notification
+THUMB="$DIR/last_screenshot_thumb.png"
+convert "$FILE" -resize 256x256\> "$THUMB"
 
-# Show notification with preview
+# Notify
 notify-send -u low -t 3000 -i "$THUMB" "Screenshot taken" "$FILE"
