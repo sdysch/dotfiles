@@ -1,0 +1,21 @@
+# E.g. in project level .envrc place:
+# dotenv
+# load_uv_venv
+# auto load uv venvs
+load_uv_venv() {
+    if [[ -d ".venv" ]]; then
+        VIRTUAL_ENV="$(pwd)/.venv"
+    fi
+
+    if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
+        echo "No virtual environment exists. Executing \`uv venv\` to create one."
+        uv venv
+        VIRTUAL_ENV="$(pwd)/.venv"
+    fi
+
+    echo "Loading $VIRTUAL_ENV"
+
+    PATH_add "$VIRTUAL_ENV/bin"
+    export UV_ACTIVE=1  # or VENV_ACTIVE=1
+    export VIRTUAL_ENV
+}
