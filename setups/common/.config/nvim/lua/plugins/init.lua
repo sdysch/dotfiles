@@ -9,9 +9,22 @@ return {
 
   -- fuzzy finder
   {
-    'ibhagwan/fzf-lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+	  'ibhagwan/fzf-lua',
+	  dependencies = { 'nvim-tree/nvim-web-devicons' },
+	  config = function()
+		  require('fzf-lua').setup({
+		  	  defaults = {
+				  actions = {
+					  ['ctrl-q'] = { fn = require('fzf-lua').actions.file_sel_to_qf, prefix = 'select-all' },
+				  },
+			  },
+			  grep = {
+				  rg_opts = '--hidden --glob !.git/* --line-number --no-heading --color=always --smart-case --column'
+			  },
+		  })
+	  end,
   },
+
 
   -- LaTeX
   { 'lervag/vimtex', ft = { 'tex' } },
