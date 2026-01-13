@@ -29,11 +29,51 @@ return {
   -- LaTeX
   { 'lervag/vimtex', ft = { 'tex' } },
 
-  -- wiki
+  -- vim wiki
   {
-    'vimwiki/vimwiki',
-    lazy = false,
-    ft = { 'wiki', 'markdown' },
+	  'vimwiki/vimwiki',
+	  lazy = false,
+	  config = function()
+		  -- Set global variables
+		  vim.g.vimwiki_list = {
+			  { path = os.getenv('VIMWIKI') }
+		  }
+		  vim.g.wiki_root = os.getenv('VIMWIKI')
+
+
+		  -- Define helper functions
+		  function WikiTodo()
+			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/todo.wiki')
+			  vim.cmd('e ' .. path)
+		  end
+
+		  function WikiNotes()
+			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/notes.wiki')
+			  vim.cmd('e ' .. path)
+		  end
+
+		  -- Backup Vimwiki automatically
+		  vim.api.nvim_create_autocmd('BufWritePost', {
+			  pattern = '*.wiki',
+			  callback = function()
+				  if vim.fn.executable('backup_vimwiki') == 1 then
+					  vim.fn.system('backup_vimwiki')
+				  end
+			  end
+		  })
+
+		  -- vimwiki syntax
+		  vim.api.nvim_create_augroup('vimwiki_ft', { clear = true })
+
+		  vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+			  group = 'vimwiki_ft',
+			  pattern = '*.wiki',
+			  callback = function()
+				  vim.bo.filetype = 'vimwiki'
+			  end,
+		  })
+
+	  end
   },
 
   -- UI helpers

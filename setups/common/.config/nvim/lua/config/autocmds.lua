@@ -56,27 +56,6 @@ vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {
   end
 })
 
--- Backup Vimwiki automatically
-vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = '*.wiki',
-  callback = function()
-    if vim.fn.executable('backup_vimwiki') == 1 then
-      vim.fn.system('backup_vimwiki')
-    end
-  end
-})
-
--- vimwiki syntax
-vim.api.nvim_create_augroup('vimwiki_ft', { clear = true })
-
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  group = 'vimwiki_ft',
-  pattern = '*.wiki',
-  callback = function()
-    vim.bo.filetype = 'vimwiki'
-  end,
-})
-
 -- autocreate missing directories on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
