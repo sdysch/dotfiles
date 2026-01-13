@@ -14,6 +14,7 @@ NVIM_INSTALL_DIR="$HOME/.local/bin"
 log() {
     printf '\n\033[1;34m==> %s\033[0m\n' "$1"
 }
+
 require_cmd() {
     command -v "$1" >/dev/null 2>&1 || {
         echo "Missing required command: $1" >&2
@@ -45,7 +46,7 @@ _install_configs() {
 	if [[ -d "$DOTFILES_DIR/.git" ]]; then
 		log 'Dotfiles already exist, skipping clone'
 	else
-		git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_DIR"
+		git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_INSTALLDIR"
 	fi
 	pushd "$DOTFILES_DIR/setups" >/dev/null
 	stow --no-folding flyr --target="$HOME"
