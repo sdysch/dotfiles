@@ -22,7 +22,7 @@ return {
           args = {"--log-level", "DEBUG"},
           runner = "pytest",
           python = ".venv/bin/python",
-          pytest_discover_instances = true,
+          pytest_discover_instances = false,
         })
       },
       icons = {

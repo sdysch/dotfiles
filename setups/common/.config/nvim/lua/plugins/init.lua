@@ -29,12 +29,6 @@ return {
   -- LaTeX
   { 'lervag/vimtex', ft = { 'tex' } },
 
-  -- distraction-free writing
-  {
-    'junegunn/goyo.vim',
-    cmd = { 'Goyo' },
-  },
-
   -- wiki
   {
     'vimwiki/vimwiki',
@@ -47,7 +41,47 @@ return {
   { 'junegunn/vim-peekaboo', event = 'VeryLazy' },
 
   -- copilot
-  -- { 'github/copilot.vim', lazy = false },
+  {
+    'zbirenbaum/copilot.lua',
+    dependencies = {
+      'copilotlsp-nvim/copilot-lsp',
+    },
+    cmd = { 'Copilot' },
+    keys = { { '<leader>ct', '<Cmd>Copilot toggle<CR>', mode = 'n', desc = 'Copilot toggle' } },
+    config = function()
+      require('copilot').setup({
+        panel = {
+          enabled = false,
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = '<C-l>',
+            -- next = '<C-]>',
+            -- prev = '<C-[>',
+            -- dismiss = '<C-]>',
+          },
+        },
+        filetypes = {
+          markdown = true,
+          python = true,
+          lua = true,
+          bash = true,
+          zsh = true,
+          sh = true,
+          gitcommit = false,
+          help = false,
+        },
+      })
+
+      vim.keymap.set('n', '<leader>ct', '<Cmd>Copilot toggle<CR>', { 
+        noremap = true, 
+        silent = true, 
+        desc = 'Toggle Copilot' 
+      })
+    end,
+  },
 
   -- colorscheme
   { 'gbprod/nord.nvim', lazy = false, priority = 1000 },
@@ -78,6 +112,34 @@ return {
   { 'emmanueltouzery/decisive.nvim', ft = { 'csv' } },
 
   -- tree sitter
-  { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' }
+  {
+	  'nvim-treesitter/nvim-treesitter',
+	  lazy = false,
+	  build = ':TSUpdate',
+	  config = function()
+		  require'nvim-treesitter'.setup {
+			  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+			  install_dir = vim.fn.stdpath('data') .. '/site'
+		  }
+
+		  -- parsers
+		  require'nvim-treesitter'.install {
+			  "gitcommit", "gitignore", "html", "http", "json", "json5", "jsonc",
+			  "lua", "make", "markdown", "markdown_inline", "python", "regex", "rst",
+			  "scss", "sql", "ssh_config", "toml", "vim", "vimdoc", "yaml"
+		  }
+
+		  -- folds
+		  vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+		  vim.wo[0][0].foldmethod = 'expr'
+		  vim.cmd('set nofoldenable') -- start with all folds open
+		  vim.opt.foldlevel = 99
+
+		  vim.api.nvim_create_autocmd('FileType', {
+			  pattern = { 'python' },
+			  callback = function() vim.treesitter.start() end,
+		  })
+	  end
+  }
 
 }
