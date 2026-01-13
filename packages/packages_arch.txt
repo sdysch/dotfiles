@@ -98,6 +98,7 @@ tree
 tree-sitter
 tree-sitter-cli
 ttf-font-awesome
+ttf-jetbrains-mono-nerd
 unzip
 unzip
 usbutils

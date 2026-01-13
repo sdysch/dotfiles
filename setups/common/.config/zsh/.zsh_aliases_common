@@ -63,6 +63,7 @@ alias gs="git switch"
 alias gsp="git stash pop"
 alias gf="git fetch"
 alias gca="git commit --amend"
+alias gpu="git pull"
 
 alias lg="lazygit"
 

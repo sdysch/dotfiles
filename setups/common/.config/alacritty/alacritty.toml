@@ -36,18 +36,17 @@ white   = "0xECEFF4"     # Nord Snow 0
 size = 9
 
 [font.normal]
-family = "MesloLGS NF"
+family = "JetBrains Mono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS NF"
+family = "JetBrains Mono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS NF"
+family = "JetBrains Mono Nerd Font"
 style = "Italic"
 
 [font.bold_italic]
-family = "MesloLGS NF"
+family = "JetBrains Mono Nerd Font"
 style = "Bold Italic"
-
