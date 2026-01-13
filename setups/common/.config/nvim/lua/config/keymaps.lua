@@ -107,16 +107,6 @@ vim.keymap.set({ 'n', 'i' }, '<leader>ip', function()
   }, 'l', true, true)
 end, { buffer = true, desc = 'Insert common Python imports' })
 
--- fzf
-local fzf = require('fzf-lua')
-vim.keymap.set('n', '<c-p>', fzf.git_files, { desc = 'fzf files in git' })
-vim.keymap.set('n', '<c-b>', fzf.buffers, { desc = 'fzf buffers' })
-vim.keymap.set('n', '<c-f>', fzf.live_grep, { desc = 'fzf live grep' })
-vim.keymap.set('n', '<leader>*', fzf.grep_cword, { desc = 'live grep on current word' })
-vim.keymap.set('n', '<leader>fr', fzf.oldfiles, { desc = 'Find recent files' })
-
-vim.keymap.set('n', '<leader>fk', ':FzfLua keymaps<CR>', { desc = 'FzfLua: Show keymaps' })
-vim.keymap.set('n', '<leader>fc', ':FzfLua commands<CR>', { desc = 'FzfLua: Show commands' })
 
 
 -- LSP keymaps
