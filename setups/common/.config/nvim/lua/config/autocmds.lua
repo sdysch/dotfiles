@@ -48,14 +48,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   end
 })
 
--- Fix tex filetype
-vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {
-  pattern = '*.tex',
-  callback = function()
-    vim.bo.filetype = 'tex'
-  end
-})
-
 -- autocreate missing directories on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
