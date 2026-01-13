@@ -9,7 +9,6 @@ return {
 		  }
 		  vim.g.wiki_root = os.getenv('VIMWIKI')
 
-
 		  -- Define helper functions
 		  function WikiTodo()
 			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/todo.wiki')
@@ -41,6 +40,11 @@ return {
 				  vim.bo.filetype = 'vimwiki'
 			  end,
 		  })
+
+
+		  -- Keymaps
+		  vim.keymap.set('n', '<leader>wt', WikiTodo, { desc = 'Open Vimwiki TODO', silent = true })
+          vim.keymap.set('n', '<leader>wn', WikiNotes, { desc = 'Open Vimwiki notes', silent = true })
 
 	  end
   },
