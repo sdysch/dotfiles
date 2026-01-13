@@ -17,9 +17,6 @@ map('n', '<leader>r', ':!make<CR>', { noremap=true, silent=true })
 -- Search
 map('n', '<leader>n', ':noh<CR>', { noremap=true, silent=true })
 
--- file explorer
-map('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
 -- Clipboard
 map({'n','v'}, '<leader>y', '"+y', { noremap=true, silent=true })
 map({'n','v'}, '<leader>p', '"+p', { noremap=true, silent=true })
@@ -51,9 +48,6 @@ map('n', '<Leader>b', ':buffers<CR>:buffer ', { noremap=true, silent=true })
 map('n', '<Leader>bd', ':bdelete<CR>', { noremap=true, silent=true })
 
 
--- Wiki shortcuts
-map('n', '<leader>wt', ':call WikiTodo()<CR>', { noremap=true, silent=true })
-map('n', '<leader>wn', ':call WikiNotes()<CR>', { noremap=true, silent=true })
 
 -- Disable accidental command window
 map('n', 'q:', ':q<CR>', { noremap=true })
@@ -61,14 +55,6 @@ map('n', 'Q', ':q<CR>', { noremap=true })
 
 -- vim native terminal
 map('n', '<leader>vt', ':vertical terminal<CR>', { noremap=true, silent=false, desc='Open vertical split terminal'})
-
--- FTerm floating terminal
-map('n', '<leader>z', ":lua require('FTerm').open()<CR>") --open terminal
-map('t', '<Esc>', '<C-\\><C-n><CMD>lua require("FTerm").close()<CR>') --preserves session
-
--- decisive csv
-map("n", "<leader>csa", ":lua require('decisive').align_csv({})<cr>") --align csv
-map("n", "<leader>csA", ":lua require('decisive').align_csv_clear({})<cr>") --clear alignment
 
 -- === python ===
 -- python breakpoints
@@ -101,15 +87,6 @@ vim.keymap.set({ 'n', 'i' }, '<leader>ip', function()
   }, 'l', true, true)
 end, { buffer = true, desc = 'Insert common Python imports' })
 
-
-
--- LSP keymaps
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" } )
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Hover description" } )
-vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true, desc = "List all uses" } )
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename project wide" } )
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true, desc = "Quick fixes" } )
-vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Error diagnostics" } )
 
 -- === copying files ===
 -- copy filename

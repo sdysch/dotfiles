@@ -22,10 +22,10 @@ return {
 		  vim.cmd('set nofoldenable') -- start with all folds open
 		  vim.opt.foldlevel = 99
 
-		  vim.api.nvim_create_autocmd('FileType', {
-			  pattern = { 'python' },
-			  callback = function() vim.treesitter.start() end,
-		  })
+		  -- vim.api.nvim_create_autocmd('FileType', {
+		  --     pattern = { 'python' },
+		  --     callback = function() vim.treesitter.start() end,
+		  -- })
 	  end
   },
 }

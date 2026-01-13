@@ -1,29 +1,55 @@
 return {
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     lazy = false,
     dependencies = {
-      "mason-org/mason.nvim",
-      "mason-org/mason-lspconfig.nvim",
+      'mason-org/mason.nvim',
+      'mason-org/mason-lspconfig.nvim',
     },
     config = function()
       -- Mason
-      require("mason").setup()
+      require('mason').setup()
 
-      require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "bashls", "sqls", "yamlls", "jsonls", "marksman" },
+      require('mason-lspconfig').setup({
+        ensure_installed = {
+          'pyright',
+          'bashls',
+          'sqls',
+          'yamlls',
+          'jsonls',
+          'marksman',
+        },
         automatic_installation = true,
       })
 
+      -- LSP on_attach (keymaps go here)
+      local on_attach = function(_, bufnr)
+        local opts = { noremap = true, silent = true, buffer = bufnr }
+
+        local function map(lhs, rhs, desc)
+          vim.keymap.set('n', lhs, rhs, vim.tbl_extend('force', opts, {
+            desc = desc,
+          }))
+        end
+
+        map('gd', vim.lsp.buf.definition, 'Go to definition')
+        map('K', vim.lsp.buf.hover, 'Hover documentation')
+        map('gr', vim.lsp.buf.references, 'List references')
+        map('<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
+        map('<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        map('<leader>E', vim.diagnostic.open_float, 'Diagnostics')
+      end
+
       -- LSP configs
       vim.lsp.config.pyright = {
-        filetypes = { "python" },
+        on_attach = on_attach,
+        filetypes = { 'python' },
         settings = {
           python = {
-          	venvPath = '.',
-          	venv = '.venv',
+            venvPath = '.',
+            venv = '.venv',
             analysis = {
-              typeCheckingMode = "basic",
+              typeCheckingMode = 'basic',
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
             },
@@ -31,20 +57,39 @@ return {
         },
       }
 
-      vim.lsp.config.bashls = { filetypes = { "sh", "bash", "zsh" } }
-      vim.lsp.config.sqls = { filetypes = { "sql" } }
-      vim.lsp.config.yamlls = { filetypes = { "yaml" } }
-      vim.lsp.config.jsonls = { filetypes = { "json" } }
-      vim.lsp.config.marksman = { filetypes = { "markdown" } }
+      vim.lsp.config.bashls = {
+        on_attach = on_attach,
+        filetypes = { 'sh', 'bash', 'zsh' },
+      }
+
+      vim.lsp.config.sqls = {
+        on_attach = on_attach,
+        filetypes = { 'sql' },
+      }
+
+      vim.lsp.config.yamlls = {
+        on_attach = on_attach,
+        filetypes = { 'yaml' },
+      }
+
+      vim.lsp.config.jsonls = {
+        on_attach = on_attach,
+        filetypes = { 'json' },
+      }
+
+      vim.lsp.config.marksman = {
+        on_attach = on_attach,
+        filetypes = { 'markdown' },
+      }
 
       -- Enable servers
       vim.lsp.enable({
-        "pyright",
-        "bashls",
-        "sqls",
-        "yamlls",
-        "jsonls",
-        "marksman",
+        'pyright',
+        'bashls',
+        'sqls',
+        'yamlls',
+        'jsonls',
+        'marksman',
       })
     end,
   },

@@ -30,9 +30,23 @@ return {
   },
 
   -- floating terminal
-  { 'numToStr/FTerm.nvim', cmd = { 'FTermOpen', 'FTermToggle' } },
+  {
+    'numToStr/FTerm.nvim',
+    cmd = { 'FTermOpen', 'FTermToggle' },
+    keys = {
+      {  '<leader>z', function() require('FTerm').open() end, desc = 'Open floating terminal', mode = 'n', },
+      { '<Esc>', function() require('FTerm').close() end, desc = 'Close floating terminal', mode = 't', },
+    }
+  },
 
   -- csv viewer
-  { 'emmanueltouzery/decisive.nvim', ft = { 'csv' } },
+  {
+    'emmanueltouzery/decisive.nvim',
+    ft = { 'csv' },
+    keys = {
+      { '<leader>csa', function() require('decisive').align_csv({}) end, desc = 'Align CSV columns', mode = 'n', },
+      { '<leader>csA', function() require('decisive').align_csv_clear({}) end, desc = 'Clear CSV alignment', mode = 'n', },
+    },
+  },
 
 }
