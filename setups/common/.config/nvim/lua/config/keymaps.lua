@@ -5,12 +5,6 @@ map('n', '<leader>w', ':w!<CR>', { noremap=true, silent=true })
 map('n', '<leader>q', ':q<CR>', { noremap=true, silent=true })
 map('n', '<leader>qa', ':qa<CR>', { noremap=true, silent=true })
 
--- Fugitive
-map('n', '<leader>gs', ':Git status<CR>', { noremap=true, silent=true, desc = 'Git status' })
-map('n', '<leader>gc', ':Git commit<CR>', { noremap=true, silent=true, desc = 'Git commit' })
-map('n', '<leader>gd', ':Gdiffsplit<CR>', { noremap=true, silent=true, desc = 'Git diffsplit' })
-map('n', '<leader>gt', ':G difftool<CR>', { noremap=true, silent=true, desc = 'Git difftool' })
-
 -- Lazy git
 vim.keymap.set('n', '<leader>lg', function()
   vim.fn.termopen('lazygit')
