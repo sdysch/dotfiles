@@ -30,15 +30,15 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 # === python ===
 # uv
 alias uva="uv add"
-alias uvi='uv init'
-alias uvinw='uv init --no-workspace'
-alias uvl='uv lock'
-alias uvp='uv pip'
+alias uvi="uv init"
+alias uvinw="uv init --no-workspace"
+alias uvl="uv lock"
+alias uvp="uv pip"
 alias uvr="uv run"
 alias uvrdb="uv run --with pdbpp"
-alias uvrm='uv remove'
+alias uvrm="uv remove"
 alias uvs="uv sync"
-alias uvv='uv venv'
+alias uvv="uv venv"
 
 # conda cleanup
 function conda_clean() {
@@ -64,6 +64,11 @@ alias gsp="git stash pop"
 alias gf="git fetch"
 alias gca="git commit --amend"
 alias gpu="git pull"
+alias gwt="git worktree add"
+alias gwtb="git worktree add -b"
+alias gwtl="git worktree list"
+alias gwtr="git worktree remove"
+alias gwtp="git worktree prune"
 
 alias lg="lazygit"
 
