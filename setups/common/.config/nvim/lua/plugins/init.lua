@@ -49,4 +49,13 @@ return {
     },
   },
 
+  -- better quickfix list syntax
+  {
+    'stevearc/quicker.nvim',
+    ft = 'qf',
+    config = function()
+    	require('quicker').setup({})
+	end
+  },
+
 }
