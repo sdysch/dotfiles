@@ -1,0 +1,12 @@
+[keyboard]
+bindings = [
+  # === font size ===
+  { key = '=', mods = 'Control|Shift', action = 'IncreaseFontSize' },
+  { key = '-', mods = 'Control|Shift', action = 'DecreaseFontSize' },
+  { key = '0', mods = 'Control|Shift', action = 'ResetFontSize' },
+
+  # === scrolling ===
+  { key = 'K', mods = 'Control|Shift', action = 'ScrollLineUp' },
+  { key = 'J', mods = 'Control|Shift', action = 'ScrollLineDown' },
+  { key = 'G', mods = 'Control|Shift', action = 'ScrollToBottom' },
+]
