@@ -87,7 +87,17 @@ alias n="nvim"
 alias oc="opencode"
 
 # === tmux ===
+alias t="tmux"
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
 alias tls='tmux list-sessions'
 alias tk='tmux kill-session -t'
+alias ts='tmux switch-client -t' 
+
+# fzf sessions and attach
+tas() {
+	session=$(tmux ls 2>/dev/null | cut -d: -f1 | fzf --prompt="-> " --header="tmux sessions " --header-first --border=rounded --padding=1 --layout=reverse --info=inline)
+	if [ -n "$session" ]; then
+		tmux attach-session -t "$session"
+	fi
+}
