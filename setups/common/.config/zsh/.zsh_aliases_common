@@ -48,8 +48,9 @@ function conda_clean() {
 
 # dotfile management
 alias dotfiles="cd $HOME/dotfiles"
+alias dots="cd $HOME/dotfiles"
 
-# git aliases
+# === git aliases ===
 alias g="git"
 alias ga="git add"
 alias gaa="git add --all"
@@ -84,3 +85,9 @@ alias n="nvim"
 
 # === opencode ===
 alias oc="opencode"
+
+# === tmux ===
+alias ta='tmux attach-session -t'
+alias tn='tmux new-session -s'
+alias tls='tmux list-sessions'
+alias tk='tmux kill-session -t'
