@@ -3,7 +3,7 @@
 	#echo "ERROR: Must supply a directory to backup to!"
 	#exit 1
 #fi
-BACKUPLOC="/media/sdysch/Seagate\ Slim\ Drive/Linux"
+BACKUPLOC="/mnt/Linux"
 EXCLUDEFILE="$HOME/.local/share/backup_exclude_file.txt"
 
 eval [ -d "$BACKUPLOC" ] || (echo "Backup location does not exist. Did you mount the USB drive?" && exit 1)
