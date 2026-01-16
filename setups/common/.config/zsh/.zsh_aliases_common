@@ -24,9 +24,6 @@ alias mv="mv -i"
 # get weather
 alias weather="curl -L http://wttr.in//~${LOCATION:-Manchester}"
 
-# tmux
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
-
 # === python ===
 # uv
 alias uva="uv add"
@@ -87,6 +84,7 @@ alias n="nvim"
 alias oc="opencode"
 
 # === tmux ===
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias t="tmux"
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
