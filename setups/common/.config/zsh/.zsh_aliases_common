@@ -99,3 +99,6 @@ tas() {
 		tmux attach-session -t "$session"
 	fi
 }
+
+# === newsboat ===
+alias nb="newsboat"
