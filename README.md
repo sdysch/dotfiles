@@ -1,6 +1,7 @@
 # dotfiles
 
 [![Install Arch](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml)
+[![Scripts](https://github.com/sdysch/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/shellcheck.yml)
 
  *  This is a store for the various configuration files that I use, across the machines that I work on.
 
