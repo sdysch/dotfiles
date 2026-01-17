@@ -5,10 +5,12 @@ on:
     paths:
       - 'setups/arch/.local/bin/**'
       - 'setups/common/.local/bin/**'
+      - 'install_scripts/*.sh'
   pull_request:
     paths:
       - 'setups/arch/.local/bin/**'
       - 'setups/common/.local/bin/**'
+      - 'install_scripts/*.sh'
 
 jobs:
   shellcheck:
@@ -24,5 +26,9 @@ jobs:
         run: |
           echo "Running ShellCheck on arch scripts..."
           shellcheck --severity=error setups/arch/.local/bin/* || exit 1
+
           echo "Running ShellCheck on common scripts..."
           shellcheck --severity=error setups/common/.local/bin/* || exit 1
+
+          echo "Running ShellCheck on install scripts..."
+          shellcheck --severity=error install_scripts/*.sh || exit 1
