@@ -4,40 +4,101 @@
 # Usage: backup_to_rclone.sh [docs|music|videos|media|all]
 # Defaults to 'all' if no argument given.
 
-# check if already running
-pgrep -f backup_to_rclone.sh > /dev/null && { echo "Already running" ; exit; }
+set -euo pipefail
 
-notify_info "Info" "🔃 Running backup"
+LOCKFILE="$HOME/.cache/backup_to_rclone.lock"
+mkdir -p "$(dirname "$LOCKFILE")"
 
-# config
-LOCATION='google_drive:arch_backups'
-CMD="rclone sync --exclude-from $HOME/.local/share/rclone_exclude.txt \
-  --fast-list \
-  --transfers=8 \
-  --checkers=16 \
-  -v --log-file=$HOME/.local/share/rclone_backup.log"
+# open file descriptor 9 and lock
+exec 9>"$LOCKFILE"
+flock -n 9 || { echo "Already running"; exit 1; }
+
+# ensure lock release on exit or Ctrl+C
+cleanup() {
+    flock -u 9
+    rm -f "$LOCKFILE"
+}
+trap cleanup EXIT INT TERM
+
+notify_info 'Info' '🔃 Running backup'
+
+# --------------------
+# CONFIG
+# --------------------
+
+# backup destinations
+LOCATIONS=(
+  'google_drive:arch_backups'
+  # 'proton_drive:arch_backups'
+)
+
+EXCLUDES_FILE="$HOME/.local/share/rclone_exclude.txt"
+LOG_DIR="$HOME/.local/share/rclone_logs"
+mkdir -p "$LOG_DIR"
+
+RCLONE_BASE_CMD=(
+  rclone sync
+  --exclude-from "$EXCLUDES_FILE"
+  --fast-list
+  --transfers=4
+  --checkers=4
+  -v
+)
 
 # which sets to back up
 TARGET="${1:-all}"
 
+# --------------------
+# FUNCTIONS
+# --------------------
+
+backup() {
+  local SRC="$1"
+  local DEST_SUBDIR="$2"
+  local PIDS=()
+
+  for LOCATION in "${LOCATIONS[@]}"; do
+    (
+      DEST_NAME="$(basename "$LOCATION")"
+      LOG_FILE="$LOG_DIR/${DEST_NAME}_${DEST_SUBDIR}.log"
+
+      "${RCLONE_BASE_CMD[@]}" \
+        "$SRC" \
+        "$LOCATION/$DEST_SUBDIR" \
+        --log-file="$LOG_FILE"
+    ) &
+
+    PIDS+=($!)
+  done
+
+  # wait for all destinations to finish
+  for PID in "${PIDS[@]}"; do
+    wait "$PID"
+  done
+}
+
+# --------------------
+# BACKUP TARGETS
+# --------------------
+
 case "$TARGET" in
   docs)
-    $CMD $HOME/Documents $LOCATION/Documents
+    backup "$HOME/Documents" 'Documents'
     ;;
   media)
-    $CMD $HOME/Music $LOCATION/Music
-    $CMD $HOME/Videos $LOCATION/Videos
+    backup "$HOME/Music" 'Music'
+    backup "$HOME/Videos" 'Videos'
     ;;
   music)
-    $CMD $HOME/Music $LOCATION/Music
+    backup "$HOME/Music" 'Music'
     ;;
   videos)
-    $CMD $HOME/Videos $LOCATION/Videos
+    backup "$HOME/Videos" 'Videos'
     ;;
   all)
-    $CMD $HOME/Documents $LOCATION/Documents
-    $CMD $HOME/Music $LOCATION/Music
-    $CMD $HOME/Videos $LOCATION/Videos
+    backup "$HOME/Documents" 'Documents'
+    backup "$HOME/Music" 'Music'
+    backup "$HOME/Videos" 'Videos'
     ;;
   *)
     echo "Usage: $0 [docs|media|music|videos|all]"
@@ -45,4 +106,4 @@ case "$TARGET" in
     ;;
 esac
 
-notify_info "Info" "✅ Backup ($TARGET) completed"
+notify_info 'Info' "✅ Backup ($TARGET) completed"

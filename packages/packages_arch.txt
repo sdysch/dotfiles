@@ -18,6 +18,7 @@ dolphin
 dunst
 evince
 evince
+exiftool
 eza
 fakeroot
 fastfetch
@@ -64,6 +65,7 @@ notify-osd
 noto-fonts-emoji
 ntfs-3g
 openssh
+p7zip
 pacman-contrib
 pass
 pavucontrol

@@ -1,11 +1,12 @@
 .git/**
+.venv/**
+
 /todolist-backup/**
 /rootInstall/**
 /taskwarrior/**
 /repos/**
 /backups/**
 /vimwiki/**
-/CVs/**
 
 /Manchester/PhD/LepUniv-meetings/**
 /Manchester/PhD/ANA-STDM-2019-21-INT1/**

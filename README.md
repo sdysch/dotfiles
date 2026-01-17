@@ -46,6 +46,7 @@ stow --no-folding common --target=$HOME
 	* sddm.service
 	* wpa_supplicant.service
 * sddm/lightdm themes need to be installed system- not user-wide
+* Have to re-link accounts with rclone 
 
 ### Xubuntu
 Still maintain legacy configs, but they are not guaranteed to work
