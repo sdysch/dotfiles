@@ -1,5 +1,6 @@
 # common aliases
 
+# === ls ===
 # exa over ls
 if type eza > /dev/null 2>&1; then
 	alias ls="eza --icons=always"
@@ -9,11 +10,11 @@ else
 	alias ll="ls -ltrh"
 fi
 
-# grep
+# === grep ===
 alias grep='grep --color=auto -n'
 alias rg='rg --hidden'
 
-# human readable memory by default
+# === human readable memory by default ===
 alias du="du -h"
 alias df="df -h"
 
@@ -71,6 +72,7 @@ alias gwtp="git worktree prune"
 
 alias lg="lazygit"
 
+# === vim ===
 # alias vim to nvim
 if [[ "$EDITOR" == "/usr/bin/nvim" ]] || [[ "$EDITOR" == "nvim" ]]
 then
@@ -79,12 +81,12 @@ then
 fi
 alias v="vim"
 alias n="nvim"
+alias nv="nvim"
 
 # === opencode ===
 alias oc="opencode"
 
 # === tmux ===
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias t="tmux"
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
@@ -102,3 +104,7 @@ tas() {
 
 # === newsboat ===
 alias nb="newsboat"
+
+# === btop ===
+# pick colours from tty
+alias btop="btop --tty"

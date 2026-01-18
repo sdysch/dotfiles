@@ -1,0 +1,35 @@
+# =========================
+#          bat 
+# =========================
+
+# Theme
+--theme=Nord
+
+# Show useful info without clutter
+--style=numbers,changes,header
+
+# Respect git (show +/- in gutter)
+--decorations=always
+
+# Paging behavior
+--paging=auto
+
+# Good default pager behavior:
+#  - F: quit if output fits on one screen
+#  - R: allow ANSI colors
+#  - X: keep content on screen after exit
+--pager="less -FRX"
+
+# Tabs & layout
+--tabs=4
+--wrap=never
+
+# Make bat act as a safe cat replacement
+--italic-text=always
+--color=always
+
+# Language overrides for common config files
+--map-syntax .conf:INI
+--map-syntax .env:INI
+--map-syntax .rc:Shell
+--map-syntax .service:Systemd
