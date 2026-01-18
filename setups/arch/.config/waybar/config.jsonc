@@ -9,6 +9,7 @@
         "pulseaudio",
         "battery",
         "backlight",
+        "custom/uptime",
         "custom/music"
     ],
     "modules-center": [
@@ -35,7 +36,7 @@
 	"cpu": {
 		"interval": 2,
 		"tooltip": false,
-		"on-click": "$TERMINAL -e htop",
+		"on-click": "$TERMINAL -e btop --tty",
 		"format-critical": "<span color='#BF616A'><b> {usage}%</b></span>",
 		"format-high": "<span color='#5E81AC'> {usage}%</span>",
 		"format-medium": "<span color='#81A1C1'> {usage}%</span>",
@@ -108,6 +109,12 @@
         "exec": "weather_formatted",
         "interval": 3600
     },
+
+	"custom/uptime": {
+		"exec": "echo  $(uptime -p | sed 's/hours/h/;s/minutes/m/;s/seconds/s/;s/up //')",
+		"interval": 60,
+		"tooltip": true
+	},
 
     "custom/music": {
         "exec": "musicplayer",
