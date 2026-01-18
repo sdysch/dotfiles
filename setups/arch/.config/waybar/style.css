@@ -78,7 +78,8 @@ window#waybar.hidden {
 #custom-newsboat,
 #custom-weather,
 #custom-diskfree,
-#custom-power
+#custom-power,
+#custom-uptime
 {
   background: @bg-alt;
   color: @fg;
@@ -137,6 +138,7 @@ window#waybar.hidden {
 #custom-pacman { color: @white; }
 #custom-diskfree { color: @white; }
 #custom-weather { color: @white; }
+#custom-uptime { color: @white; }
 #custom-newsboat { color: @white; }
 #custom-internet_speed { color: @fg-dim; }
 
