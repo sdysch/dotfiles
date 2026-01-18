@@ -35,3 +35,9 @@ export VIMWIKI=$HOME/Documents/vimwiki
 
 # python
 export PYTHONBREAKPOINT=pdbpp.set_trace
+
+# FZF
+export FZF_DEFAULT_OPTS="--color 16 --layout=reverse --height 60% --preview='bat -p --color=always {}' --border=rounded --style=minimal"
+
+# less
+export LESS='-FRX'

@@ -81,6 +81,7 @@ export TASKDATA=$XDG_CONFIG_HOME/task
 export TASKRC=$XDG_CONFIG_HOME/taskwarrior/.taskrc
 
 # less
+export LESS='-FRX'
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
@@ -92,8 +93,6 @@ export WALLPAPERSDIR="$HOME/dotfiles/wallpapers"
 export thesisDir="$HOME/Documents/Manchester/PhD/thesis"
 
 # ssh
-export USERCERN="sdysch"
-export USERMANC="samdysch"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # ruby
@@ -132,3 +131,6 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
 # npm
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+
+# FZF
+export FZF_DEFAULT_OPTS="--color 16 --layout=reverse --height 60% --preview='bat -p --color=always {}' --border=rounded --style=minimal"

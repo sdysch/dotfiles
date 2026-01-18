@@ -1,5 +1,6 @@
 alacritty
 base-devel
+bat
 bc
 beets
 biber
@@ -8,6 +9,7 @@ blueman
 bluez
 bluez-utils
 brightnessctl
+btop
 chromium
 cmake
 cmatrix
