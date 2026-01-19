@@ -31,14 +31,14 @@ _install_deps() {
         eza \
         zsh \
         direnv \
-        cargo \
         nodejs \
         npm \
         fzf \
         curl \
         git \
 		ripgrep \
-		golang-go
+		golang-go \
+		bat
 }
 
 _install_configs() {
