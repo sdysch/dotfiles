@@ -29,7 +29,7 @@ command -v fzf >/dev/null 2>&1 || { echo "fzf not found"; exit 1; }
 
 # Show interactive search
 # Display emoji + name, allow search
-selected=$(fzf --ansi --prompt="Choose emoji: " --height 40% --reverse < "$EMOJI_FILE")
+selected=$(FZF_DEFAULT_OPTS= fzf --ansi --prompt="Choose emoji: " --height 40% --reverse < "$EMOJI_FILE")
 [ -n "$selected" ] || exit 0
 
 # Extract only the emoji (everything before the first space)
