@@ -37,7 +37,10 @@ export VIMWIKI=$HOME/Documents/vimwiki
 export PYTHONBREAKPOINT=pdbpp.set_trace
 
 # FZF
-export FZF_DEFAULT_OPTS="--color 16 --layout=reverse --height 60% --preview='bat -p --color=always {}' --border=rounded --style=minimal"
+export FZF_DEFAULT_OPTS="--color 16 --layout=reverse --height 60% --border=rounded"
+# coder specifics that can be flaky
+command -v 'bat' > /dev/null && export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview='bat -p --color=always {}'"
+[[ $(uname) = "Darwin" ]] && export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --style=minimal"
 
 # less
 export LESS='-FRX'
