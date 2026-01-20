@@ -30,7 +30,8 @@ require_cmd() {
 _install_deps() {
     log 'Installing system dependencies'
     sudo apt-get update -y
-    sudo apt-get install -y nodejs npm golang-go bat
+    # sudo apt-get install -y nodejs npm golang-go bat
+    sudo apt-get install -y bat
 }
 
 _install_configs() {
