@@ -30,19 +30,7 @@ require_cmd() {
 _install_deps() {
     log 'Installing system dependencies'
     sudo apt-get update -y
-    sudo apt-get install -y \
-        # tmux \
-        # stow \
-        # eza \
-        # zsh \
-        # direnv \
-        nodejs \
-        npm \
-        # fzf \
-        # curl \
-        # git \
-		golang-go \
-		bat
+    sudo apt-get install -y nodejs npm golang-go bat
 }
 
 _install_configs() {
