@@ -6,9 +6,14 @@ PACKAGE_INSTALLPATH="dotfiles/install_scripts/packages/install"
 
 NVIM_VERSION="v0.11.5"
 TREESITTER_VERSION="v0.26.3"
+RG_VERSION="15.1.0"
 
 ZSH_PLUGIN_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins"
+
+# have to install these to local as system wide doesn't necessarily persist after restart
 NVIM_INSTALL_DIR="$HOME/.local/bin"
+EZA_INSTALL_DIR="$HOME/.local/bin"
+RG_INSTALL_DIR="$HOME/.local/bin"
 
 # === helpers ===
 log() {
@@ -25,20 +30,8 @@ require_cmd() {
 _install_deps() {
     log 'Installing system dependencies'
     sudo apt-get update -y
-    sudo apt-get install -y \
-        tmux \
-        stow \
-        eza \
-        zsh \
-        direnv \
-        cargo \
-        nodejs \
-        npm \
-        fzf \
-        curl \
-        git \
-		ripgrep \
-		golang-go
+    # sudo apt-get install -y nodejs npm golang-go bat
+    sudo apt-get install -y bat
 }
 
 _install_configs() {
@@ -122,6 +115,34 @@ _install_tree_sitter() {
 	rm -rf "$tmpdir"
 }
 
+_install_eza() {
+	log "Installing eza"
+	require_cmd wget
+	
+	tmpdir="$(mktemp -d)"
+	pushd "$tmpdir" >/dev/null
+
+	wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+	mv eza $EZA_INSTALL_DIR
+
+	popd >/dev/null
+	rm -rf "$tmpdir"
+}
+
+_install_rg() {
+	log "Install ripgrep"
+	require_cmd curl
+
+	tmpdir="$(mktemp -d)"
+	pushd "$tmpdir" >/dev/null
+
+	curl -L "https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu.tar.gz" | tar xz
+	mv ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu/rg $RG_INSTALL_DIR
+
+	popd >/dev/null
+	rm -rf "$tmpdir"
+}
+
 # ====================================================================================================
 #											Main
 # ====================================================================================================
@@ -132,5 +153,7 @@ _install_fonts
 _install_vim
 _install_tree_sitter
 _install_zsh
+_install_eza
+_install_rg
 
 log 'Bootstrap complete'

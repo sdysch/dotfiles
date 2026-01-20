@@ -87,9 +87,11 @@ alias nv="nvim"
 alias oc="opencode"
 
 # === tmux ===
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 alias t="tmux"
 alias ta='tmux attach-session -t'
 alias tn='tmux new-session -s'
+alias tnd='tmux new-session -s -d'
 alias tls='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias ts='tmux switch-client -t' 
