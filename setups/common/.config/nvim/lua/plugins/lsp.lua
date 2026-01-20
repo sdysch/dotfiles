@@ -14,9 +14,9 @@ return {
         ensure_installed = {
           'pyright',
           'bashls',
-          'sqls',
+          -- 'sqls',
           'yamlls',
-          'jsonls',
+          -- 'jsonls',
           'marksman',
         },
         automatic_installation = true,
@@ -62,20 +62,20 @@ return {
         filetypes = { 'sh', 'bash', 'zsh' },
       }
 
-      vim.lsp.config.sqls = {
-        on_attach = on_attach,
-        filetypes = { 'sql' },
-      }
+      -- vim.lsp.config.sqls = {
+      --   on_attach = on_attach,
+      --   filetypes = { 'sql' },
+      -- }
 
       vim.lsp.config.yamlls = {
         on_attach = on_attach,
         filetypes = { 'yaml' },
       }
 
-      vim.lsp.config.jsonls = {
-        on_attach = on_attach,
-        filetypes = { 'json' },
-      }
+      -- vim.lsp.config.jsonls = {
+      --   on_attach = on_attach,
+      --   filetypes = { 'json' },
+      -- }
 
       vim.lsp.config.marksman = {
         on_attach = on_attach,
@@ -86,9 +86,9 @@ return {
       vim.lsp.enable({
         'pyright',
         'bashls',
-        'sqls',
+        -- 'sqls',
         'yamlls',
-        'jsonls',
+        -- 'jsonls',
         'marksman',
       })
     end,
