@@ -98,7 +98,7 @@ alias ts='tmux switch-client -t'
 
 # fzf sessions and attach
 tas() {
-	session=$(tmux ls 2>/dev/null | cut -d: -f1 | fzf --prompt="-> " --header="tmux sessions " --header-first --border=rounded --padding=1 --layout=reverse --info=inline)
+	session=$(tmux ls 2>/dev/null | cut -d: -f1 | FZF_DEFAULT_OPTS= fzf --height 60% --prompt="-> " --header="tmux sessions " --header-first --border=rounded --padding=1 --layout=reverse --info=inline)
 	if [ -n "$session" ]; then
 		tmux attach-session -t "$session"
 	fi
