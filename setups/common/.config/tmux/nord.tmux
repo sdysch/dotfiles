@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # Copyright (c) 2016-present Sven Greb <development@svengreb.de>
 # This source code is licensed under the MIT license found in the license file.
 
@@ -8,7 +9,7 @@ NORD_TMUX_STATUS_CONTENT_NO_PATCHED_FONT_FILE="theme/nord-status-content-no-patc
 NORD_TMUX_STATUS_CONTENT_OPTION="@nord_tmux_show_status_content"
 NORD_TMUX_STATUS_CONTENT_DATE_FORMAT="@nord_tmux_date_format"
 NORD_TMUX_NO_PATCHED_FONT_OPTION="@nord_tmux_no_patched_font"
-_current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_current_dir="$(cd "$(dirname "$0")" && pwd)"
 
 __cleanup() {
   unset -v NORD_TMUX_COLOR_THEME_FILE NORD_TMUX_VERSION
