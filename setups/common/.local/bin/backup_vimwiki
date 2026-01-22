@@ -9,7 +9,7 @@ git add -A > /dev/null
 timestamp=$(date)
 message="Vim wiki automatically backed up at ${timestamp}"
 git commit -m "$message" > /dev/null
-git push origin master > /dev/null
+git push > /dev/null
 notify_info "Info" "$message"
 
 # go back to previous directory

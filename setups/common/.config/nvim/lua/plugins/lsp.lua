@@ -79,7 +79,7 @@ return {
 
       vim.lsp.config.marksman = {
         on_attach = on_attach,
-        filetypes = { 'markdown' },
+        filetypes = { 'markdown', 'vimwiki' },
       }
 
       -- Enable servers
