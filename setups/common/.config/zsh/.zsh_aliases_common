@@ -117,13 +117,24 @@ alias wiki="vim $VIMWIKI/index.md"
 alias wikitodo="vim $VIMWIKI/todo.md"
 alias wikinotes="vim $VIMWIKI/notes.md"
 alias notes="wikinotes"
+# find wikis
 function wif() {
 	file=$(find $VIMWIKI/**.md -type f | fzf)
 	vim $file
 }
-function find_todos() {
+# search wiki
+function wis() {
+  rg --line-number --color=always "$1" $VIMWIKI \
+    | FZF_DEFAULT_OPTS= fzf --ansi --delimiter : --nth 3.. \
+          --preview 'bat --style=plain --color=always --line-range :50 {1}' \
+          --preview-window=up:50% \
+    | awk -F: '{print "+"$2, $1}' \
+    | xargs -r nvim
+}
+# find todos
+function wit() {
   rg --line-number "\[ \]" "$VIMWIKI" \
-  | fzf --delimiter : \
+  | FZF_DEFAULT_OPTS= fzf --delimiter : \
         --nth 3.. \
         --preview 'bat --style=plain --color=always --line-range :50 {1}' \
         --preview-window=up:50% \
@@ -132,5 +143,5 @@ function find_todos() {
 }
 
 # print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
+alias todoLeft="cat $VIMWIKI/todo.md | grep \"^$(printf '\t')\*\" | wc -l"
 
