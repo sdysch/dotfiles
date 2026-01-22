@@ -84,6 +84,7 @@ _install_zsh() {
 _install_packages() {
 	if ! is_ci; then
 		log 'Installing pacman packages'
+		# shellcheck disable=SC2024
 		sudo pacman -S --needed --noconfirm - < packages_arch.txt
 
 		# === AUR ===
