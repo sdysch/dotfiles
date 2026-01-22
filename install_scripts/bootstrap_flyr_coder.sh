@@ -49,7 +49,7 @@ _install_configs() {
 _install_fonts() {
 	log 'Installing fonts'
 	pushd "$DOTFILES_DIR" >/dev/null || exit
-	# shellcheck source=dotfiles/install_scripts/packages/install_fonts.sh
+	# shellcheck disable=SC1090
 	source "${PACKAGE_INSTALLPATH}_fonts.sh"
 	popd >/dev/null || exit
 }
