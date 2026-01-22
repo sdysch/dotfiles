@@ -20,27 +20,33 @@ return {
 			  vim.cmd('e ' .. path)
 		  end
 
-		  -- Backup Vimwiki automatically
+		  -- Backup Vimwiki automatically, only for files inside the wiki
 		  vim.api.nvim_create_autocmd('BufWritePost', {
-			  pattern = '*.wiki',
-			  callback = function()
-				  if vim.fn.executable('backup_vimwiki') == 1 then
-					  vim.fn.system('backup_vimwiki')
+			  pattern = '*.md',
+			  callback = function(args)
+				  local wiki_root = vim.g.wiki_root
+				  local buf_path = vim.fn.expand(args.file)
+				  -- only backup if the file is inside the wiki directory
+				  if wiki_root and buf_path:sub(1, #wiki_root) == wiki_root then
+					  if vim.fn.executable('backup_vimwiki') == 1 then
+						  vim.fn.system('backup_vimwiki')
+					  end
 				  end
 			  end
 		  })
 
-		  -- vimwiki syntax
-		  vim.api.nvim_create_augroup('vimwiki_ft', { clear = true })
-
-		  vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-			  group = 'vimwiki_ft',
-			  pattern = '*.md',
+		  -- Toggle TODO with <Space> in normal mode
+		  vim.api.nvim_create_autocmd('FileType', {
+			  pattern = 'vimwiki',
 			  callback = function()
-				  vim.bo.filetype = 'vimwiki'
+				  vim.keymap.set('n', '<Space>', function()
+					  vim.cmd('VimwikiToggleListItem')
+				  end, { buffer = true, desc = 'Toggle TODO under cursor' })
 			  end,
 		  })
 
+		  -- vimwiki syntax
+		  vim.api.nvim_create_augroup('vimwiki_ft', { clear = true })
 
 		  -- Keymaps
 		  vim.keymap.set('n', '<leader>wt', WikiTodo, { desc = 'Open Vimwiki TODO', silent = true })
