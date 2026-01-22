@@ -14,16 +14,6 @@ alias pgp="pass git push origin master"
 # pacman
 alias p="sudo pacman"
 
-# edit vim wiki
-export VIMWIKI=$HOME/Documents/vimwiki
-alias wiki="vim $VIMWIKI/index.wiki"
-alias wikitodo="vim $VIMWIKI/todo.wiki"
-alias wikinotes="vim $VIMWIKI/notes.wiki"
-alias notes="wikinotes"
-
-# print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
-
 # mounting storage drive, I always forget this. # TODO check location in function
 alias mount_seagate="sudo mount -t ntfs-3g /dev/sda1 /mnt"
 

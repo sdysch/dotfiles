@@ -30,9 +30,6 @@ export HISTFILE=$XDG_DATA_HOME/zsh/history
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export _Z_DATA=$XDG_DATA_HOME/z
 
-# vimwiki (unused)
-export VIMWIKI=$HOME/Documents/vimwiki
-
 # python
 export PYTHONBREAKPOINT=pdbpp.set_trace
 
