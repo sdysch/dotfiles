@@ -1,0 +1,4 @@
+notify_info() {
+    local message="$1"
+    osascript -e "display notification \"$message\" with title \"Info\""
+}
