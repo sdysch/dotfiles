@@ -1,8 +1,0 @@
-#!/bin/bash
-# ==== restores wifi in xubuntu =====
-# REF: https://askubuntu.com/questions/1218141/dell-vostro-5490-no-wifi-in-ubuntu-18-04
-sudo rmmod iwlmvm
-sudo rmmod iwlwifi
-sudo cp /lib/firmware/iwlwifi-Qu-b0-jf-b0-48.ucode{,.bak}
-sudo cp /lib/firmware/iwlwifi-QuZ-a0-jf-b0-48.ucode /lib/firmware/iwlwifi-Qu-b0-jf-b0-48.ucode
-sudo modprobe iwlwifi

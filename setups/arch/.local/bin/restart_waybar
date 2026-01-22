@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if pgrep -x 'waybar' > /dev/null; then
-	killall waybar
-fi
-waybar &
-disown
-
-notify_info "Info" "Waybar restarted"

@@ -4,8 +4,10 @@
 export PATH="$HOME/.local/bin:/usr/bin:/bin"
 
 # Set Wayland session variables
-export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-export HYPRLAND_INSTANCE_SIGNATURE=$(cat "$HOME/.cache/hyprland_sig")
+export XDG_RUNTIME_DIR
+XDG_RUNTIME_DIR="/run/user/$(id -u)"
+export HYPRLAND_INSTANCE_SIGNATURE
+HYPRLAND_INSTANCE_SIGNATURE=$(cat "$HOME/.cache/hyprland_sig")
 
 # Directory with wallpapers
 WALLPAPER_DIR="$HOME/dotfiles/wallpapers/current_rotation"

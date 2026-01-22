@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if pgrep -x 'dunst' > /dev/null; then
-	killall dunst
-fi
-dunst &
-disown
-
-notify_info "Info" "Dunst restarted"

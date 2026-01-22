@@ -12,4 +12,4 @@ BINDINGS=$(hyprctl binds -j | jq -r '
 ')
 
 # Launch Rofi menu
-SELECTED=$(echo "$BINDINGS" | rofi -dmenu -i -p "Hyprland keybinds")
+echo "$BINDINGS" | rofi -dmenu -i -p "Hyprland keybinds"

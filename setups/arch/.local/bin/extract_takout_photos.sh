@@ -102,13 +102,14 @@ process_json() {
 
 process_zip() {
     local zip="$1"
-    local tmp="./tmp_$(basename "$zip" .zip)"
+    local tmp
+    tmp="./tmp_$(basename "$zip" .zip)"
 
     echo "=== Processing $zip ==="
 
     extract_zip "$zip" "$tmp"
 
-    find "$tmp" -type f -name '*.json' | while read json; do
+    find "$tmp" -type f -name '*.json' | while read -r json; do
         process_json "$json"
     done
 

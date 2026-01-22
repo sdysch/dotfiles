@@ -8,7 +8,7 @@ pidof -x playerctl-loop >/dev/null 2>&1 || playerctl-loop >/dev/null 2>&1 &
 # Format state file (0 = artist-title, 1 = album-title)
 FORMAT_FILE="/tmp/player_mus_format"
 [ ! -f "$FORMAT_FILE" ] && echo "0" > "$FORMAT_FILE"
-read FORMAT < "$FORMAT_FILE"
+read -r FORMAT < "$FORMAT_FILE"
 
 # Players priority: Spotify > mpv > mpd
 MUSIC_PLAYING_PLAYERS="spotify mpv mpd"
@@ -19,7 +19,7 @@ MUSIC_PLAYING_PLAYERS="spotify mpv mpd"
 # Loop through players and display first one that is playing
 DISPLAYED=0
 for PLAYER in $MUSIC_PLAYING_PLAYERS; do
-    STATUS=$(playerctl --player=$PLAYER status 2>/dev/null)
+    STATUS="$(playerctl --player="$PLAYER" status 2>/dev/null)"
     [ "$STATUS" != "Playing" ] && continue
 
     # Player-specific icon
@@ -30,7 +30,7 @@ for PLAYER in $MUSIC_PLAYING_PLAYERS; do
         *) ICON=" " ;;         # Default
     esac
 
-    echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+    echo "$ICON$(playerctl metadata --player "$PLAYER" --format "$META")"
     DISPLAYED=1
     break
 done
@@ -46,7 +46,7 @@ if [ "$DISPLAYED" -eq 0 ]; then
             mpd) ICON=" ❚❚ " ;;
         esac
 
-        echo "$ICON"$(playerctl metadata --player $PLAYER --format "$META")
+        echo "$ICON$(playerctl metadata --player $PLAYER --format "$META")"
         DISPLAYED=1
         break
     done

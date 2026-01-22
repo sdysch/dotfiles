@@ -3,32 +3,32 @@ name: ShellCheck
 on:
   push:
     paths:
-      - 'setups/arch/.local/bin/**'
-      - 'setups/common/.local/bin/**'
+      - 'setups/**/.local/bin/**'
       - 'install_scripts/*.sh'
   pull_request:
     paths:
-      - 'setups/arch/.local/bin/**'
-      - 'setups/common/.local/bin/**'
+      - 'setups/**/.local/bin/**'
       - 'install_scripts/*.sh'
 
 jobs:
   shellcheck:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
-      - name: Install ShellCheck
-        run: sudo apt-get update && sudo apt-get install -y shellcheck
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Run ShellCheck
         run: |
-          echo "Running ShellCheck on arch scripts..."
-          shellcheck --severity=error setups/arch/.local/bin/* || exit 1
+          set -e
 
-          echo "Running ShellCheck on common scripts..."
-          shellcheck --severity=error setups/common/.local/bin/* || exit 1
+          echo 'Running ShellCheck…'
 
-          echo "Running ShellCheck on install scripts..."
-          shellcheck --severity=error install_scripts/*.sh || exit 1
+          find \
+            setups/arch/.local/bin \
+            setups/common/.local/bin \
+            setups/flyr/.local/bin \
+            install_scripts \
+            -type f \
+            \( -name '*.sh' -o -perm -111 \) \
+            -print0 |
+          xargs -0 shellcheck

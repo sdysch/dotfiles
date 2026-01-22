@@ -30,14 +30,14 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*dunstrc',
   callback = function()
-    vim.fn.system('restart_dunst')
+    vim.fn.system('pkill -x dunst 2>/dev/null; dunst & disown; notify_info "Info" "Dunst restarted"')
   end
 })
 
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*waybar/*',
   callback = function()
-    vim.fn.system('restart_waybar')
+    vim.fn.system('pkill -x waybar 2>/dev/null; waybar & disown; notify_info "Info" "Waybar restarted"')
   end
 })
 

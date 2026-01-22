@@ -1,15 +1,26 @@
-#!/bin/bash
-# Choose which screen setup. Uses `plugin' and `unplug' scripts
-choices=("monitor\nlaptop")
+#!/usr/bin/env bash
+# Choose which screen setup
 
-#chosen=$(echo -e "$choices" | rofi -dmenu)
-chosen=$(echo -e "$choices" | dmenu)
+choices=$(
+    printf '%s\n' \
+        monitor \
+        laptop \
+        'Quit menu'
+)
 
-case $chosen in
-	"monitor")
-	xrandr --output eDP-1 --primary && xrandr --output HDMI-1 --primary --mode 1920x1080 --right-of eDP-1 && nitrogen --restore;;
-	"laptop")
-	xrandr --output HDMI-1 --off && xrandr --output eDP-1 --primary;;
-	"Quit menu?")
-		return;;
+chosen=$(printf '%s\n' "$choices" | dmenu)
+
+case "$chosen" in
+    monitor)
+        xrandr --output eDP-1 --primary &&
+        xrandr --output HDMI-1 --primary --mode 1920x1080 --right-of eDP-1 &&
+        nitrogen --restore
+        ;;
+    laptop)
+        xrandr --output HDMI-1 --off &&
+        xrandr --output eDP-1 --primary
+        ;;
+    'Quit menu'|'')
+        exit 0
+        ;;
 esac
