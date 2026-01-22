@@ -11,12 +11,12 @@ return {
 
 		  -- Define helper functions
 		  function WikiTodo()
-			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/todo.wiki')
+			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/todo.md')
 			  vim.cmd('e ' .. path)
 		  end
 
 		  function WikiNotes()
-			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/notes.wiki')
+			  local path = vim.fn.fnameescape(vim.g.wiki_root .. '/notes.md')
 			  vim.cmd('e ' .. path)
 		  end
 
@@ -35,7 +35,7 @@ return {
 
 		  vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
 			  group = 'vimwiki_ft',
-			  pattern = '*.wiki',
+			  pattern = '*.md',
 			  callback = function()
 				  vim.bo.filetype = 'vimwiki'
 			  end,
@@ -45,6 +45,10 @@ return {
 		  -- Keymaps
 		  vim.keymap.set('n', '<leader>wt', WikiTodo, { desc = 'Open Vimwiki TODO', silent = true })
           vim.keymap.set('n', '<leader>wn', WikiNotes, { desc = 'Open Vimwiki notes', silent = true })
+		  vim.keymap.set('n', 'gx', function()
+			  local url = vim.fn.expand('<cfile>')
+			  vim.fn.jobstart({ 'open', url }, { detach = true })
+		  end)
 
 	  end
   },
