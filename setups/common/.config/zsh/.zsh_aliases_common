@@ -98,7 +98,7 @@ alias ts='tmux switch-client -t'
 
 # fzf sessions and attach
 tas() {
-	session=$(tmux ls 2>/dev/null | cut -d: -f1 | fzf --prompt="-> " --header="tmux sessions " --header-first --border=rounded --padding=1 --layout=reverse --info=inline)
+	session=$(tmux ls 2>/dev/null | cut -d: -f1 | FZF_DEFAULT_OPTS= fzf --height 60% --prompt="-> " --header="tmux sessions " --header-first --border=rounded --padding=1 --layout=reverse --info=inline)
 	if [ -n "$session" ]; then
 		tmux attach-session -t "$session"
 	fi
@@ -117,13 +117,24 @@ alias wiki="vim $VIMWIKI/index.md"
 alias wikitodo="vim $VIMWIKI/todo.md"
 alias wikinotes="vim $VIMWIKI/notes.md"
 alias notes="wikinotes"
+# find wikis
 function wif() {
 	file=$(find $VIMWIKI/**.md -type f | fzf)
 	vim $file
 }
-function find_todos() {
+# search wiki
+function wis() {
+  rg --line-number --color=always "$1" $VIMWIKI \
+    | FZF_DEFAULT_OPTS= fzf --ansi --delimiter : --nth 3.. \
+          --preview 'bat --style=plain --color=always --line-range :50 {1}' \
+          --preview-window=up:50% \
+    | awk -F: '{print "+"$2, $1}' \
+    | xargs -r nvim
+}
+# find todos
+function wit() {
   rg --line-number "\[ \]" "$VIMWIKI" \
-  | fzf --delimiter : \
+  | FZF_DEFAULT_OPTS= fzf --delimiter : \
         --nth 3.. \
         --preview 'bat --style=plain --color=always --line-range :50 {1}' \
         --preview-window=up:50% \
@@ -132,5 +143,4 @@ function find_todos() {
 }
 
 # print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.wiki | grep \"^$(printf '\t')\*\" | wc -l"
-
+alias todoLeft="grep \"\[ \]\" ~/Documents/vimwiki/todo.md | wc -l"
