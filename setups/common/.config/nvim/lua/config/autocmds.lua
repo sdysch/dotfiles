@@ -80,3 +80,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	vim.highlight.on_yank({ timeout = 300 })
 	end,
 })
+
+-- close iron.nvim repl if it's the last buffer open
+vim.api.nvim_create_autocmd('BufDelete', {
+  callback = function(args)
+    -- iron.nvim sets this buffer variable
+    if not vim.b[args.buf].iron_repl then
+      return
+    end
+
+    -- count remaining listed buffers
+    local listed = vim.tbl_filter(function(b)
+      return vim.fn.buflisted(b) == 1
+    end, vim.api.nvim_list_bufs())
+
+    if #listed == 0 then
+      vim.cmd('quit')
+    end
+  end,
+})
