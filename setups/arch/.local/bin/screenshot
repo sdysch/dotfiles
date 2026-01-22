@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DIR="$HOME/Pictures/screenshots"
 mkdir -p "$DIR"
@@ -11,6 +11,7 @@ USE_SELECTION=0
 while getopts "s" opt; do
     case "$opt" in
         s) USE_SELECTION=1 ;;
+		*) echo "Usage: $0 [-s]" >&2; exit 1 ;;
     esac
 done
 

@@ -4,6 +4,7 @@
 # Shows emoji + name, copies only emoji to clipboard
 
 EMOJI_FILE="${XDG_DATA_HOME:-$HOME/.local/share}/emoji_list"
+unset FZF_DEFAULT_OPTS
 
 # Ensure emoji file exists
 if [ ! -f "$EMOJI_FILE" ]; then
@@ -29,7 +30,7 @@ command -v fzf >/dev/null 2>&1 || { echo "fzf not found"; exit 1; }
 
 # Show interactive search
 # Display emoji + name, allow search
-selected=$(FZF_DEFAULT_OPTS= fzf --ansi --prompt="Choose emoji: " --height 40% --reverse < "$EMOJI_FILE")
+selected=$(fzf --ansi --prompt="Choose emoji: " --height 40% --reverse < "$EMOJI_FILE")
 [ -n "$selected" ] || exit 0
 
 # Extract only the emoji (everything before the first space)
@@ -48,4 +49,6 @@ else
 fi
 
 # Optional notify
-command -v notify-send -i dialog-information "Info" >/dev/null 2>&1 && notify-send -i dialog-information "Info" "'$emoji' copied to clipboard." &
+if command -v notify-send >/dev/null 2>&1; then
+    notify-send -i dialog-information "Info" "'$emoji' copied to clipboard." &
+fi

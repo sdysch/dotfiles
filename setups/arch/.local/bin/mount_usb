@@ -45,7 +45,7 @@ case "$fstype" in
         sudo mount -t ntfs-3g "$device" "$mountpoint"
         ;;
     vfat|fat32)
-        sudo mount -t vfat -o uid=$(id -u),gid=$(id -g) "$device" "$mountpoint"
+        sudo mount -t vfat -o uid="$(id -u)",gid="$(id -g)" "$device" "$mountpoint"
         ;;
     ext4|ext3|ext2)
         sudo mount -t "$fstype" "$device" "$mountpoint"

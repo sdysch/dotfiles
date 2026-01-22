@@ -30,11 +30,11 @@ MENU_ARGS="-fn 'xos4 Terminus:size=12' -sb '#A3BE8C' -nb '#2E3440' -nf '#D8DEE9'
 
 if [ "$1" = "-r" ]; then
   MENU_PROGRAM="rofi"
-  MENU_ARGS="-dmenu -i -p 'Choose an emoji'"
+  MENU_ARGS=(-dmenu -i -p 'Choose an emoji')
 fi
 
 # Show menu
-selected=$($MENU_PROGRAM $MENU_ARGS < "$EMOJI_FILE")
+selected=$($MENU_PROGRAM "${MENU_ARGS[@]}" < "$EMOJI_FILE")
 [ -n "$selected" ] || exit 0
 
 # Extract only the emoji (everything before the first space)

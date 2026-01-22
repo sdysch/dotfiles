@@ -1,16 +1,18 @@
 #!/bin/sh
 # automatically backup vimwiki
 
-[ -d $VIMWIKI ] || exit 1
+set -eu
 
-# add files, commit, push
-pushd $VIMWIKI
-git add -A > /dev/null
-timestamp=$(date)
-message="Vim wiki automatically backed up at ${timestamp}"
-git commit -m "$message" > /dev/null
-git push > /dev/null
-notify_info "Info" "$message"
+[ -d "$VIMWIKI" ] || exit 0
 
-# go back to previous directory
-popd
+# exit early if nothing changed
+git -C "$VIMWIKI" diff --quiet && exit 0
+
+timestamp=$(date -Is)
+message="Vimwiki auto-backup @ $timestamp"
+
+git -C "$VIMWIKI" add -A
+git -C "$VIMWIKI" commit -m "$message" > /dev/null
+git -C "$VIMWIKI" push > /dev/null
+
+notify_info "Vimwiki" "$message"
