@@ -143,5 +143,4 @@ function wit() {
 }
 
 # print out how many (top-level) todo items I have left
-alias todoLeft="cat $VIMWIKI/todo.md | grep \"^$(printf '\t')\*\" | wc -l"
-
+alias todoLeft="grep \"\[ \]\" ~/Documents/vimwiki/todo.md | wc -l"

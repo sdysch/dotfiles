@@ -5,9 +5,12 @@ return {
 	  config = function()
 		  -- Set global variables
 		  vim.g.vimwiki_list = {
-			  { path = os.getenv('VIMWIKI') }
+			  { path = os.getenv('VIMWIKI'), syntax = 'markdown', ext = 'md' }
 		  }
 		  vim.g.wiki_root = os.getenv('VIMWIKI')
+		  -- not all markdown files are vimwiki
+		  vim.g.vimwiki_global_ext = 0
+		  vim.g.vimwiki_ext2syntax = {}
 
 		  -- Define helper functions
 		  function WikiTodo()
