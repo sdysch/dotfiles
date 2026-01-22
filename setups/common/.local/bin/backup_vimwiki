@@ -3,10 +3,10 @@
 
 set -eu
 
-[ -d "$VIMWIKI" ] || exit 0
+#!/bin/sh
+echo "backup_vimwiki ran at $(date)" >> /tmp/backup_vimwiki.log
 
-# exit early if nothing changed
-git -C "$VIMWIKI" diff --quiet && exit 0
+[ -d "$VIMWIKI" ] || exit 0
 
 timestamp=$(date -Is)
 message="Vimwiki auto-backup @ $timestamp"

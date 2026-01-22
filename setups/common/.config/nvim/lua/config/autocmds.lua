@@ -99,3 +99,23 @@ vim.api.nvim_create_autocmd('BufDelete', {
     end
   end,
 })
+
+local wiki_root = vim.fn.expand(vim.env.VIMWIKI or "~/Documents/vimwiki")
+wiki_root = wiki_root:gsub("/+$","")
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.md",
+    callback = function(args)
+        local buf_path = vim.fn.expand(args.file)
+
+        -- Exit if file is not inside wiki_root
+        if buf_path:sub(1, #wiki_root) ~= wiki_root then
+            return
+        end
+
+        -- Run backup if available
+        if vim.fn.executable("backup_vimwiki") == 1 then
+            vim.fn.system("backup_vimwiki")
+        end
+    end,
+})
