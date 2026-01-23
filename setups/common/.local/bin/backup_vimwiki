@@ -8,7 +8,7 @@ echo "backup_vimwiki ran at $(date)" >> /tmp/backup_vimwiki.log
 
 [ -d "$VIMWIKI" ] || exit 0
 
-timestamp=$(date -Is)
+timestamp=$(date -I)
 message="Vimwiki auto-backup @ $timestamp"
 
 git -C "$VIMWIKI" add -A
