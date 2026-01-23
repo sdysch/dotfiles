@@ -24,10 +24,12 @@ map({'n','v'}, '<leader>Y', '"*y', { noremap=true, silent=true })
 map({'n','v'}, '<leader>P', '"*p', { noremap=true, silent=true })
 
 -- Split navigation and resizing
-map('n', '<C-h>', '<C-w>h', { noremap=true })
-map('n', '<C-j>', '<C-w>j', { noremap=true })
-map('n', '<C-k>', '<C-w>k', { noremap=true })
-map('n', '<C-l>', '<C-w>l', { noremap=true })
+-- These interfere with vim-tmux-navigator now
+-- map('n', '<C-h>', '<C-w>h', { noremap=true })
+-- map('n', '<C-j>', '<C-w>j', { noremap=true })
+-- map('n', '<C-k>', '<C-w>k', { noremap=true })
+-- map('n', '<C-l>', '<C-w>l', { noremap=true })
+
 map('n', '<C-Left>', ':vertical resize +3<CR>', { noremap=true, silent=true })
 map('n', '<C-Right>', ':vertical resize -3<CR>', { noremap=true, silent=true })
 map('n', '<C-Up>', ':resize +3<CR>', { noremap=true, silent=true })
