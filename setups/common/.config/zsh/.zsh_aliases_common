@@ -144,3 +144,6 @@ function wit() {
 
 # print out how many (top-level) todo items I have left
 alias todoLeft="grep \"\[ \]\" ~/Documents/vimwiki/todo.md | wc -l"
+
+# === kittens ===
+alias kplot="kitty +kitten icat"
