@@ -19,16 +19,30 @@ return {
         wiki_dirs = {
           { name = "main", path = wiki_root },
         },
-        todo = {
-          toggle_key = "<Space>",
+        keymaps = {
+          toggle_task = "<Space>",
         },
       }
 
       -- Open URLs under cursor with gx
-      vim.keymap.set("n", "gx", function()
-        local url = vim.fn.expand("<cfile>")
-        vim.fn.jobstart({ "open", url }, { detach = true })
-      end)
+	  vim.keymap.set("n", "gx", function()
+		  local target = vim.fn.expand("<cfile>")
+		  local vimwiki = vim.env.VIMWIKI
+
+		  -- Remove vimwiki-style {{ }} wrappers
+		  target = target:gsub("^{{", ""):gsub("}}$", "")
+
+		  -- If not URL and not absolute path, prepend VIMWIKI
+		  if not target:match("^%w+://") and not target:match("^/") then
+			  target = vimwiki .. "/" .. target
+		  end
+
+		  -- Normalize path
+		  target = vim.fn.fnamemodify(target, ":p")
+
+		  vim.fn.jobstart({ "open", target }, { detach = true })
+	  end)
+
 
     end,
   },
