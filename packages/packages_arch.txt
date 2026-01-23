@@ -19,7 +19,6 @@ direnv
 dolphin
 dunst
 evince
-evince
 exiftool
 eza
 fakeroot
@@ -40,6 +39,7 @@ i3lock
 imagemagick
 isync
 jq
+kitty
 lazygit
 less
 lf
@@ -53,7 +53,6 @@ make
 mpc
 mpd
 mpd-mpris
-mpv
 mpv
 msmtp
 ncdu
@@ -82,11 +81,9 @@ reflector
 ripgrep
 ristretto
 rofi
-rofi
 rsync
 ruby
 ruby-erb
-scrot
 scrot
 sddm
 shellcheck
@@ -105,17 +102,14 @@ tree-sitter-cli
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
 unzip
-unzip
 usbutils
 vim
-vlc
 vlc
 waybar
 wget
 wl-clipboard
 xclip
 xdotool
-xfce4-terminal
 xorg-apps
 xorg-server
 xorg-xinit
