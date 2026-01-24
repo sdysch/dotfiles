@@ -4,6 +4,7 @@ format = """
 [](surface0)\
 $os\
 $username\
+$hostname\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
@@ -14,8 +15,11 @@ $python\
 [](fg:teal bg:blue)\
 [](fg:blue bg:purple)\
 $time\
+$cmd_duration\
 [ ](fg:purple)\
 $line_break$character"""
+
+# right_format = """$hostname"""
 
 palette = 'catppuccin_mocha'
 
@@ -115,7 +119,7 @@ format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
 [python]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ($virtualenv) ](fg:base bg:teal)]($style)'
 
 [time]
 disabled = false
@@ -134,3 +138,11 @@ vimcmd_symbol = '[](bold fg:creen)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
+
+[hostname]
+ssh_only = true
+format = '[\[ $hostname\]](fg:yellow)'
+
+[cmd_duration]
+min_time = 2_000
+format = '[[⏱ $duration](fg:mantle bg:purple)]($style)'
