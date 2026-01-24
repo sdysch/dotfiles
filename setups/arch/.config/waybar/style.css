@@ -74,6 +74,7 @@ window#waybar.hidden {
 #tray,
 #custom-logo,
 #custom-music,
+#custom-todos,
 #custom-pacman,
 #custom-newsboat,
 #custom-weather,
@@ -135,6 +136,7 @@ window#waybar.hidden {
 
 /***** CUSTOM MODULES *****/
 #custom-kernel { color: @red; }
+#custom-todos { color: @white; }
 #custom-pacman { color: @white; }
 #custom-diskfree { color: @white; }
 #custom-weather { color: @white; }

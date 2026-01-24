@@ -35,6 +35,16 @@ style = "fg:#2e3440 bg:#88c0d0"
 [git_status]
 style = "fg:#2e3440 bg:#88c0d0 bold"
 format = "[ $all_status$ahead_behind ]($style)"
+conflicted = "⚡$count "      # conflicts
+ahead      = "⇡$count "      # commits ahead
+behind     = "⇣$count "      # commits behind
+diverged   = "⧖$count "      # diverged branch
+untracked  = "…$count "      # untracked files
+stashed    = "📦$count "     # stash (Nerd Font box)
+modified   = "✎$count "      # modified
+staged     = "✔$count "      # staged
+renamed    = "➜$count "      # renamed
+deleted    = "✖$count "      # deleted
 
 [python]
 symbol = '󰌠 '
@@ -69,6 +79,7 @@ format = "[ 󰉋 $path ]($style)[$read_only]($read_only_style)"
 read_only_style = "fg:#2e3440 bold bg:#81a1c1"
 truncation_length = 3
 truncation_symbol = "…/"
+truncate_to_repo = true
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -78,6 +89,7 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [cmd_duration]
+min_time = 2
 format = "[ 󰔚 $duration ]($style)"
 style = "fg:#2e3440 bg:#d9dee9"
 
@@ -91,7 +103,7 @@ vimcmd_replace_symbol = "[  ](bold fg:#d08770)"
 vimcmd_visual_symbol = "[  ](bold fg:#b48ead)"
 
 [direnv]
-disabled = false
+disabled = true
 format = "[ $symbol$loaded ]($style)"
 style = 'fg:#2e3440 bg:#8fbcbb'
 
