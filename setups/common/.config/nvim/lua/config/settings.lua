@@ -30,8 +30,22 @@ vim.opt.modelines = 5
 vim.opt.wildignore = {'*.o','*.pyc','*/tmp/*','*.so','*.swp','*.zip'}
 vim.env.TMPDIR = vim.fn.expand('~/.cache/nvim/tmp')
 
+-- grep
 vim.opt.grepprg = 'rg --vimgrep --smart-case --hidden'
 vim.opt.grepformat = '%f:%l:%c:%m'
 
+-- integrated terminals
 vim.api.nvim_create_user_command('Term', 'terminal', {})
 vim.api.nvim_create_user_command('Vterm', 'vertical terminal', {})
+
+-- unlimited undofile
+-- Enable persistent undo
+vim.o.undofile = true
+
+-- Set undodir
+local undodir = os.getenv('XDG_DATA_HOME') or os.getenv('HOME')..'/.local/share'
+vim.o.undodir = undodir..'/nvim/undo'
+
+-- Unlimited undo levels
+vim.o.undolevels = 10000
+vim.o.undoreload = 10000
