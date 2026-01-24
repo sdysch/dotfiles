@@ -91,6 +91,7 @@ slurp
 speedtest-cli
 spotify-launcher
 spotifyd
+starship
 stow
 swayidle
 sxiv

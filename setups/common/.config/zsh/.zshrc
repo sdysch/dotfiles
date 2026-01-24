@@ -1,21 +1,21 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+# [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
 
 # zsh plugins
 ZSH_PLUGINS=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
 
+#  powerlevel10k/powerlevel10k.zsh-theme \
 for plugin in \
   zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh \
   zsh-autosuggestions/zsh-autosuggestions.plugin.zsh \
-  powerlevel10k/powerlevel10k.zsh-theme \
   zsh-you-should-use/you-should-use.plugin.zsh \
   conda-zsh-completion/conda-zsh-completion.plugin.zsh \
   z/z.sh; do
@@ -70,3 +70,5 @@ export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
+
+eval "$(starship init zsh)"
