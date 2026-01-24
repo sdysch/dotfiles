@@ -12,7 +12,6 @@ fi
 
 # === grep ===
 alias grep='grep --color=auto -n'
-alias rg='rg --hidden'
 
 # === human readable memory by default ===
 alias du="du -h"

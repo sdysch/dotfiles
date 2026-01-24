@@ -134,3 +134,6 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # FZF
 export FZF_DEFAULT_OPTS="--color 16 --layout=reverse --height 60% --preview='bat -p --color=always {}' --border=rounded --style=minimal"
+
+# ripgrep
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config

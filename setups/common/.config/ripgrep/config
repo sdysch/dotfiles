@@ -1,0 +1,19 @@
+# search hidden files
+--hidden
+
+# max columns
+--max-columns=150
+--max-columns-preview
+
+# ignore git
+--glob=!.git/*
+
+# always colours
+--colors=line:none
+--colors=line:style:bold
+
+# ignore case
+--smart-case
+
+# follow symlinks
+--follow
