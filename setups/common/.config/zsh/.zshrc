@@ -11,12 +11,16 @@ fi
 
 # zsh plugins
 ZSH_PLUGINS=${XDG_DATA_HOME:-$HOME/.local/share}/zsh_plugins
-source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
-source $ZSH_PLUGINS/zsh-you-should-use/you-should-use.plugin.zsh
-source $ZSH_PLUGINS/conda-zsh-completion/conda-zsh-completion.plugin.zsh
-source $ZSH_PLUGINS/z/z.sh
+
+for plugin in \
+  zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh \
+  zsh-autosuggestions/zsh-autosuggestions.plugin.zsh \
+  powerlevel10k/powerlevel10k.zsh-theme \
+  zsh-you-should-use/you-should-use.plugin.zsh \
+  conda-zsh-completion/conda-zsh-completion.plugin.zsh \
+  z/z.sh; do
+  source "$ZSH_PLUGINS/$plugin"
+done
 
 # zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
