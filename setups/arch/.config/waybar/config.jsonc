@@ -16,6 +16,7 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/todos",
         "custom/pacman",
         "custom/newsboat",
         "custom/weather",
@@ -82,6 +83,12 @@
         "format-icons": ["", ""]
     },
 
+    "custom/todos": {
+        "format": "📝 {}",
+        "interval": 600,
+        "exec": "vimwiki_todo"
+    },
+
     "custom/pacman": {
         "format": "\uf013 {}",
         "interval": 3600,
@@ -111,7 +118,7 @@
     },
 
 	"custom/uptime": {
-		"exec": "echo  $(uptime -p | sed 's/hours/h/;s/minutes/m/;s/seconds/s/;s/up //')",
+		"exec": "echo ⏱️ $(uptime -p | sed 's/hours/h/;s/minutes/m/;s/seconds/s/;s/up //')",
 		"interval": 60,
 		"tooltip": true
 	},
