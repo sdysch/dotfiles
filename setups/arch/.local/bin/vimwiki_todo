@@ -2,5 +2,5 @@
 TODO_FILE="$HOME/Documents/vimwiki/todo.md"
 if [[ -f "$TODO_FILE" ]]; then
     COUNT=$(grep "\[ \]" "$TODO_FILE" | wc -l)
-    [[ $COUNT -gt 0 ]] && echo $COUNT
+    [[ $COUNT -gt 0 ]] && echo "$COUNT"
 fi
