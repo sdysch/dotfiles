@@ -23,6 +23,8 @@ brew "tmux"
 brew "tree"
 brew "tree-sitter-cli"
 brew "wget"
+brew "starship"
+
 cask "orbstack"
 cask "iterm2"
 cask "kitty"
