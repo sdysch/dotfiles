@@ -4,62 +4,25 @@
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# === Main Prompt Format ===
 format = """
-[](#5e81ac)\
-$os$username[@](bg:#5e81ac fg:#2e3440)$hostname\
-[](bg:#81a1c1 fg:#5e81ac)\
-$directory\
-[](bg:#88c0d0 fg:#81a1c1)\
-$git_branch$git_status\
-[](bg:#8fbcbb fg:#88c0d0)\
-$python$direnv\
-[](bg:#d9dee9 fg:#8fbcbb)\
-$cmd_duration\
-[](fg:#d9dee9)\
-$fill\
-(bg:#88c0d0 fg:#d9dee9)\
-$jobs\
-(bg:#5e81ac fg:#88c0d0)\
-$time\
-(fg:#5e81ac)\
-$line_break\
-$character
+$os$username$hostname$directory$git_branch$git_status$python$cmd_duration$jobs$time$line_break$character
 """
 
-
-[git_branch]
-format = "[ $symbol$branch(:$remote_branch) ]($style)"
-symbol = "󰘬 "
-style = "fg:#2e3440 bg:#88c0d0"
-
-[git_status]
-style = "fg:#2e3440 bg:#88c0d0 bold"
-format = "[ $all_status$ahead_behind ]($style)"
-conflicted = "⚡$count "      # conflicts
-ahead      = "⇡$count "      # commits ahead
-behind     = "⇣$count "      # commits behind
-diverged   = "⧖$count "      # diverged branch
-untracked  = "…$count "      # untracked files
-stashed    = "📦$count "     # stash (Nerd Font box)
-modified   = "✎$count "      # modified
-staged     = "✔$count "      # staged
-renamed    = "➜$count "      # renamed
-deleted    = "✖$count "      # deleted
-
-[python]
-symbol = '󰌠 '
-format = "[ $symbol($virtualenv )]($style)"
-style = "fg:#2e3440 bg:#8fbcbb"
+[username]
+show_always = true
+format = '[$user]($style)'
+style_user = "fg:#2e3440 bg:#5e81ac"
 
 [hostname]
 ssh_only = false
-style = "fg:#2e3440 bg:#5e81ac"
-format = "[$ssh_symbol$hostname ]($style)"
+format = "[$ssh_symbol@$hostname]($style)"
 ssh_symbol = " "
+style = "fg:#2e3440 bg:#5e81ac"
 
 [os]
-style = "fg:#2e3440 bg:#5e81ac"
 disabled = false
+style = "fg:#2e3440 bg:#5e81ac"
 
 [os.symbols]
 Arch = ' '
@@ -67,31 +30,60 @@ Ubuntu = "󰕈"
 Macos = ""
 Linux = "󰌽"
 
-[username]
-show_always = true
-format = '[$user]($style)'
-style_user = "fg:#2e3440 bg:#5e81ac"
-
 [directory]
 style = "fg:#2e3440 bg:#81a1c1"
-read_only = " "
-format = "[ 󰉋 $path ]($style)[$read_only]($read_only_style)"
+read_only = ""
 read_only_style = "fg:#2e3440 bold bg:#81a1c1"
+format = "[ 󰉋 $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+
+[git_branch]
+symbol = "󰘬 "
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+style = "fg:#2e3440 bg:#88c0d0"
+
+[git_status]
+style = "fg:#2e3440 bg:#88c0d0 bold"
+format = "[ $all_status$ahead_behind ]($style)"
+conflicted = "⚡$count"
+ahead      = "⇡$count"
+behind     = "⇣$count"
+diverged   = "⧖$count"
+untracked  = "…$count"
+stashed    = "📦$count"
+modified   = "✎$count"
+staged     = "✔$count"
+renamed    = "➜$count"
+deleted    = "✖$count"
+
+[python]
+symbol = '󰌠 '
+format = "[ $symbol$virtualenv ]($style)"
+style = "fg:#2e3440 bg:#8fbcbb"
 
 [cmd_duration]
-min_time = 2
+min_time = 5
 format = "[ 󰔚 $duration ]($style)"
 style = "fg:#2e3440 bg:#d9dee9"
+
+[jobs]
+disabled = false
+format = "[ $symbol$number ]($style)"
+style = "fg:#2e3440 bg:#88c0d0"
+
+[time]
+disabled = false
+format = "[  $time ]($style)"
+style = "fg:#2e3440 bg:#5e81ac"
+time_format = "%H:%M"
 
 [character]
 success_symbol = "[](bold fg:#a3be8c)"
@@ -101,19 +93,3 @@ vimcmd_symbol = "[  ](bold fg:#a3be8c)"
 vimcmd_replace_one_symbol = "[  ](bold fg:#ebcb8b)"
 vimcmd_replace_symbol = "[  ](bold fg:#d08770)"
 vimcmd_visual_symbol = "[  ](bold fg:#b48ead)"
-
-[direnv]
-disabled = true
-format = "[ $symbol$loaded ]($style)"
-style = 'fg:#2e3440 bg:#8fbcbb'
-
-[jobs]
-disabled = false
-format = "(bg:#88c0d0 fg:#d9dee9)[ $symbol$number ]($style)(bg:#5e81ac fg:#88c0d0)"
-style = "fg:#2e3440 bg:#88c0d0"
-
-[time]
-disabled = false
-format = "[  $time ]($style)"
-style = "fg:#2e3440 bg:#5e81ac"
-time_format = "%H:%M"
