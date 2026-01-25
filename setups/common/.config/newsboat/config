@@ -1,16 +1,15 @@
 show-read-feeds no
 auto-reload yes
 max-items 1000
+browser firefox
 
-
+# Keybindings
 bind-key j down
 bind-key k up
-bind-key j next articlelist
-bind-key k prev articlelist
 bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
-bind-key G end
 bind-key g home
+bind-key G end
 bind-key d pagedown
 bind-key u pageup
 bind-key l open
@@ -22,15 +21,16 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-color listnormal cyan default
+# Colors: feed list
+color listnormal blue default
+color listnormal_unread green default bold
 color listfocus black yellow standout bold
-color listnormal_unread cyan default bold
-color listfocus_unread yellow default bold
-color info red black bold
-color article cyan default
+color listfocus_unread black magenta standout bold
 
-# syntax highlighting
+# Colors: info/status bar
+color info magenta black bold
+color article blue default
+
+# Syntax highlighting in articles
 highlight all "---.*---" magenta default bold
 highlight feedlist ".*(0/0))" black
-
-browser firefox
