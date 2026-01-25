@@ -100,6 +100,7 @@ vim.api.nvim_create_autocmd('BufDelete', {
   end,
 })
 
+--- backup vimwiki ---
 local wiki_root = vim.fn.expand(vim.env.VIMWIKI or "~/Documents/vimwiki")
 wiki_root = wiki_root:gsub("/+$","")
 
@@ -118,4 +119,17 @@ vim.api.nvim_create_autocmd("BufWritePost", {
             vim.fn.system("backup_vimwiki")
         end
     end,
+})
+
+
+--- update waybar todo module on save ---
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*todo.md',
+  callback = function()
+    vim.fn.system({
+    	'sh',
+    	'-c',
+    	'command -v vimwiki_todo waybar > /dev/null && pkill -RTMIN+10 waybar'
+	})
+  end
 })

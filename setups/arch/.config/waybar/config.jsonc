@@ -85,8 +85,8 @@
 
     "custom/todos": {
         "format": "📝 {}",
-        "interval": 600,
-        "exec": "vimwiki_todo"
+        "exec": "vimwiki_todo",
+        "signal": 10
     },
 
     "custom/pacman": {
