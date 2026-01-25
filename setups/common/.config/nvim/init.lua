@@ -26,12 +26,14 @@ require('lazy').setup('plugins', {
     lazy = true,
   },
   install = {
-    colorscheme = { 'nord' },
+    -- colorscheme = { 'nord' },
   },
 })
 
 -- colourscheme and syntax
-vim.cmd('colorscheme nord')
+-- vim.cmd('colorscheme nord')
+-- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+vim.cmd('colorscheme catppuccin-frappe')
 vim.cmd('syntax on')
 
 -- settings

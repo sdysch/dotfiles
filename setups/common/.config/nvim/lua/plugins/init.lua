@@ -1,5 +1,8 @@
 -- other configs defined in names files
 return {
+  -- theme
+  { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
+
   -- commenting
   { 'preservim/nerdcommenter', keys = { 'gc', 'gcc' } },
 
