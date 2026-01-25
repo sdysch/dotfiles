@@ -18,7 +18,7 @@ Far :gmail-remote:
 Near :gmail-local:
 Patterns INBOX "[Gmail]/Sent Mail" "[Gmail]/Drafts" "[Gmail]/Trash"
 Create Both
-Sync Pull
+Sync All
 Expunge Both
 SyncState *
 MaxMessages 50
