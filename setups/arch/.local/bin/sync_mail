@@ -1,50 +1,39 @@
 #!/usr/bin/env bash
 
-
 CONFIG="$HOME/.config/isync/mbsyncrc"
-DATE="$(date '+%Y-%m-%d %H:%M:%S')"
-LOGFILE="$HOME/.local/share/mail/mbsync.log"
+LASTRUN="${XDG_CONFIG_HOME:-$HOME/.config}/mail/.mailsynclastrun"
+MAILDIR="$HOME/.local/share/mail"
 
-# Check if mbsync is already running
-if pgrep -x mbsync >/dev/null; then
-    echo "[$DATE] mbsync is already running, skipping..." >> "$LOGFILE"
-    if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
-        notify-send -u normal -i "mail-read" "Mail Sync" "mbsync is already running, skipping..."
-    fi
-    exit 0
-fi
-
-# Notify starting
-if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    notify-send -u low -i "mail-send" "Mail Sync" "Starting mail sync..."
-fi
+mkdir -p "$(dirname "$LASTRUN")"
 
 # Run mbsync
-OUTPUT=$(mbsync -c "$CONFIG" -a 2>&1)
-EXIT_CODE=$?
+mbsync -c "$CONFIG" -a >/dev/null 2>&1
 
-# Determine message for notify-send
-if [ $EXIT_CODE -eq 0 ]; then
-    MESSAGE="Mail sync completed successfully at $DATE"
-    ICON="mail-unread"
-else
-    MESSAGE="Mail sync failed at $DATE
-$OUTPUT"
-    ICON="dialog-error"
+# Find new mails since last run
+NEW_MAIL_FILES=$(find "$MAILDIR" -type f -path "*/INBOX/new/*" 2>/dev/null)
+NEW_COUNT=$(echo "$NEW_MAIL_FILES" | sed '/^\s*$/d' | wc -l)
+
+# Print count of new mail
+if [ "$NEW_COUNT" -gt 0 ]; then
+	notify-send -u normal -i "mail-unread" "Mail Sync" "📬 $NEW_COUNT new mail(s)"
 fi
 
-# Notify finished
-if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    notify-send -u normal -i "$ICON" "Mail Sync" "$MESSAGE"
-fi
+# Iterate over new mail files
+for MAILFILE in $NEW_MAIL_FILES; do
+    FROM=$(awk '/^From: / {print; exit}' "$MAILFILE" | sed 's/^From: //' | tr -d '\n\t')
+    SUBJECT=$(awk '/^Subject: / {print; exit}' "$MAILFILE" | sed 's/^Subject: //' | tr -d '\n\t')
 
-# ping waybar
-command -v waybar > /dev/null && pkill -RTMIN+9 waybar
+    # echo "From: $FROM"
+    # echo "Subject: $SUBJECT"
 
-# Log output
-# shellcheck disable=SC2129
-echo "[$DATE] Exit code: $EXIT_CODE" >> "$LOGFILE"
-echo "$OUTPUT" >> "$LOGFILE"
-echo "----------------------------------------" >> "$LOGFILE"
+    # Notify each new mail
+    if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+        notify-send -u normal -i "mail-unread" "📬 $FROM" "$SUBJECT"
+    fi
+done
 
+# Update last run timestamp
+touch "$LASTRUN"
 
+# Ping waybar
+command -v waybar >/dev/null && pkill -RTMIN+9 waybar
