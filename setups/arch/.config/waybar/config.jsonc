@@ -4,24 +4,24 @@
     "spacing": 0,
     "height": 32,
     "modules-left": [
-        // "custom/logo",
+        "custom/logo",
         "clock",
         "pulseaudio",
         "battery",
-        "backlight",
-        "custom/uptime",
-        "custom/duolingo",
+        "custom/weather",
+        // "backlight",
+        // "custom/uptime",
         "custom/music"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/duolingo",
         "custom/mail",
         "custom/todos",
         "custom/pacman",
         "custom/newsboat",
-        "custom/weather",
         "cpu",
         "custom/diskfree",
         "tray"
