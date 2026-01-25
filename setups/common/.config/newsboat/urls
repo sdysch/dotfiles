@@ -9,6 +9,7 @@
 "query:Tech [skim]:tags # \"tech\" and tags # \"skim\""
 "query:Tech [longread]:tags # \"tech\" and tags # \"longread\""
 "query:Tech [company blogs]:tags # \"tech\" and tags # \"company\""
+"query:Tech [personal blogs]:tags # \"tech\" and tags # \"blog\""
 "query:python :tags # \"python\""
 "query:Company news:tags # \"news\" and tags # \"company\""
 "query:Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
@@ -82,6 +83,9 @@ https://www.theregister.com/software/ai_ml/headlines.atom news tech skim
 https://www.theregister.com/software/applications/headlines.atom news tech skim
 https://www.theregister.com/software/databases/headlines.atom news tech skim
 https://proton.me/blog/feed news tech longread company
+
+https://www.markpitblado.me/feed.xml blog tech
+https://blog.sergeantbiggs.net/posts/index.xml blog tech
 
 
 # arxiv
