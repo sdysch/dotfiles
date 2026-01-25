@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import json
+import urllib.request
+
+url = f'https://www.duolingo.com/2017-06-30/users?username=sdysch'
+
+try:
+    with urllib.request.urlopen(url, timeout=5) as response:
+        data = json.load(response)
+
+    user = data['users'][0]
+
+    streak_length = user.get('streakData', {}).get('currentStreak', {}).get('length', 0)
+
+    if streak_length > 0:
+        print(f'🇩🇰🔥 {streak_length}')
+    else:
+        print('🇩🇰⏳ 0')
+
+except Exception:
+    print('🇩🇰❓')

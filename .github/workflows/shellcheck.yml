@@ -3,11 +3,11 @@ name: ShellCheck
 on:
   push:
     paths:
-      - 'setups/**/.local/bin/**'
+      - 'setups/**/.local/bin/**/*.sh'
       - 'install_scripts/*.sh'
   pull_request:
     paths:
-      - 'setups/**/.local/bin/**'
+      - 'setups/**/.local/bin/**/*.sh'
       - 'install_scripts/*.sh'
 
 jobs:

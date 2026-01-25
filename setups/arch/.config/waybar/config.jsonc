@@ -4,12 +4,13 @@
     "spacing": 0,
     "height": 32,
     "modules-left": [
-        "custom/logo",
+        // "custom/logo",
         "clock",
         "pulseaudio",
         "battery",
         "backlight",
         "custom/uptime",
+        "custom/duolingo",
         "custom/music"
     ],
     "modules-center": [
@@ -23,8 +24,8 @@
         "custom/weather",
         "cpu",
         "custom/diskfree",
-        "tray",
-        "custom/power"
+        "tray"
+        // "custom/power"
     ],
 
     "hyprland/workspaces": {
@@ -152,5 +153,11 @@
         "tooltip": false,
         "format": "{text}",
         "return-type": "json"
+    },
+
+    "custom/duolingo": {
+        "format": "{}",
+        "exec": "duolingo_streak",
+        "interval": 3600
     }
 }
