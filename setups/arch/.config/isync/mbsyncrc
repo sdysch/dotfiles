@@ -1,0 +1,25 @@
+IMAPStore gmail-remote
+Host imap.gmail.com
+Port 993
+User sdysch94@gmail.com
+PassCmd "pass mail/gmail"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore gmail-local
+Path ~/.local/share/mail/gmail/
+Inbox ~/.local/share/mail/gmail/INBOX
+SubFolders Verbatim
+Flatten .
+
+Channel gmail
+Far :gmail-remote:
+Near :gmail-local:
+Patterns INBOX "[Gmail]/Sent Mail" "[Gmail]/Drafts" "[Gmail]/Trash"
+Create Both
+Sync Pull
+Expunge Both
+SyncState *
+MaxMessages 50
+ExpireUnread no
