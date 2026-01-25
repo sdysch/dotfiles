@@ -1,28 +1,48 @@
 #=============
-# === nord ===
+# === nord powerline angled ===
 #=============
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # === Main Prompt Format ===
 format = """
-$os$username$hostname$directory$git_branch$git_status$python$cmd_duration$jobs$time$line_break$character
+$os\
+$username\
+[](fg:#2e3440 bg:#5e81ac)\
+$hostname\
+[](fg:#5e81ac bg:#81a1c1)\
+$directory\
+[](fg:#81a1c1 bg:#88c0d0)\
+$git_branch\
+$git_status\
+[](fg:#88c0d0 bg:#8fbcbb)\
+$python\
+[](fg:#8fbcbb bg:#d9dee9)\
+$cmd_duration\
+[](fg:#d9dee9 bg:#88c0d0)\
+$jobs\
+[](fg:#88c0d0 bg:#5e81ac)\
+$time\
+\n$character
 """
+
+[line_break]
+disabled = false
 
 [username]
 show_always = true
-format = '[$user]($style)'
-style_user = "fg:#2e3440 bg:#5e81ac"
+style_user = "bg:#2e3440 fg:#d8dee9"
+format = '[$user ]($style)'
 
 [hostname]
 ssh_only = false
 format = "[$ssh_symbol@$hostname]($style)"
 ssh_symbol = " "
-style = "fg:#2e3440 bg:#5e81ac"
+style = "bg:#5e81ac fg:#2e3440"
 
 [os]
 disabled = false
-style = "fg:#2e3440 bg:#5e81ac"
+style = "bg:#2e3440 fg:#d8dee9"
 
 [os.symbols]
 Arch = ' '
@@ -31,9 +51,9 @@ Macos = ""
 Linux = "󰌽"
 
 [directory]
-style = "fg:#2e3440 bg:#81a1c1"
+style = "bg:#81a1c1 fg:#2e3440"
 read_only = ""
-read_only_style = "fg:#2e3440 bold bg:#81a1c1"
+read_only_style = "bg:#81a1c1 fg:#2e3440 bold"
 format = "[ 󰉋 $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -48,10 +68,10 @@ truncate_to_repo = true
 [git_branch]
 symbol = "󰘬 "
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
-style = "fg:#2e3440 bg:#88c0d0"
+style = "bg:#88c0d0 fg:#2e3440"
 
 [git_status]
-style = "fg:#2e3440 bg:#88c0d0 bold"
+style = "bg:#88c0d0 fg:#2e3440 bold"
 format = "[ $all_status$ahead_behind ]($style)"
 conflicted = "⚡$count"
 ahead      = "⇡$count"
@@ -67,22 +87,24 @@ deleted    = "✖$count"
 [python]
 symbol = '󰌠 '
 format = "[ $symbol$virtualenv ]($style)"
-style = "fg:#2e3440 bg:#8fbcbb"
+style = "bg:#8fbcbb fg:#2e3440"
 
 [cmd_duration]
-min_time = 5
+disabled = false
+# ms
+min_time = 3000
 format = "[ 󰔚 $duration ]($style)"
-style = "fg:#2e3440 bg:#d9dee9"
+style = "bg:#d9dee9 fg:#2e3440"
 
 [jobs]
 disabled = false
 format = "[ $symbol$number ]($style)"
-style = "fg:#2e3440 bg:#88c0d0"
+style = "bg:#88c0d0 fg:#2e3440"
 
 [time]
 disabled = false
-format = "[  $time ]($style)"
-style = "fg:#2e3440 bg:#5e81ac"
+format = "[  $time ]($style)[](fg:#5e81ac bg:#2e3440)"
+style = "bg:#5e81ac fg:#2e3440"
 time_format = "%H:%M"
 
 [character]
