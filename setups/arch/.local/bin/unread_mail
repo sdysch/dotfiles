@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# List of Maildir inboxes
+MAILDIRS=(
+    "$HOME/.local/share/mail/gmail/INBOX"
+)
+
+TOTAL_UNREAD=0
+
+for DIR in "${MAILDIRS[@]}"; do
+    if [ -d "$DIR/new" ]; then
+        COUNT=$(find "$DIR/new" -type f | wc -l)
+        TOTAL_UNREAD=$((TOTAL_UNREAD + COUNT))
+    fi
+done
+
+if [ "$TOTAL_UNREAD" -gt 0 ]; then
+    echo "📬 $TOTAL_UNREAD"
+else
+    echo "📭 0"
+fi

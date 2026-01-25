@@ -28,3 +28,5 @@ DISPLAY=:0
 # update RSS feeds hourly
 0 */1 * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; . $HOME/.zprofile; $HOME/.local/bin/updatenews
 
+# sync mail every 5 mins
+*/5 * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; . $HOME/.zprofile; . $HOME/.local/bin/sync_mail

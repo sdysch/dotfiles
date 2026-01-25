@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+
+CONFIG="$HOME/.config/isync/mbsyncrc"
+DATE="$(date '+%Y-%m-%d %H:%M:%S')"
+LOGFILE="$HOME/.local/share/mail/mbsync.log"
+
+# Check if mbsync is already running
+if pgrep -x mbsync >/dev/null; then
+    echo "[$DATE] mbsync is already running, skipping..." >> "$LOGFILE"
+    if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+        notify-send -u normal -i "mail-read" "Mail Sync" "mbsync is already running, skipping..."
+    fi
+    exit 0
+fi
+
+# Notify starting
+if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    notify-send -u low -i "mail-send" "Mail Sync" "Starting mail sync..."
+fi
+
+# Run mbsync
+OUTPUT=$(mbsync -c "$CONFIG" -a 2>&1)
+EXIT_CODE=$?
+
+# Determine message for notify-send
+if [ $EXIT_CODE -eq 0 ]; then
+    MESSAGE="Mail sync completed successfully at $DATE"
+    ICON="mail-unread"
+else
+    MESSAGE="Mail sync failed at $DATE
+$OUTPUT"
+    ICON="dialog-error"
+fi
+
+# Notify finished
+if [ -n "$DISPLAY" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    notify-send -u normal -i "$ICON" "Mail Sync" "$MESSAGE"
+fi
+
+# ping waybar
+command -v waybar > /dev/null && pkill -RTMIN+9 waybar
+
+# Log output
+echo "[$DATE] Exit code: $EXIT_CODE" >> "$LOGFILE"
+echo "$OUTPUT" >> "$LOGFILE"
+echo "----------------------------------------" >> "$LOGFILE"
+
+

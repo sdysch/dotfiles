@@ -1,3 +1,4 @@
+aerc
 alacritty
 base-devel
 bat
@@ -37,6 +38,7 @@ hyprland
 hyprpaper
 i3lock
 imagemagick
+isync
 isync
 jq
 kitty

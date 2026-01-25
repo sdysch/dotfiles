@@ -58,3 +58,7 @@ function spotmp3() {
 function update_pacman_mirrors() {
 	sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 }
+
+# === mail ===
+alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
+alias a="aerc"

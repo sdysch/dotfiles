@@ -138,7 +138,8 @@ if ! is_ci; then
         "$HOME/Music" \
         "$HOME/Pictures/screenshots" \
         "$HOME/Videos" \
-        "$HOME/Downloads"
+        "$HOME/Downloads" \
+        "$HOME/.local/share/mail/gmail"
 fi
 
 log 'Bootstrap complete'

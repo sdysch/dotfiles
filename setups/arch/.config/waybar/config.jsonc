@@ -16,6 +16,7 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/mail",
         "custom/todos",
         "custom/pacman",
         "custom/newsboat",
@@ -81,6 +82,12 @@
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": ["", ""]
+    },
+
+    "custom/mail": {
+        "format": "{}",
+        "exec": "unread_mail",
+        "signal": 9
     },
 
     "custom/todos": {
