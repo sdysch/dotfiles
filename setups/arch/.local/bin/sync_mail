@@ -42,6 +42,7 @@ fi
 command -v waybar > /dev/null && pkill -RTMIN+9 waybar
 
 # Log output
+# shellcheck disable=SC2129
 echo "[$DATE] Exit code: $EXIT_CODE" >> "$LOGFILE"
 echo "$OUTPUT" >> "$LOGFILE"
 echo "----------------------------------------" >> "$LOGFILE"
