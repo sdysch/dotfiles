@@ -6,6 +6,7 @@
  *  This is a store for the various configuration files that I use, across the machines that I work on.
 
 ![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch.png)
+![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_prompt.png)
 ![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch2.png)
 ![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch3.png)
 ![arch](https://github.com/sdysch/dotfiles/blob/master/figures/screenshot_arch4.png)
