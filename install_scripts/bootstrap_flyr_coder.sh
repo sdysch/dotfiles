@@ -134,11 +134,18 @@ _install_rg() {
 	tmpdir="$(mktemp -d)"
 	pushd "$tmpdir" >/dev/null || exit 1
 
-	curl -L "https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu.tar.gz" | tar xz
-	mv ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu/rg "$RG_INSTALL_DIR"
+	curl -L "https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-x86_64-unknown-linux-musl.tar.gz" | tar xz
+	mv ripgrep-$RG_VERSION-x86_64-unknown-linux-musl/rg "$RG_INSTALL_DIR"
 
 	popd >/dev/null || exit 1
 	rm -rf "$tmpdir"
+}
+
+_install_starship() {
+	log "Install starship"
+	require_cmd curl
+
+	curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
 }
 
 # ====================================================================================================
@@ -153,5 +160,6 @@ _install_tree_sitter
 _install_zsh
 _install_eza
 _install_rg
+_install_starship
 
 log 'Bootstrap complete'
