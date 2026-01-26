@@ -45,10 +45,10 @@ disabled = false
 style = "bg:#2e3440 fg:#d8dee9"
 
 [os.symbols]
-Arch = ' '
-Ubuntu = "󰕈"
-Macos = ""
-Linux = "󰌽"
+Arch = " "
+Ubuntu = "󰕈 "
+Macos = " "
+Linux = "󰌽 "
 
 [directory]
 style = "bg:#81a1c1 fg:#2e3440"
