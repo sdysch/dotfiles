@@ -145,10 +145,10 @@
 
     "custom/newsboat": {
         "exec": "unread_news",
-        "interval": 60,
+        "interval": 300,
         "tooltip": true,
         "format": "{text}",
-        "on-click": "alacritty -e newsboat",
+        "on-click": "$TERMINAL -e newsboat",
         "return-type": "json"
     },
 
