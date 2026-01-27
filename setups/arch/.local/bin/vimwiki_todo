@@ -1,7 +1,21 @@
 #!/usr/bin/env bash
-TODO_FILE="$HOME/Documents/vimwiki/todo.md"
-if [[ -f "$TODO_FILE" ]]; then
 
-	COUNT=$(grep -c "\[ \]" "$TODO_FILE")
-    [[ $COUNT -gt 0 ]] && echo "$COUNT"
-fi
+TODO_FILE="$HOME/Documents/vimwiki/todo.md"
+
+[[ -f "$TODO_FILE" ]] || exit 0
+
+# Get undone todos (markdown checkboxes)
+todos=$( \grep -n "\[ \]" "$TODO_FILE" | sed 's/^[0-9]\+://' )
+count=$(printf '%s\n' "$todos" | \grep -c .)
+
+(( count > 0 )) || exit 0
+
+# Tooltip text
+tooltip="📝 $count todo items\n\n$todos"
+
+# Escape for JSON
+escaped_tooltip=$(printf '%s' "$tooltip" \
+    | sed ':a;N;$!ba;s/\n/\\n/g; s/"/\\"/g')
+
+# Emit JSON
+printf '{"text":"%s","tooltip":"%s"}\n' "$count" "$escaped_tooltip"

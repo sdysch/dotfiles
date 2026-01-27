@@ -94,7 +94,8 @@
     "custom/todos": {
         "format": "📝 {}",
         "exec": "vimwiki_todo",
-        "signal": 10
+        "signal": 10,
+		"return-type": "json"
     },
 
 	"custom/pacman": {
