@@ -17,5 +17,6 @@ done
 if [ "$TOTAL_UNREAD" -gt 0 ]; then
     echo "📬 $TOTAL_UNREAD"
 else
-    echo "📭 0"
+    # echo "📭 0"
+    echo ""
 fi
