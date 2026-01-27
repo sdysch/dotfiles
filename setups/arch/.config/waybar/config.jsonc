@@ -126,7 +126,8 @@
 
     "custom/weather": {
         "exec": "weather_formatted",
-        "interval": 3600
+        "interval": 3600,
+        "on-click": "ping -q -c1 1.1.1.1 >/dev/null && curl -sf wttr.in/$LOCATION > ~/.cache/weatherreport && notify-send -i weather-showers 'Weather Report' 'Weather report updated' && killall waybar && waybar"
     },
 
 	"custom/uptime": {
