@@ -97,11 +97,14 @@
         "signal": 10
     },
 
-    "custom/pacman": {
-        "format": "\uf013 {}",
-        "interval": 3600,
-        "exec": "checkupdates | wc -l"
-    },
+	"custom/pacman": {
+		"format": "\uf013 {}",
+		"interval": 3600,
+		"exec": "check_pacman_updates",
+		"return-type": "json",
+		"on-click": "rm -f ~/.cache/waybar/checkupdates.time && notify-send -i system-software-update 'Pacman updates' 'Refreshing cache for next update...'"
+
+	},
 
     "custom/diskfree": {
         "format": "\uf108 {}",
