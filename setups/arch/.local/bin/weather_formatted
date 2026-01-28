@@ -1,21 +1,73 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-CACHE="$HOME/.cache/weatherreport"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
+CACHE_FILE="$CACHE_DIR/weatherreport"
+TIME_FILE="$CACHE_DIR/weatherreport.time"
+CACHE_TTL=3600
+LABELS=("Morning" "Noon" "Evening" "Night")
+HOURS=(6 12 18 0)  # Approx hours for labels
 
-# Update if not today
-if [ "$(stat -c %y "$CACHE" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ]; then
-    ping -q -c1 1.1.1.1 >/dev/null && curl -sf "wttr.in/$LOCATION" > "$CACHE"
-fi
+now=$(date +%s)
+last_run=0
+[[ -f "$TIME_FILE" ]] && last_run=$(<"$TIME_FILE")
 
-# Compact bar text
-showweather() {
-    printf "%s" "$(sed '16q;d' "$CACHE" | grep -wo '[0-9]*%' | sort -rn | sed 's/^/☔ /;1q' | tr -d '\n')"
-    sed '13q;d' "$CACHE" | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " ",$1 "°"," ",$2 "°"}'
+cond_to_emoji() {
+    case "$1" in
+        *Sunny*|*Clear*) echo "☀️" ;;
+        *Cloudy*|*Overcast*|*Partly*cloudy*) echo "☁️" ;;
+        *Rain*|*Drizzle*|*Shower*) echo "🌧" ;;
+        *Snow*|*Sleet*) echo "❄️" ;;
+        *Thunder*|*Storm*) echo "⛈" ;;
+        *Fog*|*Mist*|*Haze*) echo "🌫" ;;
+        *) echo "🌤" ;;
+    esac
 }
 
-# Full tooltip
-# escaped_tooltip=$(sed ':a;N;$!ba;s/\n/\\n/g; s/"/\\"/g' "$CACHE")
+fetch_weather() {
+    if ! ping -q -c1 1.1.1.1 >/dev/null 2>&1; then
+        summary=$(<"$CACHE_FILE" 2>/dev/null || echo "N/A")
+        printf '{"text":"%s","tooltip":"Offline"}\n' "$summary"
+        return
+    fi
 
-# **Only one line of JSON output!**
-# printf '{"text":"%s","tooltip":"%s"}\n' "$(showweather)" "$escaped_tooltip"
-showweather
+    data=$(curl -sf 'http://wttr.in/?format=j1') || {
+        summary=$(<"$CACHE_FILE" 2>/dev/null || echo "N/A")
+        printf '{"text":"%s","tooltip":"Error fetching"}\n' "$summary"
+        return
+    }
+
+    today_temp=$(echo "$data" | jq -r '.current_condition[0].temp_C // "N/A"')
+    today_cond=$(echo "$data" | jq -r '.current_condition[0].weatherDesc[0].value // "N/A"')
+    summary="$(cond_to_emoji "$today_cond")${today_temp}°C"
+    echo "$summary" > "$CACHE_FILE"
+
+    tooltip=""
+    days=$(echo "$data" | jq '.weather | length')
+    for i in $(seq 0 $((days-1))); do
+        date=$(echo "$data" | jq -r ".weather[$i].date")
+        tooltip+="$date "
+
+        for idx in ${!HOURS[@]}; do
+            target_hour=${HOURS[$idx]}
+            # Find the closest hour in the hourly array
+            hour_index=$(echo "$data" | jq -r ".weather[$i].hourly | to_entries | map(.key as \$k | if (.value.time|tonumber) >= $target_hour*100 then \$k else empty end) | first // 0")
+            temp=$(echo "$data" | jq -r ".weather[$i].hourly[$hour_index].tempC")
+            cond=$(echo "$data" | jq -r ".weather[$i].hourly[$hour_index].weatherDesc[0].value")
+            emoji=$(cond_to_emoji "$cond")
+            label=${LABELS[$idx]}
+            tooltip+="$emoji $label: ${temp}°C "
+        done
+
+        tooltip+="\n"
+    done
+
+    tooltip_escaped=$(echo -n "$tooltip" | sed ':a;N;$!ba;s/\n/\\n/g')
+    printf '{"text":"%s","tooltip":"%s"}\n' "$summary" "$tooltip_escaped"
+    echo "$now" > "$TIME_FILE"
+}
+
+if [[ ! -f "$CACHE_FILE" ]] || (( now - last_run > CACHE_TTL )); then
+    fetch_weather
+else
+    fetch_weather
+fi

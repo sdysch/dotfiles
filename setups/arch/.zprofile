@@ -53,9 +53,6 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 # === config file locations ===
 
-# my location
-export LOCATION="Manchester"
-
 # zsh
 export HISTFILE=$XDG_DATA_HOME/zsh/history
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
