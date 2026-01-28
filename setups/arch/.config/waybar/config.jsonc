@@ -38,7 +38,7 @@
 
 	"cpu": {
 		"interval": 2,
-		"tooltip": false,
+		"tooltip": true,
 		"on-click": "$TERMINAL -e btop --tty",
 		"format-critical": "<span color='#BF616A'><b> {usage}%</b></span>",
 		"format-high": "<span color='#5E81AC'> {usage}%</span>",
@@ -63,7 +63,7 @@
     "battery": {
         "format": "{capacity}% {icon}",
         "interval": 5,
-        "tooltip": false,
+        "tooltip": true,
         "states": { "warning": 30, "critical": 15 },
         "format-icons": {
             "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
