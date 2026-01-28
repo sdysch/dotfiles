@@ -25,13 +25,13 @@ cond_to_emoji() {
 
 fetch_weather() {
     if ! ping -q -c1 1.1.1.1 >/dev/null 2>&1; then
-        summary=$(<"$CACHE_FILE" 2>/dev/null || echo "N/A")
+        summary=$(cat "$CACHE_FILE" 2>/dev/null || echo 'N/A')
         printf '{"text":"%s","tooltip":"Offline"}\n' "$summary"
         return
     fi
 
     data=$(curl -sf 'http://wttr.in/?format=j1') || {
-        summary=$(<"$CACHE_FILE" 2>/dev/null || echo "N/A")
+		summary=$(cat "$CACHE_FILE" 2>/dev/null || echo 'N/A')
         printf '{"text":"%s","tooltip":"Error fetching"}\n' "$summary"
         return
     }
@@ -47,7 +47,7 @@ fetch_weather() {
         date=$(echo "$data" | jq -r ".weather[$i].date")
         tooltip+="$date "
 
-        for idx in ${!HOURS[@]}; do
+        for idx in "${!HOURS[@]}"; do
             target_hour=${HOURS[$idx]}
             # Find the closest hour in the hourly array
             hour_index=$(echo "$data" | jq -r ".weather[$i].hourly | to_entries | map(.key as \$k | if (.value.time|tonumber) >= $target_hour*100 then \$k else empty end) | first // 0")
