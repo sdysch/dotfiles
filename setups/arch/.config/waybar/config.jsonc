@@ -94,14 +94,18 @@
     "custom/todos": {
         "format": "📝 {}",
         "exec": "vimwiki_todo",
-        "signal": 10
+        "signal": 10,
+		"return-type": "json"
     },
 
-    "custom/pacman": {
-        "format": "\uf013 {}",
-        "interval": 3600,
-        "exec": "checkupdates | wc -l"
-    },
+	"custom/pacman": {
+		"format": "\uf013 {}",
+		"interval": 3600,
+		"exec": "check_pacman_updates",
+		"return-type": "json",
+		"on-click": "rm -f ~/.cache/waybar/checkupdates.time && notify-send -i system-software-update 'Pacman updates' 'Refreshing cache for next update...'"
+
+	},
 
     "custom/diskfree": {
         "format": "\uf108 {}",
@@ -122,7 +126,8 @@
 
     "custom/weather": {
         "exec": "weather_formatted",
-        "interval": 3600
+        "interval": 3600,
+        "on-click": "ping -q -c1 1.1.1.1 >/dev/null && curl -sf wttr.in/$LOCATION > ~/.cache/weatherreport && notify-send -i weather-showers 'Weather Report' 'Weather report updated' && killall waybar && waybar"
     },
 
 	"custom/uptime": {
@@ -140,10 +145,10 @@
 
     "custom/newsboat": {
         "exec": "unread_news",
-        "interval": 60,
+        "interval": 300,
         "tooltip": true,
         "format": "{text}",
-        "on-click": "alacritty -e newsboat",
+        "on-click": "$TERMINAL -e newsboat",
         "return-type": "json"
     },
 

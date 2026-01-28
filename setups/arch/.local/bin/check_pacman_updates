@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# cache checkupdates
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar"
+CACHE_FILE="$CACHE_DIR/checkupdates.txt"
+CACHE_TIME="$CACHE_DIR/checkupdates.time"
+CACHE_TTL=3600
+
+mkdir -p "$CACHE_DIR"
+
+now=$(date +%s)
+last_run=0
+
+[[ -f "$CACHE_TIME" ]] && last_run=$(<"$CACHE_TIME")
+
+# Refresh cache if missing or stale
+if (( now - last_run > CACHE_TTL )); then
+    if updates=$(checkupdates 2>/dev/null); then
+        printf '%s\n' "$updates" > "$CACHE_FILE"
+        printf '%s\n' "$now" > "$CACHE_TIME"
+    fi
+fi
+
+# Read cached data (even if stale / offline)
+updates_list=""
+[[ -f "$CACHE_FILE" ]] && updates_list=$(<"$CACHE_FILE")
+
+# Get update list
+updates_list=$(checkupdates 2>/dev/null | head -n 30)
+updates_count=$(printf '%s\n' "$updates_list" | grep -c .)
+
+# Find last system upgrade time
+last_update_epoch=$(
+    \grep -a "starting full system upgrade" /var/log/pacman.log \
+    | tail -n 1 \
+    | sed -E 's/^\[([^]]+)\].*/\1/' \
+    | xargs -I{} date -d "{}" +%s 2>/dev/null
+)
+
+now_epoch=$(date +%s)
+class="old"
+days_since="unknown"
+
+if [[ -n "$last_update_epoch" ]]; then
+    days_since=$(( (now_epoch - last_update_epoch) / 86400 ))
+
+    if (( days_since < 7 )); then
+        class="fresh"
+    elif (( days_since < 25 )); then
+        class="stale"
+    else
+        class="old"
+    fi
+fi
+
+# Tooltip content
+if (( updates_count > 0 )); then
+    tooltip="󰏗 $updates_count updates\n\n$updates_list"
+else
+    tooltip="󰏗 System up to date"
+fi
+
+# Escape tooltip for JSON (quotes + newlines)
+escaped_tooltip=$(printf '%s' "$tooltip" \
+    | sed ':a;N;$!ba;s/\n/\\n/g; s/"/\\"/g')
+
+printf '{"text":"%s","class":"%s","tooltip":"%s"}\n' \
+    "$updates_count" "$class" "$escaped_tooltip"
