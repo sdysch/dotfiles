@@ -22,7 +22,7 @@ alias rm="rm -i"
 alias mv="mv -i"
 
 # get weather
-alias weather="curl -L http://wttr.in//~${LOCATION:-Manchester}"
+alias weather="curl -sL \"http://wttr.in//?format=%c%t\" | sed -e 's/+//' -e 's/\ //'"
 
 # === python ===
 # uv
