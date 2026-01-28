@@ -1,7 +1,7 @@
 #!/bin/bash
 # bootstrap coder instance
 DOTFILES_REPO="https://github.com/sdysch-flyr/dotfiles"
-DOTFILES_INSTALLDIR="$HOME"
+DOTFILES_DIR="$HOME/dotfiles/"
 PACKAGE_INSTALLPATH="dotfiles/install_scripts/packages/install"
 
 NVIM_VERSION="v0.11.5"
@@ -29,8 +29,7 @@ require_cmd() {
 _install_deps() {
     log 'Installing system dependencies'
     sudo apt-get update -y
-    # sudo apt-get install -y nodejs npm golang-go bat
-    sudo apt-get install -y bat starship
+    sudo apt-get install -y bat
 }
 
 _install_configs() {
@@ -38,7 +37,7 @@ _install_configs() {
 	if [[ -d "$DOTFILES_DIR/.git" ]]; then
 		log 'Dotfiles already exist, skipping clone'
 	else
-		git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_INSTALLDIR"
+		git clone --depth=1 "$DOTFILES_REPO" "$DOTFILES_DIR"
 	fi
 	pushd "$DOTFILES_DIR/setups" >/dev/null || exit
 	stow --no-folding flyr --target="$HOME"
@@ -134,11 +133,18 @@ _install_rg() {
 	tmpdir="$(mktemp -d)"
 	pushd "$tmpdir" >/dev/null || exit 1
 
-	curl -L "https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu.tar.gz" | tar xz
-	mv ripgrep-$RG_VERSION-aarch64-unknown-linux-gnu/rg "$RG_INSTALL_DIR"
+	curl -L "https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-x86_64-unknown-linux-musl.tar.gz" | tar xz
+	mv ripgrep-$RG_VERSION-x86_64-unknown-linux-musl/rg "$RG_INSTALL_DIR"
 
 	popd >/dev/null || exit 1
 	rm -rf "$tmpdir"
+}
+
+_install_starship() {
+	log "Install starship"
+	require_cmd curl
+
+	curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
 }
 
 # ====================================================================================================
@@ -153,5 +159,6 @@ _install_tree_sitter
 _install_zsh
 _install_eza
 _install_rg
+_install_starship
 
 log 'Bootstrap complete'
