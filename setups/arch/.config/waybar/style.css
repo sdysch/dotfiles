@@ -141,7 +141,8 @@ window#waybar.hidden {
 #custom-mail { color: @white; }
 #custom-duolingo { color: @white; }
 #custom-todos { color: @white; }
-#custom-pacman { color: @white; }
+#custom-pacman { color: #4c566a; }
+
 #custom-diskfree { color: @white; }
 #custom-weather { color: @white; }
 #custom-uptime { color: @white; }
@@ -180,4 +181,17 @@ tooltip label {
 /* Hover effect */
 .modules-right > *:hover {
     background: rgba(94, 129, 172, 0.35); /* subtle frost-blue glow */
+}
+
+#custom-pacman.fresh {
+    color: #a3be8c;
+}
+
+#custom-pacman.stale {
+    color: #ebcb8b;
+}
+
+#custom-pacman.old {
+    color: #bf616a;
+	font-weight: bold;
 }

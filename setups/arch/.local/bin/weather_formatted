@@ -1,25 +1,21 @@
 #!/bin/sh
 
-# If we have internet, get a weather report from wttr.in and store it locally.
-getforecast() { 
-    ping -q -c 1 1.1.1.1 >/dev/null &&
-    curl -sf "wttr.in/$LOCATION" > "$HOME/.local/share/weatherreport" || exit 1
+CACHE="$HOME/.cache/weatherreport"
+
+# Update if not today
+if [ "$(stat -c %y "$CACHE" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ]; then
+    ping -q -c1 1.1.1.1 >/dev/null && curl -sf "wttr.in/$LOCATION" > "$CACHE"
+fi
+
+# Compact bar text
+showweather() {
+    printf "%s" "$(sed '16q;d' "$CACHE" | grep -wo '[0-9]*%' | sort -rn | sed 's/^/☔ /;1q' | tr -d '\n')"
+    sed '13q;d' "$CACHE" | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " ",$1 "°"," ",$2 "°"}'
 }
 
-# Extract precip chance, low, and high with better icons.
-showweather() { 
-    printf "%s" "$(sed '16q;d' "$HOME/.local/share/weatherreport" |
-        grep -wo '[0-9]*%' | sort -rn | sed 's/^/☔ /;1q' | tr -d '\n')"
+# Full tooltip
+# escaped_tooltip=$(sed ':a;N;$!ba;s/\n/\\n/g; s/"/\\"/g' "$CACHE")
 
-    sed '13q;d' "$HOME/.local/share/weatherreport" |
-        grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n |
-        sed -e 1b -e '$!d' | tr '\n|m' ' ' |
-        awk '{print " ",$1 "°"," ",$2 "°"}'
-}
-
-# Update report if not from today
-[ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ] ||
-    getforecast
-
+# **Only one line of JSON output!**
+# printf '{"text":"%s","tooltip":"%s"}\n' "$(showweather)" "$escaped_tooltip"
 showweather
-

@@ -35,8 +35,8 @@ export EDITOR="nvim"
 export IMAGEVIEWER="ristretto"
 export READER="zathura"
 export TERM="xterm-256color"
-export TERMINAL="alacritty"
-#export TERMINAL="kitty"
+# export TERMINAL="alacritty"
+export TERMINAL="kitty"
 
 # choose status bar dependent on login session
 case "$DESKTOP_SESSION" in
