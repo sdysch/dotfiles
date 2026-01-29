@@ -125,7 +125,8 @@
     },
 
     "custom/weather": {
-        "exec": "weather_formatted",
+        // "exec": "weather_formatted",
+        "exec": "weather_python",
 		"interval": 300,
 		"return-type": "json"
     },
