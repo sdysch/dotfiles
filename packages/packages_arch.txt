@@ -16,6 +16,7 @@ cmake
 cmatrix
 cronie
 curl
+deno
 direnv
 dolphin
 dunst
