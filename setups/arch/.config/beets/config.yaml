@@ -2,8 +2,8 @@ directory: ~/Music/Library   # where your organized library will live
 library: ~/.config/beets/musiclibrary.db
 
 import:
-  move: yes
-  write: yes
+  move: no
+  write: no
   copy: no
   autotag: no
   incremental: yes
@@ -13,3 +13,10 @@ paths:
   default: $albumartist/$album/$track $title
   singleton: $artist/$title
   comp: Various Artists/$album/$track $title
+
+plugins: fetchart
+
+fetchart:
+  auto: yes
+  store_source: yes
+  tempdir: ~/.cache/beets/fetchart
