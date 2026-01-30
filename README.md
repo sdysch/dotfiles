@@ -36,6 +36,7 @@ stow --no-folding common --target=$HOME
 * Then reboot
 
 #### Annoyances
+* Manually copy over mpd playlists
 * Have to enable many systemd services manually (non-exhaustive list), I haven't kept good records of what I've done
 * Partial list with `systemctl list-units --type=service --state=running`
 	* NetworkManager.service
