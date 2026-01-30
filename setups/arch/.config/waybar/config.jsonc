@@ -87,13 +87,13 @@
 
     "custom/mail": {
         "format": "{}",
-        "exec": "unread_mail",
+        "exec": "~/.config/waybar/scripts/unread_mail",
         "signal": 9
     },
 
     "custom/todos": {
         "format": "📝 {}",
-        "exec": "vimwiki_todo",
+        "exec": "~/.config/waybar/scripts/vimwiki_todo",
         "signal": 10,
 		"return-type": "json"
     },
@@ -101,7 +101,7 @@
 	"custom/pacman": {
         "format": "  {}",
 		"interval": 3600,
-		"exec": "check_pacman_updates",
+		"exec": "~/.config/waybar/scripts/check_pacman_updates",
 		"return-type": "json",
 		"on-click": "rm -f ~/.cache/waybar/checkupdates.time && notify-send -i system-software-update 'Pacman updates' 'Refreshing cache for next update...'"
 
@@ -125,8 +125,8 @@
     },
 
     "custom/weather": {
-        // "exec": "weather_formatted",
-        "exec": "weather_python",
+        // "exec": "~/.config/waybar/scripts/weather_formatted",
+        "exec": "~/.config/waybar/scripts/weather_python",
 		"interval": 300,
 		"return-type": "json"
     },
@@ -138,14 +138,14 @@
 	},
 
     "custom/music": {
-        "exec": "musicplayer",
+        "exec": "~/.config/waybar/scripts/musicplayer",
         "interval": 1,
         "tooltip": false,
         "on-click": "playerctl play-pause"
     },
 
     "custom/newsboat": {
-        "exec": "unread_news",
+        "exec": "~/.config/waybar/scripts/unread_news",
         "interval": 300,
         "tooltip": true,
         "format": "{text}",
@@ -154,7 +154,7 @@
     },
 
     "custom/internet_speed": {
-        "exec": "internet_speed",
+        "exec": "~/.config/waybar/scripts/internet_speed",
         "interval": 1,
         "tooltip": false,
         "format": "{text}",
@@ -163,7 +163,7 @@
 
     "custom/duolingo": {
         "format": "{}",
-        "exec": "duolingo_streak",
+        "exec": "~/.config/waybar/scripts/duolingo_streak",
         "interval": 3600
     }
 }
