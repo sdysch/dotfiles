@@ -161,4 +161,7 @@ _install_eza
 _install_rg
 _install_starship
 
+# make directories
+mkdir -p "${XDG_DATA_HOME-$HOME/.local/share}"/zsh
+
 log 'Bootstrap complete'
