@@ -19,12 +19,14 @@ curl
 deno
 direnv
 dolphin
+duf
 dunst
 evince
 exiftool
 eza
 fakeroot
 fastfetch
+fd
 ffmpeg
 firefox
 fontconfig
