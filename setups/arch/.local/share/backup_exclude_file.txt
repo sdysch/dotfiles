@@ -7,3 +7,4 @@ taskwarrior/
 backups/
 Manchester/PostDoc/MadGraphInstall
 Manchester/PostDoc/SSHiggs_signalGeneration
+screenshots/
