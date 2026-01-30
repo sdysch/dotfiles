@@ -15,6 +15,9 @@ backups=(
 	"$HOME/.ssh"
 	"$HOME/.config/gnupg"
 	"$HOME/.local/share/password-store"
+	"$HOME/Music"
+	"$HOME/Pictures"
+	"$HOME/Videos"
 )
 for backup in "${backups[@]}"; do
 	echo "Backing up $backup to $BACKUPLOC"
