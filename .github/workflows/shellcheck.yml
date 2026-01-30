@@ -5,10 +5,12 @@ on:
     paths:
       - 'setups/**/.local/bin/*'
       - 'install_scripts/*.sh'
+      - 'setups/arch/.config/waybar/scripts/*'
   pull_request:
     paths:
       - 'setups/**/.local/bin/*'
       - 'install_scripts/*.sh'
+      - 'setups/arch/.config/waybar/scripts/*'
 
 jobs:
   shellcheck:
