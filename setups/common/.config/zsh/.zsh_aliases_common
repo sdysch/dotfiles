@@ -15,7 +15,11 @@ alias grep='grep --color=auto -n'
 
 # === human readable memory by default ===
 alias du="du -h"
-alias df="df -h"
+if type duf > /dev/null 2>&1; then
+	alias df="duf"
+else
+	alias df="df -h"
+fi
 
 # being careful about what I move and delete
 alias rm="rm -i"
