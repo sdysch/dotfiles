@@ -82,6 +82,10 @@ export LESS='-FRX'
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
+# pagers
+export MANPAGER='less -R'
+export PAGER='less -R'
+
 # directory where wallpapers/icons are stored
 export ICONSDIR="$HOME/dotfiles/icons"
 export WALLPAPERSDIR="$HOME/dotfiles/wallpapers"

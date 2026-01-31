@@ -66,3 +66,7 @@ export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 
 # less
 export LESS='-FRX'
+
+# pagers
+export MANPAGER='less -R'
+export PAGER='less -R'

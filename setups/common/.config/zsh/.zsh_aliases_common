@@ -146,3 +146,7 @@ alias todoLeft="grep -c \"\[ \]\" ~/Documents/vimwiki/todo.md"
 
 # === kittens ===
 alias kplot="kitty +kitten icat"
+
+# === rsync ===
+alias rs="rsync --info=progress2 --human-readable"
+alias rsa="rsync -a --info=progress2 --human-readable"
