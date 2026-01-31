@@ -133,3 +133,11 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 	})
   end
 })
+
+-- automatically enable spell check on certain files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'gitcommit', 'markdown', 'text' },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
