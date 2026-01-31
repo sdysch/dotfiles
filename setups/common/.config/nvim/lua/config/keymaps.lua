@@ -121,3 +121,28 @@ local function copy_git_relative_path()
 end
 
 vim.keymap.set('n', '<leader>cg', copy_git_relative_path, { desc = 'Copy path relative to git root' })
+
+-- === spell ===
+-- toggle spell
+vim.keymap.set('n', '<leader>ss', function()
+  vim.opt.spell = not vim.opt.spell:get()
+end, { desc = 'Toggle spellcheck' })
+
+-- next / previous misspelling
+vim.keymap.set('n', '<leader>sn', ']s', { desc = 'Next misspelling' })
+vim.keymap.set('n', '<leader>sp', '[s', { desc = 'Previous misspelling' })
+
+-- suggestions
+vim.keymap.set('n', '<leader>sc', 'z=', { desc = 'Spelling suggestions' })
+
+-- add word (persistent)
+vim.keymap.set('n', '<leader>sa', 'zg', { desc = 'Add word to spellfile' })
+
+-- add word (buffer-local)
+vim.keymap.set('n', '<leader>sA', 'zG', { desc = 'Add word (buffer only)' })
+
+-- mark as wrong
+vim.keymap.set('n', '<leader>sw', 'zw', { desc = 'Mark word as wrong' })
+
+-- undo last zg/zw
+vim.keymap.set('n', '<leader>su', 'zug', { desc = 'Undo spell add/remove' })

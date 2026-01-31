@@ -49,3 +49,7 @@ vim.o.undodir = undodir..'/nvim/undo'
 -- Unlimited undo levels
 vim.o.undolevels = 10000
 vim.o.undoreload = 10000
+
+-- spell
+vim.opt.spelllang = { 'en_gb' }
+vim.opt.spelloptions = 'camel'
