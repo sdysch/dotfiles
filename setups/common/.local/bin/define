@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Possible to pipe directly into rofi
+
+# REF: https://github.com/BreadOnPenguins/scripts/blob/master/shortcuts-menus/define
+
+# Get word from argument or clipboard (primary X11 or Wayland)
+word=${1:-$(xclip -o -selection primary 2>/dev/null || wl-paste 2>/dev/null)}
+
+# Validate input: non-empty, no slashes (basic security)
+if [[ -z "$word" || "$word" =~ [\/] ]]; then
+    notify-send -h string:bgcolor:#bf616a -t 3000 "Invalid input."
+    exit 0
+fi
+
+# Fetch dictionary data with timeout and fail fast on error
+query=$(curl -fsS --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_GB/$word")
+curl_exit=$?
+
+if [[ $curl_exit -ne 0 ]]; then
+    notify-send -h string:bgcolor:#bf616a -t 3000 "Connection error."
+    exit 1
+fi
+
+# Check for invalid word
+if [[ "$query" == *"No Definitions Found"* ]]; then
+    notify-send -h string:bgcolor:#bf616a -t 3000 "Invalid word."
+    exit 0
+fi
+
+# Extract first 3 definitions with part of speech
+def=$(echo "$query" | jq -r '[.[].meanings[] | {pos: .partOfSpeech, def: .definitions[].definition}] | .[:3][] | "\(.pos). \(.def)"')
+
+# Fallback if jq fails or no definitions found
+if [[ -z "$def" ]]; then
+    notify-send -h string:bgcolor:#bf616a -t 3000 "No definitions available."
+    exit 0
+fi
+
+# Send desktop notification
+notify-send -t 60000 "$word -" "$def"
