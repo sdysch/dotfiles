@@ -1,31 +1,71 @@
 return {
   {
-	  'nvim-treesitter/nvim-treesitter',
-	  lazy = false,
-	  build = ':TSUpdate',
-	  config = function()
-		  require'nvim-treesitter'.setup {
-			  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
-			  install_dir = vim.fn.stdpath('data') .. '/site'
-		  }
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    branch = "main",
+    lazy = false,
+    event = "VeryLazy",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "dockerfile",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "gomod",
+        "gosum",
+        "hcl",
+        "helm",
+        "html",
+        "ini",
+        "java",
+        "javascript",
+        "json",
+        "kotlin",
+        "lua",
+        "luadoc",
+        "make",
+        "markdown",
+        "python",
+        "rust",
+        "terraform",
+        "toml",
+        "vim",
+        "vimdoc",
+        "yaml",
+      },
+    },
+    config = function(_, opts)
+      local TS = require("nvim-treesitter")
+      TS.install(opts.ensure_installed)
 
-		  -- parsers
-		  require'nvim-treesitter'.install {
-			  "gitcommit", "gitignore", "html", "http", "json", "json5", "jsonc",
-			  "lua", "make", "markdown", "markdown_inline", "python", "regex", "rst",
-			  "scss", "sql", "ssh_config", "toml", "vim", "vimdoc", "yaml"
-		  }
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
+        callback = function(args)
+          local buf = args.buf
+          local filetype = args.match
 
-		  -- folds
-		  vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-		  vim.wo[0][0].foldmethod = 'expr'
-		  vim.cmd('set nofoldenable') -- start with all folds open
-		  vim.opt.foldlevel = 99
+          -- you need some mechanism to avoid running on buffers that do not
+          -- correspond to a language (like oil.nvim buffers), this implementation
+          -- checks if a parser exists for the current language
+          local language = vim.treesitter.language.get_lang(filetype) or filetype
+          if not vim.treesitter.language.add(language) then
+            return
+          end
 
-		  -- vim.api.nvim_create_autocmd('FileType', {
-		  --     pattern = { 'python' },
-		  --     callback = function() vim.treesitter.start() end,
-		  -- })
-	  end
+          -- folds
+          vim.wo.foldmethod = "expr"
+          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+          vim.wo.foldenable = false
+
+          vim.treesitter.start(buf, language)
+
+        end,
+      })
+    end,
   },
 }
