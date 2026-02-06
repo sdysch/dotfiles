@@ -6,12 +6,12 @@ return {
 	},
 	keys = {
 		-- basic
-		{ '<leader>dt', '<cmd>DapViewToggle<cr>' },
-		{ '<leader>db', '<cmd>DapToggleBreakpoint<cr>' },
-		{ '<leader>de', '<cmd>DapEval<cr>' },
-		{ '<leader>dc', '<cmd>DapContinue<cr>' },
-		{ '<leader>dw', '<cmd>DapViewWatch<cr>' },
-		{ '<leader>dl', '<cmd>DapShowLog<cr>' },
+		{ '<leader>dt', '<cmd>DapViewToggle<cr>', desc = 'Toggle DapView' },
+		{ '<leader>db', '<cmd>DapToggleBreakpoint<cr>' , desc = 'Toggle Dap breakpoint'},
+		{ '<leader>de', '<cmd>DapEval<cr>' , desc = 'DapEval'},
+		{ '<leader>dc', '<cmd>DapContinue<cr>' , desc = 'DapContinue'},
+		{ '<leader>dw', '<cmd>DapViewWatch<cr>' , desc = 'DapViewWatch'},
+		{ '<leader>dl', '<cmd>DapShowLog<cr>' , desc = 'DapShowLog'},
 
 		-- Stepping with arrow keys
 		{ '<Right>', '<cmd>DapStepOver<cr>', desc = 'Step over' },
@@ -19,8 +19,8 @@ return {
 		{ '<Up>',    '<cmd>DapStepOut<cr>',  desc = 'Step out' },
 
 		-- Frame navigation
-		{ '<leader>du', '<cmd>DapUp<cr>', desc = 'Up frame' },
-		{ '<leader>dd', '<cmd>DapDown<cr>', desc = 'Down frame' },
+		{ '<leader>du', '<cmd>DapUp<cr>', desc = 'Dap Up frame' },
+		{ '<leader>dd', '<cmd>DapDown<cr>', desc = 'Dap Down frame' },
 
 	},
 	config = function()
