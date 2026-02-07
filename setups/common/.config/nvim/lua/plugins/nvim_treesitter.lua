@@ -1,71 +1,62 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    branch = "main",
-    lazy = false,
-    event = "VeryLazy",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "c",
-        "dockerfile",
-        "git_config",
-        "git_rebase",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "gomod",
-        "gosum",
-        "hcl",
-        "helm",
-        "html",
-        "ini",
-        "java",
-        "javascript",
-        "json",
-        "kotlin",
-        "lua",
-        "luadoc",
-        "make",
-        "markdown",
-        "python",
-        "rust",
-        "terraform",
-        "toml",
-        "vim",
-        "vimdoc",
-        "yaml",
-      },
-    },
-    config = function(_, opts)
-      local TS = require("nvim-treesitter")
-      TS.install(opts.ensure_installed)
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	branch = "main",
+	build = ":TSUpdate",
+	opts = {
+		ensure_installed = {
+			"bash",
+			"c",
+			"css",
+			"cpp",
+			"diff",
+			"dockerfile",
+			"git_config",
+			"git_rebase",
+			"gitattributes",
+			"gitcommit",
+			"gitignore",
+			"hcl",
+			"helm",
+			"html",
+			"ini",
+			"jsdoc",
+			"json",
+			"json5",
+			"kotlin",
+			"lua",
+			"luadoc",
+			"luap",
+			"make",
+			"markdown",
+			"markdown_inline",
+			"python",
+			"query",
+			"regex",
+			"rust",
+			"toml",
+			"tex",
+			"vim",
+			"vimdoc",
+			"yaml",
+		},
+	},
+	config = function(_, opts)
+		-- install parsers from custom opts.ensure_installed
+		if opts.ensure_installed and #opts.ensure_installed > 0 then
+			require("nvim-treesitter").install(opts.ensure_installed)
+			-- register and start parsers for filetypes
+			for _, parser in ipairs(opts.ensure_installed) do
+				local filetypes = parser -- In this case, parser is the filetype/language name
+				vim.treesitter.language.register(parser, filetypes)
 
-      vim.api.nvim_create_autocmd("FileType", {
-        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
-        callback = function(args)
-          local buf = args.buf
-          local filetype = args.match
-
-          -- you need some mechanism to avoid running on buffers that do not
-          -- correspond to a language (like oil.nvim buffers), this implementation
-          -- checks if a parser exists for the current language
-          local language = vim.treesitter.language.get_lang(filetype) or filetype
-          if not vim.treesitter.language.add(language) then
-            return
-          end
-
-          -- folds
-          vim.wo.foldmethod = "expr"
-          vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-          vim.wo.foldenable = false
-
-          vim.treesitter.start(buf, language)
-
-        end,
-      })
-    end,
-  },
+				vim.api.nvim_create_autocmd({ "FileType" }, {
+					pattern = filetypes,
+					callback = function(event)
+						vim.treesitter.start(event.buf, parser)
+					end,
+				})
+			end
+		end
+	end,
 }
