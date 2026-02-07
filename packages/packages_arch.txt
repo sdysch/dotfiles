@@ -36,7 +36,6 @@ git
 gnome-keyring
 grim
 htop
-htop
 hyprland
 hyprpaper
 i3lock
@@ -122,6 +121,7 @@ xdotool
 xorg-apps
 xorg-server
 xorg-xinit
+yazi
 yt-dlp
 zathura
 zsh
