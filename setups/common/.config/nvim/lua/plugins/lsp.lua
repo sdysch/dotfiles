@@ -13,10 +13,11 @@ return {
       require('mason-lspconfig').setup({
         ensure_installed = {
           'bashls',
-          'jedi_language_server',
+          -- 'jedi_language_server',
           'marksman',
           'pyright',
           'yamlls',
+          'ruff',
           -- 'jsonls',
           -- 'sqls',
         },
@@ -38,9 +39,9 @@ return {
         map('gr', vim.lsp.buf.references, 'List references')
         map('<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
         map('<leader>E', vim.diagnostic.open_float, 'Diagnostics')
-		map('<leader>ca', function()
-			require('fzf-lua').lsp_code_actions()
-		end, 'fzf code action')
+    map('<leader>ca', function()
+      require('fzf-lua').lsp_code_actions()
+    end, 'fzf code action')
 
       end
 
@@ -86,19 +87,31 @@ return {
         filetypes = { 'markdown', 'vimwiki' },
       }
 
-      vim.lsp.config.jedi_language_server = {
-      	  on_attach = on_attach,
-      	  filetypes = { 'python' },
-      	  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
-	  }
+      -- vim.lsp.config.jedi_language_server = {
+      --   on_attach = on_attach,
+      --   filetypes = { 'python' },
+      --   root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
+      -- }
+
+      vim.lsp.config.ruff= {
+        on_attach = on_attach,
+        filetypes = { 'python' },
+        init_options = {
+          settings = {
+            args = {},
+          },
+        },
+      }
+
 
       -- Enable servers
       vim.lsp.enable({
         'bashls',
-        'jedi_language_server',
+        -- 'jedi_language_server',
         'marksman',
         'pyright',
         'yamlls',
+        'ruff',
         -- 'jsonls',
         -- 'sqls',
       })
