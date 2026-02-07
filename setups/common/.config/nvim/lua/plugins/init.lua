@@ -4,7 +4,7 @@ return {
   { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
 
   -- commenting
-  { 'preservim/nerdcommenter', keys = { 'gc', 'gcc' } },
+  -- { 'preservim/nerdcommenter', keys = { 'gc', 'gcc' } },
 
   -- UI helpers
   { 'ap/vim-css-color', lazy = false },
@@ -43,14 +43,14 @@ return {
   },
 
   -- csv viewer
-  {
-    'emmanueltouzery/decisive.nvim',
-    ft = { 'csv' },
-    keys = {
-      { '<leader>csa', function() require('decisive').align_csv({}) end, desc = 'Align CSV columns', mode = 'n', },
-      { '<leader>csA', function() require('decisive').align_csv_clear({}) end, desc = 'Clear CSV alignment', mode = 'n', },
-    },
-  },
+  -- {
+  --   'emmanueltouzery/decisive.nvim',
+  --   ft = { 'csv' },
+  --   keys = {
+  --     { '<leader>csa', function() require('decisive').align_csv({}) end, desc = 'Align CSV columns', mode = 'n', },
+  --     { '<leader>csA', function() require('decisive').align_csv_clear({}) end, desc = 'Clear CSV alignment', mode = 'n', },
+  --   },
+  -- },
 
   -- better quickfix list syntax
   {
