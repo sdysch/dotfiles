@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.10.0
+    hooks:
+      - id: shellcheck
+        files: >
+          ^setups/.*/\.local/bin/|
+          ^install_scripts/.*\.sh$|
+          ^setups/arch/\.config/waybar/scripts/
