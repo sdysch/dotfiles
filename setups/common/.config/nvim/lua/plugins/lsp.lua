@@ -12,12 +12,13 @@ return {
 
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'pyright',
           'bashls',
-          -- 'sqls',
+          'jedi_language_server',
+          'marksman',
+          'pyright',
           'yamlls',
           -- 'jsonls',
-          'marksman',
+          -- 'sqls',
         },
         automatic_installation = true,
       })
@@ -36,8 +37,11 @@ return {
         map('K', vim.lsp.buf.hover, 'Hover documentation')
         map('gr', vim.lsp.buf.references, 'List references')
         map('<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
-        map('<leader>ca', vim.lsp.buf.code_action, 'Code action')
         map('<leader>E', vim.diagnostic.open_float, 'Diagnostics')
+		map('<leader>ca', function()
+			require('fzf-lua').lsp_code_actions()
+		end, 'fzf code action')
+
       end
 
       -- LSP configs
@@ -49,7 +53,7 @@ return {
             venvPath = '.',
             venv = '.venv',
             analysis = {
-              typeCheckingMode = 'basic',
+              typeCheckingMode = 'strict',
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
             },
@@ -82,14 +86,20 @@ return {
         filetypes = { 'markdown', 'vimwiki' },
       }
 
+      vim.lsp.config.jedi_language_server = {
+      	  on_attach = on_attach,
+      	  filetypes = { 'python' },
+	  }
+
       -- Enable servers
       vim.lsp.enable({
-        'pyright',
         'bashls',
-        -- 'sqls',
+        'jedi_language_server',
+        'marksman',
+        'pyright',
         'yamlls',
         -- 'jsonls',
-        'marksman',
+        -- 'sqls',
       })
     end,
   },
