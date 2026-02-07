@@ -53,7 +53,7 @@ return {
             venvPath = '.',
             venv = '.venv',
             analysis = {
-              typeCheckingMode = 'strict',
+              typeCheckingMode = 'basic',
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
             },
@@ -89,6 +89,7 @@ return {
       vim.lsp.config.jedi_language_server = {
       	  on_attach = on_attach,
       	  filetypes = { 'python' },
+      	  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
 	  }
 
       -- Enable servers
