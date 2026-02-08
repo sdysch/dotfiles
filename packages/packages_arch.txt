@@ -45,7 +45,6 @@ kid3
 kitty
 lazygit
 less
-lf
 libnotify
 libreoffice-still
 lightdm
