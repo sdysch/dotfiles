@@ -11,7 +11,7 @@ fi
 
 # default programs
 export EDITOR="nvim"
-export IMAGEVIEWER="sxiv"
+export IMAGEVIEWER="sxiv -b -g 1280x720"
 export READER="zathura"
 export TERM="xterm-256color"
 export TERMINAL="kitty"
