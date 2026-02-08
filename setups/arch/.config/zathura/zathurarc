@@ -1,12 +1,24 @@
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-set page-padding 1
-map h scroll half-up
-map l scroll half-down
-map d toggle_page_mode
-map r reload
-map R rotate
-map K zoom in
+
+set selection-clipboard clipboard
+set adjust-open width
+set scroll-page-aware true
+set scroll-full-overlap 0.01
+set scroll-step 50
+set zoom-center true
+
+map G goto bottom
+map H navigate previous
 map J zoom out
+map K zoom in
+map L navigate next
+map R rotate
+map d scroll half-down
+map gg goto top
+map h scroll half-up
 map i recolor
+map l scroll half-down
 map p print
+map r reload
+map u scroll half-up
