@@ -62,3 +62,6 @@ function update_pacman_mirrors() {
 # === mail ===
 alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
 alias a="aerc"
+
+# image viewer
+alias sxiv="sxiv -b -g 1280x720"

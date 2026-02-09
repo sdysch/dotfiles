@@ -21,7 +21,6 @@ direnv
 dolphin
 duf
 dunst
-evince
 exiftool
 eza
 fakeroot
@@ -36,19 +35,16 @@ git
 gnome-keyring
 grim
 htop
-htop
 hyprland
 hyprpaper
 i3lock
 imagemagick
-isync
 isync
 jq
 kid3
 kitty
 lazygit
 less
-lf
 libnotify
 libreoffice-still
 lightdm
@@ -78,6 +74,7 @@ papirus-icon-theme
 pass
 pavucontrol
 picom
+pre-commit
 pulseaudio
 pulseaudio-bluetooth
 python
@@ -86,7 +83,6 @@ ranger
 rclone
 reflector
 ripgrep
-ristretto
 rofi
 rsync
 ruby
@@ -121,6 +117,8 @@ xdotool
 xorg-apps
 xorg-server
 xorg-xinit
+yazi
 yt-dlp
 zathura
+zathura-pdf-poppler
 zsh

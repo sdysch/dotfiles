@@ -25,6 +25,7 @@ brew "tmux"
 brew "tree"
 brew "tree-sitter-cli"
 brew "wget"
+brew "yazi"
 
 cask "orbstack"
 cask "iterm2"

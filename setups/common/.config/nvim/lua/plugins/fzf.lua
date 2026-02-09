@@ -21,9 +21,23 @@ return {
           },
         },
         grep = {
-          rg_opts = '--hidden --glob !.git/* --line-number --no-heading --color=always --smart-case --column'
+          rg_opts = '--hidden --glob !.git/* --line-number --no-heading --color=always --smart-case --column',
+        },
+        lsp = {
+          code_actions = {
+            winopts = {
+              relative = 'cursor',
+              width = 0.6,
+              height = 0.6,
+              row = 1,
+              preview = { vertical = 'up:70%' },
+            },
+          },
         },
       })
-    end,
+      -- Register fzf-lua as UI select backend for LSP`
+      local fzf = require('fzf-lua')
+      fzf.register_ui_select()
+    end
   },
 }
