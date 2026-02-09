@@ -37,8 +37,8 @@ map('n', '<C-Down>', ':resize -3<CR>', { noremap=true, silent=true })
 map('n', '<leader>-', ':split<CR>', { noremap=true })
 map('n', '<leader>\\', ':vsplit<CR>', { noremap=true })
 map('n', '<leader>=', '<C-w>=', { noremap=true, silent=true })
-map('n', '<leader>sp', ':split ', { noremap=true, silent=false, desc='Split and edit file'})
-map('n', '<leader>vsp', ':vsplit ', { noremap=true, silent=false, desc='V split and edit file'})
+-- map('n', '<leader>sp', ':split ', { noremap=true, silent=false, desc='Split and edit file'})
+-- map('n', '<leader>vsp', ':vsplit ', { noremap=true, silent=false, desc='V split and edit file'})
 
 
 -- Tabs
