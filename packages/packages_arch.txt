@@ -31,6 +31,7 @@ firefox
 fontconfig
 fzf
 gcc
+geary
 git
 gnome-keyring
 grim
