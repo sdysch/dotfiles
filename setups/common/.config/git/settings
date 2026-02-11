@@ -1,3 +1,4 @@
+# vim ft=gitconfig
 [core]
 	excludesfile = ~/.config/git/gitignore_global
 	#pager = cat
@@ -7,3 +8,7 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
