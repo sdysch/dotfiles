@@ -1,0 +1,12 @@
+# source private aliases
+source $ZDOTDIR/.zsh_aliases_private
+
+# kubectl
+if [ $commands[kubectl] ]; then
+	source <(kubectl completion zsh)
+fi
+
+# bumpver
+alias bumpm="SKIP=no-commit-to-branch bumpver update --tag final --minor"
+alias bumpa="SKIP=no-commit-to-branch bumpver update --tag final --alpha"
+alias bumpp="SKIP=no-commit-to-branch bumpver update --tag final --patch"

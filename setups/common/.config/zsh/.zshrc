@@ -64,6 +64,8 @@ ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
 
 # common aliases
 source $ZDOTDIR/.zsh_aliases
+source $ZDOTDIR/.zsh_aliases_common
+source $ZDOTDIR/.zsh_aliases_private
 
 export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

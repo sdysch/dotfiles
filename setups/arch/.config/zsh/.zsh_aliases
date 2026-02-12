@@ -1,8 +1,5 @@
 # personal aliases
 
-# source common aliases
-source $ZDOTDIR/.zsh_aliases_common
-
 # opening files
 open() {
 	xdg-open $@ 2>/dev/null & 
