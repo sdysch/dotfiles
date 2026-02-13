@@ -10,3 +10,18 @@ fi
 alias bumpm="SKIP=no-commit-to-branch bumpver update --tag final --minor"
 alias bumpa="SKIP=no-commit-to-branch bumpver update --tag final --alpha"
 alias bumpp="SKIP=no-commit-to-branch bumpver update --tag final --patch"
+
+function tkuttle() {
+    local session_name="kuttle"
+
+    # Check if session exists
+    if ! tmux has-session -t "$session_name" 2>/dev/null; then
+        # Create session detached
+        tmux new-session -d -s "$session_name" -n kuttle
+
+        tmux send-keys -t "$session_name:kuttle" 'kuttle' C-m
+    fi
+
+    # Attach to the session
+    tmux attach -t "$session_name"
+}
