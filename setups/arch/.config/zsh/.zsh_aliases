@@ -1,11 +1,8 @@
 # personal aliases
 
-# source common aliases
-source $ZDOTDIR/.zsh_aliases_common
-
 # opening files
 open() {
-	xdg-open $@ 2>/dev/null & 
+	xdg-open "$@" 2>/dev/null & 
 }
 
 # gnu pass
@@ -53,6 +50,22 @@ function ytmp3() {
 
 function spotmp3() {
 	spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache $1
+}
+
+# search & then play youtube playlist with mpv
+function ytpl() {
+  local query="$*"
+  local url
+
+  url=$(
+    yt-dlp "ytsearch15:${query} playlist" \
+      --flat-playlist \
+      --print "%(title)s|||%(webpage_url)s" |
+      fzf --prompt="Playlist > " |
+      cut -d '|' -f 4-
+  )
+
+  [ -n "$url" ] && mpv "$url"
 }
 
 function update_pacman_mirrors() {

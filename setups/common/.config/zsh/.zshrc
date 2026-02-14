@@ -62,8 +62,9 @@ setopt correct
 # change colour of wildcard
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
 
-# common aliases
+# source aliases
 source $ZDOTDIR/.zsh_aliases
+source $ZDOTDIR/.zsh_aliases_common
 
 export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

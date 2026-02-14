@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Show active MPRIS players in a rofi menu and toggle play/pause
+
+# Get list of active players
+mapfile -t players < <(playerctl -l)
+
+# Exit if none found
+[ "${#players[@]}" -eq 0 ] && exit 0
+
+# Show rofi menu
+selection=$(printf '%s\n' "${players[@]}" | rofi -dmenu -p "Select player:")
+
+[ -z "$selection" ] && exit 0
+
+# Toggle play/pause on selected player
+playerctl --player="$selection" play-pause
