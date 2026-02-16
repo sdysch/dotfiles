@@ -1,9 +1,11 @@
 repos:
-  - repo: https://github.com/koalaman/shellcheck-precommit
-    rev: v0.10.0
-    hooks:
+  -   repo: local
+      hooks:
       - id: shellcheck
-        files: >
-          ^setups/.*/\.local/bin/|
-          ^install_scripts/.*\.sh$|
-          ^setups/arch/\.config/waybar/scripts/
+        name: shellcheck
+        description: Test shell scripts with shellcheck
+        entry: shellcheck
+        language: python
+        types: [shell]
+        require_serial: true # shellcheck can detect sourcing this way
+        files: '^(setups/(arch|flyr|common)/\.local/bin/|install_scripts/[^/]+\.sh$|setups/arch/\.config/waybar/scripts/)'

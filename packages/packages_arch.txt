@@ -57,6 +57,7 @@ mpc
 mpd
 mpd-mpris
 mpv
+mpv-mpris
 msmtp
 ncdu
 ncmpcpp
