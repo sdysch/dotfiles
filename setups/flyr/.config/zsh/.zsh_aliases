@@ -1,5 +1,6 @@
 # source private aliases
-source $ZDOTDIR/.zsh_aliases_private
+PRIVATE_ALIASES="$ZDOTDIR/.zsh_aliases_private"
+[[ -f $PRIVATE_ALIASES ]] && source $PRIVATE_ALIASES
 
 # kubectl
 if [ $commands[kubectl] ]; then
