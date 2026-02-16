@@ -54,6 +54,7 @@ alias dots="cd $HOME/dotfiles"
 # === git aliases ===
 alias g="git"
 alias ga="git add"
+alias gm="git merge"
 alias gaa="git add --all"
 alias gb="git branch"
 alias gba="git branch -a"
