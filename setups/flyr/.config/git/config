@@ -1,0 +1,7 @@
+# private
+[include]
+	path = ~/.config/git/email
+[include]
+	path = ~/.config/git/aliases
+[include]
+	path = ~/.config/git/settings

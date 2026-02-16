@@ -1,3 +1,4 @@
+brew "argo"
 brew "bat"
 brew "btop"
 brew "cmake"
