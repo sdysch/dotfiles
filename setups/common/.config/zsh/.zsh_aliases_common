@@ -86,6 +86,10 @@ alias v="vim"
 alias n="nvim"
 alias nv="nvim"
 
+# === emacs ===
+alias emacs="emacsclient -c -a 'emacs'"
+alias nw="emacsclient -nw -a 'emacs'"
+
 # === opencode ===
 alias oc="opencode"
 

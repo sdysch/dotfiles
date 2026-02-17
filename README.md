@@ -15,7 +15,8 @@
 ### Arch setup
 * Window manager: wayland ([hyprland](./setups/arch/.config/hyprland)) + [waybar](./setups/arch/.config/waybar) / [dwm](https://github.com/sdysch/dwm) + [dwmblocks](https://github.com/sdysch/dwmblocks)
 * [zsh](./setups/common/.config/zsh)
-* [(neo)vim](./setups/common/.config/nvim) + [vim-plug](https://github.com/junegunn/vim-plug)
+* [(neo)vim](./setups/common/.config/nvim)
+* Occasionally emacs + [doom emacs](https://github.com/doomemacs/doomemacs) (really to see what the fuss is all about)
 * Launcher: [rofi](./setups/arch/.config/rofi)
 
 ## Installation

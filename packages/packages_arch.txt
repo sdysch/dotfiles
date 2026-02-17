@@ -21,6 +21,7 @@ direnv
 dolphin
 duf
 dunst
+emacs
 exiftool
 eza
 fakeroot
