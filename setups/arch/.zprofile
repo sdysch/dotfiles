@@ -1,4 +1,11 @@
 # vim: ft=sh
+
+# === config file locations ===
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -8,6 +15,10 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# add doom emacs to PATH
+EMACS_DIR=$XDG_CONFIG_HOME/emacs
+[[ -d $EMACS_DIR/bin ]] && export PATH="$EMACS_DIR/bin:$PATH"
 
 # default programs
 export EDITOR="nvim"
@@ -23,12 +34,6 @@ case "$DESKTOP_SESSION" in
 	hyprland) export STATUSBAR="waybar";;
 	*) export STATUSBAR="";;
 esac
-
-# === config file locations ===
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache
 
 # zsh
 export HISTFILE=$XDG_DATA_HOME/zsh/history
