@@ -1,4 +1,14 @@
 # personal aliases
+# === helpers ===
+_require_cmd() {
+  command -v "$1" >/dev/null 2>&1 && return 0
+  _err "Missing required command: $1"
+  return 1
+}
+
+_err() {
+  printf '\n\033[1;31m==> ERROR: %s\033[0m\n' "$1" >&2
+}
 
 # opening files
 open() {
@@ -16,12 +26,9 @@ alias mount_seagate="sudo mount -t ntfs-3g /dev/sda1 /mnt"
 
 # count songs in mpd database
 function number_of_songs() {
-	if command -v mpc >/dev/null; then
-			mpc update >/dev/null 2>&1
-			mpc stats | awk -F': ' '/Songs:/ {print $2}'
-		else
-			echo "mpc not found"
-	fi
+	_require_cmd mpc || return 1
+	mpc update >/dev/null 2>&1
+	mpc stats | awk -F': ' '/Songs:/ {print $2}'
 }
 
 # check music metadata in a directory
@@ -38,38 +45,42 @@ function check_music_metadata() {
 
 # music
 function ytmp3() {
+	_require_cmd yt-dlp || return 1
 	yt-dlp -o '%(playlist_index)s - %(title)s.%(ext)s' \
-       --extract-audio \
-       --audio-format mp3 \
-       --add-metadata \
-       --embed-thumbnail \
-       --metadata-from-title "%(artist)s - %(title)s" \
-       --split-chapters \
-       $1
+			 --extract-audio \
+			 --audio-format mp3 \
+			 --add-metadata \
+			 --embed-thumbnail \
+			 --metadata-from-title "%(artist)s - %(title)s" \
+			 --split-chapters \
+			 "$1"
 }
 
 function spotmp3() {
-	spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache $1
+	_require_cmd spotdl || return 1
+	spotdl --lyrics --output "./{artist}/{album}/" --overwrite skip --print-errors --audio youtube youtube-music --no-cache "$1"
 }
 
 # search & then play youtube playlist with mpv
 function ytpl() {
-  local query="$*"
-  local url
+	_require_cmd yt-dlp || return 1
+	local query="$*"
+	local url
 
-  url=$(
-    yt-dlp "ytsearch15:${query} playlist" \
-      --flat-playlist \
-      --print "%(title)s|||%(webpage_url)s" |
-      fzf --prompt="Playlist > " |
-      cut -d '|' -f 4-
-  )
+	url=$(
+		yt-dlp "ytsearch15:${query} playlist" \
+			--flat-playlist \
+			--print "%(title)s|||%(webpage_url)s" |
+			fzf --prompt="Playlist > " |
+			cut -d '|' -f 4-
+	)
 
-  [ -n "$url" ] && mpv "$url"
+	[ -n "$url" ] && mpv "$url"
 }
 
 function update_pacman_mirrors() {
-	sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+	_require_cmd reflector || return 1
+	sudo reflector --latest 10 --sort rate --country "united kingdom" --protocol http,https --save /etc/pacman.d/mirrorlist
 }
 
 # === mail ===

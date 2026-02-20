@@ -87,8 +87,9 @@ alias n="nvim"
 alias nv="nvim"
 
 # === emacs ===
-alias emacs="emacsclient -c -a 'emacs'"
-alias nw="emacsclient -nw -a 'emacs'"
+# If -a blank then daemon is started if not running
+alias emacs="emacsclient -c -a ''"
+alias nw="emacsclient -nw -a ''"
 
 # === opencode ===
 alias oc="opencode"
