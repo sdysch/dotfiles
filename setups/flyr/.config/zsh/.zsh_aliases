@@ -12,7 +12,7 @@ alias ks="kubectl config use-context"
 
 # argo
 alias als="argo list"
-alias arm= "argo delete"
+alias arm="argo delete"
 
 # bumpver
 alias bumpm="SKIP=no-commit-to-branch bumpver update --tag final --minor"
