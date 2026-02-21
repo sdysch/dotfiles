@@ -32,10 +32,10 @@ return {
 
     local frame = 1
     dashboard.section.header.val = frames[frame]
-
     -- Updated bookmarks
     dashboard.section.buttons.val = {
       dashboard.button('f', '󰍉  Find file', ':lua require(\'fzf-lua\').files()<CR>'),
+      dashboard.button('r', '  Find recent files', ':lua require(\'fzf-lua\').oldfiles()<CR>'),
       dashboard.button('t', '  Browse cwd', ':NvimTreeOpen<CR>'),
       dashboard.button('p', '  Plugins', ':Lazy<CR>'),
       dashboard.button('q', '󰅙  Quit', ':qa!<CR>'),
