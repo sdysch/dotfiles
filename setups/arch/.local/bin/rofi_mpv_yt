@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MODE='video'
+AUDIO_ONLY=0
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+	case "$1" in
+		--playlist)
+			MODE='playlist'
+			shift
+			;;
+		--audio-only)
+			AUDIO_ONLY=1
+			shift
+			;;
+		-h|--help)
+			echo 'Usage: ytvid [--playlist] [--audio-only]'
+			exit 0
+			;;
+		*)
+			echo "Unknown option: $1"
+			exit 1
+			;;
+	esac
+done
+
+# Ask for query
+if [[ "$MODE" == 'playlist' ]]; then
+	query=$(rofi -dmenu -i -p 'Search playlist:')
+else
+	query=$(rofi -dmenu -i -p 'Search video:')
+fi
+
+[[ -z "$query" ]] && exit 0
+
+# Build search
+if [[ "$MODE" == 'playlist' ]]; then
+	search="ytsearch15:${query} playlist"
+
+	mapfile -t options < <(
+		yt-dlp "$search" --flat-playlist \
+			--print '%(title)s (%(playlist_count)s videos)|||%(webpage_url)s'
+	)
+else
+	search="ytsearch15:${query}"
+
+	mapfile -t options < <(
+		yt-dlp "$search" --flat-playlist \
+			--print '%(title)s (%(duration_string)s)|||%(webpage_url)s'
+	)
+fi
+
+[[ ${#options[@]} -eq 0 ]] && exit 0
+
+# Selection menu
+if [[ "$MODE" == 'playlist' ]]; then
+	selection=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Select playlist:')
+else
+	selection=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Select video:')
+fi
+
+[[ -z "$selection" ]] && exit 0
+
+url="${selection##*|||}"
+
+# Launch mpv
+if [[ "$AUDIO_ONLY" -eq 1 ]]; then
+	exec mpv --no-video "$url"
+else
+	exec mpv "$url"
+fi
