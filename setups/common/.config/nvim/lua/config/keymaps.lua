@@ -79,17 +79,6 @@ end
 -- map to <leader>b in Python buffers
 vim.keymap.set('n', '<leader>B', toggle_breakpoint, { buffer = true, silent = true, desc = 'toggle python breakpoint' })
 
--- python boilerplate imports FIXME not ideal as I may not always want everything
-vim.keymap.set({ 'n', 'i' }, '<leader>ip', function()
-  vim.api.nvim_put({
-    'import pandas as pd',
-    'import numpy as np',
-    'import matplotlib.pyplot as plt',
-    'import seaborn as sns'
-  }, 'l', true, true)
-end, { buffer = true, desc = 'Insert common Python imports' })
-
-
 -- === copying files ===
 -- copy filename
 vim.keymap.set('n', '<leader>cf', function()
@@ -146,3 +135,61 @@ vim.keymap.set('n', '<leader>sw', 'zw', { desc = 'Mark word as wrong' })
 
 -- undo last zg/zw
 vim.keymap.set('n', '<leader>su', 'zug', { desc = 'Undo spell add/remove' })
+
+-- === minimalist python snippets handling ===
+local fzf = require('fzf-lua')
+vim.keymap.set('n', '<leader>si', function()
+    local ft = vim.bo.filetype
+    local snippet_file = vim.fn.expand('~/.config/nvim/snippets/' .. ft .. '_snippets.txt')
+
+    if vim.fn.filereadable(snippet_file) == 0 then
+        print('No snippet file found for filetype: ' .. ft)
+        return
+    end
+
+    -- Parse snippets
+    local snippets = {}
+    local current_name = nil
+    local current_text = {}
+
+    for line in io.lines(snippet_file) do
+        local header = line:match('^#%s*(.-):')
+        if header then
+            if current_name then
+                table.insert(snippets, {name=current_name, text=table.concat(current_text, '\n')})
+            end
+            current_name = header
+            current_text = {}
+        else
+            table.insert(current_text, line)
+        end
+    end
+    if current_name then
+        table.insert(snippets, {name=current_name, text=table.concat(current_text, '\n')})
+    end
+
+    -- Prepare choices and map for preview
+    local choices = {}
+    local choice_map = {}
+    for _, s in ipairs(snippets) do
+        table.insert(choices, s.name)
+        choice_map[s.name] = s.text
+    end
+
+    fzf.fzf_exec(choices, {
+        prompt = 'Snippet> ',
+        preview = function(selected)
+            local text = choice_map[selected[1]] or ''
+            return text
+        end,
+        actions = {
+            ['default'] = function(selected)
+                local text = choice_map[selected[1]]
+                if text then
+                    local lines = vim.split(text, '\n')
+                    vim.api.nvim_put(lines, 'l', true, true)
+                end
+            end
+        }
+    })
+end, { desc = 'Insert snippet' })
