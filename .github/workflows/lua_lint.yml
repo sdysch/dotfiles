@@ -19,7 +19,7 @@ jobs:
         run: cargo install selene
 
       - name: Run Selene on Neovim config
-        run: selene setups/*/.config/nvim/**/*.lua
+        run: find setups/*/.config/nvim -name "*.lua" -print0 | xargs -0 selene
 
   stylua-lint:
     runs-on: ubuntu-latest
@@ -29,8 +29,9 @@ jobs:
 
       - name: Install StyLua
         run: |
-          curl -sSfL https://raw.githubusercontent.com/JohnnyMorganz/StyLua/main/install.sh | sh
-          sudo mv stylua /usr/local/bin/
+          sudo apt-get update
+          sudo apt-get install -y python3 python3-pip
+          pip install git+https://github.com/johnnymorganz/stylua
 
       - name: Run StyLua check
         run: stylua --check setups/*/.config/nvim
