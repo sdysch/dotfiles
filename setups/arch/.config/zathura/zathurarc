@@ -16,9 +16,9 @@ map L navigate next
 map R rotate
 map d scroll half-down
 map gg goto top
-map h scroll half-up
+# map h scroll half-up
 map i recolor
-map l scroll half-down
+# map l scroll half-down
 map p print
 map r reload
 map u scroll half-up
