@@ -1,11 +1,11 @@
 return {
-  'lukas-reineke/indent-blankline.nvim',
-  main = 'ibl',
+  "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
   opts = {
     indent = {
-      char = '│',
-      tab_char = '│',
-      highlight = 'NonText',
+      char = "│",
+      tab_char = "│",
+      highlight = "NonText",
     },
     scope = {
       enabled = true,
@@ -13,12 +13,12 @@ return {
       show_end = false,
     },
     exclude = {
-      filetypes = { 'help', 'terminal', 'lazy', 'dashboard' },
+      filetypes = { "help", "terminal", "lazy", "dashboard" },
     },
   },
-  event = { 'BufReadPost', 'BufNewFile' },
+  event = { "BufReadPost", "BufNewFile" },
   config = function(_, opts)
-    local ibl = require('ibl')
+    local ibl = require("ibl")
     ibl.setup(opts)
     vim.cmd([[highlight default link IBLIndent NonText]])
   end,

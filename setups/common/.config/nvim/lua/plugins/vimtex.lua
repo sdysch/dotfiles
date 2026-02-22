@@ -1,15 +1,15 @@
 return {
   {
-    'lervag/vimtex',
-    ft = { 'tex' },
+    "lervag/vimtex",
+    ft = { "tex" },
     config = function()
       -- Fix tex filetype
-      vim.api.nvim_create_autocmd({'BufRead','BufNewFile'}, {
-        pattern = '*.tex',
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = "*.tex",
         callback = function()
-          vim.bo.filetype = 'tex'
-        end
+          vim.bo.filetype = "tex"
+        end,
       })
-    end
+    end,
   },
 }

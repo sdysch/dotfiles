@@ -1,7 +1,7 @@
 -- ===============================
 -- General Settings
 -- ===============================
-vim.opt.encoding = 'utf-8'
+vim.opt.encoding = "utf-8"
 vim.opt.autoindent = true
 vim.opt.copyindent = true
 vim.opt.cursorline = true
@@ -23,33 +23,33 @@ vim.opt.number = true
 vim.opt.showmatch = true
 vim.opt.splitright = true
 vim.opt.undolevels = 1000
-vim.opt.backspace = {'eol','start','indent'}
-vim.opt.whichwrap:append('<,>,h,l')
+vim.opt.backspace = { "eol", "start", "indent" }
+vim.opt.whichwrap:append("<,>,h,l")
 vim.opt.modeline = true
 vim.opt.modelines = 5
-vim.opt.wildignore = {'*.o','*.pyc','*/tmp/*','*.so','*.swp','*.zip'}
-vim.env.TMPDIR = vim.fn.expand('~/.cache/nvim/tmp')
+vim.opt.wildignore = { "*.o", "*.pyc", "*/tmp/*", "*.so", "*.swp", "*.zip" }
+vim.env.TMPDIR = vim.fn.expand("~/.cache/nvim/tmp")
 
 -- grep
-vim.opt.grepprg = 'rg --vimgrep --smart-case --hidden'
-vim.opt.grepformat = '%f:%l:%c:%m'
+vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
+vim.opt.grepformat = "%f:%l:%c:%m"
 
 -- integrated terminals
-vim.api.nvim_create_user_command('Term', 'terminal', {})
-vim.api.nvim_create_user_command('Vterm', 'vertical terminal', {})
+vim.api.nvim_create_user_command("Term", "terminal", {})
+vim.api.nvim_create_user_command("Vterm", "vertical terminal", {})
 
 -- unlimited undofile
 -- Enable persistent undo
 vim.o.undofile = true
 
 -- Set undodir
-local undodir = os.getenv('XDG_DATA_HOME') or os.getenv('HOME')..'/.local/share'
-vim.o.undodir = undodir..'/nvim/undo'
+local undodir = os.getenv("XDG_DATA_HOME") or os.getenv("HOME") .. "/.local/share"
+vim.o.undodir = undodir .. "/nvim/undo"
 
 -- Unlimited undo levels
 vim.o.undolevels = 10000
 vim.o.undoreload = 10000
 
 -- spell
-vim.opt.spelllang = { 'en_gb' }
-vim.opt.spelloptions = 'camel'
+vim.opt.spelllang = { "en_gb" }
+vim.opt.spelloptions = "camel"
