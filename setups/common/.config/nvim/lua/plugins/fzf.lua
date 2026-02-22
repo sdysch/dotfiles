@@ -2,7 +2,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = "FzfLua",
+    cmd = { "FzfLua" },
     keys = {
       { "<leader>ff", "<cmd>FzfLua git_files<CR>", desc = "fzf files in git" },
       { "<leader>fb", "<cmd>FzfLua buffers<CR>", desc = "fzf buffers" },
@@ -14,10 +14,11 @@ return {
     },
 
     config = function()
-      require("fzf-lua").setup({
+      local fzf = require("fzf-lua")
+      fzf.setup({
         defaults = {
           actions = {
-            ["ctrl-q"] = { fn = require("fzf-lua").actions.file_sel_to_qf, prefix = "select-all" },
+            ["ctrl-q"] = { fn = fzf.actions.file_sel_to_qf, prefix = "select-all" },
           },
         },
         grep = {
@@ -36,7 +37,6 @@ return {
         },
       })
       -- Register fzf-lua as UI select backend for LSP`
-      local fzf = require("fzf-lua")
       fzf.register_ui_select()
     end,
   },
