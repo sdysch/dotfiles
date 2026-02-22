@@ -1,6 +1,7 @@
 return {
   {
     "lervag/vimtex",
+    lazy = false,
     ft = { "tex" },
     config = function()
       -- Fix tex filetype
