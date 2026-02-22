@@ -1,7 +1,7 @@
 return {
   "otavioschwanck/arrow.nvim",
   keys = {
-    { ";", mode = { "n", "v" } },
+    { ",;", mode = { "n", "v" } },
     { "m", mode = { "n", "v" } },
   },
   dependencies = {
@@ -9,7 +9,7 @@ return {
   },
   opts = {
     show_icons = true,
-    leader_key = ";",
+    leader_key = ",;",
     buffer_leader_key = "m",
   },
 }

@@ -31,6 +31,7 @@ return {
 
     local frame = 1
     dashboard.section.header.val = frames[frame]
+
     -- Updated bookmarks
     dashboard.section.buttons.val = {
       dashboard.button("f", "󰍉  Find file", ":lua require('fzf-lua').files()<CR>"),
