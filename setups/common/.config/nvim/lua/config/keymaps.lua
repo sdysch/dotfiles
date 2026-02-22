@@ -11,9 +11,6 @@ vim.keymap.set("n", "<leader>lg", function()
   vim.cmd("startinsert")
 end, { desc = "Lazygit (terminal)" })
 
--- Make
-map("n", "<leader>r", ":!make<CR>", { noremap = true, silent = true })
-
 -- Search
 map("n", "<leader>n", ":noh<CR>", { noremap = true, silent = true })
 
