@@ -1,18 +1,18 @@
 return {
   {
-    'folke/noice.nvim',
-    event = 'VeryLazy',
+    "folke/noice.nvim",
+    event = "VeryLazy",
     dependencies = {
-      'MunifTanjim/nui.nvim',
+      "MunifTanjim/nui.nvim",
       {
-        'rcarriga/nvim-notify',
+        "rcarriga/nvim-notify",
         config = function()
-          vim.notify = require('notify')
-  
-          require('notify').setup({
-            stages = 'fade',
+          vim.notify = require("notify")
+
+          require("notify").setup({
+            stages = "fade",
             timeout = 3000,
-            background_colour = '#000000',
+            background_colour = "#000000",
           })
         end,
       },
@@ -20,18 +20,18 @@ return {
     opts = {
       lsp = {
         override = {
-          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
-          ['vim.lsp.util.stylize_markdown'] = true,
-          ['cmp.entry.get_documentation'] = true,
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
         },
         hover = {
-        	enabled = false
-		},
-		signature = {
-			enabled = false,
-		}
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
       },
-  
+
       presets = {
         bottom_search = true,
         command_palette = true,
@@ -40,5 +40,5 @@ return {
         lsp_doc_border = true,
       },
     },
-  }
+  },
 }
