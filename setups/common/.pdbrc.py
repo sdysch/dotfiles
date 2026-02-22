@@ -1,25 +1,26 @@
-print('[INFO] -- Loading custom settings from ~/.pdbrc.py')
-from pygments.token import Token
 import os
 import pdb
 
+print("[INFO] -- Loading custom settings from ~/.pdbrc.py")
+
 # vim keybindings in pager
-os.environ['PAGER'] = 'less -R'
+os.environ["PAGER"] = "less -R"
+
 
 # === config ===
 class Config(pdb.DefaultConfig):
     # colours
-    setbgcolor = 'dark'
+    setbgcolor = "dark"
     use_pygments = True
     filename_color = pdb.Color.lightgray
     use_terminal256formatter = True
 
     # colours
-    setbgcolor = 'dark'
+    setbgcolor = "dark"
     use_pygments = True
 
     # prompt
-    prompt = '(Pdb++) → '
+    prompt = "(Pdb++) → "
 
     # auto context
     context = 5
@@ -35,10 +36,12 @@ class Config(pdb.DefaultConfig):
             pass
         else:
             self.colorscheme = terminal.TERMINAL_COLORS.copy()
-            self.colorscheme.update({
-                terminal.Keyword:            (139, None),
-                terminal.Number:             (186, None),
-                terminal.String:             (108, None),
-                terminal.Name.Function:      (67, None),
-                terminal.Name.Namespace:     (110, None),
-            })
+            self.colorscheme.update(
+                {
+                    terminal.Keyword: (139, None),
+                    terminal.Number: (186, None),
+                    terminal.String: (108, None),
+                    terminal.Name.Function: (67, None),
+                    terminal.Name.Namespace: (110, None),
+                }
+            )
