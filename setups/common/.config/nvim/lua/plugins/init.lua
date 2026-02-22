@@ -56,16 +56,6 @@ return {
     },
   },
 
-  -- csv viewer
-  -- {
-  --   'emmanueltouzery/decisive.nvim',
-  --   ft = { 'csv' },
-  --   keys = {
-  --     { '<leader>csa', function() require('decisive').align_csv({}) end, desc = 'Align CSV columns', mode = 'n', },
-  --     { '<leader>csA', function() require('decisive').align_csv_clear({}) end, desc = 'Clear CSV alignment', mode = 'n', },
-  --   },
-  -- },
-
   -- better quickfix list syntax
   {
     "stevearc/quicker.nvim",
@@ -74,4 +64,18 @@ return {
       require("quicker").setup({})
     end,
   },
+
+  -- arrow for bookmarking files
+  {
+  "otavioschwanck/arrow.nvim",
+  lazy=false,
+  dependencies = {
+    { "nvim-tree/nvim-web-devicons" },
+  },
+  opts = {
+    show_icons = true,
+    leader_key = ';',
+    buffer_leader_key = 'm',
+  }
+},
 }
