@@ -93,6 +93,7 @@ ruby
 ruby-erb
 scrot
 sddm
+selene
 shellcheck
 slurp
 speedtest-cli
