@@ -45,7 +45,7 @@ repos:
     hooks:
       - id: stylua
         name: stylua
-        entry: selene
+        entry: stylua
         language: system
         types: [lua]
-        files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
+        files: '^setups/[^/]+/\.config/nvim/.*\.lua$'

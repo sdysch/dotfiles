@@ -67,15 +67,15 @@ return {
 
   -- arrow for bookmarking files
   {
-  "otavioschwanck/arrow.nvim",
-  lazy=false,
-  dependencies = {
-    { "nvim-tree/nvim-web-devicons" },
+    "otavioschwanck/arrow.nvim",
+    lazy = false,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    },
+    opts = {
+      show_icons = true,
+      leader_key = ";",
+      buffer_leader_key = "m",
+    },
   },
-  opts = {
-    show_icons = true,
-    leader_key = ';',
-    buffer_leader_key = 'm',
-  }
-},
 }
