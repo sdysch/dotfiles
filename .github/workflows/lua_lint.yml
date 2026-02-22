@@ -1,0 +1,36 @@
+name: Lua Lint
+
+on:
+  push:
+    paths:
+      - 'setups/*/.config/nvim/**/*.lua'
+  pull_request:
+    paths:
+      - 'setups/*/.config/nvim/**/*.lua'
+
+jobs:
+  selene-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Selene
+        run: cargo install selene
+
+      - name: Run Selene on Neovim config
+        run: selene setups/*/.config/nvim/**/*.lua
+
+  stylua-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install StyLua
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/JohnnyMorganz/StyLua/main/install.sh | sh
+          sudo mv stylua /usr/local/bin/
+
+      - name: Run StyLua check
+        run: stylua --check setups/*/.config/nvim

@@ -101,6 +101,7 @@ spotify-launcher
 spotifyd
 starship
 stow
+stylua
 swayidle
 sxiv
 texlive

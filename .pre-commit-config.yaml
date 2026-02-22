@@ -41,7 +41,11 @@ repos:
         files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
 
 
-  # - repo: https://github.com/JohnnyMorganz/StyLua
-  #   rev: v2.3.1
-  #   hooks:
-  #     - id: stylua
+  - repo: local
+    hooks:
+      - id: stylua
+        name: stylua
+        entry: selene
+        language: system
+        types: [lua]
+        files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
