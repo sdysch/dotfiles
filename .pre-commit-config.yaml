@@ -9,3 +9,8 @@ repos:
         types: [shell]
         require_serial: true # shellcheck can detect sourcing this way
         files: '^(setups/(arch|flyr|common)/\.local/bin/|install_scripts/[^/]+\.sh$|setups/arch/\.config/waybar/scripts/)'
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
