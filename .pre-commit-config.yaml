@@ -40,7 +40,7 @@ repos:
         types: [lua]
         files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
 
-
+  # style lua
   - repo: local
     hooks:
       - id: stylua
