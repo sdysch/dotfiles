@@ -9,7 +9,7 @@ on:
       - 'setups/*/.config/nvim/**/*.lua'
 
 jobs:
-  selene-lint:
+  lua-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,20 +18,14 @@ jobs:
       - name: Install Selene
         run: cargo install selene
 
-      - name: Run Selene on Neovim config
-        run: find setups/*/.config/nvim -name "*.lua" -print0 | xargs -0 selene
-
-  stylua-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Install StyLua
         run: |
           sudo apt-get update
           sudo apt-get install -y python3 python3-pip
           pip install git+https://github.com/johnnymorganz/stylua
+
+      - name: Run Selene
+        run: find setups/*/.config/nvim -name "*.lua" -print0 | xargs -0 selene
 
       - name: Run StyLua check
         run: stylua --check setups/*/.config/nvim
