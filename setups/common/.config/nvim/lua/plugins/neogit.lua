@@ -9,12 +9,11 @@ return {
     },
     cmd = "Neogit",
     keys = {
-      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
     },
     config = function()
-
       -- Setup Diffview
-      require('diffview').setup({
+      require("diffview").setup({
         enhanced_diff_hl = true,
         use_icons = true,
         key_bindings = {
@@ -28,12 +27,12 @@ return {
       })
 
       -- Setup Neogit
-      require('neogit').setup {
+      require("neogit").setup({
         integrations = { diffview = true },
-      }
+      })
 
-      vim.api.nvim_set_keymap('n', '<leader>gd', '<cmd>DiffviewOpen<cr>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>gq', '<cmd>DiffviewClose<cr>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>gq", "<cmd>DiffviewClose<cr>", { noremap = true, silent = true })
     end,
-  }
+  },
 }

@@ -1,39 +1,72 @@
 #!/bin/python3
+# ruff: noqa
 
 # calculate hydration of sourdough bread
 # hydration = ratio of water content to flour content
 # starter assumed to be 100% hydrated but can be specified
 
-#====================================================================================================
+# ====================================================================================================
+
 
 def main(args):
 
     totalWaterWeight = args.water
     totalFlourWeight = args.flour
 
-    if (args.starterHydration):
-        print("[INFO] - using starter hydration of {hydration}".format(hydration=args.starterHydration))
+    if args.starterHydration:
+        print(
+            "[INFO] - using starter hydration of {hydration}".format(
+                hydration=args.starterHydration
+            )
+        )
 
-    flourInStarter = args.starter * ( 1. / ( 1. + args.starterHydration ) )
-    waterInStarter = args.starter * ( args.starterHydration / ( 1. + args.starterHydration ) )
+    flourInStarter = args.starter * (1.0 / (1.0 + args.starterHydration))
+    waterInStarter = args.starter * (
+        args.starterHydration / (1.0 + args.starterHydration)
+    )
 
     totalWaterWeight += waterInStarter
-    totalFlourWeight += ( args.starter - waterInStarter )
+    totalFlourWeight += args.starter - waterInStarter
+
+    print(str(totalWaterWeight / totalFlourWeight * 100) + "%")
 
 
-    print( str( totalWaterWeight / totalFlourWeight * 100 ) + "%" )
-
-#====================================================================================================
+# ====================================================================================================
 
 if __name__ == "__main__":
-    
     import argparse
 
-    parser = argparse.ArgumentParser(description = "Calculate the hydration of sourdough bread")
-    parser.add_argument("--starter", metavar = "STARTERWEIGHT", type = float, help = "Weight of starter (assumed to be 100% hydrated, use --starterHydration to specify)", required = True)
-    parser.add_argument("--flour", metavar = "FLOURWEIGHT", type = float, help = "Weight of flour", required = True)
-    parser.add_argument("--water", metavar = "WATERWEIGHT", type = float, help = "Weight of water", required = True)
-    parser.add_argument("--starterHydration", metavar = "STARTERHYDRATION", type = float, default = 1., help = "Alter the hydration of your sourdough starter. Must be a fraction, e.g. 0.7 for 70% hydrated")
+    parser = argparse.ArgumentParser(
+        description="Calculate the hydration of sourdough bread"
+    )
+    parser.add_argument(
+        "--starter",
+        metavar="STARTERWEIGHT",
+        type=float,
+        help="Weight of starter (assumed to be 100% hydrated, use --starterHydration to specify)",
+        required=True,
+    )
+    parser.add_argument(
+        "--flour",
+        metavar="FLOURWEIGHT",
+        type=float,
+        help="Weight of flour",
+        required=True,
+    )
+    parser.add_argument(
+        "--water",
+        metavar="WATERWEIGHT",
+        type=float,
+        help="Weight of water",
+        required=True,
+    )
+    parser.add_argument(
+        "--starterHydration",
+        metavar="STARTERHYDRATION",
+        type=float,
+        default=1.0,
+        help="Alter the hydration of your sourdough starter. Must be a fraction, e.g. 0.7 for 70% hydrated",
+    )
 
     args = parser.parse_args()
     main(args)

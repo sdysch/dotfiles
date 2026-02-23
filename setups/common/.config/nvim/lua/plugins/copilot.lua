@@ -1,13 +1,13 @@
 return {
   {
-    'zbirenbaum/copilot.lua',
+    "zbirenbaum/copilot.lua",
     dependencies = {
-      'copilotlsp-nvim/copilot-lsp',
+      "copilotlsp-nvim/copilot-lsp",
     },
-    cmd = { 'Copilot' },
-    keys = { { '<leader>ct', '<Cmd>Copilot toggle<CR>', mode = 'n', desc = 'Copilot toggle' } },
+    cmd = { "Copilot" },
+    keys = { { "<leader>ct", "<Cmd>Copilot toggle<CR>", mode = "n", desc = "Copilot toggle" } },
     config = function()
-      require('copilot').setup({
+      require("copilot").setup({
         panel = {
           enabled = false,
         },
@@ -15,7 +15,7 @@ return {
           enabled = true,
           auto_trigger = true,
           keymap = {
-            accept = '<C-l>',
+            accept = "<C-l>",
             -- next = '<C-]>',
             -- prev = '<C-[>',
             -- dismiss = '<C-]>',
@@ -33,10 +33,10 @@ return {
         },
       })
 
-      vim.keymap.set('n', '<leader>ct', '<Cmd>Copilot toggle<CR>', { 
-        noremap = true, 
-        silent = true, 
-        desc = 'Toggle Copilot' 
+      vim.keymap.set("n", "<leader>ct", "<Cmd>Copilot toggle<CR>", {
+        noremap = true,
+        silent = true,
+        desc = "Toggle Copilot",
       })
     end,
   },

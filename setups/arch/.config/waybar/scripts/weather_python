@@ -6,47 +6,51 @@ import requests
 import time
 import os
 
-CACHE_DIR = os.environ.get('XDG_CACHE_HOME', os.path.expanduser('~/.cache'))
-CACHE_FILE = os.path.join(CACHE_DIR, 'weatherreport')
-TIME_FILE = os.path.join(CACHE_DIR, 'weatherreport.time')
+CACHE_DIR = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
+CACHE_FILE = os.path.join(CACHE_DIR, "weatherreport")
+TIME_FILE = os.path.join(CACHE_DIR, "weatherreport.time")
 CACHE_TTL = 3600
 
 LABELS = [
-    ('Morning', 600),   # 06:00
-    ('Noon', 1200),     # 12:00
-    ('Evening', 1800),  # 18:00
-    ('Night', 0)        # 00:00
+    ("Morning", 600),  # 06:00
+    ("Noon", 1200),  # 12:00
+    ("Evening", 1800),  # 18:00
+    ("Night", 0),  # 00:00
 ]
+
 
 def cond_to_emoji(cond):
     cond = cond.lower()
-    if 'sunny' in cond or 'clear' in cond:
-        return '☀️'
-    if 'cloud' in cond or 'overcast' in cond:
-        return '☁️'
-    if 'rain' in cond or 'drizzle' in cond or 'shower' in cond:
-        return '🌧'
-    if 'snow' in cond or 'sleet' in cond:
-        return '❄️'
-    if 'thunder' in cond or 'storm' in cond:
-        return '⛈'
-    if 'fog' in cond or 'mist' in cond or 'haze' in cond:
-        return '🌫'
-    return '🌤'
+    if "sunny" in cond or "clear" in cond:
+        return "☀️"
+    if "cloud" in cond or "overcast" in cond:
+        return "☁️"
+    if "rain" in cond or "drizzle" in cond or "shower" in cond:
+        return "🌧"
+    if "snow" in cond or "sleet" in cond:
+        return "❄️"
+    if "thunder" in cond or "storm" in cond:
+        return "⛈"
+    if "fog" in cond or "mist" in cond or "haze" in cond:
+        return "🌫"
+    return "🌤"
+
 
 def read_cache():
     try:
         with open(CACHE_FILE) as f:
             return f.read().strip()
     except FileNotFoundError:
-        return 'N/A'
+        return "N/A"
+
 
 def write_cache(text):
     os.makedirs(CACHE_DIR, exist_ok=True)
-    with open(CACHE_FILE, 'w') as f:
+    with open(CACHE_FILE, "w") as f:
         f.write(text)
-    with open(TIME_FILE, 'w') as f:
+    with open(TIME_FILE, "w") as f:
         f.write(str(int(time.time())))
+
 
 def cache_valid():
     try:
@@ -56,49 +60,46 @@ def cache_valid():
     except FileNotFoundError:
         return False
 
+
 def pick_hour(hourly, target_time):
     for h in hourly:
-        if int(h['time']) == target_time:
+        if int(h["time"]) == target_time:
             return h
     return None
 
+
 def main():
     try:
-        weather = requests.get('https://wttr.in/?format=j1', timeout=5).json()
+        weather = requests.get("https://wttr.in/?format=j1", timeout=5).json()
     except Exception:
-        print(json.dumps({
-            'text': read_cache(),
-            'tooltip': 'Error fetching weather'
-        }))
+        print(json.dumps({"text": read_cache(), "tooltip": "Error fetching weather"}))
         return
 
     if cache_valid():
         summary = read_cache()
     else:
-        current = weather['current_condition'][0]
-        emoji = cond_to_emoji(current['weatherDesc'][0]['value'])
-        summary = f'{emoji}{current["temp_C"]}°C'
+        current = weather["current_condition"][0]
+        emoji = cond_to_emoji(current["weatherDesc"][0]["value"])
+        summary = f"{emoji}{current['temp_C']}°C"
         write_cache(summary)
 
     tooltip_lines = []
 
-    for day in weather['weather']:
-        tooltip_lines.append(day['date'])
+    for day in weather["weather"]:
+        tooltip_lines.append(day["date"])
         for label, t in LABELS:
-            hour = pick_hour(day['hourly'], t)
+            hour = pick_hour(day["hourly"], t)
             if not hour:
                 continue
-            emoji = cond_to_emoji(hour['weatherDesc'][0]['value'])
-            temp = hour['tempC']
-            tooltip_lines.append(f'{emoji} {label}: {temp}°C')
-        tooltip_lines.append('')
+            emoji = cond_to_emoji(hour["weatherDesc"][0]["value"])
+            temp = hour["tempC"]
+            tooltip_lines.append(f"{emoji} {label}: {temp}°C")
+        tooltip_lines.append("")
 
-    tooltip = '\n'.join(tooltip_lines).rstrip()
+    tooltip = "\n".join(tooltip_lines).rstrip()
 
-    print(json.dumps({
-        'text': summary,
-        'tooltip': tooltip
-    }))
+    print(json.dumps({"text": summary, "tooltip": tooltip}))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

@@ -18,10 +18,10 @@ return {
       },
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
-    ft = { 'csv' },
+    ft = { "csv" },
     keys = {
-      { '<leader>csv', '<cmd>CsvViewToggle display_mode=border<cr>', desc = 'Toggle csv view', mode = 'n', },
-      { '<leader>csV', '<cmd>CsvViewToggle display_mode=highlight<cr>', desc = 'Toggle csv view', mode = 'n', },
-    }
-  }
+      { "<leader>csv", "<cmd>CsvViewToggle display_mode=border<cr>", desc = "Toggle csv view", mode = "n" },
+      { "<leader>csV", "<cmd>CsvViewToggle display_mode=highlight<cr>", desc = "Toggle csv view", mode = "n" },
+    },
+  },
 }

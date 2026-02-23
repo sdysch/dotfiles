@@ -83,13 +83,27 @@ then
 	alias vim="nvim"
 	alias vimdiff="nvim -d"
 fi
+
 alias v="vim"
 alias n="nvim"
 alias nv="nvim"
 
+function vf() {
+	local file
+	file="$(fzf)" || return
+	vim "$file"
+}
+
+function nvf() {
+	local file
+	file="$(fzf)" || return
+	nvim "$file"
+}
+
 # === emacs ===
-alias emacs="emacsclient -c -a 'emacs'"
-alias nw="emacsclient -nw -a 'emacs'"
+# If -a blank then daemon is started if not running
+alias emacs="emacsclient -c -a ''"
+alias nw="emacsclient -nw -a ''"
 
 # === opencode ===
 alias oc="opencode"

@@ -1,0 +1,51 @@
+# pybase: standard Python imports
+import os
+import sys
+import pathlib
+import logging
+
+# pandas: import pandas
+import pandas as pd
+
+# numpy: import numpy
+import numpy as np
+
+# matplotlib: import matplotlib pyplot
+import matplotlib.pyplot as plt
+
+# seaborn: import seaborn
+import seaborn as sns
+
+# data science combo: common imports
+import os
+import sys
+import pathlib
+import logging
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# logging setup: basic logging config
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# matplotlib inline: for Jupyter notebooks
+%matplotlib inline
+
+# sklearn: import sklearn
+import sklearn
+
+# sklearn_metrics: common metrics imports
+from sklearn.metrics import mean_absolute_error as MAE, mean_squared_error as MSE, r2_score as R2, mean_absolute_percentage_error as MAPE
+
+# sklearn_train_test: train/test split import
+from sklearn.model_selection import train_test_split
+
+# sklearn_scaler: common scalers
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+
+# sklearn_model_template: basic model fit template
+from sklearn.linear_model import LinearRegression
