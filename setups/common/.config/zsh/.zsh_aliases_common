@@ -175,3 +175,9 @@ alias rs="rsync --info=progress2 --human-readable"
 alias rsa="rsync -a --info=progress2 --human-readable"
 
 alias yz="yazi"
+
+# === pandoc ===
+# Convert Markdown to PDF using XeLaTeX
+function md2pdf() {
+    pandoc -s -o "${1%.md}.pdf" "$1" --pdf-engine=xelatex
+}
