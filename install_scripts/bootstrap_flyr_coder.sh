@@ -147,6 +147,15 @@ _install_starship() {
 	curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
 }
 
+_install_pre_commit() {
+	log "Install pre-commit"
+	require_cmd uv
+
+	uv tool install pre-commit
+
+	log "Setup pre-commit, enable in repos"
+}
+
 # ====================================================================================================
 #											Main
 # ====================================================================================================
@@ -160,6 +169,7 @@ _install_zsh
 _install_eza
 _install_rg
 _install_starship
+_install_pre_commit
 
 # make directories
 mkdir -p "${XDG_DATA_HOME-$HOME/.local/share}"/zsh
