@@ -74,6 +74,7 @@ ntfs-3g
 openssh
 p7zip
 pacman-contrib
+pandoc
 papirus-icon-theme
 pass
 pavucontrol
