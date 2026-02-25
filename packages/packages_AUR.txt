@@ -1,5 +1,4 @@
 archlinux-themes-sddm
-google-chrome
 intel-ucode
 lightdm-webkit-theme-aether
 lightdm-webkit2-greeter

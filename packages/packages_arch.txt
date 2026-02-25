@@ -74,6 +74,7 @@ ntfs-3g
 openssh
 p7zip
 pacman-contrib
+pandoc
 papirus-icon-theme
 pass
 pavucontrol
@@ -111,6 +112,7 @@ tree-sitter
 tree-sitter-cli
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
+ttf-roboto
 unzip
 usbutils
 vim
