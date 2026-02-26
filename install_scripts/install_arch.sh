@@ -23,6 +23,7 @@ clone_if_missing() {
 }
 
 _install_fonts() {
+	log 'Installing powerline fonts'
 	# tmp dir
 	tmpdir=$(mktemp -d)
 	git clone --depth=1 https://github.com/powerline/fonts.git "$tmpdir/fonts"
@@ -32,6 +33,7 @@ _install_fonts() {
 }
 
 _change_shell_to_zsh() {
+	log 'Changing shell'
 	if [[ "${SHELL:-}" == *zsh ]]; then
 		log "zsh is already the current shell"
 	else
@@ -52,6 +54,7 @@ _change_shell_to_zsh() {
 }
 
 _install_zsh() {
+	log 'Installing zsh plugins'
 	DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 	CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
@@ -82,6 +85,7 @@ _install_zsh() {
 }
 
 _install_packages() {
+	log 'Installing packages, pacman & AUR'
 	if ! is_ci; then
 		log 'Installing pacman packages'
 		# shellcheck disable=SC2024
@@ -104,38 +108,21 @@ _install_packages() {
 	fi
 }
 
-# ===================================================
-#						MAIN
-# ===================================================
+_create_xdg_dirs() {
+	log 'Creating XDG directories'
+	mkdir -p \
+		"${XDG_CONFIG_HOME:-$HOME/.config}" \
+		"${XDG_DATA_HOME:-$HOME/.local/share}" \
+		"${XDG_CACHE_HOME:-$HOME/.cache}" \
+		"$HOME/.ssh"
+}
 
-# === XDG directory spec ===
-log 'Creating XDG directories'
-mkdir -p \
-    "${XDG_CONFIG_HOME:-$HOME/.config}" \
-    "${XDG_DATA_HOME:-$HOME/.local/share}" \
-    "${XDG_CACHE_HOME:-$HOME/.cache}" \
-    "$HOME/.ssh"
+_install_uv() {
+	log 'Installing uv'
+	curl -LsSf https://astral.sh/uv/install.sh | sh
+}
 
-# === install packages (non-CI) ===
-log 'Installing packages, pacman & AUR'
-_install_packages
-
-# === install powerline fonts ===
-log 'Installing powerline fonts'
-_install_fonts
-
-# === install zsh ===
-log 'Changing shell'
-_change_shell_to_zsh
-log 'Installing zsh plugins'
-_install_zsh
-
-# === install uv ===
-log 'Installing uv'
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# === user directories ===
-if ! is_ci; then
+_create_user_dirs() {
     log 'Creating user directories'
     mkdir -p \
         "$HOME/Documents" \
@@ -144,6 +131,19 @@ if ! is_ci; then
         "$HOME/Videos" \
         "$HOME/Downloads" \
         "$HOME/.local/share/mail/gmail"
-fi
+}
 
+# ===================================================
+#						MAIN
+# ===================================================
+
+_create_xdg_dirs
+_install_packages
+_install_fonts
+_change_shell_to_zsh
+_install_zsh
+_install_uv
+if ! is_ci; then
+	_create_user_dirs
+fi
 log 'Bootstrap complete'
