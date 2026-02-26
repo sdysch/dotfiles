@@ -130,6 +130,10 @@ _change_shell_to_zsh
 log 'Installing zsh plugins'
 _install_zsh
 
+# === install uv ===
+log 'Installing uv'
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # === user directories ===
 if ! is_ci; then
     log 'Creating user directories'
