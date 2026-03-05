@@ -30,6 +30,6 @@ jobs:
     uses: ./.github/workflows/install_arch.yml
 
   docker_build:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: install_arch
     uses: ./.github/workflows/docker.yml
