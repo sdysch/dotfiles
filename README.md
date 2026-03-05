@@ -35,6 +35,14 @@ stow --no-folding common --target=$HOME
 ```
 * Then reboot
 
+#### Docker demo
+_This is a demo so I could learn a bit about automated docker builds with github actions_
+Pull the latest Docker image:
+
+```bash
+docker pull ghcr.io/<user>/<repo>/dotfiles:latest
+```
+
 #### Annoyances
 * Manually copy over mpd playlists
 * Have to enable many systemd services manually (non-exhaustive list), I haven't kept good records of what I've done
