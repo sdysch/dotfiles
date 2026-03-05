@@ -92,6 +92,7 @@ export SSB_HOME="$XDG_DATA_HOME"/zoom
 # python
 export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
 export PYTHONBREAKPOINT=pdbpp.set_trace
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/init-repl.py"
 
 # matplotlib, jupyter/ipython
 export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
