@@ -89,7 +89,7 @@ _install_packages() {
 	if ! is_ci; then
 		log 'Installing pacman packages'
 		# shellcheck disable=SC2024
-		sudo pacman -S --needed --noconfirm - < packages_arch.txt
+		sudo pacman -S --needed --noconfirm - < packages/packages_arch.txt
 
 		# === AUR ===
 		if ! command -v yay >/dev/null 2>&1; then
@@ -104,7 +104,7 @@ _install_packages() {
 		fi
 
 		log 'Installing AUR packages'
-		yay -S --needed --noconfirm - < packages_AUR.txt
+		yay -S --needed --noconfirm - < packages/packages_AUR.txt
 	fi
 }
 
