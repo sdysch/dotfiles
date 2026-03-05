@@ -1,16 +1,18 @@
 name: ShellCheck
 
+# on:
+#   push:
+#     paths:
+#       - 'setups/**/.local/bin/*'
+#       - 'install_scripts/*.sh'
+#       - 'setups/arch/.config/waybar/scripts/*'
+#   pull_request:
+#     paths:
+#       - 'setups/**/.local/bin/*'
+#       - 'install_scripts/*.sh'
+#       - 'setups/arch/.config/waybar/scripts/*'
 on:
-  push:
-    paths:
-      - 'setups/**/.local/bin/*'
-      - 'install_scripts/*.sh'
-      - 'setups/arch/.config/waybar/scripts/*'
-  pull_request:
-    paths:
-      - 'setups/**/.local/bin/*'
-      - 'install_scripts/*.sh'
-      - 'setups/arch/.config/waybar/scripts/*'
+  workflow_call:
 
 jobs:
   shellcheck:
@@ -28,7 +30,7 @@ jobs:
           find \
             setups/arch/.local/bin \
             setups/common/.local/bin \
-            setups/flyr/.local/bin \
+            setups/work/.local/bin \
             install_scripts \
             -type f \
             \( -name '*.sh' -o -perm -111 \) \

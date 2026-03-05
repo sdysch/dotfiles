@@ -1,8 +1,10 @@
 name: Python Lint
 
+# on:
+#   push:
+#   pull_request:
 on:
-  push:
-  pull_request:
+  workflow_call:
 
 jobs:
   python-lint:

@@ -1,12 +1,14 @@
 name: Lua Lint
 
+# on:
+#   push:
+#     paths:
+#       - 'setups/*/.config/nvim/**/*.lua'
+#   pull_request:
+#     paths:
+#       - 'setups/*/.config/nvim/**/*.lua'
 on:
-  push:
-    paths:
-      - 'setups/*/.config/nvim/**/*.lua'
-  pull_request:
-    paths:
-      - 'setups/*/.config/nvim/**/*.lua'
+  workflow_call:
 
 jobs:
   lua-lint:

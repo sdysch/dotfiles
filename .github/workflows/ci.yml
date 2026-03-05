@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  gitleaks:
+    uses: ./.github/workflows/gitleaks.yml
+
+  python:
+    needs: gitleaks
+    uses: ./.github/workflows/python_lint.yml
+
+  lua:
+    needs: gitleaks
+    uses: ./.github/workflows/lua_lint.yml
+
+  shell:
+    needs: gitleaks
+    uses: ./.github/workflows/shellcheck.yml
+
+  install_arch:
+    needs:
+      - python
+      - lua
+      - shell
+    uses: ./.github/workflows/install_arch.yml

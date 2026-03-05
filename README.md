@@ -1,9 +1,6 @@
 # dotfiles
 
-[![Install Arch](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/install_arch.yml)
-[![Scripts](https://github.com/sdysch/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/shellcheck.yml)
-[![Lua](https://github.com/sdysch/dotfiles/actions/workflows/lua_lint.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/lua_lint.yml)
-[![Python](https://github.com/sdysch/dotfiles/actions/workflows/python_lint.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/python_lint.yml)
+[![Install](https://github.com/sdysch/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/sdysch/dotfiles/actions/workflows/ci.yml)
 
  *  This is a store for the various configuration files that I use, across the machines that I work on.
 
