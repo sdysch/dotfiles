@@ -12,7 +12,7 @@ COPY . /dotfiles
 WORKDIR /dotfiles
 
 # Run install script
-RUN ./install_scripts/install_arch.sh
+RUN bash -x install_scripts/install_arch.sh
 
 # Stow configs
 RUN cd setups && \
