@@ -28,3 +28,7 @@ jobs:
       - lua
       - shell
     uses: ./.github/workflows/install_arch.yml
+
+  docker_build:
+    needs: install_arch
+    uses: ./.github/workflows/docker.yml

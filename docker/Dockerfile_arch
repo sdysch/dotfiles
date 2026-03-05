@@ -1,0 +1,23 @@
+FROM archlinux:latest
+
+# Install basic dependencies
+RUN pacman -Sy --noconfirm \
+      stow git base-devel zsh neovim cmake \
+      xorgproto libx11 libxinerama libxft \
+      tree-sitter tree-sitter-cli \
+    && pacman -Scc --noconfirm
+
+# Copy dotfiles
+COPY . /dotfiles
+WORKDIR /dotfiles
+
+# Run install script
+RUN ./install_scripts/install_arch.sh
+
+# Stow configs
+RUN cd setups && \
+    stow --no-folding arch --target=$HOME --adopt && \
+    stow --no-folding common --target=$HOME --adopt
+
+# Default shell
+CMD ["/bin/zsh"]
