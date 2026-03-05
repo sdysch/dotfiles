@@ -6,10 +6,6 @@ is_ci() {
     [[ -n "${CI:-}" ]]
 }
 
-is_docker() {
-    grep -qE '/docker|/lxc' /proc/1/cgroup 2>/dev/null || [ -f /.dockerenv ]
-}
-
 log() {
     printf '\n\033[1;34m==> %s\033[0m\n' "$1"
 }
@@ -90,7 +86,7 @@ _install_zsh() {
 
 _install_packages() {
 	log 'Installing packages, pacman & AUR'
-	if ! is_ci && ! is_docker; then
+	if [ -z "${IN_DOCKER:-}" ] && ! is_ci; then
 		log 'Installing pacman packages'
 		# shellcheck disable=SC2024
 		sudo pacman -S --needed --noconfirm - < packages/packages_arch.txt

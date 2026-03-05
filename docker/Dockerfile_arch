@@ -1,5 +1,7 @@
 FROM archlinux:latest
 
+ENV IN_DOCKER=1
+
 # Install basic dependencies
 RUN pacman -Sy --noconfirm \
       stow git base-devel zsh neovim cmake \
