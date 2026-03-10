@@ -26,7 +26,8 @@ updates_list=""
 [[ -f "$CACHE_FILE" ]] && updates_list=$(<"$CACHE_FILE")
 
 # Get update list
-updates_list=$(checkupdates 2>/dev/null | head -n 30)
+# updates_list=$(checkupdates 2>/dev/null | head -n 30)
+updates_list=$(checkupdates 2>/dev/null)
 updates_count=$(printf '%s\n' "$updates_list" | grep -c .)
 
 # Find last system upgrade time
