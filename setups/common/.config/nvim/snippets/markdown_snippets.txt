@@ -1,2 +1,10 @@
 # markdown links: markdown links
 []()
+
+# markdown bash code block: markdown bash code block
+```bash
+```
+
+# markdown python code block: markdown python code block
+```python
+```
