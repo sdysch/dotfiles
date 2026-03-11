@@ -37,6 +37,7 @@ stow --no-folding common --target=$HOME
 
 #### Docker demo
 _This is a demo so I could learn a bit about automated docker builds with github actions_
+
 Pull the latest Docker image:
 
 ```bash
