@@ -146,3 +146,6 @@ export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 
 # cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+# Ollama
+export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
