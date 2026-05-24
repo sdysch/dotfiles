@@ -1,17 +1,19 @@
 [Added Associations]
+image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
-image/gif=sxiv.desktop;
 image/webp=sxiv.desktop;
+video/vnd.avi=mpv-3.desktop;mpv-2.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop
+image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 image/jpg=sxiv.desktop;
 image/png=sxiv.desktop;
-image/gif=sxiv.desktop;
 image/webp=sxiv.desktop;
 text/html=firefox.desktop
+video/vnd.avi=mpv-3.desktop;
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
