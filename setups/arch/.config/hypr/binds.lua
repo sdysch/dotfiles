@@ -23,7 +23,7 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Return", hl.dsp.layout("swapwit
 for i = 1, 10 do
 	local key = i % 10
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i}))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i}))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false}))
 end
 
 -- Special workspaces
