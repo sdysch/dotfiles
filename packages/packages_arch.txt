@@ -78,6 +78,7 @@ papirus-icon-theme
 pass
 pavucontrol
 picom
+pipewire-alsa
 pre-commit
 pulseaudio
 pulseaudio-bluetooth
