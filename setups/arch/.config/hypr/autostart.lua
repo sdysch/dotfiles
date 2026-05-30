@@ -1,0 +1,16 @@
+hl.env("XCURSOR_SIZE", 24)
+hl.env("HYPRCURSOR_SIZE", 24)
+
+-- Autostart
+hl.on("hyprland.start", function()
+    hl.exec_cmd("nm-applet")
+    hl.exec_cmd("blueman-applet")
+    hl.exec_cmd("pulseaudio --start")
+    hl.exec_cmd("~/.local/bin/check_inactivity")
+    hl.exec_cmd("~/.local/bin/sway_idler")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("echo local_var_HYPRLAND_INSTANCE_SIGNATURE > ~/.cache/hyprland_sig")
+    hl.exec_cmd("dunst")
+    hl.exec_cmd("emacs --daemon")
+end)
