@@ -20,5 +20,8 @@ jobs:
       - name: Run Selene
         run: find setups/*/.config/nvim -name "*.lua" -print0 | xargs -0 selene
 
-      - name: Run StyLua check
+      - name: Run StyLua check (nvim)
         run: stylua --check setups/*/.config/nvim
+
+      - name: Run StyLua check (hyprland)
+        run: stylua --check setups/*/.config/hypr

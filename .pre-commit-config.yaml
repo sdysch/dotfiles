@@ -40,7 +40,7 @@ repos:
         types: [lua]
         files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
 
-  # style lua
+  # style nvim lua
   - repo: local
     hooks:
       - id: stylua
@@ -49,3 +49,13 @@ repos:
         language: system
         types: [lua]
         files: '^setups/[^/]+/\.config/nvim/.*\.lua$'
+
+  # style hyprland lua
+  - repo: local
+    hooks:
+      - id: stylua
+        name: stylua
+        entry: stylua
+        language: system
+        types: [lua]
+        files: '^setups/[^/]+/\.config/hypr/.*\.lua$'

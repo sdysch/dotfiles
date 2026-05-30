@@ -21,17 +21,23 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Return", hl.dsp.layout("swapwit
 
 -- Switch workspaces with mainMod + [0-9], send active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
-	local key = i % 10
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i}))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false}))
+  local key = i % 10
+  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- Special workspaces
 hl.bind(mainMod .. " + " .. "Z", hl.dsp.workspace.toggle_special("music"))
 hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.workspace.toggle_special("scratch"))
 
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Z", hl.dsp.window.move({ workspace = "special:music" }, { follow = false }))
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "SPACE", hl.dsp.window.move({ workspace = "special:scratch" }, { follow = false }))
+hl.bind(
+  mainMod .. " + " .. "SHIFT" .. " + " .. "Z",
+  hl.dsp.window.move({ workspace = "special:music" }, { follow = false })
+)
+hl.bind(
+  mainMod .. " + " .. "SHIFT" .. " + " .. "SPACE",
+  hl.dsp.window.move({ workspace = "special:scratch" }, { follow = false })
+)
 
 -- swap focussed windows left and right
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "h", hl.dsp.window.swap({ direction = "left" }))
