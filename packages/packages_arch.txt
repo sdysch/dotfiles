@@ -78,10 +78,11 @@ papirus-icon-theme
 pass
 pavucontrol
 picom
+pipewire
 pipewire-alsa
+pipewire-alsa
+pipewire-pulse
 pre-commit
-pulseaudio
-pulseaudio-bluetooth
 python
 python-pip
 ranger
@@ -119,6 +120,7 @@ vim
 vlc
 waybar
 wget
+wireplumber
 wl-clipboard
 xclip
 xdotool

@@ -54,9 +54,9 @@ docker pull ghcr.io/<user>/<repo>/dotfiles:latest
 	* mpd-mpris.service
 	* mpd.service
 	* pipewire.service
-	* pulseaudio.service
 	* sddm.service
 	* wpa_supplicant.service
+	* pipewire pipewire-pulse wireplumber
 * sddm/lightdm themes need to be installed system- not user-wide
 * Have to re-link accounts with rclone 
 
