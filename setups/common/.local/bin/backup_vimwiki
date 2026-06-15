@@ -1,9 +1,6 @@
 #!/bin/sh
 # automatically backup vimwiki
 
-set -eu
-
-#!/bin/sh
 echo "backup_vimwiki ran at $(date)" >> /tmp/backup_vimwiki.log
 
 [ -d "$VIMWIKI" ] || exit 0
