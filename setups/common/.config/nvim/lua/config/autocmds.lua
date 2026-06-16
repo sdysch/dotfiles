@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*/swaync/style.css",
   callback = function()
-    vim.fn.system('swaync-client --reload-config; notify_info "Info" "swaync restarted"')
+    vim.fn.system('swaync-client --reload-css; notify_info "Info" "swaync css reloaded"')
   end,
 })
 

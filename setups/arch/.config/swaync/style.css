@@ -38,7 +38,7 @@
   color: @noti-fg-normal;
   border-color: @noti-border-normal;
 
-  font-family: "JetBrains Mono Medium";
+  /*font-family: "JetBrains Mono Medium";*/
   font-size: 10pt;
 }
 
@@ -64,7 +64,7 @@
 .notification-action {
   padding: 4px 12px;
   border-radius: 6px;
-  font-family: "JetBrains Mono Medium";
+  /* font-family: "JetBrains Mono Medium"; */
   font-size: 10pt;
 }
 
@@ -105,14 +105,14 @@
 }
 
 .widget-title > label {
-  font-family: "JetBrains Mono Medium";
+  /* font-family: "JetBrains Mono Medium"; */
   font-size: 10pt;
   font-weight: bold;
   color: @noti-fg-normal;
 }
 
 .widget-title > button {
-  font-family: "JetBrains Mono Medium";
+  /* font-family: "JetBrains Mono Medium"; */
   font-size: 10pt;
   color: @noti-fg-normal;
   border-radius: 6px;
@@ -122,7 +122,7 @@
 }
 
 .widget-dnd > label {
-  font-family: "JetBrains Mono Medium";
+  /* font-family: "JetBrains Mono Medium"; */
   font-size: 10pt;
   color: @noti-fg-low;
 }
