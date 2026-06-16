@@ -195,3 +195,35 @@ tooltip label {
     color: #bf616a;
 	font-weight: bold;
 }
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
+/***** NOTIFICATION *****/
+/* Unread notification waiting */
+#custom-notification.notification {
+  color: @cyan;
+}
+
+/* DND active, no notifications */
+#custom-notification.dnd-none {
+  color: #4c566a;
+}
+
+/* DND active with pending notifications */
+#custom-notification.dnd-notification {
+  color: @orange;
+}
+
+/* Inhibited states */
+#custom-notification.inhibited-none {
+  color: @fg-dim;
+}
+
+#custom-notification.inhibited-notification {
+  color: @yellow;
+}
+
+#custom-notification.dnd-inhibited-notification {
+  color: @orange;
+}

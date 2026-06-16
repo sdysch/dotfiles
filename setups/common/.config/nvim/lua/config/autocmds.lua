@@ -48,6 +48,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*/swaync/style.css",
+  callback = function()
+    vim.fn.system('swaync-client --reload-config; notify_info "Info" "swaync restarted"')
+  end,
+})
+
 -- autocreate missing directories on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()

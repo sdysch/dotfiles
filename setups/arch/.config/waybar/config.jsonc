@@ -24,7 +24,8 @@
         "custom/newsboat",
         "cpu",
         "custom/diskfree",
-        "tray"
+        "tray",
+        "custom/notification"
         // "custom/power"
     ],
 
@@ -165,5 +166,26 @@
         "format": "{}",
         "exec": "~/.config/waybar/scripts/duolingo_streak",
         "interval": 3600
-    }
+    },
+
+	"custom/notification": {
+		"tooltip": true,
+		"format": "<span size='16pt'>{icon}</span>",
+		"format-icons": {
+			"notification": "󱅫 ",
+			"none": "󰂜 ",
+			"dnd-notification": "󰂠 ",
+			"dnd-none": "󰪓 ",
+			"inhibited-notification": "󰂛 ",
+			"inhibited-none": "󰪑 ",
+			"dnd-inhibited-notification": "󰂛 ",
+			"dnd-inhibited-none": "󰪑 "
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	}
 }

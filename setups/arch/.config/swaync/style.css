@@ -1,0 +1,128 @@
+/* swaync style.css — migrated from dunst (Nord theme)
+ */
+
+/* ── Urgency colour tokens ─────────────────────────────────────────── */
+@define-color noti-bg-low      rgba(46, 52, 64, 0.867);   /* #2e3440dd */
+@define-color noti-fg-low      #d8dee9;
+@define-color noti-border-low  #4c566a;
+
+@define-color noti-bg-normal   rgba(46, 52, 64, 0.867);   /* #2e3440dd */
+@define-color noti-fg-normal   #e5e9f0;
+@define-color noti-border-normal #88c0d0;
+
+@define-color noti-bg-critical rgba(59, 66, 82, 0.933);   /* #3b4252ee */
+@define-color noti-fg-critical #eceff4;
+@define-color noti-border-critical #bf616a;
+
+@define-color separator        #3b4252;
+
+/* ── Base notification card ────────────────────────────────────────── */
+.notification-row {
+  outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: transparent;
+}
+
+.notification {
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 12px;
+  margin: 6px 12px;
+
+  /* default (normal urgency) */
+  background: @noti-bg-normal;
+  color: @noti-fg-normal;
+  border-color: @noti-border-normal;
+
+  font-family: "JetBrains Mono Medium";
+  font-size: 10pt;
+}
+
+/* ── Urgency variants ──────────────────────────────────────────────── */
+.notification.low {
+  background: @noti-bg-low;
+  color: @noti-fg-low;
+  border-color: @noti-border-low;
+}
+
+.notification.critical {
+  background: @noti-bg-critical;
+  color: @noti-fg-critical;
+  border-color: @noti-border-critical;
+}
+
+/* ── Typography ────────────────────────────────────────────────────── */
+.notification-content {
+  padding: 0;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: "JetBrains Mono Medium";
+  font-size: 10pt;
+}
+
+/* Summary (bold, maps to dunst <b>%s</b>) */
+.notification-summary {
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* Body (maps to dunst %b) */
+.notification-body {
+  line-height: 1.4;
+}
+
+/* ── Icon ──────────────────────────────────────────────────────────── */
+/* swaync places the icon on the left automatically.
+   min/max sizes are set via GTK; these CSS rules nudge the sizing. */
+.notification-icon {
+  min-width:  40px;
+  min-height: 40px;
+  max-width:  128px;
+  max-height: 128px;
+  margin-right: 10px;   /* text_icon_padding equivalent */
+}
+
+/* ── Separator between stacked notifications ───────────────────────── */
+.notification + .notification {
+  border-top: 2px solid @separator;
+  margin-top: 2px;
+}
+
+/* ── Control-centre shell ──────────────────────────────────────────── */
+.control-center {
+  background: @noti-bg-normal;
+  border-radius: 10px;
+  border: 1px solid @noti-border-normal;
+  padding: 12px;
+}
+
+.widget-title > label {
+  font-family: "JetBrains Mono Medium";
+  font-size: 10pt;
+  font-weight: bold;
+  color: @noti-fg-normal;
+}
+
+.widget-title > button {
+  font-family: "JetBrains Mono Medium";
+  font-size: 10pt;
+  color: @noti-fg-normal;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid @separator;
+  padding: 4px 8px;
+}
+
+.widget-dnd > label {
+  font-family: "JetBrains Mono Medium";
+  font-size: 10pt;
+  color: @noti-fg-low;
+}

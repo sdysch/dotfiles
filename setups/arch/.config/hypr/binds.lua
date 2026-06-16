@@ -62,8 +62,10 @@ hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true 
 hl.bind("Print", hl.dsp.exec_cmd("screenshot"))
 hl.bind(mainMod .. " + " .. "Print", hl.dsp.exec_cmd("screenshot -s"))
 
--- dunst
-hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("dunstctl close"))
+-- notifications
+-- hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("dunstctl close"))
+hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("swaync-client -cp"))
+hl.bind("CTRL" .. " + SHIFT + " .. "SPACE", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- power, lock options
 hl.bind(mainMod .. " + " .. "X", hl.dsp.exec_cmd("lock_sway"))

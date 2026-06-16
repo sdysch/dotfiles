@@ -105,6 +105,7 @@ starship
 stow
 stylua
 swayidle
+swaync
 sxiv
 texlive
 tmux
