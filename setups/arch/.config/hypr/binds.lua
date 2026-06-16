@@ -64,7 +64,7 @@ hl.bind(mainMod .. " + " .. "Print", hl.dsp.exec_cmd("screenshot -s"))
 
 -- notifications
 -- hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("dunstctl close"))
-hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("swaync-client -cp"))
+hl.bind("CTRL" .. " + " .. "SPACE", hl.dsp.exec_cmd("swaync-client --close-latest"))
 hl.bind("CTRL" .. " + SHIFT + " .. "SPACE", hl.dsp.exec_cmd("swaync-client -t"))
 
 -- power, lock options
