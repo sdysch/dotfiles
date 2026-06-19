@@ -46,6 +46,14 @@ https://www.manchester.ac.uk/about/news/tagfeed/en/tags/headlines news uom
 https://julienaismith.com/feed/ dogtraining blog
 https://www.scandikitchen.co.uk/feed/ scandikitchen recipes
 
+---Jobs---
+https://api.lever.co/v0/postings/veo?mode=json veo company jobs
+https://api.ashbyhq.com/posting-api/job-board/KAYAK kayak company jobs
+# https://trackman.recruitee.com/api/feeds/offers.xml trackman company jobs
+https://careers.alipes.dk/jobs.rss alipes company jobs
+https://jobs.lunar.app/jobs.rss lunar company jobs
+https://careers.monta.com/jobs.rss monta company jobs
+
 # python
 ---python---
 https://blog.python.org/feeds/posts/default?alt=rss news tech python
