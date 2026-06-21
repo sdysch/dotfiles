@@ -2,20 +2,24 @@
 "query:Unread Articles:unread = \"yes\""
 
 ---Combined---
-"query:All daily news:tags # \"daily\" and tags # \"news\""
-"query:BBC news:tags # \"daily\" and tags # \"news\" and tags # \"bbc\""
-"query:Daily local news:tags # \"daily\" and tags # \"news\" and tags # \"local\""
-"query:WSJ news:tags # \"news\" and tags # \"wsj\""
-"query:Tech [skim]:tags # \"tech\" and tags # \"skim\""
-"query:Tech [longread]:tags # \"tech\" and tags # \"longread\""
-"query:Tech [company blogs]:tags # \"tech\" and tags # \"company\""
-"query:Tech [personal blogs]:tags # \"tech\" and tags # \"blog\""
-"query:python :tags # \"python\""
-"query:Company news:tags # \"news\" and tags # \"company\""
-"query:Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
-"query:Research papers:tags # \"arxiv\""
-"query:Reddit:tags # \"reddit\""
-"query:Skim:tags # \"skim\""
+"query:🗞️ All daily news:tags # \"daily\" and tags # \"news\""
+"query:🗞️ BBC news:tags # \"daily\" and tags # \"news\" and tags # \"bbc\""
+"query:🗞️ Daily local news:tags # \"daily\" and tags # \"news\" and tags # \"local\""
+"query:🗞️ WSJ news:tags # \"news\" and tags # \"wsj\""
+"query:🗞️ Tech [skim]:tags # \"tech\" and tags # \"skim\""
+"query:🗞️ Tech [longread]:tags # \"tech\" and tags # \"longread\""
+"query:🗞️ Tech [company blogs]:tags # \"tech\" and tags # \"company\""
+"query:🗞️ Tech [personal blogs]:tags # \"tech\" and tags # \"blog\""
+"query:🗞️ Tech [research]:tags # \"tech\" and tags # \"research\""
+"query:🗞️ python :tags # \"python\""
+"query:🗞️ Company news:tags # \"news\" and tags # \"company\""
+"query:🗞️ Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
+"query:🗞️ Arch package updates:tags # \"linux\" and tags # \"arch\" and tags # \"packages\""
+"query:🗞️ Research papers:tags # \"arxiv\""
+"query:🗞️ Reddit:tags # \"reddit\""
+"query:🗞️ neovim:tags # \"nvim\""
+"query:🗞️ Skim:tags # \"skim\""
+"query:🗞️ All jobs:tags # \"jobs\""
 
 ---Individual---
 # News
@@ -26,9 +30,9 @@ https://feeds.bbci.co.uk/news/business/rss.xml bbc news business daily
 https://feeds.bbci.co.uk/news/politics/rss.xml bbc news politics daily
 https://feeds.bbci.co.uk/news/england/manchester/rss.xml bbc news local daily manchester
 https://feeds.content.dowjones.io/public/rss/RSSWorldNews wsj world daily news
-https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness wsj business news
-https://feeds.content.dowjones.io/public/rss/RSSWSJD wsj tech news
-https://feeds.content.dowjones.io/public/rss/RSSMarketsMain wsj markets news
+https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness wsj business daily news
+https://feeds.content.dowjones.io/public/rss/RSSWSJD wsj tech daily news
+https://feeds.content.dowjones.io/public/rss/RSSMarketsMain wsj markets daily news
 https://www.ft.com/rss/home/uk ft news daily
 
 
@@ -43,6 +47,10 @@ https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
 https://inrix.com/feed/ news inrix company
 https://flyr.com/feed/ news flyr company
 https://www.manchester.ac.uk/about/news/tagfeed/en/tags/headlines news uom
+https://proton.me/blog/feed news company
+https://www.databricks.com/feed/ news company
+https://ooono.com/en-uk/blogs/news.atom news company ooono
+
 https://julienaismith.com/feed/ dogtraining blog
 https://www.scandikitchen.co.uk/feed/ scandikitchen recipes
 
@@ -67,14 +75,13 @@ https://deepmind.google/blog/rss.xml tech longread company
 https://engineering.fb.com/feed/ tech longread company
 https://feeds.feedburner.com/FeaturedBlogPosts-DataScienceCentral tech skim
 https://juliasilge.com/blog/index.xml tech skim
-https://medium.com/feed/kaggle-blog tech longread
+https://medium.com/feed/kaggle-blog tech longread company
 https://news.ycombinator.com/rss tech skim
 https://research.google/blog/rss/ tech longread company
 https://statmodeling.stat.columbia.edu/feed/ tech skim
 https://towardsdatascience.com/feed/ tech skim
 https://www.amazon.science/index.rss tech longread company
 https://www.analyticsvidhya.com/feed/ tech skim
-https://www.databricks.com/feed/ tech longread company
 https://www.kdnuggets.com/feed tech skim
 https://www.theseattledataguy.com/feed/ tech skim
 https://www.uber.com/en-GB/blog/london/engineering/rss/ tech longread company
@@ -83,23 +90,41 @@ https://eng.lyft.com/feed tech longread company
 https://aws.amazon.com/blogs/machine-learning/feed/ tech longread company
 https://openai.com/blog/rss tech longread company
 https://www.microsoft.com/en-us/research/feed/ tech longread company
-https://ai.googleblog.com/atom.xml tech longread company
 https://github.blog/feed/ tech github skim
 https://github.blog/news-insights/product-news/feed/ tech github skim
 https://www.theregister.com/software/ai_ml/headlines.atom news tech skim
 https://www.theregister.com/software/applications/headlines.atom news tech skim
 https://www.theregister.com/software/databases/headlines.atom news tech skim
-https://proton.me/blog/feed news tech longread company
+https://huggingface.co/blog/feed.xml tech longread company
+
+https://www.mlops.wtf/feed tech longread company
 
 https://www.markpitblado.me/feed.xml blog tech
 https://blog.sergeantbiggs.net/posts/index.xml blog tech
+https://www.anthropic.com/news/rss.xml?utm_source=chatgpt.com
 
+https://neptune.ai/blog/feed tech longread company
+https://mlops.community/feed tech longread
+https://mlops.substack.com/feed tech longread blog
+https://bair.berkeley.edu/blog/feed.xml tech longread research
+https://www.nature.com/subjects/machine-learning.rss tech longread research
+https://dagshub.com/blog/rss/ tech longread company
+https://davidstutz.de/category/blog/feed tech longread blog
+https://deephaven.io/blog/rss.xml tech longread company
+https://newsletter.theaiedge.io/feed tech longread blog
+https://decodingml.substack.com/feed tech longread blog
+https://newsletter.swirlai.com/feed tech longread blog
+https://domino.ai/feed.xml tech longread company
+https://clear.ml/feed tech longread company
 
+# papers
 # arxiv
 ---ArXiv---
 https://export.arxiv.org/rss/cs arxiv research cs 
 https://export.arxiv.org/rss/cs.AI arxiv research cs ai
 https://export.arxiv.org/rss/cs.LG arxiv research cs ml
+
+https://azuresilent.github.io/hf-paper-rss/feed.xml techresearch skim
 
 # linux
 ---Linux---
