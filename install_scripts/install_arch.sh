@@ -126,6 +126,7 @@ _create_user_dirs() {
     log 'Creating user directories'
     mkdir -p \
         "$HOME/Documents" \
+        "$HOME/Projects" \
         "$HOME/Music" \
         "$HOME/Pictures/screenshots" \
         "$HOME/Videos" \
