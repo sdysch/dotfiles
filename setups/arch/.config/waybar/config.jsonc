@@ -14,7 +14,7 @@
         "custom/music"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "ext/workspaces"
     ],
     "modules-right": [
         "custom/duolingo",
@@ -29,7 +29,7 @@
         // "custom/power"
     ],
 
-    "hyprland/workspaces": {
+    "ext/workspaces": {
         "format": "{name}",
         "on-click": "activate",
         "persistent-workspaces": { "*": 1 },
