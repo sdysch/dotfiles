@@ -35,6 +35,12 @@ hl.window_rule({
   float = true,
 })
 
+-- sxiv
+hl.window_rule({
+  match = { class = "^(sxiv)$" },
+  float = true,
+})
+
 -- file pickers
 hl.window_rule({
   name = "float-file-pickers",
