@@ -75,6 +75,17 @@ return {
               },
             },
           },
+          {
+            require("opencode").statusline,
+            fmt = function(str)
+              if not str or str == "" then
+                return ""
+              end
+              -- return '󰚩 ' .. str
+              return str
+            end,
+            color = { fg = "#7aa2f7" },
+          },
         },
         lualine_x = { diff, "fileformat", "filetype" },
         lualine_y = { "location" },

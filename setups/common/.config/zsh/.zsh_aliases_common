@@ -107,6 +107,7 @@ alias nw="emacsclient -nw -a ''"
 
 # === opencode ===
 alias oc="opencode"
+alias ocp="opencode --port"
 
 # === tmux ===
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
