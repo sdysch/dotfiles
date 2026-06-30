@@ -107,7 +107,17 @@ alias nw="emacsclient -nw -a ''"
 
 # === opencode ===
 alias oc="opencode"
+alias occ="opencode --continue"
+alias ocl="opencode session list"
 alias ocp="opencode --port"
+
+function oc_fzf() {
+  local session
+  session=$(opencode session list | fzf --header-lines=2 | awk '{print $1}')
+  if [[ -n "$session" ]]; then
+    opencode -s "$session"
+  fi
+}
 
 # === tmux ===
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
