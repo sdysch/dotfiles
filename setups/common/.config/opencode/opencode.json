@@ -3,7 +3,6 @@
 	"theme": "nord",
 	"permission": {
 		"bash": {
-			"*": "ask",
 			"npm *": "allow",
 			"rm *": "deny",
 			"grep *": "allow",
