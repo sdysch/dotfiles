@@ -2,6 +2,7 @@
 
 swaylock \
     --effect-blur 5 \
+    --datestr '%d-%m-%Y' \
     --screenshots \
     --clock \
     --indicator \
