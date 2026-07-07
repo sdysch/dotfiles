@@ -1,64 +1,69 @@
 #!/usr/bin/env python3
-# shellcheck disable=all
+"""Waybar weather module backed by wttr.in.
+
+Env vars:
+    WEATHER_CACHE_TTL - seconds before refetching (default: 3600)
+"""
 
 import json
-import requests
-import time
 import os
+import time
+import urllib.error
+import urllib.request
 
 CACHE_DIR = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("~/.cache"))
-CACHE_FILE = os.path.join(CACHE_DIR, "weatherreport")
-TIME_FILE = os.path.join(CACHE_DIR, "weatherreport.time")
-CACHE_TTL = 3600
+CACHE_FILE = os.path.join(CACHE_DIR, "weatherreport.json")
+
+LOCATION = ""  # empty = wttr.in auto-detects via IP; set e.g. "London" to pin it
+UNITS = "metric"  # "metric" or "imperial"
+CACHE_TTL = int(os.environ.get("WEATHER_CACHE_TTL", "3600"))
+REQUEST_TIMEOUT = 5
 
 LABELS = [
-    ("Morning", 600),  # 06:00
-    ("Noon", 1200),  # 12:00
-    ("Evening", 1800),  # 18:00
-    ("Night", 0),  # 00:00
+    ("Morning", 600),
+    ("Noon", 1200),
+    ("Evening", 1800),
+    ("Night", 0),
+]
+
+# condition keyword -> (emoji, waybar css class)
+CONDITION_MAP = [
+    (("sunny", "clear"), "☀️", "clear"),
+    (("thunder", "storm"), "⛈", "storm"),
+    (("snow", "sleet"), "❄️", "snow"),
+    (("rain", "drizzle", "shower"), "🌧", "rain"),
+    (("fog", "mist", "haze"), "🌫", "fog"),
+    (("cloud", "overcast"), "☁️", "cloudy"),
 ]
 
 
-def cond_to_emoji(cond):
+def cond_lookup(cond):
     cond = cond.lower()
-    if "sunny" in cond or "clear" in cond:
-        return "☀️"
-    if "cloud" in cond or "overcast" in cond:
-        return "☁️"
-    if "rain" in cond or "drizzle" in cond or "shower" in cond:
-        return "🌧"
-    if "snow" in cond or "sleet" in cond:
-        return "❄️"
-    if "thunder" in cond or "storm" in cond:
-        return "⛈"
-    if "fog" in cond or "mist" in cond or "haze" in cond:
-        return "🌫"
-    return "🌤"
+    for keywords, emoji, css_class in CONDITION_MAP:
+        if any(k in cond for k in keywords):
+            return emoji, css_class
+    return "🌤", "default"
 
 
-def read_cache():
-    try:
-        with open(CACHE_FILE) as f:
-            return f.read().strip()
-    except FileNotFoundError:
-        return "N/A"
+def fetch_weather():
+    url = f"https://wttr.in/{LOCATION}?format=j1"
+    if UNITS == "imperial":
+        url += "&u"
+    req = urllib.request.Request(url, headers={"User-Agent": "curl/8.0"})
+    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+        return json.loads(resp.read().decode())
 
 
-def write_cache(text):
-    os.makedirs(CACHE_DIR, exist_ok=True)
-    with open(CACHE_FILE, "w") as f:
-        f.write(text)
-    with open(TIME_FILE, "w") as f:
-        f.write(str(int(time.time())))
+def temp_key(units):
+    return "temp_F" if units == "imperial" else "temp_C"
 
 
-def cache_valid():
-    try:
-        with open(TIME_FILE) as f:
-            last = int(f.read().strip())
-        return time.time() - last < CACHE_TTL
-    except FileNotFoundError:
-        return False
+def hourly_temp_key(units):
+    return "tempF" if units == "imperial" else "tempC"
+
+
+def unit_suffix(units):
+    return "°F" if units == "imperial" else "°C"
 
 
 def pick_hour(hourly, target_time):
@@ -68,37 +73,79 @@ def pick_hour(hourly, target_time):
     return None
 
 
-def main():
-    try:
-        weather = requests.get("https://wttr.in/?format=j1", timeout=5).json()
-    except Exception:
-        print(json.dumps({"text": read_cache(), "tooltip": "Error fetching weather"}))
-        return
-
-    if cache_valid():
-        summary = read_cache()
-    else:
-        current = weather["current_condition"][0]
-        emoji = cond_to_emoji(current["weatherDesc"][0]["value"])
-        summary = f"{emoji}{current['temp_C']}°C"
-        write_cache(summary)
+def build_output(weather):
+    current = weather["current_condition"][0]
+    emoji, css_class = cond_lookup(current["weatherDesc"][0]["value"])
+    text = f"{emoji} {current[temp_key(UNITS)]}{unit_suffix(UNITS)}"
 
     tooltip_lines = []
-
     for day in weather["weather"]:
         tooltip_lines.append(day["date"])
         for label, t in LABELS:
             hour = pick_hour(day["hourly"], t)
             if not hour:
                 continue
-            emoji = cond_to_emoji(hour["weatherDesc"][0]["value"])
-            temp = hour["tempC"]
-            tooltip_lines.append(f"{emoji} {label}: {temp}°C")
+            h_emoji, _ = cond_lookup(hour["weatherDesc"][0]["value"])
+            temp = hour[hourly_temp_key(UNITS)]
+            tooltip_lines.append(f"{h_emoji} {label}: {temp}{unit_suffix(UNITS)}")
         tooltip_lines.append("")
-
     tooltip = "\n".join(tooltip_lines).rstrip()
 
-    print(json.dumps({"text": summary, "tooltip": tooltip}))
+    return {
+        "text": text,
+        "tooltip": tooltip,
+        "class": css_class,
+        "fetched_at": int(time.time()),
+    }
+
+
+def read_cache():
+    try:
+        with open(CACHE_FILE) as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        return None
+
+
+def write_cache(data):
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    tmp_path = CACHE_FILE + ".tmp"
+    with open(tmp_path, "w") as f:
+        json.dump(data, f)
+    os.replace(tmp_path, CACHE_FILE)  # atomic
+
+
+def cache_is_fresh(cached):
+    return cached is not None and (time.time() - cached["fetched_at"]) < CACHE_TTL
+
+
+def stale_fallback(cached, error_note):
+    if cached is None:
+        return {"text": "N/A", "tooltip": error_note, "class": "error"}
+    age_min = int((time.time() - cached["fetched_at"]) / 60)
+    return {
+        "text": cached["text"],
+        "tooltip": f"{cached['tooltip']}\n\n({error_note}, showing data from {age_min}m ago)",
+        "class": cached.get("class", "default"),
+    }
+
+
+def main():
+    cached = read_cache()
+
+    if cache_is_fresh(cached):
+        output = cached
+    else:
+        try:
+            weather = fetch_weather()
+            output = build_output(weather)
+            write_cache(output)
+        except urllib.error.URLError:
+            output = stale_fallback(cached, "network error")
+        except (KeyError, IndexError, ValueError, TypeError):
+            output = stale_fallback(cached, "bad response from wttr.in")
+
+    print(json.dumps({k: v for k, v in output.items() if k != "fetched_at"}))
 
 
 if __name__ == "__main__":
