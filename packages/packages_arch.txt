@@ -15,6 +15,7 @@ chromium
 cmake
 cmatrix
 cronie
+cups
 curl
 deno
 direnv
@@ -34,9 +35,11 @@ fzf
 gcc
 geary
 git
+github-cli
 gitleaks
 gnome-keyring
 grim
+gutenprint
 htop
 hyprland
 hyprpaper
