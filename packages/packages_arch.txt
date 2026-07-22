@@ -128,6 +128,7 @@ wget
 wireplumber
 wl-clipboard
 xclip
+xdg-desktop-portal-hyprland
 xdotool
 xorg-apps
 xorg-server
