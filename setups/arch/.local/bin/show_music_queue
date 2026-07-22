@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Send a notification with currently queued music
+
+MAX_SONGS="${1:-5}"
+
+current="$(mpc current)"
+
+if [[ -z "$current" ]]; then
+    notify-send \
+        -u low \
+        -t 5000 \
+        -h string:x-dunst-stack-tag:music-queue \
+        -i audio-x-generic \
+        "🎧 Music Queue" \
+        "Nothing is currently playing."
+    exit 0
+fi
+
+# Get the current playlist position (1-based)
+position="$(
+    mpc status |
+    awk 'NR==2 {
+        split($2, a, "/")
+        sub("#", "", a[1])
+        print a[1]
+    }'
+)"
+
+queue="$(
+    mpc playlist |
+    tail -n +"$((position + 1))" |
+    head -n "$MAX_SONGS"
+)"
+
+body="🎧 <b>Now Playing</b>
+━━━━━━━━━━━━━━━━━━
+▶ $current"
+
+if [[ -n "$queue" ]]; then
+    body+="
+
+⏭ <b>Up Next</b>"
+
+    while IFS= read -r song; do
+        body+="
+• $song"
+    done <<< "$queue"
+else
+    body+="
+
+📭 Queue is empty."
+fi
+
+notify-send \
+    -u low \
+    -t 8000 \
+    -h string:x-dunst-stack-tag:music-queue \
+    -i audio-x-generic \
+    "Music Queue" \
+    "$body"

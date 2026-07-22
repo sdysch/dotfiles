@@ -88,6 +88,7 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "P", hl.dsp.exec_cmd("rofi_playerctl"))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Q", hl.dsp.exec_cmd("show_music_queue"))
 
 -- playing yt videos with mpv
 hl.bind(mainMod .. " + " .. "Y", hl.dsp.exec_cmd("rofi_mpv_yt"))
