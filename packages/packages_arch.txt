@@ -74,6 +74,7 @@ nm-connection-editor
 notify-osd
 noto-fonts-emoji
 ntfs-3g
+okular
 openssh
 p7zip
 pacman-contrib
