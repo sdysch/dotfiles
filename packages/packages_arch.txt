@@ -81,6 +81,7 @@ pandoc
 papirus-icon-theme
 pass
 pavucontrol
+pdfarranger
 picom
 pipewire
 pipewire-alsa
