@@ -77,6 +77,10 @@ ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_aliases_common
 
+# load env vars
+MB_ENV_VAR="/etc/profile.d/mbprod-secrets.sh"
+[ -f $MB_ENV_VAR ] && source $MB_ENV_VAR
+
 export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
