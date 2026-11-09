@@ -5,10 +5,14 @@
 if type eza > /dev/null 2>&1; then
 	alias ls="eza --icons=always"
 	alias ll="eza -l --sort newest --color=always --icons=always"
+	alias la="eza -la --sort newest --color=always --icons=always"
 else
 	alias ls="ls --color=auto"
 	alias ll="ls -ltrh"
+	alias la="ls -ltrha"
 fi
+
+alias tree="eza --tree --icons"
 
 # === grep ===
 alias grep='grep --color=auto -n'
@@ -192,3 +196,7 @@ alias yz="yazi"
 function md2pdf() {
     pandoc -s -o "${1%.md}.pdf" "$1" --pdf-engine=xelatex
 }
+
+# SQL
+alias lazysql="lazysql --no-telemetry"
+alias lsql="lazysql"

@@ -1,5 +1,6 @@
 archlinux-themes-sddm
 intel-ucode
+lazysql
 lightdm-webkit-theme-aether
 lightdm-webkit2-greeter
 nerd-fonts-meslo

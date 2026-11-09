@@ -54,7 +54,18 @@ eval "$(uv generate-shell-completion zsh)"
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=$HISTFILE
-#setopt SHARE_HISTORY
+
+# history options
+setopt share_history
+setopt append_history
+setopt hist_ignore_dups
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_reduce_blanks
+setopt inc_append_history
+
+# fzf
+eval "$(fzf --zsh)"
 
 # autocorrect
 setopt correct

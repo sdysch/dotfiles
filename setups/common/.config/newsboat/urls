@@ -11,6 +11,7 @@
 "query:🗞️ Tech [company blogs]:tags # \"tech\" and tags # \"company\""
 "query:🗞️ Tech [personal blogs]:tags # \"tech\" and tags # \"blog\""
 "query:🗞️ Tech [research]:tags # \"tech\" and tags # \"research\""
+"query:🗞️ Shipping [All]:tags # \"shipping\" and tags # \"news\""
 "query:🗞️ python :tags # \"python\""
 "query:🗞️ Company news:tags # \"news\" and tags # \"company\""
 "query:🗞️ Arch official announcements:tags # \"linux\" and tags # \"arch\" and tags # \"official\""
@@ -42,6 +43,19 @@ https://www.sciencedaily.com/rss/all.xml news daily science
 https://www.dr.dk/nyheder/service/feeds/allenyheder news lang:dk
 https://www.dr.dk/mu/feed/mads-monopolet-podcast.xml?format=podcast lang:dk
 
+# shipping
+--- Shipping ---
+https://www.lloydslist.com/rss-feeds news shipping
+https://www.lloydslist.com/rss news shipping
+https://splash247.com/feed/ news shipping
+https://shippingwatch.com/rss/seneste.rss news shipping
+https://maritime-executive.com/articles.rss news shipping
+https://services.tradewindsnews.com/api/feed/rss news shipping
+https://www.joc.com/rss news shipping
+https://www.rivieramm.com/Syndication/DF.cfm?f=9&ft=10& news shipping
+https://www.rivieramm.com/Syndication/DF.cfm?f=10&ft=10& news shipping
+https://www.rivieramm.com/Syndication/DF.cfm?f=13&ft=10& news shipping
+
 # misc news
 ---Misc---
 https://inrix.com/feed/ news inrix company
@@ -54,7 +68,8 @@ https://raw.githubusercontent.com/leontloveless/ai-rss-feeds/main/feeds/claude.x
 https://raw.githubusercontent.com/leontloveless/ai-rss-feeds/main/feeds/anthropic.xml news company anthropic
 https://raw.githubusercontent.com/leontloveless/ai-rss-feeds/main/feeds/stability-ai.xml news company stability
 https://raw.githubusercontent.com/leontloveless/ai-rss-feeds/main/feeds/cursor-blog.xml news company cursor
-https://mbshipbrokers.com/feed/ news company mbshipbrokers
+https://mbshipbrokers.com/feed/ news company mbshipbrokers shipping
+https://investor.maersk.com/rss/news-releases.xml news company maersk shipping
 
 https://julienaismith.com/feed/ dogtraining blog
 https://www.scandikitchen.co.uk/feed/ scandikitchen recipes

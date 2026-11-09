@@ -30,14 +30,8 @@ end
 hl.bind(mainMod .. " + " .. "Z", hl.dsp.workspace.toggle_special("music"))
 hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.workspace.toggle_special("scratch"))
 
-hl.bind(
-  mainMod .. " + " .. "SHIFT" .. " + " .. "Z",
-  hl.dsp.window.move({ workspace = "special:music" }, { follow = false })
-)
-hl.bind(
-  mainMod .. " + " .. "SHIFT" .. " + " .. "SPACE",
-  hl.dsp.window.move({ workspace = "special:scratch" }, { follow = false })
-)
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "Z", hl.dsp.window.move({ workspace = "special:music" }))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "SPACE", hl.dsp.window.move({ workspace = "special:scratch" }))
 
 -- swap focussed windows left and right
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "h", hl.dsp.window.swap({ direction = "left" }))

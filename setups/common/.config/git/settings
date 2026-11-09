@@ -1,7 +1,7 @@
 # vim ft=gitconfig
 [core]
 	excludesfile = ~/.config/git/gitignore_global
-	#pager = cat
+	pager = delta
 [pager]
 	branch = false
 [pull]
@@ -12,3 +12,7 @@
 	enabled = true
 [diff]
 	algorithm = histogram
+[include]
+    path = ~/.config/git/themes
+[delta]
+	features = arctic-fox
