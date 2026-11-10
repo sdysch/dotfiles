@@ -32,6 +32,7 @@ _install_deps() {
 	    eza \
 	    fzf \
 	    gh \
+	    git-delta \
 	    kitty \
 	    lazygit \
 	    msodbcsql18 \
@@ -39,6 +40,7 @@ _install_deps() {
 	    nodejs \
 	    npm \
 	    ripgrep \
+	    shellcheck \
 	    stow \
 	    tmux \
 	    unixodbc \

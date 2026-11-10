@@ -16,3 +16,9 @@
     path = ~/.config/git/themes
 [delta]
 	features = arctic-fox
+[user]
+	signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
