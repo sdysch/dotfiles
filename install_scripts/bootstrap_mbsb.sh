@@ -128,21 +128,6 @@ _install_pre_commit() {
 	log "Setup pre-commit, enable in repos"
 }
 
-_install_tree_sitter() {
-	log "Installing tree-sitter $TREESITTER_VERSION"
-
-	require_cmd curl
-	tmpdir="$(mktemp -d)"
-	pushd "$tmpdir" >/dev/null || exit 1
-
-	curl -L "https://github.com/tree-sitter/tree-sitter/releases/download/$TREESITTER_VERSION/tree-sitter-linux-x64.gz" | gunzip > tree-sitter
-	chmod +x tree-sitter
-	sudo mv tree-sitter /usr/local/bin/tree-sitter
-
-	popd >/dev/null || exit 1
-	rm -rf "$tmpdir"
-}
-
 _install_vim() {
 
 	log "Installing neovim $NVIM_VERSION"

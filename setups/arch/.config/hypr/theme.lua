@@ -37,7 +37,7 @@ hl.config({
   master = {
     new_status = "master",
     mfact = 0.55,
-    special_scale_factor = 0.9,
+    -- special_scale_factor = 0.9,
   },
   animations = {
     enabled = true,
