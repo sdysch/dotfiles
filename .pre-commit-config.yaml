@@ -9,7 +9,7 @@ repos:
         language: python
         types: [shell]
         require_serial: true # shellcheck can detect sourcing this way
-        files: '^(setups/(arch|flyr|common)/\.local/bin/|install_scripts/[^/]+\.sh$|setups/arch/\.config/waybar/scripts/)'
+        files: '^(setups/(arch|work|mbsb|common)/\.local/bin/|install_scripts/[^/]+\.sh$|setups/arch/\.config/waybar/scripts/)'
 
   # gitleaks
   - repo: https://github.com/gitleaks/gitleaks
@@ -38,7 +38,7 @@ repos:
         entry: selene
         language: system
         types: [lua]
-        files: '^setups/(arch|flyr|common)/\.config/nvim/.*\.lua$'
+        files: '^setups/(arch|mbsb|flyr|common)/\.config/nvim/.*\.lua$'
 
   # style nvim lua
   - repo: local
