@@ -200,3 +200,9 @@ function md2pdf() {
 # SQL
 alias lazysql="lazysql --no-telemetry"
 alias lsql="lazysql"
+
+# Claude
+alias c="claude"
+alias cr="claude --resume"
+alias cl="claude --continue"
+alias cn="claude --new"

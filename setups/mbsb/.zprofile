@@ -57,3 +57,9 @@ export LESS='-FRX'
 # pagers
 export MANPAGER='less -R'
 export PAGER='less -R'
+
+# Claude
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+
+# cargo
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
