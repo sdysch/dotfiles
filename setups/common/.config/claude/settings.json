@@ -1,10 +1,13 @@
 {
-  "statusLine": {
-    "type": "command",
-    "command": "bash /home/sdsd/.config/claude/scripts/statusline-command.sh"
-  },
-  "theme": "dark",
   "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./.secrets/**)",
+      "Read(./**/*id_rsa*)",
+      "Read(./**/*id_ed25519*)"
+    ],
     "ask": [
       "Bash(sudo *)",
       "Bash(doas *)",
@@ -24,14 +27,6 @@
       "Bash(git clean *)",
       "Bash(git checkout -- *)",
       "Bash(git restore *)"
-    ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)",
-      "Read(./.secrets/**)",
-      "Read(./**/*id_rsa*)",
-      "Read(./**/*id_ed25519*)"
     ]
   },
   "hooks": {
@@ -47,5 +42,11 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/sdsd/.config/claude/scripts/statusline-command.sh"
+  },
+  "theme": "dark",
+  "editorMode": "vim"
 }
