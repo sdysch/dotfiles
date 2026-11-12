@@ -1,7 +1,51 @@
 {
   "statusLine": {
     "type": "command",
-    "command": "bash /home/sdsd/.config/claude/statusline-command.sh"
+    "command": "bash /home/sdsd/.config/claude/scripts/statusline-command.sh"
   },
-  "theme": "dark"
+  "theme": "dark",
+  "permissions": {
+    "ask": [
+      "Bash(sudo *)",
+      "Bash(doas *)",
+      "Bash(rm *)",
+      "Bash(mv *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(mount *)",
+      "Bash(umount *)",
+      "Bash(systemctl *)",
+      "Bash(service *)",
+      "Bash(apt *)",
+      "Bash(apt-get *)",
+      "Bash(pacman *)",
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./.secrets/**)",
+      "Read(./**/*id_rsa*)",
+      "Read(./**/*id_ed25519*)"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt|agent_needs_input|agent_completed",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_CONFIG_DIR:-$HOME/.config/claude}/scripts/notify.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
 }
