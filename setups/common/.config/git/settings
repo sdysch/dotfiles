@@ -18,3 +18,9 @@
 	features = arctic-fox
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[user]
+	signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
