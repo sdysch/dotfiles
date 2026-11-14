@@ -30,14 +30,42 @@
     ]
   },
   "hooks": {
-    "Notification": [
+    "UserPromptSubmit": [
       {
-        "matcher": "permission_prompt|idle_prompt|agent_needs_input|agent_completed",
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_CONFIG_DIR:-$HOME/.config/claude}/scripts/notify.sh",
-            "timeout": 5
+            "command": "~/.config/tmux/plugins/tmux-agent-status/hooks/better-hook.sh UserPromptSubmit"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.config/tmux/plugins/tmux-agent-status/hooks/better-hook.sh PreToolUse"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.config/tmux/plugins/tmux-agent-status/hooks/better-hook.sh Stop"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.config/tmux/plugins/tmux-agent-status/hooks/better-hook.sh Notification"
           }
         ]
       }
